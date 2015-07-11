@@ -1,0 +1,149 @@
+<!-- feed categories are at the bottom of the page -->
+<ons-navigator>
+    <ons-page>
+        
+<!-- login view -->
+<div id="loginPage"  style="display:none;">
+
+<div data-role="header">
+<h1>Auth Demo</h1>
+</div>
+
+<div data-role="content">
+
+<form id="loginForm" ng-controller="loginController">
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="Email">Email:</label>
+<input type="text" name="email" id="email"  placeholder="Email" />
+</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="password">Password:</label>
+<input type="password" name="password" id="password"  placeholder="Password" />
+</div>
+{{name}}
+
+<input type="submit" value="Login" id="submitButton" ng-click="userLogin()">
+</form>
+
+</div>
+</div>
+
+<!-- login view close -->
+
+<!-- register view start -->
+
+<div id="registerPage" data-role="page" style="display:none;">
+
+<div data-role="header">
+<h1>Register</h1>
+</div>
+
+<div data-role="content">
+
+<form id="registerForm" ng-controller="registerController">
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_email">Email:</label>
+<input type="text" name="register_email" id="register_email" value="" placeholder="Email" />
+</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_name">Name:</label>
+<input type="text" name="register_name" id="register_name" value="" placeholder="Name" />
+</div>
+
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_roll">Roll No.:</label>
+<input type="text" name="register_roll" id="register_roll" value="" placeholder="Roll No." />
+</div>
+
+<!-- calling for college list retrieval here -->
+{{getCollegeFromStorage()}}
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_college">College:</label>
+<input type="text" name="register_college" id="register_college" value="" placeholder="College" />
+</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_categories">Categories:</label>
+<input type="text" name="register_categories" id="register_categories" value="" placeholder="Categories" />
+</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_contactNumber">Categories:</label>
+<input type="text" name="register_contactNumber" id="register_contactNumber" value="" placeholder="Contact" />
+</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_password">Password:</label>
+<input type="password" name="register_password" id="register_password" value="" placeholder="Password" />
+</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="register_confirmPassword">Confirm Password:</label>
+<input type="password" name="register_confirmPassword" id="register_confirmPassword" value="" placeholder="Confirm Password" />
+</div>
+
+
+<input type="submit" value="Register" id="register_submitButton" ng-click="userRegister()">
+</form>
+
+</div>
+</div>
+
+<!-- register view end -->
+
+        <ons-toolbar fixed-style id="toolbar" style="display:none;">
+        <div class="left">
+        <ons-toolbar-button ng-click="menu.toggle()">
+        <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+        </ons-toolbar-button>
+        </div>
+        <div class="center">College Feed</div>
+        </ons-toolbar>
+
+
+
+        <div id="category-page" style="display:none;">
+        <div class="profile-card">
+
+            <ons-icon icon="rss" class="profile-logo"></ons-icon>
+            <div class="profile-name">College Feed</div>
+            <div class="profile-id">@AppsHybrid</div>
+            <div class="profile-desc">Get college Feeds on your phone.</div>
+
+        </div>
+        
+        <ons-list-header>Select item below</ons-list-header>
+        
+        <ons-list ng-controller="FeedPluginCategoriesController">
+            <ons-list-item modifier="chevron" class="item" ng-repeat="category in categories" ng-click="showDetail($index)">
+                <ons-row>
+                    
+                    <ons-col width="60px"> 
+                    <!-- this notification is to be shown on two pages notice page and category page --> 
+                    <div class="notification menu-notification">1.1.0 {{getName()}}</div>
+                    <div class="item-thum"><ons-icon icon="{{category.icon}}"></ons-icon></div>
+                    </ons-col>
+                    
+                    <ons-col>
+                    <header>
+                    <span class="item-title">{{category.title}}</span>
+                    </header>
+                    <p class="item-desc">{{category.description}}</p>
+                    </ons-col>
+                    
+                </ons-row> 
+
+            </ons-list-item>
+            <!-- below function call as when migrating from menu toolbar all is hidded by default -->
+        {{showHiddenPage(category.id)}}
+
+        </ons-list>
+        </div>
+    </ons-page>
+</ons-navigator>
+<script type="text/javascript">
+
+</script>
