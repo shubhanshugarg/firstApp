@@ -16,9 +16,9 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-
+        
         ons.setDefaultDeviceBackButtonListener(function() {
-            if (navigator.notification.confirm("Are you sure to close the App?",
+            if (navigator.notification.confirm("Are you sure to close the App?", 
                 function(index) {
                     if (index == 1) { // OK button
                         navigator.app.exitApp(); // Close the app
@@ -26,12 +26,12 @@ var app = {
                 }
             ));
         });
-
+        
         // Open any external link with InAppBrowser Plugin
         $(document).on('click', 'a[href^=http], a[href^=https]', function(e){
 
             e.preventDefault();
-            var $this = $(this);
+            var $this = $(this); 
             var target = $this.data('inAppBrowser') || '_blank';
 
             window.open($this.attr('href'), target);
@@ -110,7 +110,7 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
     //hacky way post asynch as to do after dom load
     $('#toolbar').show();
     $('#category-page').show();
-
+    
     },"json");
 ///handle login not needed as login if stored in local storage
 //handleLogin(email,password);
@@ -118,21 +118,21 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
     //show login and register form here
     //hide the categories page
     //hacky way post asynch as to do after dom load
-
+    
     /*$.post("json/structure.json", {email:"aa"}, function(res) {
     alert("not stored in local storage");
     //$('#toolbar').show();
     $('#loginPage').show();
     $('#registerPage').show();
     },"json");*/
-
+    
     $.get("http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos", function(response) {
     alert("not stored in local storage");
     var isSuccess= response.success;
             if (isSuccess) {
-
+            
             var collegeList= response.data;
-
+            
             }else{
                 var errorMessage=response.message;
                 alert(errorMessage);
@@ -152,7 +152,7 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
 
             }
     }).fail(function() {
-
+    
     alert("some probem with internet or server not able to fetch list of colleges.");
 });
 
@@ -161,12 +161,12 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
 /*
     $http({method: 'GET', url: "http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos",async: false}).
         success(function(response, status, headers, config) {
-
+            
             var isSuccess= response.success;
             if (isSuccess) {
-
+            
             var collegeList= response.data;
-
+            
             }else{
                 var errorMessage=response.message;
                 alert(errorMessage);
@@ -184,13 +184,13 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
             $('#loginPage').show();
             $('#registerPage').show();
 
-            }
+            } 
         }).
         error(function(data, status, headers, config) {
             alert("some probem with internet or server not able to fetch list of colleges.");
             //page remain as it is
             $scope.isLoggedIn="no";
-        });   */
+        });   */ 
 
     //close new call
 
@@ -218,24 +218,24 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
 
         console.log('Received Event: ' + id);
     }
-
+    
 };
 
 (function(){
     'use strict';
     var module = angular.module('sensationFeedPlugin', ['onsen', 'sensationFeedPlugin.data', 'ngSanitize']);
-
-
+    
+   
     document.addEventListener('deviceready', function() {
-        angular.bootstrap(document, ['sensationFeedPlugin']);
+        angular.bootstrap(document, ['sensationFeedPlugin']);       
     }, false);
-
+    
     // Feed Plugin: Categories Controller
     /*module.controller('FeedPluginCategoriesController', function($scope, $http, FeedPluginData) {
 
         $http({method: 'GET', url: FeedPluginData.url}).
         success(function(data, status, headers, config) {
-            $scope.categories = data.categories;
+            $scope.categories = data.categories; 
         }).
         error(function(data, status, headers, config) {
 
@@ -255,7 +255,7 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
         }
 
     });*/
-
+    
     //mine login controller
 
     module.controller('loginController', function($scope, $http, FeedPluginData) {
@@ -278,7 +278,7 @@ if(u != '' && p!= '') {
 
 $http({method: 'GET', url: "http://collegeboard-env2.elasticbeanstalk.com/userInfo/userSignIn?userEmail="+u+"&userPassword="+p ,async: false}).
         success(function(response, status, headers, config) {
-
+            
             var isSuccess= response.success;
             if (isSuccess) {
             var register_name= response.data.userName;
@@ -415,9 +415,9 @@ headers: {
             } else {
             // or message from shubhanshu to show here
             alert("Your registration failed try again failed");
-            }
+            } 
         }).error(function (response) {
-
+            
             alert(response.message);
             alert("Some problem with the server");
         });
@@ -440,19 +440,10 @@ $("#register_submitButton").removeAttr("disabled");
         }
 
         $scope.getCollegeFromStorage = function() {
-            var collegeData =$.parseJSON(window.localStorage.getItem('collegeData'));
-            var tags = [];
-            $.each(collegeData, function(key,value) {
-                tags.push(value.collegeName);
-            });
-            $('#register_college').autocomplete({
-                source: tags,
-                change: function(event,ui){
-                    $(this).val((ui.item ? ui.item.id : ""));
-                }
-            });
-        };
+            var collegeData = JSON.parse(window.localStorage.getItem('collegeData'));
+            return collegeData;
 
+        }
 
     });
 
@@ -465,7 +456,7 @@ $("#register_submitButton").removeAttr("disabled");
 
         $http({method: 'GET', url: FeedPluginData.url}).
         success(function(data, status, headers, config) {
-            $scope.categories = data.categories;
+            $scope.categories = data.categories; 
         }).
         error(function(data, status, headers, config) {
 
@@ -491,9 +482,9 @@ $("#register_submitButton").removeAttr("disabled");
             if ($("#loginPage").is(":hidden") && $("#registerPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
             $('#toolbar').show();
             $('#category-page').show();
-            };
+            };        
         }
-
+        
         $scope.getName = function(id) {
         //
         return "a";
@@ -515,12 +506,12 @@ $("#register_submitButton").removeAttr("disabled");
         }
 
     });
-
+    
     // Feed Plugin: Master Controller
     module.controller('FeedPluginMasterController', function($scope, $http, FeedPluginData) {
-
+    
         $scope.msg = "Loading...";
-
+        
 
         $scope.feeds = "";
 
@@ -539,7 +530,7 @@ $("#register_submitButton").removeAttr("disabled");
         //noticeInfo/getNotices?userId=user_id&categoriesToFetch=categoryId
         $http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php" ,async: false}).
         success(function(response, status, headers, config) {
-
+            
 
                 //new
                 var isSuccess= response.success;
@@ -563,10 +554,10 @@ $("#register_submitButton").removeAttr("disabled");
                     });
 
                 $scope.feeds=array;
-                feedEntriesData=array;
+                feedEntriesData=array;              
                 console.log(array);
                 $scope.msg = "";
-                //feedEntriesData is not decoupled from the incomming data so also change in the feed master when data changes
+                //feedEntriesData is not decoupled from the incomming data so also change in the feed master when data changes 
                 executeOnSucess(feedEntriesData);
             }else{
                 //check if data in local storage show that
@@ -584,7 +575,7 @@ $("#register_submitButton").removeAttr("disabled");
                     $scope.feeds=feedEntriesData;
                     //var feedEntriesData=window.localStorage["feedEntriesData"+categoryId+categoryName];
                     executeOnSucess(feedEntriesData);
-
+                    
                 }else{
                 var errorMessage=response.message;
                 alert("Not able to fetch data"+errorMessage);
@@ -622,7 +613,7 @@ $("#register_submitButton").removeAttr("disabled");
                 console.log(array);
                 $scope.msg = "";
                 executeOnSucess();
-            }*/
+            }*/ 
         }).
         error(function(data, status, headers, config) {
             if (window.localStorage["feedEntriesData"] != undefined) {
@@ -637,12 +628,12 @@ $("#register_submitButton").removeAttr("disabled");
                     feedEntriesData=array;
                     $scope.feeds=feedEntriesData;
                     executeOnSucess(feedEntriesData);
-
+                    
                 }else{
                 //var errorMessage=response.message;
                 $scope.msg = 'An error occured:' + status;
                 }
-
+        
         });
 
 
@@ -650,7 +641,7 @@ $("#register_submitButton").removeAttr("disabled");
 
         /*$http({method: 'JSONP', url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(FeedPluginData.selectedItem.url)}).
         success(function(data, status, headers, config) {
-
+            
             if (!data.responseData) {
                 $scope.msg = "The device is unable to get the data.";
             } else {
@@ -658,16 +649,16 @@ $("#register_submitButton").removeAttr("disabled");
                 $scope.description = data.responseData.feed.description;
                 $scope.link = data.responseData.feed.link;
                 $scope.feeds = data.responseData.feed.entries;
-
+                
                 $scope.msg = "";
             }
 
         }).
         error(function(data, status, headers, config) {
-        $scope.msg = 'An error occured:' + status;
+        $scope.msg = 'An error occured:' + status; 
         });*/
     function executeOnSucess(feedEntriesData){
-
+        
         alert(Object.keys(feedEntriesData).length);
         var page = 1;
         // Define the number of the feed results in the page
@@ -684,19 +675,19 @@ $("#register_submitButton").removeAttr("disabled");
         };
 
         $scope.showMoreItems = function() {
-        page = page + 1;
-        };
-
+        page = page + 1;       
+        }; 
+        
         $scope.showDetail = function(index) {
         var selectedItem = feedEntriesData[index];
         FeedPluginData.selectedItem = selectedItem;
         $scope.ons.navigator.pushPage('feed-detail.html', selectedItem);
         }
-
-
-
+        
+		
+        
         };
-
+        
     });
 
     // Feed Plugin: Detail Controller
@@ -725,19 +716,19 @@ $("#register_submitButton").removeAttr("disabled");
 
 		$scope.hasVideo = function(item) {
 			var media = $scope.mediaObject(item);
-
+            
             //JAVASCRIPT: condition ? val1 : val2
             //return media.type ? (media.type == "video/mp4") : (media.url ? (media.url.indexOf(".mp4") != -1) : false);
 			return media.type ? (media.type == "video/mp4") : false;
 		}
-
+        
 		$scope.hasAudio = function(item) {
 			var media = $scope.mediaObject(item);
-
+            
             //JAVASCRIPT: condition ? val1 : val2
 			return media.type ? (media.type == "audio/mp3") : false;
 		}*/
-
+        
         //marking spam and report abuse here function firing post call to the server same function doing both calls
 
         $scope.setInfoState = function(state) {
@@ -746,7 +737,7 @@ $("#register_submitButton").removeAttr("disabled");
             if(FeedPluginData.mainCategory.toLowerCase()=="notices")
             {
                 fd.append('noticeId',$scope.item.noticeId);
-
+                
             }else if(FeedPluginData.mainCategory.toLowerCase()=="news"){
                 fd.append('newsId',$scope.item.newsId);
             }
@@ -754,12 +745,12 @@ $("#register_submitButton").removeAttr("disabled");
             if(state.toLowerCase()=="spam")
             {
                 fd.append('infoState',"REPORTED_SPAM");
-
+                
             }else if(state.toLowerCase()=="abuse"){
                 fd.append('newsId',"REPORTED_ABUSE");
             }
-
-
+            
+            
             var locationOrigin="http://collegeboard-env2.elasticbeanstalk.com";
             $http.post(locationOrigin + "/noticeInfo/changeNoticeState", fd, {
             transformRequest: angular.identity,
@@ -771,26 +762,26 @@ $("#register_submitButton").removeAttr("disabled");
             if (isSuccess) {
             alert("Reported");
             //empty the initial variabes of notice
-
+            
             }else{
                 alert("error in reporting try later");
                 var errorMessage=response.message;
                 alert(errorMessage);
         }
         }).error(function (response) {
-
+            
             //alert(response.message);
             alert("Some problem with the internet or server try later.");
         });
-
+        
 
         }
 
         $scope.getTrustedResourceUrl = function(src) {
-
+            
             return $sce.trustAsResourceUrl(src);
         }
-
+        
         $scope.loadURL = function (link) {
             //target: The target in which to load the URL, an optional parameter that defaults to _self. (String)
             //_self: Opens in the Cordova WebView if the URL is in the white list, otherwise it opens in the InAppBrowser.
@@ -799,22 +790,22 @@ $("#register_submitButton").removeAttr("disabled");
             //window.open($scope.item.link,'_blank');
             window.open(link,'_blank');
         }
-
+        
         /*$scope.shareFeed = function () {
-
+            
             var subject = $scope.item.title;
             var message = $scope.item.content;
             message = message.replace(/(<([^>]+)>)/ig,"");
 
             var link = $scope.item.link;
-
+            
             //Documentation: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin
             //window.plugins.socialsharing.share('Message', 'Subject', 'Image', 'Link');
             window.plugins.socialsharing.share(message, subject, null, link);
         }*/
-
+        
      });
-
+    
     // Contact Controller
     module.controller('ContactController', function($scope, $http) {
 
@@ -826,7 +817,7 @@ $("#register_submitButton").removeAttr("disabled");
             alert(cat1);
             var imgUri=$scope.imgUri;
             alert(imgUri);
-
+            
             var noticeData = {notice_heading: heading, notice_description:description};
             var noticeDataJson=JSON.stringify(noticeData);
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
@@ -872,7 +863,7 @@ headers: {
                 } else {
                 // or message from shubhanshu to show here
                 alert("Your notice could not be posted");
-                }
+                } 
             }).
             error(function(data, status, headers, config) {
                 alert("There is some server error try sommetime later");
@@ -893,7 +884,7 @@ headers: {
     // Contact Controller
     module.controller('noticePostController', function($scope, $http) {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-
+        
         $scope.submitForm = function() {
             var heading=$scope.subject;
             var description=$scope.message;
@@ -910,7 +901,7 @@ headers: {
             //var cp = $("#imgUri").val();
             var imgUri=$scope.imgUri;
 
-
+            
             var imgUri = $("#imgUri").val();
             alert(imgUri);
             var imgUri=$('input[type=file]')[0].files[0];
@@ -925,7 +916,7 @@ headers: {
 }
 ];*/
 var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-
+            
 var user_id=profileData["user_id"];
 /*var data = {
 "userId": user_id,
@@ -955,16 +946,16 @@ var fd = new FormData();
             //notices=JSON.stringify(notices);
             /*var noticeDataJson=JSON.stringify(noticeData);
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-
-            var user_id=profileData["user_id"];
+            
+            var user_id=profileData["user_id"];            
             */
 
            /* var fdJson={
-
+                
                 'noticeInfos':notices
             }*/
             //fdJson=JSON.stringify(fdJson);
-
+            
 
 
 //fd.append('collegeAddress', collegeAddress);
@@ -997,7 +988,7 @@ headers: {
                 alert(errorMessage);
         }
         }).error(function (response) {
-
+            
             //alert(response.message);
             alert("Some problem with the internet or server try later.");
         });
@@ -1011,9 +1002,9 @@ headers: {
 
 module.controller('menuController', function($scope) {
 
-
+        
         //$scope.items = FeedPluginData.selectedItem.items;
-
+        
         $scope.showHiddenHome = function() {
             $('#toolbar').show();
             $('#category-page').show();
