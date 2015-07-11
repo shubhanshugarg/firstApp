@@ -144,6 +144,23 @@ $.post("json/structure.json", {email:"aa"}, function(res) {
             var collegeDataJson=JSON.stringify(collegeData);
 
             window.localStorage["collegeData"] = collegeDataJson;
+
+              var collegeData =$.parseJSON(window.localStorage.getItem('collegeData'));
+                
+                var tags = [];
+                $.each(collegeData, function(key,value) {
+                    tags.push(value.collegeName);
+                });
+                $('#register_college').autocomplete({
+                    source: tags,
+                    
+                    change: function (event, ui) {
+                    if (ui.item == null || ui.item == undefined) {
+                    $(this).val("");
+                    $(this).attr("disabled", false);
+                    } 
+                }
+            });
             //$.mobile.changePage("some.html");
             //show categories and hide login and register form
 
@@ -439,19 +456,7 @@ $("#register_submitButton").removeAttr("disabled");
         $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});*/
         }
 
-        $scope.getCollegeFromStorage = function() {
-            var collegeData =$.parseJSON(window.localStorage.getItem('collegeData'));
-            var tags = [];
-            $.each(collegeData, function(key,value) {
-                tags.push(value.collegeName);
-            });
-            $('#register_college').autocomplete({
-                source: tags,
-                change: function(event,ui){
-                    $(this).val((ui.item ? ui.item.id : ""));
-                }
-            });
-        };
+        
 
 
     });
@@ -893,12 +898,28 @@ headers: {
     // Contact Controller
     module.controller('noticePostController', function($scope, $http) {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-
+        var allCategories=profileData.interestedCategories;
+        $scope.allCategories=allCategories; 
         $scope.submitForm = function() {
             var heading=$scope.subject;
             var description=$scope.message;
+            var url=$scope.url;
+            var fbUrl=$scope.fbUrl;
             var categories='';
-            var cat1=$scope.cat1;
+            //for loop all categories time
+            var i=0;
+            
+            for (i = 0; i < allCategories.length; i++) { 
+                var cat=$scope.allCategories[i].isSelected;
+                 if (cat) {
+                    if(categories=="")
+                    {categories=$scope.allCategories[i].categoryId;}else{
+                        categories=categories+','+$scope.allCategories[i].categoryId;
+                    }
+                };
+            
+            }
+            /*var cat1=$scope.cat1;
             if (cat1) {
                 categories='1';
             };
@@ -906,11 +927,11 @@ headers: {
             var cat2=$scope.cat2;
             if (cat2) {
                 categories=categories+',2';
-            };
+            };*/
             //var cp = $("#imgUri").val();
             var imgUri=$scope.imgUri;
 
-
+            
             var imgUri = $("#imgUri").val();
             alert(imgUri);
             var imgUri=$('input[type=file]')[0].files[0];
@@ -938,8 +959,8 @@ var fd = new FormData();
             fd.append('noticeHeading', heading);
             fd.append('noticeDescription', description);
             fd.append('categories', categories);
-            fd.append('noticeUrl', description);
-            fd.append('noticeFBUrl', categories);
+            fd.append('noticeUrl', url);
+            fd.append('noticeFBUrl', fbUrl);
             //fd.append('infoState', 'APPROVED');
             fd.append('noticeImageFile', imgUri);
             //new

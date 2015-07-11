@@ -16,7 +16,10 @@
         <textarea class="textarea" rows="10" placeholder="Message" ng-model="message" style="width:100%; margin-bottom:10px;"></textarea>
         <input type="text" class="text-input" placeholder="URL" ng-model="url" style="width:100%; margin-bottom:10px;">
         <input type="text" class="text-input" placeholder="Facebook Link" ng-model="fbUrl" style="width:100%; margin-bottom:10px;">
-        <input type="checkbox" ng-model="cat1" value="Bike">First Year
+        
+        <div ng-repeat="category in allCategories">
+        <input type="checkbox" ng-model="category.isSelected" value="{{category.categoryId}}">{{category.categoryName}}
+        </div>
         <input type="checkbox" ng-model="cat2" value="Car"> E cell 
         <input type="file"  id="imgUri">
         <!-- <input type="file" class="custom-file-input"
