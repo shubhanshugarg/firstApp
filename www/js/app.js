@@ -552,20 +552,55 @@ var app = {
         //which category is clicked
         alert(user_id);
         //noticeInfo/getNotices?userId=user_id&categoriesToFetch=categoryId
-        $http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php", async: false}).
+        //$http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php", async: false}).
+        $http({method: 'GET', url: "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId="+user_id+"&categoriesToFetch="+categoryId, async: false}).
             success(function (response, status, headers, config) {
 
 
                 //new
                 var isSuccess = response.success;
                 if (isSuccess) {
-                    var register_name = response.data.userName;
-                    var feedData = response.data;
-                    $scope.title = feedData.feed.title;
-                    $scope.description = feedData.feed.description;
-                    $scope.link = feedData.feed.link;
-                    $scope.feeds = feedData.feed.entries;
-                    var feedEntriesData = feedData.feed.entries;
+                    //var register_name = response.data.userName;
+
+
+                        var responseData = response.data;
+                        var feed={};
+                        var entries={};
+                        var count=0;
+                        var entryValueObj={};
+                        $.each(responseData, function (key, value) {
+                        
+                        entryValueObj={
+                                "id":value.noticeId,
+                                "title":value.noticeHeading,
+                                "images":{
+                                "url1":value.noticeImageId
+                                },
+                                "publishedDate":value.creationDate,
+                                "content":value.noticeDescription,
+                                "urlLink":value.noticeUrl,
+                                "socialLink":value.noticeFBUrl,
+                                "postedByRoll":value.userInfo.rollNumber,
+                                "postedByName":value.userInfo.userName,
+                                "contentSnippet":"peterparker@mail.com"
+                        }
+                            entries[count++]=entryValueObj;
+
+                
+                        });
+
+                    feed={
+                        "entries" : entries
+                    }
+
+
+                    //var feedData = response.data;
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    //$scope.link = feedData.feed.link;
+                    //$scope.feeds = feedData.feed.entries;
+                    $scope.feeds = feed.entries;
+                    var feedEntriesData = feed.entries;
                     console.log($scope.feeds);
                     var feedEntriesDataJson = JSON.stringify(feedEntriesData);
                     window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] = feedEntriesDataJson;
