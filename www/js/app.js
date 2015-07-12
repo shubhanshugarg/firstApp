@@ -93,6 +93,31 @@ var app = {
 
         //   $("#submitButton").on('click',handleLogin);
         checkPreAuth();
+        //fetching notification count
+        var getCount = function () {
+            //if here to execute only when profile id set
+            var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+            var catIds = [];
+            $.each(profileData.interestedCategories, function (key, value) {
+                catIds.push(value.categoryId);
+            });
+            var catIdsString = catIds.join(",");
+            $.get("http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" +
+                catIdsString + "&date=1/7/15", function (response) {
+                //alert("not stored in local storage");
+
+                catIds = 1;
+                $('#notificationCount-' + catIds).text(response);
+
+
+            }).fail(function () {
+
+                alert("some probem with internet or server not able to fetch list of colleges.");
+            });
+
+            //alert("Hello");
+        }
+        setInterval(getCount, 5000);
 //left
 //change variable name and make global variable for url
 
@@ -553,7 +578,11 @@ var app = {
         alert(user_id);
         //noticeInfo/getNotices?userId=user_id&categoriesToFetch=categoryId
         //$http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php", async: false}).
-        $http({method: 'GET', url: "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId="+user_id+"&categoriesToFetch="+categoryId, async: false}).
+        $http({
+            method: 'GET',
+            url: "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId,
+            async: false
+        }).
             success(function (response, status, headers, config) {
 
 
@@ -563,34 +592,34 @@ var app = {
                     //var register_name = response.data.userName;
 
 
-                        var responseData = response.data;
-                        var feed={};
-                        var entries={};
-                        var count=0;
-                        var entryValueObj={};
-                        $.each(responseData, function (key, value) {
-                        
-                        entryValueObj={
-                                "id":value.noticeId,
-                                "title":value.noticeHeading,
-                                "images":{
-                                "url1":value.noticeImageId
-                                },
-                                "publishedDate":value.creationDate,
-                                "content":value.noticeDescription,
-                                "urlLink":value.noticeUrl,
-                                "socialLink":value.noticeFBUrl,
-                                "postedByRoll":value.userInfo.rollNumber,
-                                "postedByName":value.userInfo.userName,
-                                "contentSnippet":"peterparker@mail.com"
+                    var responseData = response.data;
+                    var feed = {};
+                    var entries = {};
+                    var count = 0;
+                    var entryValueObj = {};
+                    $.each(responseData, function (key, value) {
+
+                        entryValueObj = {
+                            "id": value.noticeId,
+                            "title": value.noticeHeading,
+                            "images": {
+                                "url1": value.noticeImageId
+                            },
+                            "publishedDate": value.creationDate,
+                            "content": value.noticeDescription,
+                            "urlLink": value.noticeUrl,
+                            "socialLink": value.noticeFBUrl,
+                            "postedByRoll": value.userInfo.rollNumber,
+                            "postedByName": value.userInfo.userName,
+                            "contentSnippet": "peterparker@mail.com"
                         }
-                            entries[count++]=entryValueObj;
+                        entries[count++] = entryValueObj;
 
-                
-                        });
 
-                    feed={
-                        "entries" : entries
+                    });
+
+                    feed = {
+                        "entries": entries
                     }
 
 
