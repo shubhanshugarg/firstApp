@@ -21,8 +21,11 @@
                style="width:100%; margin-bottom:10px;">
 
         <div ng-repeat="category in allCategories">
-            <input type="checkbox" ng-model="category.isSelected" value="{{category.categoryId}}">{{category.categoryName}}
+            <!-- <input type="checkbox" ng-model="category.isSelected" value="{{category.categoryId}}">{{category.categoryName}} -->
+            <!-- parent used below as new scope is defined by the radio button -->
+            <input type="radio" name="categoryRadio" ng-model="$parent.isSelected"  ng-value="{{category.categoryId}}"  >{{category.categoryName}}
         </div>
+        <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <input type="checkbox" ng-model="cat2" value="Car"> E cell
         <input type="file" id="imgUri">
         <!-- <input type="file" class="custom-file-input"

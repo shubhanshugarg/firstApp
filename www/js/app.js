@@ -102,22 +102,43 @@ var app = {
                 catIds.push(value.categoryId);
             });
             var catIdsString = catIds.join(",");
+            
+            var postedDates=[];
+            $.each(profileData.interestedCategories, function (key, value) {
+                //catIds.push(value.categoryId);
+                if (window.localStorage['feedEntriesDataNotices'+ value.categoryId + value.categoryName] != undefined) {
+            var categoryFeed= JSON.parse(window.localStorage.getItem('feedEntriesDataNotices'+ value.categoryId + value.categoryName));
+            postedDates.push(categoryFeed[0].publishedDate);
+
+            }else{
+                postedDates.push(0000000000000);
+            }
+            
+            });
+
+            var postedDatesString = postedDates.join(",");
+
             $.get("http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" +
-                catIdsString + "&date=1/7/15", function (response) {
+                catIdsString + "&dates="+postedDatesString, function (response) {
                 //alert("not stored in local storage");
 
-                catIds = 1;
-                $('#notificationCount-' + catIds).text(response);
+                //notification display logic here take out from response and show in text
+                $.each(response, function (key, value) {
+                    $('#notificationNoticesCount-' + key).text(value);
+                });
+                //catIds = 1;
+                //$('#notificationNoticesCount-' + catIds).text(response);
 
 
             }).fail(function () {
 
-                alert("some probem with internet or server not able to fetch list of colleges.");
+                alert("some probem with internet or server not able to fetch count in categories.");
             });
 
             //alert("Hello");
         }
-        setInterval(getCount, 5000);
+        
+        setInterval(getCount, 15000);
 //left
 //change variable name and make global variable for url
 
@@ -152,7 +173,7 @@ var app = {
                  },"json");*/
 
                 $.get("http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos", function (response) {
-                    alert("not stored in local storage");
+                    //alert("not stored in local storage");
                     var isSuccess = response.success;
                     if (isSuccess) {
 
@@ -777,7 +798,8 @@ var app = {
         //decoupling the selected item
         $scope.item.mainCategory = FeedPluginData.mainCategory;
         $scope.item.title = FeedPluginData.selectedItem.title;
-        $scope.item.publishedDate = FeedPluginData.selectedItem.publishedDate;
+        $scope.item.publishedDate = new Date(FeedPluginData.selectedItem.publishedDate);
+        //$scope.item.publishedDate = FeedPluginData.selectedItem.publishedDate;
         $scope.item.content = FeedPluginData.selectedItem.content;
         $scope.item.urlLink = FeedPluginData.selectedItem.urlLink;
         $scope.item.socialLink = FeedPluginData.selectedItem.socialLink;
@@ -978,20 +1000,23 @@ var app = {
             var fbUrl = $scope.fbUrl;
             var categories = '';
             //for loop all categories time
-            var i = 0;
+            /*var i = 0;
 
             for (i = 0; i < allCategories.length; i++) {
                 var cat = $scope.allCategories[i].isSelected;
-                if (cat) {
+                
+                if (cat != "") {
                     if (categories == "") {
                         categories = $scope.allCategories[i].categoryId;
                     } else {
                         categories = categories + ',' + $scope.allCategories[i].categoryId;
                     }
-                }
-                ;
+                };
 
-            }
+            }*/
+            categories=$scope.isSelected;
+
+            
             /*var cat1=$scope.cat1;
              if (cat1) {
              categories='1';
@@ -1036,40 +1061,7 @@ var app = {
             fd.append('noticeFBUrl', fbUrl);
             //fd.append('infoState', 'APPROVED');
             fd.append('noticeImageFile', imgUri);
-            //new
-            //var noticeData = {'noticeHeading': heading, 'noticeDescription':description,'categories':categories,infoState:'APPROVED'};
-            //var noticeData={'noticeHeading': heading, 'noticeDescription':description};
-            /*var array = $.map(noticeData, function(value, index) {
-             return [value];
-             });
-             noticeData=array;
-             var notices=[];
-             notices.push(noticeData);*/
-//notices.push(noticeData);
-            //notices=JSON.stringify(notices);
-            /*var noticeDataJson=JSON.stringify(noticeData);
-             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-
-             var user_id=profileData["user_id"];
-             */
-
-            /* var fdJson={
-
-             'noticeInfos':notices
-             }*/
-            //fdJson=JSON.stringify(fdJson);
-
-
-//fd.append('collegeAddress', collegeAddress);
-//fd.append('userImageFile', userImageFile);
-            //var locationOrigin="http://collegeboard-env2.elasticbeanstalk.com";
-
-            /*$http({
-             url: locationOrigin + '/collegeInfo/postNotices',
-             method: "POST",
-             data: data,
-             headers: {'Content-Type': 'application/json'}
-             }*/
+            
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             $http.post(locationOrigin + "/noticeInfo/postNotice", fd, {
                 transformRequest: angular.identity,
