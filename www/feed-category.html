@@ -11,7 +11,7 @@
             <ons-row>
                 <ons-col>
                     <header>
-                        <div class="notification menu-notification" id="notification{{title}}Count-{{item.categoryId}}"></div>
+                        <div class="notification menu-notification" id="notification{{title}}Count-{{item.categoryId}}" ng-hide="item.categoryNotifications == 0">{{item.categoryNotifications}}</div>
                         
                         <span class="item-title">{{item.categoryName}}</span>
 

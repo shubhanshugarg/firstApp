@@ -62,6 +62,7 @@ var app = {
                         //$('#loginPage').show();
                         $('#toolbar').show();
                         $('#category-page').show();
+
                         //show category page here and hide the splash screen
 
                         //$.mobile.changePage("some.html");
@@ -123,12 +124,19 @@ var app = {
                 //alert("not stored in local storage");
 
                 //notification display logic here take out from response and show in text
+                //make all zero here and again set (if not 0 then notification circle shown)
+               //reseting notifcation local storage
+                $.each(profileData.interestedCategories, function (key, value) {
+                    window.localStorage['#notificationNoticesCount-' + value.categoryId] = 0;
+                });
+
+
+
                 $.each(response, function (key, value) {
                     $('#notificationNoticesCount-' + key).text(value);
+                    window.localStorage['#notificationNoticesCount-' + key] = value;
                 });
-                //catIds = 1;
-                //$('#notificationNoticesCount-' + catIds).text(response);
-
+                
 
             }).fail(function () {
 
@@ -137,7 +145,7 @@ var app = {
 
             //alert("Hello");
         }
-        
+        getCount();        
         setInterval(getCount, 15000);
 //left
 //change variable name and make global variable for url
@@ -156,6 +164,7 @@ var app = {
                     //hacky way post asynch as to do after dom load
                     $('#toolbar').show();
                     $('#category-page').show();
+                    
 
                 }, "json");
 ///handle login not needed as login if stored in local storage
@@ -212,6 +221,7 @@ var app = {
 
                         $('#loginPage').show();
                         $('#registerPage').show();
+                        
 
                     }
                 }).fail(function () {
@@ -379,6 +389,7 @@ var app = {
                             $('#registerPage').hide();
                             $('#toolbar').show();
                             $('#category-page').show();
+                            
 
                         }
                         /*else {
@@ -487,6 +498,7 @@ var app = {
                         $('#registerPage').hide();
                         $('#toolbar').show();
                         $('#category-page').show();
+                        
 
                     } else {
                         // or message from shubhanshu to show here
@@ -551,6 +563,7 @@ var app = {
             if ($("#loginPage").is(":hidden") && $("#registerPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
                 $('#toolbar').show();
                 $('#category-page').show();
+                
             }
             ;
         }
@@ -568,7 +581,30 @@ var app = {
         $scope.title = FeedPluginData.selectedItem.title;
         FeedPluginData.mainCategory = FeedPluginData.selectedItem.title;
         //$scope.items = FeedPluginData.selectedItem.items;
+        
+        //retreiving notification from local storage
+        //var notifications=[];
+        $.each(FeedPluginData.profileData["interestedCategories"], function (key, value) {
+                    //window.localStorage['#notificationNoticesCount-' + value.categoryId] = 0;
+                    //var profileData = JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
+                    //notifications.push(JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId)));
+                    if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
+                    if (window.localStorage['#notificationNoticesCount-' + value.categoryId] != undefined) {
+                    value.categoryNotifications=JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
+                    }
+                    }else if(FeedPluginData.mainCategory.toLowerCase() == "news"){
+                    if (window.localStorage['#notificationNewsCount-' + value.categoryId] != undefined) {
+                    value.categoryNotifications=JSON.parse(window.localStorage.getItem('#notificationNewsCount-' + value.categoryId));
+                        
+                    }
+                }
+
+
+                });
         $scope.items = FeedPluginData.profileData["interestedCategories"];
+        //var iii= FeedPluginData.profileData["interestedCategories"];
+        //var ii=0;
+
         $scope.showDetail = function (index) {
             var selectedItem = $scope.items[index];
             FeedPluginData.selectedItem = selectedItem;
@@ -1101,6 +1137,7 @@ var app = {
         $scope.showHiddenHome = function () {
             $('#toolbar').show();
             $('#category-page').show();
+            
         }
 
     });
