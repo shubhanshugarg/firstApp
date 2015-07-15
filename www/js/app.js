@@ -218,7 +218,7 @@ var app = {
                         });
                         //$.mobile.changePage("some.html");
                         //show categories and hide login and register form
-
+                        menu.setSwipeable(false);
                         $('#loginPage').show();
                         $('#registerPage').show();
                         
@@ -389,6 +389,7 @@ var app = {
                             $('#registerPage').hide();
                             $('#toolbar').show();
                             $('#category-page').show();
+                            menu.setSwipeable(true);
                             
 
                         }
@@ -498,6 +499,7 @@ var app = {
                         $('#registerPage').hide();
                         $('#toolbar').show();
                         $('#category-page').show();
+                        menu.setSwipeable(true);
                         
 
                     } else {
