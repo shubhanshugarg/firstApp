@@ -166,7 +166,8 @@
 
                         <ons-col width="60px">
                             <!-- this notification is to be shown on two pages notice page and category page -->
-                            <div class="notification menu-notification">1.1.0 {{getName()}}</div>
+                            <!-- <div class="notification menu-notification">1.1.0 {{getName()}}</div> -->
+                            <div class="notification menu-notification" id="#notificationNew{{category.title}}" ng-hide="newNotification == ''" >{{newNotification}}</div>
                             <div class="item-thum">
                                 <ons-icon icon="{{category.icon}}"></ons-icon>
                             </div>

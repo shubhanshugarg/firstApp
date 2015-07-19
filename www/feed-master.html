@@ -9,6 +9,11 @@
 
     <ons-list-header ng-show="description" ng-bind-html="description"></ons-list-header>
 
+    <ons-row align="center" class="status-message">
+        <ons-col>
+            <span ng-bind="msg"></span>
+        </ons-col>
+    </ons-row>
     <ons-list ng-show="feeds">
         <ons-list-item modifier="chevron" class="item" ng-repeat="feed in feeds | limitTo: paginationLimit()"
                        ng-click="showDetail($index)">
@@ -36,11 +41,7 @@
         </ons-list-item>
     </ons-list>
 
-    <ons-row align="center" class="status-message">
-        <ons-col>
-            <span ng-bind="msg"></span>
-        </ons-col>
-    </ons-row>
+    
 
     <div style="padding: 0 10px 10px 10px;">
         <ons-button modifier="large" ng-show="hasMoreItems()" ng-click="showMoreItems()">Show more</ons-button>

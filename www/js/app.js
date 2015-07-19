@@ -94,8 +94,8 @@ var app = {
 
         //   $("#submitButton").on('click',handleLogin);
         checkPreAuth();
-        //fetching notification count
-        var getCount = function () {
+        //fetching notification count var getCount = 
+        function getCount(mainCategory) {
             //if here to execute only when profile id set
             var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
             var catIds = [];
@@ -107,8 +107,8 @@ var app = {
             var postedDates=[];
             $.each(profileData.interestedCategories, function (key, value) {
                 //catIds.push(value.categoryId);
-                if (window.localStorage['feedEntriesDataNotices'+ value.categoryId + value.categoryName] != undefined) {
-            var categoryFeed= JSON.parse(window.localStorage.getItem('feedEntriesDataNotices'+ value.categoryId + value.categoryName));
+                if (window.localStorage['feedEntriesData'+mainCategory+ value.categoryId + value.categoryName] != undefined) {
+            var categoryFeed= JSON.parse(window.localStorage.getItem('feedEntriesData'+mainCategory+ value.categoryId + value.categoryName));
             postedDates.push(categoryFeed[0].publishedDate);
 
             }else{
@@ -118,23 +118,29 @@ var app = {
             });
 
             var postedDatesString = postedDates.join(",");
-
-            $.get("http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" +
-                catIdsString + "&dates="+postedDatesString, function (response) {
+            if (mainCategory=="Notices") {
+                getCountUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" +catIdsString + "&dates="+postedDatesString;
+            }else if(mainCategory=="News"){
+                getCountUrl="http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" +catIdsString + "&dates="+postedDatesString;
+            }
+            $.get(getCountUrl, function (response) {
                 //alert("not stored in local storage");
 
                 //notification display logic here take out from response and show in text
                 //make all zero here and again set (if not 0 then notification circle shown)
                //reseting notifcation local storage
                 $.each(profileData.interestedCategories, function (key, value) {
-                    window.localStorage['#notificationNoticesCount-' + value.categoryId] = 0;
+                    window.localStorage['#notification'+mainCategory+'Count-' + value.categoryId] = 0;
                 });
 
 
 
                 $.each(response, function (key, value) {
-                    $('#notificationNoticesCount-' + key).text(value);
-                    window.localStorage['#notificationNoticesCount-' + key] = value;
+                    $('#notification'+mainCategory+'Count-' + key).text(value);
+                    if (value >0) {
+                        $('#notificationNew'+mainCategory).text("New "+mainCategory);
+                    };
+                    window.localStorage['#notification'+mainCategory+'Count-' + key] = value;
                 });
                 
 
@@ -145,8 +151,8 @@ var app = {
 
             //alert("Hello");
         }
-        getCount();        
-        setInterval(getCount, 150000);
+        getCount("Notices");        
+        setInterval(function() { getCount("Notices"); }, 1500000);
 //left
 //change variable name and make global variable for url
 
