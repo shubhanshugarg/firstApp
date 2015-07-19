@@ -638,6 +638,25 @@ var app = {
         var categoryName = FeedPluginData.selectedItem.categoryName;
         var categoryDescription = FeedPluginData.selectedItem.categoryDescription;
         //which category is clicked
+        //showing from local storage here as if internet as if net not there and internet chk take time
+        if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
+                    //var errorMessage=response.message;
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
+                    var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
+                    //array formed for to limt to work
+                    var array = $.map(feedEntriesData, function (value, index) {
+                        return [value];
+                    });
+                    //$scope.feeds=feedEntriesData;
+                    feedEntriesData = array;
+                    $scope.feeds = feedEntriesData;
+                    executeOnSucess(feedEntriesData);
+
+                }
+
+        //close showing from llocal storage
         alert(user_id);
         var getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         if (mainCategory.toLowerCase() == "notices") {
@@ -717,29 +736,6 @@ var app = {
                     
 
 
-                    /*$.each(responseData, function (key, value) {
-
-                        entryValueObj = {
-                            "id": value.noticeId,
-                            "title": value.noticeHeading,
-                            "images": {
-                                "url1": value.noticeImageId
-                            },
-                            "publishedDate": value.creationDate,
-                            "content": value.noticeDescription,
-                            "urlLink": value.noticeUrl,
-                            "socialLink": value.noticeFBUrl,
-                            "postedByRoll": value.userInfo.rollNumber,
-                            "postedByName": value.userInfo.userName,
-                            "contentSnippet": "peterparker@mail.com"
-                        }
-                        entries[count++] = entryValueObj;
-
-
-                    });
-                    */
-                    
-
                     feed = {
                         "entries": entries
                     }
@@ -771,6 +767,9 @@ var app = {
                     executeOnSucess(feedEntriesData);
                 } else {
                     //check if data in local storage show that
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
                     if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
                         var errorMessage = response.message;
                         alert("Not able to fetch new data" + errorMessage);
@@ -794,8 +793,11 @@ var app = {
                 
             }).
             error(function (data, status, headers, config) {
-                if (window.localStorage["feedEntriesData"] != undefined) {
+                if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
                     //var errorMessage=response.message;
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
                     alert("Some internet problem");
                     var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                     //array formed for to limt to work
@@ -809,6 +811,9 @@ var app = {
 
                 } else {
                     //var errorMessage=response.message;
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
                     $scope.msg = 'An error occured:' + status;
                 }
 
