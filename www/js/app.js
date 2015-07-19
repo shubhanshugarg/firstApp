@@ -146,7 +146,7 @@ var app = {
             //alert("Hello");
         }
         getCount();        
-        setInterval(getCount, 15000);
+        setInterval(getCount, 150000);
 //left
 //change variable name and make global variable for url
 
@@ -635,11 +635,20 @@ var app = {
         var categoryDescription = FeedPluginData.selectedItem.categoryDescription;
         //which category is clicked
         alert(user_id);
+        var getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+        if (mainCategory.toLowerCase() == "notices") {
+            
+            getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+            
+        } else if (mainCategory.toLowerCase() == "news") {
+            getUrl="http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+        }
         //noticeInfo/getNotices?userId=user_id&categoriesToFetch=categoryId
         //$http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php", async: false}).
         $http({
             method: 'GET',
-            url: "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId,
+            //url: "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId,
+            url: getUrl,
             async: false
         }).
             success(function (response, status, headers, config) {
@@ -656,7 +665,55 @@ var app = {
                     var entries = {};
                     var count = 0;
                     var entryValueObj = {};
-                    $.each(responseData, function (key, value) {
+                    
+                    if (mainCategory.toLowerCase() == "notices") {
+            
+                         $.each(responseData, function (key, value) {
+
+                                        entryValueObj = {
+                                            "id": value.noticeId,
+                                            "title": value.noticeHeading,
+                                            "images": {
+                                                "url1": value.noticeImageId
+                                            },
+                                            "publishedDate": value.creationDate,
+                                            "content": value.noticeDescription,
+                                            "urlLink": value.noticeUrl,
+                                            "socialLink": value.noticeFBUrl,
+                                            "postedByRoll": value.userInfo.rollNumber,
+                                            "postedByName": value.userInfo.userName,
+                                            "contentSnippet": "Click to read"
+                                        }
+                                        entries[count++] = entryValueObj;
+
+
+                                    });   
+                                } else if (mainCategory.toLowerCase() == "news") {
+                                    $.each(responseData, function (key, value) {
+
+                                                entryValueObj = {
+                                                    "id": value.newsId,
+                                                    "title": value.newsHeading,
+                                                    "images": {
+                                                        "url1": value.newsImageId
+                                                    },
+                                                    "publishedDate": value.creationDate,
+                                                    "content": value.newsDescription,
+                                                    "urlLink": value.newsUrl,
+                                                    "socialLink": value.newsFBUrl,
+                                                    "postedByRoll": value.userInfo.rollNumber,
+                                                    "postedByName": value.userInfo.userName,
+                                                    "contentSnippet": "Click to read"
+                                                }
+                                                entries[count++] = entryValueObj;
+
+
+                                            });
+                                }
+                    
+
+
+                    /*$.each(responseData, function (key, value) {
 
                         entryValueObj = {
                             "id": value.noticeId,
@@ -676,6 +733,8 @@ var app = {
 
 
                     });
+                    */
+                    
 
                     feed = {
                         "entries": entries
@@ -728,33 +787,7 @@ var app = {
                         alert("Not able to fetch data" + errorMessage);
                     }
                 }
-                //new close
-
-
-                /*console.log(data);
-                 //  console.log(data.a);
-                 var feedData=data;
-                 //var feedData=JSON.parse(data);
-                 //profData["userId"];
-                 //below to check correct information on login
-                 if (!feedData.responseData) {
-                 $scope.msg = "The device is unable to get the data.";
-                 } else {
-                 $scope.title = feedData.responseData.feed.title;
-                 $scope.description = feedData.responseData.feed.description;
-                 $scope.link = feedData.responseData.feed.link;
-                 $scope.feeds = feedData.responseData.feed.entries;
-                 console.log($scope.feeds);
-                 //below is change from object to array for working of limito filter in feed-master angular
-                 var array = $.map($scope.feeds, function(value, index) {
-                 return [value];
-                 });
-
-                 $scope.feeds=array;
-                 console.log(array);
-                 $scope.msg = "";
-                 executeOnSucess();
-                 }*/
+                
             }).
             error(function (data, status, headers, config) {
                 if (window.localStorage["feedEntriesData"] != undefined) {
@@ -778,26 +811,7 @@ var app = {
             });
 
 
-        //extra close
-
-        /*$http({method: 'JSONP', url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(FeedPluginData.selectedItem.url)}).
-         success(function(data, status, headers, config) {
-
-         if (!data.responseData) {
-         $scope.msg = "The device is unable to get the data.";
-         } else {
-         $scope.title = data.responseData.feed.title;
-         $scope.description = data.responseData.feed.description;
-         $scope.link = data.responseData.feed.link;
-         $scope.feeds = data.responseData.feed.entries;
-
-         $scope.msg = "";
-         }
-
-         }).
-         error(function(data, status, headers, config) {
-         $scope.msg = 'An error occured:' + status;
-         });*/
+        
         function executeOnSucess(feedEntriesData) {
 
             alert(Object.keys(feedEntriesData).length);
@@ -1129,6 +1143,70 @@ var app = {
         };
 
     });
+    
+
+    module.controller('newsPostController', function ($scope, $http) {
+        var profileData = JSON.parse(window.localStorage.getItem('profileData'));
+        var allCategories = profileData.interestedCategories;
+        $scope.allCategories = allCategories;
+        $scope.submitForm = function () {
+            var heading = $scope.subject;
+            var description = $scope.message;
+            var url = $scope.url;
+            var fbUrl = $scope.fbUrl;
+            var categories = '';
+            categories=$scope.isSelected;
+
+            var imgUri = $scope.imgUri;
+
+
+            var imgUri = $("#imgUri").val();
+            alert(imgUri);
+            var imgUri = $('input[type=file]')[0].files[0];
+            var profileData = JSON.parse(window.localStorage.getItem('profileData'));
+
+            var user_id = profileData["user_id"];
+            var fd = new FormData();
+            fd.append('userId', user_id);
+            fd.append('newsHeading', heading);
+            fd.append('newsDescription', description);
+            fd.append('categories', categories);
+            fd.append('newsUrl', url);
+            fd.append('newsFBUrl', fbUrl);
+            //fd.append('infoState', 'APPROVED');
+            fd.append('newsImageFile', imgUri);
+            
+            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            $http.post(locationOrigin + "/newsInfo/postNews", fd, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            }).success(function (response) {
+                var isSuccess = response.success;
+                if (isSuccess) {
+                    alert("Your news has been posted");
+                    //empty the initial variabes of news
+                    $scope.subject = '';
+                    $scope.message = '';
+                    $scope.cat1 = '';
+                } else {
+                    alert("news was'nt posted contact us");
+                    var errorMessage = response.message;
+                    alert(errorMessage);
+                }
+            }).error(function (response) {
+
+                //alert(response.message);
+                alert("Some problem with the internet or server try later.");
+            });
+
+
+        };
+
+    });
+
+
 
 
     module.controller('menuController', function ($scope) {
