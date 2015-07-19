@@ -593,11 +593,15 @@ var app = {
                     if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
                     if (window.localStorage['#notificationNoticesCount-' + value.categoryId] != undefined) {
                     value.categoryNotifications=JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
+                    }else{
+                        value.categoryNotifications=0;
                     }
                     }else if(FeedPluginData.mainCategory.toLowerCase() == "news"){
                     if (window.localStorage['#notificationNewsCount-' + value.categoryId] != undefined) {
                     value.categoryNotifications=JSON.parse(window.localStorage.getItem('#notificationNewsCount-' + value.categoryId));
                         
+                    }else{
+                        value.categoryNotifications=0;
                     }
                 }
 
