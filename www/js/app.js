@@ -109,7 +109,11 @@ var app = {
                 //catIds.push(value.categoryId);
                 if (window.localStorage['feedEntriesData'+mainCategory+ value.categoryId + value.categoryName] != undefined) {
             var categoryFeed= JSON.parse(window.localStorage.getItem('feedEntriesData'+mainCategory+ value.categoryId + value.categoryName));
+            if (typeof categoryFeed[0] !== 'undefined' && typeof categoryFeed[0].publishedDate !== 'undefined') {
             postedDates.push(categoryFeed[0].publishedDate);
+                }else{
+                postedDates.push(0000000000000);
+            }
 
             }else{
                 postedDates.push(0000000000000);
@@ -153,6 +157,8 @@ var app = {
         }
         getCount("Notices");        
         setInterval(function() { getCount("Notices"); }, 1500000);
+        getCount("News");        
+        setInterval(function() { getCount("News"); }, 1500000);
 //left
 //change variable name and make global variable for url
 
@@ -663,7 +669,7 @@ var app = {
                 }
 
         //close showing from llocal storage
-        alert(user_id);
+        //alert(user_id);
         var getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         if (mainCategory.toLowerCase() == "notices") {
             
