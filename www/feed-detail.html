@@ -6,9 +6,9 @@
         </div>
         <div class="center" ng-bind-html="item.title"></div>
         <div class="right">
-            <ons-toolbar-button ng-click="shareFeed()">
+            <!-- <ons-toolbar-button ng-click="shareFeed()">
                 <ons-icon icon="share-alt" style="vertical-align: -4px; font-size: 26px;"></ons-icon>
-            </ons-toolbar-button>
+            </ons-toolbar-button> -->
         </div>
     </ons-toolbar>
 
@@ -17,8 +17,9 @@
     
     <audio id="audio" ng-src="{{getTrustedResourceUrl(mediaObject(item).url)}}" controls autoplay ng-if="hasAudio(item)"></audio>
      -->
-    <img ng-src="{{getTrustedResourceUrl(item.images.url1)}}"></img>
-
+    <!-- <img ng-src="{{getTrustedResourceUrl(item.images.url1)}}"></img> -->
+    <center><img ng-src="http://collegeboard-env2.elasticbeanstalk.com/archive/document/{{item.images.url1}}"></img></center>
+    
     <section style="padding: 10px;">
 
         <h2 class="title" ng-bind-html="item.title"></h2>

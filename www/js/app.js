@@ -99,12 +99,14 @@ var app = {
             //if here to execute only when profile id set
             var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
             var catIds = [];
+            if (profileData != null) {
             $.each(profileData.interestedCategories, function (key, value) {
                 catIds.push(value.categoryId);
             });
             var catIdsString = catIds.join(",");
             
             var postedDates=[];
+            
             $.each(profileData.interestedCategories, function (key, value) {
                 //catIds.push(value.categoryId);
                 if (window.localStorage['feedEntriesData'+mainCategory+ value.categoryId + value.categoryName] != undefined) {
@@ -152,7 +154,7 @@ var app = {
 
                 alert("some probem with internet or server not able to fetch count in categories.");
             });
-
+        }
             //alert("Hello");
         }
         getCount("Notices");        
@@ -962,6 +964,9 @@ var app = {
             //_blank: Opens in the InAppBrowser.
             //_system: Opens in the system's web browser.
             //window.open($scope.item.link,'_blank');
+            //alert(link);    
+            if (link.substring(0, 4).toLowerCase()!="http") 
+                {link="http://"+link;}
             window.open(link, '_blank');
         }
 
