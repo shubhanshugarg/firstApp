@@ -5,8 +5,12 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <allow-intent href="market:*" />
-    <name>HelloWorld</name>
+    <name>College Board</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -21,4 +25,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="res/icon.png" />
+    <icon density="ldpi" platform="android" src="res/icon.png" />
+    <icon density="mdpi" platform="android" src="res/icon.png" />
+    <icon density="hdpi" platform="android" src="res/icon.png" />
+    <icon density="xhdpi" platform="android" src="res/icon.png" />
+    <preference name="SplashScreen" value="icon" />
+    <preference name="SplashScreenDelay" value="10000" />
 </widget>

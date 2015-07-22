@@ -94,22 +94,28 @@ var app = {
 
         //   $("#submitButton").on('click',handleLogin);
         checkPreAuth();
-        //fetching notification count
-        var getCount = function () {
+        //fetching notification count var getCount = 
+        function getCount(mainCategory) {
             //if here to execute only when profile id set
             var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
             var catIds = [];
+            if (profileData != null) {
             $.each(profileData.interestedCategories, function (key, value) {
                 catIds.push(value.categoryId);
             });
             var catIdsString = catIds.join(",");
             
             var postedDates=[];
+            
             $.each(profileData.interestedCategories, function (key, value) {
                 //catIds.push(value.categoryId);
-                if (window.localStorage['feedEntriesDataNotices'+ value.categoryId + value.categoryName] != undefined) {
-            var categoryFeed= JSON.parse(window.localStorage.getItem('feedEntriesDataNotices'+ value.categoryId + value.categoryName));
+                if (window.localStorage['feedEntriesData'+mainCategory+ value.categoryId + value.categoryName] != undefined) {
+            var categoryFeed= JSON.parse(window.localStorage.getItem('feedEntriesData'+mainCategory+ value.categoryId + value.categoryName));
+            if (typeof categoryFeed[0] !== 'undefined' && typeof categoryFeed[0].publishedDate !== 'undefined') {
             postedDates.push(categoryFeed[0].publishedDate);
+                }else{
+                postedDates.push(0000000000000);
+            }
 
             }else{
                 postedDates.push(0000000000000);
@@ -118,23 +124,29 @@ var app = {
             });
 
             var postedDatesString = postedDates.join(",");
-
-            $.get("http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" +
-                catIdsString + "&dates="+postedDatesString, function (response) {
+            if (mainCategory=="Notices") {
+                getCountUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" +catIdsString + "&dates="+postedDatesString;
+            }else if(mainCategory=="News"){
+                getCountUrl="http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" +catIdsString + "&dates="+postedDatesString;
+            }
+            $.get(getCountUrl, function (response) {
                 //alert("not stored in local storage");
 
                 //notification display logic here take out from response and show in text
                 //make all zero here and again set (if not 0 then notification circle shown)
                //reseting notifcation local storage
                 $.each(profileData.interestedCategories, function (key, value) {
-                    window.localStorage['#notificationNoticesCount-' + value.categoryId] = 0;
+                    window.localStorage['#notification'+mainCategory+'Count-' + value.categoryId] = 0;
                 });
 
 
 
                 $.each(response, function (key, value) {
-                    $('#notificationNoticesCount-' + key).text(value);
-                    window.localStorage['#notificationNoticesCount-' + key] = value;
+                    $('#notification'+mainCategory+'Count-' + key).text(value);
+                    if (value >0) {
+                        $('#notificationNew'+mainCategory).text("New "+mainCategory);
+                    };
+                    window.localStorage['#notification'+mainCategory+'Count-' + key] = value;
                 });
                 
 
@@ -142,11 +154,13 @@ var app = {
 
                 alert("some probem with internet or server not able to fetch count in categories.");
             });
-
+        }
             //alert("Hello");
         }
-        getCount();        
-        setInterval(getCount, 150000);
+        getCount("Notices");        
+        setInterval(function() { getCount("Notices"); }, 1500000);
+        getCount("News");        
+        setInterval(function() { getCount("News"); }, 1500000);
 //left
 //change variable name and make global variable for url
 
@@ -638,7 +652,26 @@ var app = {
         var categoryName = FeedPluginData.selectedItem.categoryName;
         var categoryDescription = FeedPluginData.selectedItem.categoryDescription;
         //which category is clicked
-        alert(user_id);
+        //showing from local storage here as if internet as if net not there and internet chk take time
+        if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
+                    //var errorMessage=response.message;
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
+                    var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
+                    //array formed for to limt to work
+                    var array = $.map(feedEntriesData, function (value, index) {
+                        return [value];
+                    });
+                    //$scope.feeds=feedEntriesData;
+                    feedEntriesData = array;
+                    $scope.feeds = feedEntriesData;
+                    executeOnSucess(feedEntriesData);
+
+                }
+
+        //close showing from llocal storage
+        //alert(user_id);
         var getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         if (mainCategory.toLowerCase() == "notices") {
             
@@ -717,29 +750,6 @@ var app = {
                     
 
 
-                    /*$.each(responseData, function (key, value) {
-
-                        entryValueObj = {
-                            "id": value.noticeId,
-                            "title": value.noticeHeading,
-                            "images": {
-                                "url1": value.noticeImageId
-                            },
-                            "publishedDate": value.creationDate,
-                            "content": value.noticeDescription,
-                            "urlLink": value.noticeUrl,
-                            "socialLink": value.noticeFBUrl,
-                            "postedByRoll": value.userInfo.rollNumber,
-                            "postedByName": value.userInfo.userName,
-                            "contentSnippet": "peterparker@mail.com"
-                        }
-                        entries[count++] = entryValueObj;
-
-
-                    });
-                    */
-                    
-
                     feed = {
                         "entries": entries
                     }
@@ -771,6 +781,9 @@ var app = {
                     executeOnSucess(feedEntriesData);
                 } else {
                     //check if data in local storage show that
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
                     if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
                         var errorMessage = response.message;
                         alert("Not able to fetch new data" + errorMessage);
@@ -794,8 +807,11 @@ var app = {
                 
             }).
             error(function (data, status, headers, config) {
-                if (window.localStorage["feedEntriesData"] != undefined) {
+                if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
                     //var errorMessage=response.message;
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
                     alert("Some internet problem");
                     var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                     //array formed for to limt to work
@@ -809,6 +825,9 @@ var app = {
 
                 } else {
                     //var errorMessage=response.message;
+                    $scope.title = categoryName;
+                    $scope.description = categoryDescription;
+                    
                     $scope.msg = 'An error occured:' + status;
                 }
 
@@ -945,6 +964,9 @@ var app = {
             //_blank: Opens in the InAppBrowser.
             //_system: Opens in the system's web browser.
             //window.open($scope.item.link,'_blank');
+            //alert(link);    
+            if (link.substring(0, 4).toLowerCase()!="http") 
+                {link="http://"+link;}
             window.open(link, '_blank');
         }
 

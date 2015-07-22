@@ -40,6 +40,15 @@
     <script src="lib/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript" charset="utf-8">
+
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            navigator.splashscreen.show();
+        }
+
+    </script>
     <script type="text/javascript">
     app.initialize();
 
