@@ -241,6 +241,9 @@ var app = {
                 }).fail(function () {
 
                     alert("some probem with internet or server not able to fetch list of colleges.");
+                    menu.setSwipeable(false);
+                        $('#loginPage').show();
+                        $('#registerPage').show();
                 });
 
                 //hide splash screen here
@@ -717,6 +720,7 @@ var app = {
                                             "content": value.noticeDescription,
                                             "urlLink": value.noticeUrl,
                                             "socialLink": value.noticeFBUrl,
+                                            "postedById": value.userInfo.userId,
                                             "postedByRoll": value.userInfo.rollNumber,
                                             "postedByName": value.userInfo.userName,
                                             "contentSnippet": "Click to read"
@@ -738,6 +742,7 @@ var app = {
                                                     "content": value.newsDescription,
                                                     "urlLink": value.newsUrl,
                                                     "socialLink": value.newsFBUrl,
+                                                    "postedById": value.userInfo.userId,
                                                     "postedByRoll": value.userInfo.rollNumber,
                                                     "postedByName": value.userInfo.userName,
                                                     "contentSnippet": "Click to read"
@@ -879,7 +884,9 @@ var app = {
         $scope.item.urlLink = FeedPluginData.selectedItem.urlLink;
         $scope.item.socialLink = FeedPluginData.selectedItem.socialLink;
         $scope.item.postedByName = FeedPluginData.selectedItem.postedByName;
+        $scope.item.postedById = FeedPluginData.selectedItem.postedById;
         $scope.item.postedByRoll = FeedPluginData.selectedItem.postedByRoll;
+        $scope.item.myUserId = FeedPluginData.profileData["user_id"];
         if ($scope.item.images != undefined) {
             $scope.item.images.url1 = FeedPluginData.selectedItem.images.url1;
         }
@@ -907,28 +914,88 @@ var app = {
          return media.type ? (media.type == "audio/mp3") : false;
          }*/
 
+         //delete a notice or news item
+         $scope.deleteItem = function () {
+            var fd = new FormData();
+            var setDeleteUrl="";
+            //if news or notice
+
+            if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
+                fd.append('noticeId', $scope.item.noticeId);
+                setDeleteUrl="";
+
+            } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
+                fd.append('newsId', $scope.item.newsId);
+                setDeleteUrl="";
+            }
+            
+
+            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            $http.post(locationOrigin + setDeleteUrl, fd, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            }).success(function (response) {
+                var isSuccess = response.success;
+                if (isSuccess) {
+                    alert("Deleted");
+                    //empty the initial variabes of notice
+
+                } else {
+                    alert("error in deleting try later");
+                    var errorMessage = response.message;
+                    alert(errorMessage);
+                }
+            }).error(function (response) {
+
+                //alert(response.message);
+                alert("Some problem with the internet or server try later.");
+            });
+
+
+        }
+
+         //close delete call
+
+         $scope.checkItemPermission = function () {
+            
+            if ($scope.item.myUserId == $scope.item.postedById) {
+               return true;
+            } else{
+                return false;
+            }
+            
+
+            }
+
+
+
         //marking spam and report abuse here function firing post call to the server same function doing both calls
 
         $scope.setInfoState = function (state) {
             var fd = new FormData();
             //if news or notice
+            var setInfoStateUrl="";
             if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
                 fd.append('noticeId', $scope.item.noticeId);
+                setInfoStateUrl="/noticeInfo/changeNoticeState";
 
             } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
                 fd.append('newsId', $scope.item.newsId);
+                setInfoStateUrl="/newsInfo/changeNewsState";
             }
             //if spam or abuse
             if (state.toLowerCase() == "spam") {
                 fd.append('infoState', "REPORTED_SPAM");
 
             } else if (state.toLowerCase() == "abuse") {
-                fd.append('newsId', "REPORTED_ABUSE");
+                fd.append('infoState', "REPORTED_ABUSE");
             }
 
 
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
-            $http.post(locationOrigin + "/noticeInfo/changeNoticeState", fd, {
+            $http.post(locationOrigin + setInfoStateUrl, fd, {
                 transformRequest: angular.identity,
                 headers: {
                     'Content-Type': undefined

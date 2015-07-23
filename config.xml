@@ -31,4 +31,6 @@
 	<icon src="res/icon.png" platform="android" density="xhdpi" />
 	<preference name="SplashScreen" value="icon" />
 	<preference name="SplashScreenDelay" value="10000" />
+	<preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="AutoHideSplashScreen" value="false" />
 </widget>

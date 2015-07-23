@@ -23,4 +23,6 @@
 
     <!-- Preferences for Android -->
     <preference name="loglevel" value="DEBUG" />
+	<preference name="AutoHideSplashScreen" value="false" />
+<preference name="ShowSplashScreenSpinner" value="false" />
 </widget>
