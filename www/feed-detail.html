@@ -59,6 +59,9 @@
         <ons-button modifier="small" ng-click="setInfoState('abuse')">
             Report Abuse
         </ons-button>
+        <ons-button modifier="small" ng-show="checkItemPermission()" ng-click="deleteItem()">
+            Delete
+        </ons-button>
 
     </section>
 
