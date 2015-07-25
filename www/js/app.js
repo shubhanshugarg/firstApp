@@ -347,6 +347,7 @@ var app = {
     module.controller('loginController', function ($scope, $http, FeedPluginData) {
 
         $scope.name = "harry";
+        
 
         $scope.userLogin = function () {
 
@@ -435,6 +436,8 @@ var app = {
              FeedPluginData.selectedItem = selectedItem;
              $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});*/
         }
+
+
 
     });
 
@@ -922,11 +925,11 @@ var app = {
 
             if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
                 fd.append('noticeId', $scope.item.noticeId);
-                setDeleteUrl="";
+                setDeleteUrl="/noticeInfo/deleteNotice";
 
             } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
                 fd.append('newsId', $scope.item.newsId);
-                setDeleteUrl="";
+                setDeleteUrl="/newsInfo/deleteNews";
             }
             
 
