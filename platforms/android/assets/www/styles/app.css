@@ -107,3 +107,8 @@ audio { margin-top:10px; }
 .navigation-bar__title { text-overflow: ellipsis; overflow: hidden; height: auto; }
 
 .navigation-bar--android__center { max-width: 50%; overflow: hidden; text-overflow: ellipsis; }
+
+.form-group{display:flex}
+
+.form-group label{width : 25%;font-size: smaller}
+.form-group .col-sm-10{  float: right;width: 75%}

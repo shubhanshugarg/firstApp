@@ -2,6 +2,7 @@ var app = {
     // Application Constructor
     initialize: function () {
         this.bindEvents();
+		navigator.splashscreen.hide();
     },
     // Bind Event Listeners
     //
@@ -104,9 +105,9 @@ var app = {
                 catIds.push(value.categoryId);
             });
             var catIdsString = catIds.join(",");
-            
+
             var postedDates=[];
-            
+
             $.each(profileData.interestedCategories, function (key, value) {
                 //catIds.push(value.categoryId);
                 if (window.localStorage['feedEntriesData'+mainCategory+ value.categoryId + value.categoryName] != undefined) {
@@ -120,7 +121,7 @@ var app = {
             }else{
                 postedDates.push(0000000000000);
             }
-            
+
             });
 
             var postedDatesString = postedDates.join(",");
@@ -148,7 +149,7 @@ var app = {
                     };
                     window.localStorage['#notification'+mainCategory+'Count-' + key] = value;
                 });
-                
+
 
             }).fail(function () {
 
@@ -157,9 +158,9 @@ var app = {
         }
             //alert("Hello");
         }
-        getCount("Notices");        
+        getCount("Notices");
         setInterval(function() { getCount("Notices"); }, 1500000);
-        getCount("News");        
+        getCount("News");
         setInterval(function() { getCount("News"); }, 1500000);
 //left
 //change variable name and make global variable for url
@@ -178,7 +179,7 @@ var app = {
                     //hacky way post asynch as to do after dom load
                     $('#toolbar').show();
                     $('#category-page').show();
-                    
+
 
                 }, "json");
 ///handle login not needed as login if stored in local storage
@@ -235,7 +236,7 @@ var app = {
                         menu.setSwipeable(false);
                         $('#loginPage').show();
                         $('#registerPage').show();
-                        
+
 
                     }
                 }).fail(function () {
@@ -347,7 +348,6 @@ var app = {
     module.controller('loginController', function ($scope, $http, FeedPluginData) {
 
         $scope.name = "harry";
-        
 
         $scope.userLogin = function () {
 
@@ -408,7 +408,7 @@ var app = {
                             $('#toolbar').show();
                             $('#category-page').show();
                             menu.setSwipeable(true);
-                            
+
 
                         }
                         /*else {
@@ -436,8 +436,6 @@ var app = {
              FeedPluginData.selectedItem = selectedItem;
              $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});*/
         }
-
-
 
     });
 
@@ -520,7 +518,7 @@ var app = {
                         $('#toolbar').show();
                         $('#category-page').show();
                         menu.setSwipeable(true);
-                        
+
 
                     } else {
                         // or message from shubhanshu to show here
@@ -585,7 +583,7 @@ var app = {
             if ($("#loginPage").is(":hidden") && $("#registerPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
                 $('#toolbar').show();
                 $('#category-page').show();
-                
+
             }
             ;
         }
@@ -603,7 +601,7 @@ var app = {
         $scope.title = FeedPluginData.selectedItem.title;
         FeedPluginData.mainCategory = FeedPluginData.selectedItem.title;
         //$scope.items = FeedPluginData.selectedItem.items;
-        
+
         //retreiving notification from local storage
         //var notifications=[];
         $.each(FeedPluginData.profileData["interestedCategories"], function (key, value) {
@@ -619,7 +617,7 @@ var app = {
                     }else if(FeedPluginData.mainCategory.toLowerCase() == "news"){
                     if (window.localStorage['#notificationNewsCount-' + value.categoryId] != undefined) {
                     value.categoryNotifications=JSON.parse(window.localStorage.getItem('#notificationNewsCount-' + value.categoryId));
-                        
+
                     }else{
                         value.categoryNotifications=0;
                     }
@@ -663,7 +661,7 @@ var app = {
                     //var errorMessage=response.message;
                     $scope.title = categoryName;
                     $scope.description = categoryDescription;
-                    
+
                     var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                     //array formed for to limt to work
                     var array = $.map(feedEntriesData, function (value, index) {
@@ -680,9 +678,9 @@ var app = {
         //alert(user_id);
         var getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         if (mainCategory.toLowerCase() == "notices") {
-            
+
             getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
-            
+
         } else if (mainCategory.toLowerCase() == "news") {
             getUrl="http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         }
@@ -708,9 +706,9 @@ var app = {
                     var entries = {};
                     var count = 0;
                     var entryValueObj = {};
-                    
+
                     if (mainCategory.toLowerCase() == "notices") {
-            
+
                          $.each(responseData, function (key, value) {
 
                                         entryValueObj = {
@@ -731,7 +729,7 @@ var app = {
                                         entries[count++] = entryValueObj;
 
 
-                                    });   
+                                    });
                                 } else if (mainCategory.toLowerCase() == "news") {
                                     $.each(responseData, function (key, value) {
 
@@ -755,7 +753,7 @@ var app = {
 
                                             });
                                 }
-                    
+
 
 
                     feed = {
@@ -791,7 +789,7 @@ var app = {
                     //check if data in local storage show that
                     $scope.title = categoryName;
                     $scope.description = categoryDescription;
-                    
+
                     if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
                         var errorMessage = response.message;
                         alert("Not able to fetch new data" + errorMessage);
@@ -812,14 +810,14 @@ var app = {
                         alert("Not able to fetch data" + errorMessage);
                     }
                 }
-                
+
             }).
             error(function (data, status, headers, config) {
                 if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
                     //var errorMessage=response.message;
                     $scope.title = categoryName;
                     $scope.description = categoryDescription;
-                    
+
                     alert("Some internet problem");
                     var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                     //array formed for to limt to work
@@ -835,14 +833,14 @@ var app = {
                     //var errorMessage=response.message;
                     $scope.title = categoryName;
                     $scope.description = categoryDescription;
-                    
+
                     $scope.msg = 'An error occured:' + status;
                 }
 
             });
 
 
-        
+
         function executeOnSucess(feedEntriesData) {
 
             alert(Object.keys(feedEntriesData).length);
@@ -931,7 +929,7 @@ var app = {
                 fd.append('newsId', $scope.item.newsId);
                 setDeleteUrl="/newsInfo/deleteNews";
             }
-            
+
 
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             $http.post(locationOrigin + setDeleteUrl, fd, {
@@ -962,13 +960,13 @@ var app = {
          //close delete call
 
          $scope.checkItemPermission = function () {
-            
+
             if ($scope.item.myUserId == $scope.item.postedById) {
                return true;
             } else{
                 return false;
             }
-            
+
 
             }
 
@@ -1035,7 +1033,7 @@ var app = {
             //_system: Opens in the system's web browser.
             //window.open($scope.item.link,'_blank');
             //alert(link);    
-            if (link.substring(0, 4).toLowerCase()!="http") 
+            if (link.substring(0, 4).toLowerCase()!="http")
                 {link="http://"+link;}
             window.open(link, '_blank');
         }
@@ -1152,7 +1150,7 @@ var app = {
 
             for (i = 0; i < allCategories.length; i++) {
                 var cat = $scope.allCategories[i].isSelected;
-                
+
                 if (cat != "") {
                     if (categories == "") {
                         categories = $scope.allCategories[i].categoryId;
@@ -1164,7 +1162,7 @@ var app = {
             }*/
             categories=$scope.isSelected;
 
-            
+
             /*var cat1=$scope.cat1;
              if (cat1) {
              categories='1';
@@ -1209,7 +1207,7 @@ var app = {
             fd.append('noticeFBUrl', fbUrl);
             //fd.append('infoState', 'APPROVED');
             fd.append('noticeImageFile', imgUri);
-            
+
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             $http.post(locationOrigin + "/noticeInfo/postNotice", fd, {
                 transformRequest: angular.identity,
@@ -1239,7 +1237,7 @@ var app = {
         };
 
     });
-    
+
 
     module.controller('newsPostController', function ($scope, $http) {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
@@ -1271,7 +1269,7 @@ var app = {
             fd.append('newsFBUrl', fbUrl);
             //fd.append('infoState', 'APPROVED');
             fd.append('newsImageFile', imgUri);
-            
+
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             $http.post(locationOrigin + "/newsInfo/postNews", fd, {
                 transformRequest: angular.identity,
@@ -1313,7 +1311,7 @@ var app = {
         $scope.showHiddenHome = function () {
             $('#toolbar').show();
             $('#category-page').show();
-            
+
         }
 
     });

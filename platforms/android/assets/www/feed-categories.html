@@ -7,10 +7,8 @@
 
             <div class="container-fluid" style="border: 1px groove cornflowerblue" data-role="content">
 
-                <div data-role="header">
-                    <h2>
-                        <small>Sign in</small>
-                    </h2>
+                <div data-role="header" style="text-align: center;background-color: beige">
+                    <h4>LOG IN</h4>
                 </div>
 
                 <form role="form" id="loginForm" ng-controller="loginController">
@@ -30,11 +28,12 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-primary" ng-click="userLogin()">Sign In</button>
+                        <button class="btn btn-primary" style="margin: auto" ng-click="userLogin()">Sign In</button>
                     </div>
 
                 </form>
-
+                By clicking sign in you agree to the <a onclick="window.open('http://google.com', '_blank');"><u>terms
+                and conditions</u></a>
             </div>
 
         </div>
@@ -45,11 +44,11 @@
 
         <div class="container" id="registerPage" data-role="page" style="display:none;">
 
-            <div data-role="header">
-                <h1>Register</h1>
-            </div>
-
             <div class="container-fluid" style="border: 1px groove cornflowerblue" data-role="content">
+
+                <div data-role="header" style="text-align: center;background-color: beige">
+                    <h4>REGISTER</h4>
+                </div>
 
                 <form role="form" id="registerForm" ng-controller="registerController">
                     <div data-role="fieldcontain" class="form-group">
@@ -84,7 +83,7 @@
 
                         <div class="col-sm-10">
                             <input class="form-control" type="text" name="register_college" id="register_college"
-                                   
+
                                    placeholder="College"/></div>
                     </div>
 
@@ -125,7 +124,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-primary" value="Register" id="register_submitButton"
+                        <button class="btn btn-primary" value="Register" style="margin: auto" id="register_submitButton"
                                 ng-click="userRegister();">Sign Up
                         </button>
                     </div>
@@ -167,7 +166,9 @@
                         <ons-col width="60px">
                             <!-- this notification is to be shown on two pages notice page and category page -->
                             <!-- <div class="notification menu-notification">1.1.0 {{getName()}}</div> -->
-                            <div class="notification menu-notification" id="#notificationNew{{category.title}}" ng-hide="newNotification == ''" >{{newNotification}}</div>
+                            <div class="notification menu-notification" id="#notificationNew{{category.title}}"
+                                 ng-hide="newNotification == ''">{{newNotification}}
+                            </div>
                             <div class="item-thum">
                                 <ons-icon icon="{{category.icon}}"></ons-icon>
                             </div>
