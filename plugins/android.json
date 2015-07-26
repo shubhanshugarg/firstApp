@@ -23,10 +23,10 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.example.hello"
+            "PACKAGE_NAME": "com.firstKhabar"
         },
         "org.apache.cordova.splashscreen": {
-            "PACKAGE_NAME": "com.example.hello"
+            "PACKAGE_NAME": "com.firstKhabar"
         }
     },
     "dependent_plugins": {}

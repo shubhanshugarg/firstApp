@@ -2,7 +2,6 @@ var app = {
     // Application Constructor
     initialize: function () {
         this.bindEvents();
-		navigator.splashscreen.hide();
     },
     // Bind Event Listeners
     //
@@ -19,13 +18,9 @@ var app = {
         app.receivedEvent('deviceready');
 
         ons.setDefaultDeviceBackButtonListener(function () {
-            if (navigator.notification.confirm("Are you sure to close the App?",
-                    function (index) {
-                        if (index == 1) { // OK button
-                            navigator.app.exitApp(); // Close the app
-                        }
-                    }
-                ));
+            var confirmed = confirm("Are you sure to close the App?");
+            if (confirmed)
+                navigator.app.exitApp();
         });
 
         // Open any external link with InAppBrowser Plugin
