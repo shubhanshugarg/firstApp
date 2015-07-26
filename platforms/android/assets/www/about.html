@@ -1,6 +1,9 @@
-<ons-page>
+<ons-page ng-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})>
     <ons-toolbar>
         <div class="left">
+		        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
             <ons-toolbar-button ng-click="menu.toggle()">
                 <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
             </ons-toolbar-button>

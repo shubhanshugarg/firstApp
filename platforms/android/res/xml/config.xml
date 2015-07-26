@@ -32,7 +32,7 @@
     <icon density="hdpi" platform="android" src="res/icon/drawable-hdpi/icon.png" />
     <icon density="xhdpi" platform="android" src="res/icon/drawable-xhdpi/icon.png" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="30000" />
+    <preference name="SplashScreenDelay" value="20000" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="AutoHideSplashScreen" value="false" />
 </widget>

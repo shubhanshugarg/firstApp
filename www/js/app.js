@@ -67,7 +67,7 @@ var app = {
                         // show signup login form
                         //hide splash screen here
                         $('#loginPage').show();
-                        $('#registerPage').show();
+                        //$('#registerPage').show();
                         //hide splash screen here
                     }
                     $("#submitButton").removeAttr("disabled");
@@ -80,7 +80,7 @@ var app = {
                     alert("Do initial login");
                     $("#submitButton").removeAttr("disabled");
                     $('#loginPage').show();
-                    $('#registerPage').show();
+                    //$('#registerPage').show();
                 }, "json");
                 //hide splash screen here
 
@@ -230,7 +230,7 @@ var app = {
                         //show categories and hide login and register form
                         menu.setSwipeable(false);
                         $('#loginPage').show();
-                        $('#registerPage').show();
+                        //$('#registerPage').show();
 
 
                     }
@@ -239,7 +239,7 @@ var app = {
                     alert("some probem with internet or server not able to fetch list of colleges.");
                     menu.setSwipeable(false);
                         $('#loginPage').show();
-                        $('#registerPage').show();
+                        //$('#registerPage').show();
                 });
 
                 //hide splash screen here
@@ -399,7 +399,7 @@ var app = {
                             //show categories and hide login and register form
 
                             $('#loginPage').hide();
-                            $('#registerPage').hide();
+                            //$('#registerPage').hide();
                             $('#toolbar').show();
                             $('#category-page').show();
                             menu.setSwipeable(true);
@@ -432,11 +432,25 @@ var app = {
              $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});*/
         }
 
+        $('#login-form-link').click(function(e) {
+            $("#loginForm").delay(100).fadeIn(100);
+            $("#registerForm").fadeOut(100);
+            $('#register-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
     });
 
 
     module.controller('registerController', function ($scope, $http, FeedPluginData) {
 
+        $('#register-form-link').click(function(e) {
+            $("#registerForm").delay(100).fadeIn(100);
+            $("#loginForm").fadeOut(100);
+            $('#login-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
         $scope.name = "harry";
 
         $scope.userRegister = function () {
@@ -509,7 +523,7 @@ var app = {
                         //show categories and hide login and register form
 
                         $('#loginPage').hide();
-                        $('#registerPage').hide();
+                        //$('#registerPage').hide();
                         $('#toolbar').show();
                         $('#category-page').show();
                         menu.setSwipeable(true);
@@ -575,7 +589,7 @@ var app = {
 
         $scope.showHiddenPage = function (index) {
             //how to hide splash screen here
-            if ($("#loginPage").is(":hidden") && $("#registerPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
+            if ($("#loginPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
                 $('#toolbar').show();
                 $('#category-page').show();
 
