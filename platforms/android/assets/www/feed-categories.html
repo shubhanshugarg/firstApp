@@ -85,11 +85,11 @@
                                             <input class="form-control" type="text" name="register_college"
                                                    id="register_college" tabindex="1" placeholder="College"/>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <input class="form-control" type="text" name="register_categories"
                                                    id="register_categories" tabindex="1" value=""
                                                    placeholder="Categories"/>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <input class="form-control" type="text" name="register_contactNumber"
                                                    tabindex="1" id="register_contactNumber" value=""
@@ -122,7 +122,7 @@
                     <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                 </ons-toolbar-button>
             </div>
-            <div class="center">College Feed</div>
+            <div class="center">College FirstKhabar</div>
         </ons-toolbar>
 
 
@@ -130,9 +130,10 @@
             <div class="profile-card">
 
                 <ons-icon icon="rss" class="profile-logo"></ons-icon>
-                <div class="profile-name">College Feed</div>
-                <div class="profile-id">@AppsHybrid</div>
-                <div class="profile-desc">Get college Feeds on your phone.</div>
+                <div class="profile-name">College FirstKhabar</div>
+                <!-- below ang not working -->
+                <div class="profile-id">@connect{{retrieveCollege("a")}}</div>
+                <div class="profile-desc">Crowd sourced college community information platform</div>
 
             </div>
 
