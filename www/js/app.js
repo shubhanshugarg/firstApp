@@ -34,65 +34,104 @@ var app = {
 
         });
 
-        //mine initial login and signup functionality (when app launches) before the oops of the template started
+        checkPreAuth();
+        
+        app.getCount("Notices");
+        setInterval(function() { app.getCount("Notices"); }, 1500000);
+        app.getCount("News");
+        setInterval(function() { app.getCount("News"); }, 1500000);
+//left
+//change variable name and make global variable for url
 
-        function handleLogin(email, password) {
-            //var form = $("#loginForm");
-            //disable the button so we can't resubmit while we wait
-            //$("#submitButton",form).attr("disabled","disabled");
-            //var u = $("#email", form).val();
-            //var p = $("#password", form).val();
-            var u = email;
-            var p = password;
-            console.log("click");
-            if (u != '' && p != '') {
-                $('#loginPage').show();
-                $.post("http://localhost/noticeBoard/www/loginDummy.php", {email: u, password: p}, function (res) {
-                    alert(res.a);
-                    if (res.a == "1") {
-                        //store
-                        //show the logged in panel
-                        window.localStorage["email"] = u;
-                        window.localStorage["password"] = p;
-                        alert("Your login sucess");
-                        //$('#loginPage').show();
-                        $('#toolbar').show();
-                        $('#category-page').show();
+        function checkPreAuth() {
+            var form = $("#loginForm");
+            if (window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
+                var email = window.localStorage["email"];
+                var password = window.localStorage["password"];
+                $.post("json/structure.json", {email: "aa"}, function (res) {
+                    //alert("Your login sucess");
+                    //$('#loginPage').show();
+                    //hacky way post asynch as to do after dom load
+                    $('#toolbar').show();
+                    $('#category-page').show();
 
-                        //show category page here and hide the splash screen
 
-                        //$.mobile.changePage("some.html");
+                }, "json");
+///handle login not needed as login if stored in local storage
+//handleLogin(email,password);
+            } else {
+                //show login and register form here
+                //hide the categories page
+                //hacky way post asynch as to do after dom load
+
+     
+                $.get("http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos", function (response) {
+                    //alert("not stored in local storage");
+                    var isSuccess = response.success;
+                    if (isSuccess) {
+
+                        var collegeList = response.data;
+
                     } else {
-                        alert("Your login failed");
-                        // show signup login form
-                        //hide splash screen here
+                        var errorMessage = response.message;
+                        alert(errorMessage);
+                    }
+                    if (isSuccess) {
+                        //store profile data in local storage
+                        //var collegeData = {'college_list': register_email, 'user_id' :user_id ,'contact_nos':contact_nos,'register_password':register_password, 'register_name': register_name, 'register_college': register_college, 'register_roll': register_roll, 'interestedCategories': interestedCategories};
+                        var collegeData = collegeList;
+                        var collegeDataJson = JSON.stringify(collegeData);
+
+                        window.localStorage["collegeData"] = collegeDataJson;
+
+                        var collegeData = $.parseJSON(window.localStorage.getItem('collegeData'));
+
+                        var tags = [];
+                        $.each(collegeData, function (key, value) {
+                            tags.push(value.collegeName);
+                        });
+                        $('#register_college').autocomplete({
+                            source: tags,
+
+                            change: function (event, ui) {
+                                if (ui.item == null || ui.item == undefined) {
+                                    $(this).val("");
+                                    $(this).attr("disabled", false);
+                                }
+                            }
+                        });
+                        //$.mobile.changePage("some.html");
+                        //show categories and hide login and register form
+                        menu.setSwipeable(false);
                         $('#loginPage').show();
                         //$('#registerPage').show();
-                        //hide splash screen here
-                    }
-                    $("#submitButton").removeAttr("disabled");
-                }, "json");
-                //$('#loginPage').show();
-            } else {
-                //Thanks Igor!
-                //post request because of hacky loading of dom
-                $.post("http://localhost/noticeBoard/www/loginDummy.php", {email: "aa"}, function (res) {
-                    alert("Do initial login");
-                    $("#submitButton").removeAttr("disabled");
-                    $('#loginPage').show();
-                    //$('#registerPage').show();
-                }, "json");
-                //hide splash screen here
 
+
+                    }
+                }).fail(function () {
+
+                    alert("some probem with internet or server not able to fetch list of colleges.");
+                    menu.setSwipeable(false);
+                        $('#loginPage').show();
+                        //$('#registerPage').show();
+                });
+
+                //hide splash screen here
+     
             }
-            //return false;
+
         }
 
-        //   $("#submitButton").on('click',handleLogin);
-        checkPreAuth();
-        //fetching notification count var getCount = 
-        function getCount(mainCategory) {
-            //if here to execute only when profile id set
+
+//mine
+
+
+    },
+    // there are 2 definitions of getcount they both do the same thing but otherone cannot be called from somewhere else wrong design
+    getCount: function (mainCategory) {
+        
+        //if here to execute only when profile id set
+        if (window.localStorage["profileData"] != undefined) {
             var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
             var catIds = [];
             if (profileData != null) {
@@ -148,147 +187,14 @@ var app = {
 
             }).fail(function () {
 
-                alert("some probem with internet or server not able to fetch count in categories.");
+                //alert("some probem with internet or server not able to fetch count in categories.");
             });
         }
+    }
             //alert("Hello");
-        }
-        getCount("Notices");
-        setInterval(function() { getCount("Notices"); }, 1500000);
-        getCount("News");
-        setInterval(function() { getCount("News"); }, 1500000);
-//left
-//change variable name and make global variable for url
-
-        function checkPreAuth() {
-            var form = $("#loginForm");
-            if (window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
-                /*$("#email", form).val(window.localStorage["email"]);
-                 $("#password", form).val(window.localStorage["password"]);
-                 */
-                var email = window.localStorage["email"];
-                var password = window.localStorage["password"];
-                $.post("json/structure.json", {email: "aa"}, function (res) {
-                    alert("Your login sucess");
-                    //$('#loginPage').show();
-                    //hacky way post asynch as to do after dom load
-                    $('#toolbar').show();
-                    $('#category-page').show();
-
-
-                }, "json");
-///handle login not needed as login if stored in local storage
-//handleLogin(email,password);
-            } else {
-                //show login and register form here
-                //hide the categories page
-                //hacky way post asynch as to do after dom load
-
-                /*$.post("json/structure.json", {email:"aa"}, function(res) {
-                 alert("not stored in local storage");
-                 //$('#toolbar').show();
-                 $('#loginPage').show();
-                 $('#registerPage').show();
-                 },"json");*/
-
-                $.get("http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos", function (response) {
-                    //alert("not stored in local storage");
-                    var isSuccess = response.success;
-                    if (isSuccess) {
-
-                        var collegeList = response.data;
-
-                    } else {
-                        var errorMessage = response.message;
-                        alert(errorMessage);
-                    }
-                    if (isSuccess) {
-                        //store profile data in local storage
-                        //var collegeData = {'college_list': register_email, 'user_id' :user_id ,'contact_nos':contact_nos,'register_password':register_password, 'register_name': register_name, 'register_college': register_college, 'register_roll': register_roll, 'interestedCategories': interestedCategories};
-                        var collegeData = collegeList;
-                        var collegeDataJson = JSON.stringify(collegeData);
-
-                        window.localStorage["collegeData"] = collegeDataJson;
-
-                        var collegeData = $.parseJSON(window.localStorage.getItem('collegeData'));
-
-                        var tags = [];
-                        $.each(collegeData, function (key, value) {
-                            tags.push(value.collegeName);
-                        });
-                        $('#register_college').autocomplete({
-                            source: tags,
-
-                            change: function (event, ui) {
-                                if (ui.item == null || ui.item == undefined) {
-                                    $(this).val("");
-                                    $(this).attr("disabled", false);
-                                }
-                            }
-                        });
-                        //$.mobile.changePage("some.html");
-                        //show categories and hide login and register form
-                        menu.setSwipeable(false);
-                        $('#loginPage').show();
-                        //$('#registerPage').show();
-
-
-                    }
-                }).fail(function () {
-
-                    alert("some probem with internet or server not able to fetch list of colleges.");
-                    menu.setSwipeable(false);
-                        $('#loginPage').show();
-                        //$('#registerPage').show();
-                });
-
-                //hide splash screen here
-                //new call to fetch the colleges
-                /*
-                 $http({method: 'GET', url: "http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos",async: false}).
-                 success(function(response, status, headers, config) {
-
-                 var isSuccess= response.success;
-                 if (isSuccess) {
-
-                 var collegeList= response.data;
-
-                 }else{
-                 var errorMessage=response.message;
-                 alert(errorMessage);
-                 }
-                 if(isSuccess) {
-                 //store profile data in local storage
-                 //var collegeData = {'college_list': register_email, 'user_id' :user_id ,'contact_nos':contact_nos,'register_password':register_password, 'register_name': register_name, 'register_college': register_college, 'register_roll': register_roll, 'interestedCategories': interestedCategories};
-                 var collegeData=college_list;
-                 var collegeDataJson=JSON.stringify(collegeData);
-
-                 window.localStorage["collegeData"] = collegeDataJson;
-                 //$.mobile.changePage("some.html");
-                 //show categories and hide login and register form
-
-                 $('#loginPage').show();
-                 $('#registerPage').show();
-
-                 }
-                 }).
-                 error(function(data, status, headers, config) {
-                 alert("some probem with internet or server not able to fetch list of colleges.");
-                 //page remain as it is
-                 $scope.isLoggedIn="no";
-                 });   */
-
-                //close new call
-
-            }
-
-        }
-
-
-//mine
-
 
     },
+
     // Update DOM on a Received Event
     receivedEvent: function (id) {
         //var parentElement = document.getElementById(id);
@@ -312,32 +218,7 @@ var app = {
         angular.bootstrap(document, ['sensationFeedPlugin']);
     }, false);
 
-    // Feed Plugin: Categories Controller
-    /*module.controller('FeedPluginCategoriesController', function($scope, $http, FeedPluginData) {
-
-     $http({method: 'GET', url: FeedPluginData.url}).
-     success(function(data, status, headers, config) {
-     $scope.categories = data.categories;
-     }).
-     error(function(data, status, headers, config) {
-
-     });
-
-     $scope.showDetail = function(index) {
-     var selectedItem = $scope.categories[index];
-     //get profile information about items stored in the local storage
-     //using some data replace lateron
-     var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-     //var categoryInterestedData=profileData["categories"];
-     //var email=window.localStorage["email"];
-     FeedPluginData.selectedItem = selectedItem;
-     FeedPluginData.profileData=profileData;
-     //title fields are passed you can change it
-     $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});
-     }
-
-     });*/
-
+    
     //mine login controller
 
     module.controller('loginController', function ($scope, $http, FeedPluginData) {
@@ -346,7 +227,7 @@ var app = {
 
         $scope.userLogin = function () {
 
-            alert("clicked");
+            //alert("clicked");
 
             var form = $("#loginForm");
 //disable the button so we can't resubmit while we wait
@@ -402,14 +283,12 @@ var app = {
                             //$('#registerPage').hide();
                             $('#toolbar').show();
                             $('#category-page').show();
+                            app.getCount("Notices");
+                            app.getCount("News");
                             menu.setSwipeable(true);
 
 
                         }
-                        /*else {
-                         // or message from shubhanshu to show here
-                         alert("Your registration failed try again failed");
-                         } */
                     }).
                     error(function (data, status, headers, config) {
                         alert("some probem with server try sometime later");
@@ -455,7 +334,7 @@ var app = {
 
         $scope.userRegister = function () {
 
-            alert("clicked");
+            //alert("clicked");
 
             var form = $("#registerForm");
 //disable the button so we can't resubmit while we wait
@@ -526,12 +405,14 @@ var app = {
                         //$('#registerPage').hide();
                         $('#toolbar').show();
                         $('#category-page').show();
+                        app.getCount("Notices");
+                        app.getCount("News");
                         menu.setSwipeable(true);
 
 
                     } else {
                         // or message from shubhanshu to show here
-                        alert("Your registration failed try again failed");
+                        alert("Your registration failed try again");
                     }
                 }).error(function (response) {
 
@@ -544,7 +425,7 @@ var app = {
 
             } else {
 //Thanks Igor!
-                alert("You must enter a email and password or confirm password does not match");
+                alert("You must enter a email , password and matching confirm password ");
                 $("#register_submitButton").removeAttr("disabled");
             }
 
@@ -572,6 +453,14 @@ var app = {
 
             });
 
+        $scope.retrieveCollege= function(a){
+            if (window.localStorage["profileData"] != undefined) {
+            var profileData = JSON.parse(window.localStorage.getItem('profileData'));
+            return profileData["register_college"];
+
+            };
+        }     
+
         $scope.showDetail = function (index) {
             var selectedItem = $scope.categories[index];
             //selected item is for example notices
@@ -584,6 +473,11 @@ var app = {
             FeedPluginData.profileData = profileData;
             //profiledata to take out the categories
             //title fields are passed you can change it
+            if(selectedItem.title.toLowerCase() == "news"){
+            app.getCount("News");
+            }else if(selectedItem.title.toLowerCase() == "notices"){
+            app.getCount("Notices");
+            }
             $scope.ons.navigator.pushPage('feed-category.html', {title: selectedItem.title});
         }
 
@@ -852,7 +746,7 @@ var app = {
 
         function executeOnSucess(feedEntriesData) {
 
-            alert(Object.keys(feedEntriesData).length);
+            //alert(Object.keys(feedEntriesData).length);
             var page = 1;
             // Define the number of the feed results in the page
             var pageSize = 3;
@@ -953,9 +847,10 @@ var app = {
                     //empty the initial variabes of notice
 
                 } else {
-                    alert("error in deleting try later");
+                    
                     var errorMessage = response.message;
-                    alert(errorMessage);
+                    alert("error in deleting try later"+errorMessage);
+                    //alert(errorMessage);
                 }
             }).error(function (response) {
 
@@ -1017,9 +912,10 @@ var app = {
                     //empty the initial variabes of notice
 
                 } else {
-                    alert("error in reporting try later");
+                    
                     var errorMessage = response.message;
-                    alert(errorMessage);
+                    alert("error in reporting try later"+errorMessage);
+                    //alert(errorMessage);
                 }
             }).error(function (response) {
 
@@ -1047,101 +943,10 @@ var app = {
             window.open(link, '_blank');
         }
 
-        /*$scope.shareFeed = function () {
-
-         var subject = $scope.item.title;
-         var message = $scope.item.content;
-         message = message.replace(/(<([^>]+)>)/ig,"");
-
-         var link = $scope.item.link;
-
-         //Documentation: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin
-         //window.plugins.socialsharing.share('Message', 'Subject', 'Image', 'Link');
-         window.plugins.socialsharing.share(message, subject, null, link);
-         }*/
-
+    
     });
 
-    // Contact Controller
-    module.controller('ContactController', function ($scope, $http) {
-
-        $scope.submitForm = function () {
-            var heading = $scope.subject;
-            var description = $scope.message;
-            var cat1 = $scope.cat1;
-            if (cat1) {
-            }
-            ;
-            alert(cat1);
-            var imgUri = $scope.imgUri;
-            alert(imgUri);
-
-            var noticeData = {notice_heading: heading, notice_description: description};
-            var noticeDataJson = JSON.stringify(noticeData);
-            var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-            var fd = new FormData();
-            fd.append('userName', name);
-            fd.append('rollNumber', roll);
-            fd.append('contactNumber', contactNumber);
-            fd.append('categoryIds', categories);
-            fd.append('email', u);
-            fd.append('password', p);
-            fd.append('collegeName', college);
-
-            var noticeInfos = {};
-
-            fd.append('noticeInfos', noticeInfos);
-
-//fd.append('collegeAddress', collegeAddress);
-//fd.append('userImageFile', userImageFile);
-            /*var locationOrigin="http://collegeboard-env2.elasticbeanstalk.com";
-             $http.post(locationOrigin + "/userInfo/userSignUp", fd, {
-             transformRequest: angular.identity,
-             headers: {
-             'Content-Type': undefined
-             }
-             }).success(function (response) {
-             */
-
-
-            $http({
-                method: 'POST',
-                url: "http://localhost/noticeBoard/www/loginDummy2.php",
-                data: noticeDataJson
-            }).success(function (data, status, headers, config) {
-                $scope.postedSuccess = data.responseData.feed.title;
-                alert($scope.postedSuccess);
-                if ($scope.postedSuccess == "Peter Parker") {
-                    //hide login register show categories
-                    $scope.postedSuccess = "yes";
-                } else {
-                    $scope.postedSuccess = "no";
-                }
-                ;
-                if ($scope.postedSuccess == "yes") {
-                    //store profile data in local storage
-                    alert("Your notice has been posted");
-
-                } else {
-                    // or message from shubhanshu to show here
-                    alert("Your notice could not be posted");
-                }
-            }).
-                error(function (data, status, headers, config) {
-                    alert("There is some server error try sommetime later");
-                });
-
-            /* window.plugin.email.open({
-             to:      ['email@company.com'],
-             cc:      ['email1@company.com'],
-             bcc:     ['email2@company.com'],
-             subject: $scope.subject,
-             body:    $scope.message
-             });*/
-
-        };
-
-    });
+    
 
     // Contact Controller
     module.controller('noticePostController', function ($scope, $http) {
@@ -1186,7 +991,7 @@ var app = {
 
 
             var imgUri = $("#imgUri").val();
-            alert(imgUri);
+            //alert(imgUri);
             var imgUri = $('input[type=file]')[0].files[0];
             /*console.log(imgUri);
              var imgUri=btoa($('input[type=file]')[0].files[0]);
@@ -1232,9 +1037,10 @@ var app = {
                     $scope.message = '';
                     $scope.cat1 = '';
                 } else {
-                    alert("notice was'nt posted contact us");
+                    
                     var errorMessage = response.message;
-                    alert(errorMessage);
+                    alert("notice was'nt posted contact us"+errorMessage);
+                    //alert(errorMessage);
                 }
             }).error(function (response) {
 
@@ -1264,7 +1070,7 @@ var app = {
 
 
             var imgUri = $("#imgUri").val();
-            alert(imgUri);
+            //alert(imgUri);
             var imgUri = $('input[type=file]')[0].files[0];
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
 
@@ -1294,9 +1100,10 @@ var app = {
                     $scope.message = '';
                     $scope.cat1 = '';
                 } else {
-                    alert("news was'nt posted contact us");
+                    
                     var errorMessage = response.message;
-                    alert(errorMessage);
+                    alert("news was'nt posted contact us"+errorMessage);
+                    //alert(errorMessage);
                 }
             }).error(function (response) {
 
