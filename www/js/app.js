@@ -1,3 +1,5 @@
+var pictureSource;
+var destinationType;
 var app = {
     // Application Constructor
     initialize: function () {
@@ -16,6 +18,8 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
 
         ons.setDefaultDeviceBackButtonListener(function () {
             var confirmed = confirm("Are you sure to close the App?");
