@@ -41,6 +41,10 @@
         </ons-list>
         <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
+        <img id="originalImg"/>
+          <img id="uploadPreview"/>
+        <input id="uploadImage" type="file" name="myPhoto" ng-model="a" onchange="angular.element(this).scope().loadImageFile()"/>
+
         <button ng-click="capturePhotoEdit()">select photo new</button>
         <br>
         <button ng-click="getPhoto()">From Photo Album</button>
