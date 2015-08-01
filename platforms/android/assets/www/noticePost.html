@@ -1,4 +1,5 @@
-<ons-page ng-controller="noticePostController" on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
+<ons-page ng-controller="noticePostController"
+          on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
 
     <ons-toolbar>
         <div class="left">
@@ -20,15 +21,33 @@
         <input type="text" class="text-input" placeholder="Facebook Link" ng-model="fbUrl"
                style="width:100%; margin-bottom:10px;">
 
-        <div ng-repeat="category in allCategories"  style="display: inline">
-            <!-- <input type="checkbox" ng-model="category.isSelected" value="{{category.categoryId}}">{{category.categoryName}} -->
-            <!-- parent used below as new scope is defined by the radio button -->
-            <input type="radio" name="categoryRadio" ng-model="$parent.isSelected"  ng-value="{{category.categoryId}}" >{{category.categoryName}}
-        </div>
+        <ons-list>
+            <ons-list-header>Categories</ons-list-header>
+
+            <div ng-repeat="category in allCategories">
+
+                <ons-list-item modifier="tappable" style="width:33%;float: left">
+                    <label class="radio-button radio-button--list-item">
+                        <input type="radio" name="categoryRadio" ng-model="$parent.isSelected"
+                               ng-value="{{category.categoryId}}"/>
+
+                        <div style="width: 25%;float: left;background-color: lightgoldenrodyellow"
+                             class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                        <div style="width: 75%;float: left">{{category.categoryName}}</div>
+                    </label>
+                </ons-list-item>
+
+            </div>
+        </ons-list>
         <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
+        <button ng-click="capturePhotoEdit()">select photo new</button>
         <br>
-        Choose Image: 
+        <button ng-click="getPhoto()">From Photo Album</button>
+        <br>
+        <img style="display:none;" id="largeImage" src=""/>
+        <img style="display:none;width:60px;height:60px;" id="smallImage" src=""/>
+        Choose Image:
         <input type="file" id="imgUri">
         <br>
         <!-- <input type="file" class="custom-file-input"

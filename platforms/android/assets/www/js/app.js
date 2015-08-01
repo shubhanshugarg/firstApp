@@ -1,3 +1,5 @@
+var pictureSource;
+var destinationType;
 var app = {
     // Application Constructor
     initialize: function () {
@@ -16,7 +18,10 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-
+        if (navigator.camera != undefined) {
+            pictureSource = navigator.camera.PictureSourceType;
+            destinationType = navigator.camera.DestinationType;
+        }
         ons.setDefaultDeviceBackButtonListener(function () {
             var confirmed = confirm("Are you sure to close the App?");
             if (confirmed)
@@ -35,11 +40,15 @@ var app = {
         });
 
         checkPreAuth();
-        
+
         app.getCount("Notices");
-        setInterval(function() { app.getCount("Notices"); }, 1500000);
+        setInterval(function () {
+            app.getCount("Notices");
+        }, 1500000);
         app.getCount("News");
-        setInterval(function() { app.getCount("News"); }, 1500000);
+        setInterval(function () {
+            app.getCount("News");
+        }, 1500000);
 //left
 //change variable name and make global variable for url
 
@@ -64,7 +73,7 @@ var app = {
                 //hide the categories page
                 //hacky way post asynch as to do after dom load
 
-     
+
                 $.get("http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos", function (response) {
                     //alert("not stored in local storage");
                     var isSuccess = response.success;
@@ -112,12 +121,12 @@ var app = {
 
                     alert("some probem with internet or server not able to fetch list of colleges.");
                     menu.setSwipeable(false);
-                        $('#loginPage').show();
-                        //$('#registerPage').show();
+                    $('#loginPage').show();
+                    //$('#registerPage').show();
                 });
 
                 //hide splash screen here
-     
+
             }
 
         }
@@ -129,69 +138,69 @@ var app = {
     },
     // there are 2 definitions of getcount they both do the same thing but otherone cannot be called from somewhere else wrong design
     getCount: function (mainCategory) {
-        
+
         //if here to execute only when profile id set
         if (window.localStorage["profileData"] != undefined) {
             var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
             var catIds = [];
             if (profileData != null) {
-            $.each(profileData.interestedCategories, function (key, value) {
-                catIds.push(value.categoryId);
-            });
-            var catIdsString = catIds.join(",");
-
-            var postedDates=[];
-
-            $.each(profileData.interestedCategories, function (key, value) {
-                //catIds.push(value.categoryId);
-                if (window.localStorage['feedEntriesData'+mainCategory+ value.categoryId + value.categoryName] != undefined) {
-            var categoryFeed= JSON.parse(window.localStorage.getItem('feedEntriesData'+mainCategory+ value.categoryId + value.categoryName));
-            if (typeof categoryFeed[0] !== 'undefined' && typeof categoryFeed[0].publishedDate !== 'undefined') {
-            postedDates.push(categoryFeed[0].publishedDate);
-                }else{
-                postedDates.push(0000000000000);
-            }
-
-            }else{
-                postedDates.push(0000000000000);
-            }
-
-            });
-
-            var postedDatesString = postedDates.join(",");
-            if (mainCategory=="Notices") {
-                getCountUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" +catIdsString + "&dates="+postedDatesString;
-            }else if(mainCategory=="News"){
-                getCountUrl="http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" +catIdsString + "&dates="+postedDatesString;
-            }
-            $.get(getCountUrl, function (response) {
-                //alert("not stored in local storage");
-
-                //notification display logic here take out from response and show in text
-                //make all zero here and again set (if not 0 then notification circle shown)
-               //reseting notifcation local storage
                 $.each(profileData.interestedCategories, function (key, value) {
-                    window.localStorage['#notification'+mainCategory+'Count-' + value.categoryId] = 0;
+                    catIds.push(value.categoryId);
+                });
+                var catIdsString = catIds.join(",");
+
+                var postedDates = [];
+
+                $.each(profileData.interestedCategories, function (key, value) {
+                    //catIds.push(value.categoryId);
+                    if (window.localStorage['feedEntriesData' + mainCategory + value.categoryId + value.categoryName] != undefined) {
+                        var categoryFeed = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + value.categoryId + value.categoryName));
+                        if (typeof categoryFeed[0] !== 'undefined' && typeof categoryFeed[0].publishedDate !== 'undefined') {
+                            postedDates.push(categoryFeed[0].publishedDate);
+                        } else {
+                            postedDates.push(0000000000000);
+                        }
+
+                    } else {
+                        postedDates.push(0000000000000);
+                    }
+
                 });
 
+                var postedDatesString = postedDates.join(",");
+                if (mainCategory == "Notices") {
+                    getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+                } else if (mainCategory == "News") {
+                    getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+                }
+                $.get(getCountUrl, function (response) {
+                    //alert("not stored in local storage");
+
+                    //notification display logic here take out from response and show in text
+                    //make all zero here and again set (if not 0 then notification circle shown)
+                    //reseting notifcation local storage
+                    $.each(profileData.interestedCategories, function (key, value) {
+                        window.localStorage['#notification' + mainCategory + 'Count-' + value.categoryId] = 0;
+                    });
 
 
-                $.each(response, function (key, value) {
-                    $('#notification'+mainCategory+'Count-' + key).text(value);
-                    if (value >0) {
-                        $('#notificationNew'+mainCategory).text("New "+mainCategory);
-                    };
-                    window.localStorage['#notification'+mainCategory+'Count-' + key] = value;
+                    $.each(response, function (key, value) {
+                        $('#notification' + mainCategory + 'Count-' + key).text(value);
+                        if (value > 0) {
+                            $('#notificationNew' + mainCategory).text("New " + mainCategory);
+                        }
+                        ;
+                        window.localStorage['#notification' + mainCategory + 'Count-' + key] = value;
+                    });
+
+
+                }).fail(function () {
+
+                    //alert("some probem with internet or server not able to fetch count in categories.");
                 });
-
-
-            }).fail(function () {
-
-                //alert("some probem with internet or server not able to fetch count in categories.");
-            });
+            }
         }
-    }
-            //alert("Hello");
+        //alert("Hello");
 
     },
 
@@ -218,7 +227,7 @@ var app = {
         angular.bootstrap(document, ['sensationFeedPlugin']);
     }, false);
 
-    
+
     //mine login controller
 
     module.controller('loginController', function ($scope, $http, FeedPluginData) {
@@ -311,7 +320,7 @@ var app = {
              $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});*/
         }
 
-        $('#login-form-link').click(function(e) {
+        $('#login-form-link').click(function (e) {
             $("#loginForm").delay(100).fadeIn(100);
             $("#registerForm").fadeOut(100);
             $('#register-form-link').removeClass('active');
@@ -323,7 +332,7 @@ var app = {
 
     module.controller('registerController', function ($scope, $http, FeedPluginData) {
 
-        $('#register-form-link').click(function(e) {
+        $('#register-form-link').click(function (e) {
             $("#registerForm").delay(100).fadeIn(100);
             $("#loginForm").fadeOut(100);
             $('#login-form-link').removeClass('active');
@@ -453,13 +462,14 @@ var app = {
 
             });
 
-        $scope.retrieveCollege= function(a){
+        $scope.retrieveCollege = function (a) {
             if (window.localStorage["profileData"] != undefined) {
-            var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-            return profileData["register_college"];
+                var profileData = JSON.parse(window.localStorage.getItem('profileData'));
+                return profileData["register_college"];
 
-            };
-        }     
+            }
+            ;
+        }
 
         $scope.showDetail = function (index) {
             var selectedItem = $scope.categories[index];
@@ -473,10 +483,10 @@ var app = {
             FeedPluginData.profileData = profileData;
             //profiledata to take out the categories
             //title fields are passed you can change it
-            if(selectedItem.title.toLowerCase() == "news"){
-            app.getCount("News");
-            }else if(selectedItem.title.toLowerCase() == "notices"){
-            app.getCount("Notices");
+            if (selectedItem.title.toLowerCase() == "news") {
+                app.getCount("News");
+            } else if (selectedItem.title.toLowerCase() == "notices") {
+                app.getCount("Notices");
             }
             $scope.ons.navigator.pushPage('feed-category.html', {title: selectedItem.title});
         }
@@ -508,26 +518,26 @@ var app = {
         //retreiving notification from local storage
         //var notifications=[];
         $.each(FeedPluginData.profileData["interestedCategories"], function (key, value) {
-                    //window.localStorage['#notificationNoticesCount-' + value.categoryId] = 0;
-                    //var profileData = JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
-                    //notifications.push(JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId)));
-                    if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
-                    if (window.localStorage['#notificationNoticesCount-' + value.categoryId] != undefined) {
-                    value.categoryNotifications=JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
-                    }else{
-                        value.categoryNotifications=0;
-                    }
-                    }else if(FeedPluginData.mainCategory.toLowerCase() == "news"){
-                    if (window.localStorage['#notificationNewsCount-' + value.categoryId] != undefined) {
-                    value.categoryNotifications=JSON.parse(window.localStorage.getItem('#notificationNewsCount-' + value.categoryId));
-
-                    }else{
-                        value.categoryNotifications=0;
-                    }
+            //window.localStorage['#notificationNoticesCount-' + value.categoryId] = 0;
+            //var profileData = JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
+            //notifications.push(JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId)));
+            if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
+                if (window.localStorage['#notificationNoticesCount-' + value.categoryId] != undefined) {
+                    value.categoryNotifications = JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
+                } else {
+                    value.categoryNotifications = 0;
                 }
+            } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
+                if (window.localStorage['#notificationNewsCount-' + value.categoryId] != undefined) {
+                    value.categoryNotifications = JSON.parse(window.localStorage.getItem('#notificationNewsCount-' + value.categoryId));
+
+                } else {
+                    value.categoryNotifications = 0;
+                }
+            }
 
 
-                });
+        });
         $scope.items = FeedPluginData.profileData["interestedCategories"];
         //var iii= FeedPluginData.profileData["interestedCategories"];
         //var ii=0;
@@ -561,31 +571,31 @@ var app = {
         //which category is clicked
         //showing from local storage here as if internet as if net not there and internet chk take time
         if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
-                    //var errorMessage=response.message;
-                    $scope.title = categoryName;
-                    $scope.description = categoryDescription;
+            //var errorMessage=response.message;
+            $scope.title = categoryName;
+            $scope.description = categoryDescription;
 
-                    var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
-                    //array formed for to limt to work
-                    var array = $.map(feedEntriesData, function (value, index) {
-                        return [value];
-                    });
-                    //$scope.feeds=feedEntriesData;
-                    feedEntriesData = array;
-                    $scope.feeds = feedEntriesData;
-                    executeOnSucess(feedEntriesData);
+            var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
+            //array formed for to limt to work
+            var array = $.map(feedEntriesData, function (value, index) {
+                return [value];
+            });
+            //$scope.feeds=feedEntriesData;
+            feedEntriesData = array;
+            $scope.feeds = feedEntriesData;
+            executeOnSucess(feedEntriesData);
 
-                }
+        }
 
         //close showing from llocal storage
         //alert(user_id);
-        var getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+        var getUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         if (mainCategory.toLowerCase() == "notices") {
 
-            getUrl="http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+            getUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
 
         } else if (mainCategory.toLowerCase() == "news") {
-            getUrl="http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+            getUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         }
         //noticeInfo/getNotices?userId=user_id&categoriesToFetch=categoryId
         //$http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php", async: false}).
@@ -612,51 +622,50 @@ var app = {
 
                     if (mainCategory.toLowerCase() == "notices") {
 
-                         $.each(responseData, function (key, value) {
+                        $.each(responseData, function (key, value) {
 
-                                        entryValueObj = {
-                                            "id": value.noticeId,
-                                            "title": value.noticeHeading,
-                                            "images": {
-                                                "url1": value.noticeImageId
-                                            },
-                                            "publishedDate": value.creationDate,
-                                            "content": value.noticeDescription,
-                                            "urlLink": value.noticeUrl,
-                                            "socialLink": value.noticeFBUrl,
-                                            "postedById": value.userInfo.userId,
-                                            "postedByRoll": value.userInfo.rollNumber,
-                                            "postedByName": value.userInfo.userName,
-                                            "contentSnippet": "Click to read"
-                                        }
-                                        entries[count++] = entryValueObj;
-
-
-                                    });
-                                } else if (mainCategory.toLowerCase() == "news") {
-                                    $.each(responseData, function (key, value) {
-
-                                                entryValueObj = {
-                                                    "id": value.newsId,
-                                                    "title": value.newsHeading,
-                                                    "images": {
-                                                        "url1": value.newsImageId
-                                                    },
-                                                    "publishedDate": value.creationDate,
-                                                    "content": value.newsDescription,
-                                                    "urlLink": value.newsUrl,
-                                                    "socialLink": value.newsFBUrl,
-                                                    "postedById": value.userInfo.userId,
-                                                    "postedByRoll": value.userInfo.rollNumber,
-                                                    "postedByName": value.userInfo.userName,
-                                                    "contentSnippet": "Click to read"
-                                                }
-                                                entries[count++] = entryValueObj;
+                            entryValueObj = {
+                                "id": value.noticeId,
+                                "title": value.noticeHeading,
+                                "images": {
+                                    "url1": value.noticeImageId
+                                },
+                                "publishedDate": value.creationDate,
+                                "content": value.noticeDescription,
+                                "urlLink": value.noticeUrl,
+                                "socialLink": value.noticeFBUrl,
+                                "postedById": value.userInfo.userId,
+                                "postedByRoll": value.userInfo.rollNumber,
+                                "postedByName": value.userInfo.userName,
+                                "contentSnippet": "Click to read"
+                            }
+                            entries[count++] = entryValueObj;
 
 
-                                            });
-                                }
+                        });
+                    } else if (mainCategory.toLowerCase() == "news") {
+                        $.each(responseData, function (key, value) {
 
+                            entryValueObj = {
+                                "id": value.newsId,
+                                "title": value.newsHeading,
+                                "images": {
+                                    "url1": value.newsImageId
+                                },
+                                "publishedDate": value.creationDate,
+                                "content": value.newsDescription,
+                                "urlLink": value.newsUrl,
+                                "socialLink": value.newsFBUrl,
+                                "postedById": value.userInfo.userId,
+                                "postedByRoll": value.userInfo.rollNumber,
+                                "postedByName": value.userInfo.userName,
+                                "contentSnippet": "Click to read"
+                            }
+                            entries[count++] = entryValueObj;
+
+
+                        });
+                    }
 
 
                     feed = {
@@ -743,7 +752,6 @@ var app = {
             });
 
 
-
         function executeOnSucess(feedEntriesData) {
 
             //alert(Object.keys(feedEntriesData).length);
@@ -818,19 +826,19 @@ var app = {
          return media.type ? (media.type == "audio/mp3") : false;
          }*/
 
-         //delete a notice or news item
-         $scope.deleteItem = function () {
+        //delete a notice or news item
+        $scope.deleteItem = function () {
             var fd = new FormData();
-            var setDeleteUrl="";
+            var setDeleteUrl = "";
             //if news or notice
 
             if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
                 fd.append('noticeId', $scope.item.noticeId);
-                setDeleteUrl="/noticeInfo/deleteNotice";
+                setDeleteUrl = "/noticeInfo/deleteNotice";
 
             } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
                 fd.append('newsId', $scope.item.newsId);
-                setDeleteUrl="/newsInfo/deleteNews";
+                setDeleteUrl = "/newsInfo/deleteNews";
             }
 
 
@@ -847,9 +855,9 @@ var app = {
                     //empty the initial variabes of notice
 
                 } else {
-                    
+
                     var errorMessage = response.message;
-                    alert("error in deleting try later"+errorMessage);
+                    alert("error in deleting try later" + errorMessage);
                     //alert(errorMessage);
                 }
             }).error(function (response) {
@@ -861,19 +869,18 @@ var app = {
 
         }
 
-         //close delete call
+        //close delete call
 
-         $scope.checkItemPermission = function () {
+        $scope.checkItemPermission = function () {
 
             if ($scope.item.myUserId == $scope.item.postedById) {
-               return true;
-            } else{
+                return true;
+            } else {
                 return false;
             }
 
 
-            }
-
+        }
 
 
         //marking spam and report abuse here function firing post call to the server same function doing both calls
@@ -881,14 +888,14 @@ var app = {
         $scope.setInfoState = function (state) {
             var fd = new FormData();
             //if news or notice
-            var setInfoStateUrl="";
+            var setInfoStateUrl = "";
             if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
                 fd.append('noticeId', $scope.item.noticeId);
-                setInfoStateUrl="/noticeInfo/changeNoticeState";
+                setInfoStateUrl = "/noticeInfo/changeNoticeState";
 
             } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
                 fd.append('newsId', $scope.item.newsId);
-                setInfoStateUrl="/newsInfo/changeNewsState";
+                setInfoStateUrl = "/newsInfo/changeNewsState";
             }
             //if spam or abuse
             if (state.toLowerCase() == "spam") {
@@ -912,9 +919,9 @@ var app = {
                     //empty the initial variabes of notice
 
                 } else {
-                    
+
                     var errorMessage = response.message;
-                    alert("error in reporting try later"+errorMessage);
+                    alert("error in reporting try later" + errorMessage);
                     //alert(errorMessage);
                 }
             }).error(function (response) {
@@ -938,43 +945,112 @@ var app = {
             //_system: Opens in the system's web browser.
             //window.open($scope.item.link,'_blank');
             //alert(link);    
-            if (link.substring(0, 4).toLowerCase()!="http")
-                {link="http://"+link;}
+            if (link.substring(0, 4).toLowerCase() != "http") {
+                link = "http://" + link;
+            }
             window.open(link, '_blank');
         }
 
-    
+
     });
 
-    
 
     // Contact Controller
     module.controller('noticePostController', function ($scope, $http) {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
         var allCategories = profileData.interestedCategories;
         $scope.allCategories = allCategories;
+
+        $scope.capturePhotoEdit = function () {
+            // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+            navigator.camera.getPicture($scope.onPhotoDataSuccess, $scope.onFail, { quality: 20, allowEdit: true,
+                destinationType: destinationType.DATA_URL });
+        }
+        $scope.onFail = function (message) {
+            alert('Failed because: ' + message);
+        }
+        $scope.onPhotoDataSuccess = function (imageData) {
+            // Uncomment to view the base64-encoded image data
+            // console.log(imageData);
+
+            // Get image handle
+            //
+            imageData = "data:image/jpeg;base64," + imageData;
+
+            $scope.imageBlob = $scope.dataURItoBlob(imageData);
+
+            var smallImage = document.getElementById('smallImage');
+
+            // Unhide image elements
+            //
+            smallImage.style.display = 'block';
+
+            // Show the captured photo
+            // The in-line CSS rules are used to resize the image
+            //
+            smallImage.src = "data:image/jpeg;base64," + imageData;
+        };
+        $scope.dataURItoBlob = function (dataURI) {
+            // convert base64/URLEncoded data component to raw binary data held in a string
+            var byteString;
+            if (dataURI.split(',')[0].indexOf('base64') >= 0)
+                byteString = atob(dataURI.split(',')[1]);
+            else
+                byteString = unescape(dataURI.split(',')[1]);
+
+            // separate out the mime component
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+            // write the bytes of the string to a typed array
+            var ia = new Uint8Array(byteString.length);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+
+            }
+
+            return new Blob([ia], {type: mimeString});
+        };
+        $scope.onPhotoURISuccess = function (imageURI) {
+            $scope.imageBlob = imageURI;
+            var largeImage = document.getElementById('largeImage');
+            largeImage.style.display = 'block';
+
+            largeImage.src = imageURI;
+
+        };
+        $scope.getPhoto = function () {
+
+            var source = pictureSource.SAVEDPHOTOALBUM;
+
+            navigator.camera.getPicture($scope.onPhotoURISuccess, $scope.onFail, { quality: 50,
+                destinationType: destinationType.FILE_URI,
+                sourceType: source });
+
+        };
         $scope.submitForm = function () {
             var heading = $scope.subject;
             var description = $scope.message;
             var url = $scope.url;
             var fbUrl = $scope.fbUrl;
+            var imageBlob = $scope.imageBlob;
             var categories = '';
+
             //for loop all categories time
             /*var i = 0;
 
-            for (i = 0; i < allCategories.length; i++) {
-                var cat = $scope.allCategories[i].isSelected;
+             for (i = 0; i < allCategories.length; i++) {
+             var cat = $scope.allCategories[i].isSelected;
 
-                if (cat != "") {
-                    if (categories == "") {
-                        categories = $scope.allCategories[i].categoryId;
-                    } else {
-                        categories = categories + ',' + $scope.allCategories[i].categoryId;
-                    }
-                };
+             if (cat != "") {
+             if (categories == "") {
+             categories = $scope.allCategories[i].categoryId;
+             } else {
+             categories = categories + ',' + $scope.allCategories[i].categoryId;
+             }
+             };
 
-            }*/
-            categories=$scope.isSelected;
+             }*/
+            categories = $scope.isSelected;
 
 
             /*var cat1=$scope.cat1;
@@ -991,18 +1067,9 @@ var app = {
 
 
             var imgUri = $("#imgUri").val();
-            //alert(imgUri);
+
             var imgUri = $('input[type=file]')[0].files[0];
-            /*console.log(imgUri);
-             var imgUri=btoa($('input[type=file]')[0].files[0]);
-             console.log(imgUri);*/
-            //new
-            /*var noticeInfos = [
-             {
-             'noticeHeading': heading,
-             'noticeDescription': description
-             }
-             ];*/
+
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
 
             var user_id = profileData["user_id"];
@@ -1020,7 +1087,8 @@ var app = {
             fd.append('noticeUrl', url);
             fd.append('noticeFBUrl', fbUrl);
             //fd.append('infoState', 'APPROVED');
-            fd.append('noticeImageFile', imgUri);
+            //fd.append('noticeImageFile', imgUri);
+            fd.append('noticeImageFile', imageBlob);
 
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             $http.post(locationOrigin + "/noticeInfo/postNotice", fd, {
@@ -1037,9 +1105,9 @@ var app = {
                     $scope.message = '';
                     $scope.cat1 = '';
                 } else {
-                    
+
                     var errorMessage = response.message;
-                    alert("notice was'nt posted contact us"+errorMessage);
+                    alert("notice was'nt posted contact us" + errorMessage);
                     //alert(errorMessage);
                 }
             }).error(function (response) {
@@ -1064,7 +1132,7 @@ var app = {
             var url = $scope.url;
             var fbUrl = $scope.fbUrl;
             var categories = '';
-            categories=$scope.isSelected;
+            categories = $scope.isSelected;
 
             var imgUri = $scope.imgUri;
 
@@ -1100,9 +1168,9 @@ var app = {
                     $scope.message = '';
                     $scope.cat1 = '';
                 } else {
-                    
+
                     var errorMessage = response.message;
-                    alert("news was'nt posted contact us"+errorMessage);
+                    alert("news was'nt posted contact us" + errorMessage);
                     //alert(errorMessage);
                 }
             }).error(function (response) {
@@ -1115,8 +1183,6 @@ var app = {
         };
 
     });
-
-
 
 
     module.controller('menuController', function ($scope) {
