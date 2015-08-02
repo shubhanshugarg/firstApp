@@ -979,16 +979,16 @@ var app = {
 
             $scope.imageBlob = $scope.dataURItoBlob(imageData);
 
-            var smallImage = document.getElementById('smallImage');
+            //var smallImage = document.getElementById('smallImage');
 
             // Unhide image elements
             //
-            smallImage.style.display = 'block';
+            //smallImage.style.display = 'block';
 
             // Show the captured photo
             // The in-line CSS rules are used to resize the image
             //
-            smallImage.src = "data:image/jpeg;base64," + imageData;
+            //smallImage.src = "data:image/jpeg;base64," + imageData;
         };
         $scope.dataURItoBlob = function (dataURI) {
             // convert base64/URLEncoded data component to raw binary data held in a string
@@ -1010,23 +1010,7 @@ var app = {
 
             return new Blob([ia], {type: mimeString});
         };
-        $scope.onPhotoURISuccess = function (imageURI) {
-            $scope.imageBlob = imageURI;
-            var largeImage = document.getElementById('largeImage');
-            largeImage.style.display = 'block';
-
-            largeImage.src = imageURI;
-
-        };
-        $scope.getPhoto = function () {
-
-            var source = pictureSource.SAVEDPHOTOALBUM;
-
-            navigator.camera.getPicture($scope.onPhotoURISuccess, $scope.onFail, { quality: 50,
-                destinationType: destinationType.FILE_URI,
-                sourceType: source });
-
-        };
+        
         $scope.loadImageFile = function(){
 
        var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
@@ -1035,11 +1019,13 @@ var app = {
 
           var img=new Image();
           img.onload=function(){
-              document.getElementById("originalImg").src=img.src;
+              //document.getElementById("originalImg").src=img.src;
               var canvas=document.createElement("canvas");
               var ctx=canvas.getContext("2d");
-              canvas.width=img.width/2;
-              canvas.height=img.height/2;
+              //canvas.width=img.width/2;
+              //canvas.height=img.height/2;
+              canvas.width=150;
+              canvas.height=250;
               ctx.drawImage(img,0,0,img.width,img.height,0,0,canvas.width,canvas.height);
               document.getElementById("uploadPreview").src = canvas.toDataURL();
               var imageData=canvas.toDataURL();
@@ -1090,12 +1076,12 @@ var app = {
              categories=categories+',2';
              };*/
             //var cp = $("#imgUri").val();
-            var imgUri = $scope.imgUri;
+            /*var imgUri = $scope.imgUri;
 
 
             var imgUri = $("#imgUri").val();
 
-            var imgUri = $('input[type=file]')[0].files[0];
+            var imgUri = $('input[type=file]')[0].files[0];*/
 
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
 
@@ -1153,20 +1139,81 @@ var app = {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
         var allCategories = profileData.interestedCategories;
         $scope.allCategories = allCategories;
+        
+        $scope.capturePhotoEdit = function () {
+            // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+            navigator.camera.getPicture($scope.onPhotoDataSuccess, $scope.onFail, { quality: 20, allowEdit: true,
+                destinationType: destinationType.DATA_URL });
+        }
+        $scope.onFail = function (message) {
+            alert('Failed because: ' + message);
+        }
+        $scope.onPhotoDataSuccess = function (imageData) {
+            imageData = "data:image/jpeg;base64," + imageData;
+
+            $scope.imageBlob = $scope.dataURItoBlob(imageData);
+
+        };
+        $scope.dataURItoBlob = function (dataURI) {
+            // convert base64/URLEncoded data component to raw binary data held in a string
+            var byteString;
+            if (dataURI.split(',')[0].indexOf('base64') >= 0)
+                byteString = atob(dataURI.split(',')[1]);
+            else
+                byteString = unescape(dataURI.split(',')[1]);
+
+            // separate out the mime component
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+            // write the bytes of the string to a typed array
+            var ia = new Uint8Array(byteString.length);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+
+            }
+
+            return new Blob([ia], {type: mimeString});
+        };
+        
+        $scope.loadImageFile = function(){
+
+       var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+
+        oFReader.onload = function (oFREvent) {
+
+          var img=new Image();
+          img.onload=function(){
+              //document.getElementById("originalImg").src=img.src;
+              var canvas=document.createElement("canvas");
+              var ctx=canvas.getContext("2d");
+              //canvas.width=img.width/2;
+              //canvas.height=img.height/2;
+              canvas.width=150;
+              canvas.height=250;
+              ctx.drawImage(img,0,0,img.width,img.height,0,0,canvas.width,canvas.height);
+              document.getElementById("uploadPreview").src = canvas.toDataURL();
+              var imageData=canvas.toDataURL();
+              $scope.imageBlob = $scope.dataURItoBlob(imageData);
+          }
+          img.src=oFREvent.target.result;
+        };
+                
+        if (document.getElementById("uploadImage").files.length === 0) { return; }
+          var oFile = document.getElementById("uploadImage").files[0];
+          if (!rFilter.test(oFile.type)) { alert("You must select a valid image file!"); return; }
+          oFReader.readAsDataURL(oFile);
+
+        };
+
         $scope.submitForm = function () {
             var heading = $scope.subject;
             var description = $scope.message;
             var url = $scope.url;
             var fbUrl = $scope.fbUrl;
             var categories = '';
+            var imageBlob = $scope.imageBlob;
             categories = $scope.isSelected;
 
-            var imgUri = $scope.imgUri;
-
-
-            var imgUri = $("#imgUri").val();
-            //alert(imgUri);
-            var imgUri = $('input[type=file]')[0].files[0];
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
 
             var user_id = profileData["user_id"];
@@ -1178,7 +1225,8 @@ var app = {
             fd.append('newsUrl', url);
             fd.append('newsFBUrl', fbUrl);
             //fd.append('infoState', 'APPROVED');
-            fd.append('newsImageFile', imgUri);
+            //fd.append('newsImageFile', imgUri);
+            fd.append('newsImageFile', imageBlob);
 
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             $http.post(locationOrigin + "/newsInfo/postNews", fd, {

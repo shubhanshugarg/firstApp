@@ -43,8 +43,13 @@
 
         <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
-        Choose Image: <input type="file" id="imgUri">
+        Image:  
+        Choose from gallery :<input id="uploadImage" type="file" name="myPhoto" ng-model="a" onchange="angular.element(this).scope().loadImageFile()"/>
+        <img id="uploadPreview"/> OR
+        <button ng-click="capturePhotoEdit()">Take photo</button>
         <br>
+        <!-- Choose Image: <input type="file" id="imgUri">
+        <br> -->
         <!-- <input type="file" class="custom-file-input"
 file-model="imgUri"> -->
         <ons-button modifier="large" ng-click="submitForm()">
