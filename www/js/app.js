@@ -979,16 +979,16 @@ var app = {
 
             $scope.imageBlob = $scope.dataURItoBlob(imageData);
 
-            //var smallImage = document.getElementById('smallImage');
+            var uploadPreview = document.getElementById('uploadPreview');
 
             // Unhide image elements
             //
-            //smallImage.style.display = 'block';
+            //uploadPreview.style.display = 'block';
 
             // Show the captured photo
             // The in-line CSS rules are used to resize the image
             //
-            //smallImage.src = "data:image/jpeg;base64," + imageData;
+            uploadPreview.src = "data:image/jpeg;base64," + imageData;
         };
         $scope.dataURItoBlob = function (dataURI) {
             // convert base64/URLEncoded data component to raw binary data held in a string

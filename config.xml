@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.firstKhabar" version="0.0.2" xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.firstKhabar" version="0.0.3" xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>First Khabar</name>
+    <name>College FirstKhabar</name>
     <description>
         Pehli khabhar,na idhar,na udhar,only on first khabar :D
     </description>
     <author email="dev@firstKhabar.com" href="http://firstKhabar.com">
-        First Khabar Team
+        College First Khabar Team
     </author>
     <content src="index.html"/>
     <plugin name="cordova-plugin-whitelist" version="1"/>

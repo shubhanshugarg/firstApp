@@ -41,12 +41,24 @@
         </ons-list>
         <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
-        
-        Image:  
-        Choose from gallery :<input id="uploadImage" type="file" name="myPhoto" ng-model="a" onchange="angular.element(this).scope().loadImageFile()"/>
-        <img id="uploadPreview"/> OR
-        <button ng-click="capturePhotoEdit()">Take photo</button>
-        <br>
+        <ons-list>
+            <ons-list-header>Upload image</ons-list-header>
+            <ons-list-item>
+                <div style="display:flex">
+					<span class="btn btn-default btn-file" style="width:50%;margin: auto">From storage
+					<input id="uploadImage" type="file" name="myPhoto" ng-model="a"
+                           onchange="angular.element(this).scope().loadImageFile()"/>
+					</span>
+					<span style="width:50%">
+						<button class="btn btn-default btn-file" ng-click="capturePhotoEdit()">From camera</button>
+					</span>
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <img id="uploadPreview" src=""/>
+            </ons-list-item>
+        </ons-list>
+
         <!-- <button ng-click="getPhoto()">From Photo Album</button>
         <br>
         <img style="display:none;" id="largeImage" src=""/>
