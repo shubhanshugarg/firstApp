@@ -23,11 +23,12 @@ var app = {
             destinationType = navigator.camera.DestinationType;
         }
         ons.setDefaultDeviceBackButtonListener(function () {
-            var confirmed = confirm("Are you sure to close the App?");
+            /*var confirmed = confirm("Are you sure to close the App?");
             if (confirmed)
                 navigator.app.exitApp();
+        });*/
+        navigator.app.exitApp();
         });
-
         // Open any external link with InAppBrowser Plugin
         $(document).on('click', 'a[href^=http], a[href^=https]', function (e) {
 
@@ -757,7 +758,7 @@ var app = {
             //alert(Object.keys(feedEntriesData).length);
             var page = 1;
             // Define the number of the feed results in the page
-            var pageSize = 3;
+            var pageSize = 15;
             //console.log(feedData.responseData.feed.entries);
             //$scope.paginationLimit = function(data) {
             $scope.paginationLimit = function () {
@@ -828,6 +829,11 @@ var app = {
 
         //delete a notice or news item
         $scope.deleteItem = function () {
+            var confirmed = confirm("Are you sure you want to delete?");
+            if (!confirmed){
+                return;
+            }
+        
             var fd = new FormData();
             var setDeleteUrl = "";
             //if news or notice
@@ -886,6 +892,10 @@ var app = {
         //marking spam and report abuse here function firing post call to the server same function doing both calls
 
         $scope.setInfoState = function (state) {
+            var confirmed = confirm("Are you sure you want to mark report item?");
+            if (!confirmed){
+                return;
+            }
             var fd = new FormData();
             //if news or notice
             var setInfoStateUrl = "";
@@ -960,6 +970,8 @@ var app = {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
         var allCategories = profileData.interestedCategories;
         $scope.allCategories = allCategories;
+        $scope.disableButton=false;
+        $scope.postNoticeButtonText="Post Notice";
 
         $scope.capturePhotoEdit = function () {
             // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
@@ -988,7 +1000,7 @@ var app = {
             // Show the captured photo
             // The in-line CSS rules are used to resize the image
             //
-            uploadPreview.src = "data:image/jpeg;base64," + imageData;
+            uploadPreview.src =imageData;
         };
         $scope.dataURItoBlob = function (dataURI) {
             // convert base64/URLEncoded data component to raw binary data held in a string
@@ -1041,6 +1053,8 @@ var app = {
 
         };
         $scope.submitForm = function () {
+            $scope.postNoticeButtonText="Wait ...";
+            $scope.disableButton=true;
             var heading = $scope.subject;
             var description = $scope.message;
             var url = $scope.url;
@@ -1113,20 +1127,31 @@ var app = {
                 var isSuccess = response.success;
                 if (isSuccess) {
                     alert("Your Notice has been posted");
+                    $scope.disableButton=false;
+                    $scope.postNoticeButtonText="Post Notice";
                     //empty the initial variabes of notice
                     $scope.subject = '';
                     $scope.message = '';
                     $scope.cat1 = '';
+                    $scope.url='';
+                    $scope.fbUrl='';
+                    $scope.imageBlob='';
+                    $scope.isSelected='';
+                    document.getElementById("uploadPreview").src='';
                 } else {
 
                     var errorMessage = response.message;
                     alert("notice was'nt posted contact us" + errorMessage);
+                    $scope.disableButton=false;
+                    $scope.postNoticeButtonText="Post Notice";
                     //alert(errorMessage);
                 }
             }).error(function (response) {
 
                 //alert(response.message);
                 alert("Some problem with the internet or server try later.");
+                $scope.disableButton=false;
+                $scope.postNoticeButtonText="Post Notice";
             });
 
 
@@ -1139,6 +1164,8 @@ var app = {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
         var allCategories = profileData.interestedCategories;
         $scope.allCategories = allCategories;
+        $scope.disableButton=false;
+        $scope.postNewsButtonText="Post News";
         
         $scope.capturePhotoEdit = function () {
             // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
@@ -1206,6 +1233,8 @@ var app = {
         };
 
         $scope.submitForm = function () {
+            $scope.disableButton=true;
+            $scope.postNewsButtonText="Wait...";
             var heading = $scope.subject;
             var description = $scope.message;
             var url = $scope.url;
@@ -1238,20 +1267,31 @@ var app = {
                 var isSuccess = response.success;
                 if (isSuccess) {
                     alert("Your news has been posted");
+                    $scope.disableButton=false;
+                    $scope.postNewsButtonText="Post News";
                     //empty the initial variabes of news
                     $scope.subject = '';
                     $scope.message = '';
                     $scope.cat1 = '';
+                    $scope.url='';
+                    $scope.fbUrl='';
+                    $scope.imageBlob='';
+                    $scope.isSelected='';
+                    document.getElementById("uploadPreview").src='';
                 } else {
 
                     var errorMessage = response.message;
                     alert("news was'nt posted contact us" + errorMessage);
+                    $scope.disableButton=false;
+                    $scope.postNewsButtonText="Post News";
                     //alert(errorMessage);
                 }
             }).error(function (response) {
 
                 //alert(response.message);
                 alert("Some problem with the internet or server try later.");
+                $scope.disableButton=false;
+                $scope.postNewsButtonText="Post News";
             });
 
 

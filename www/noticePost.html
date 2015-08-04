@@ -43,6 +43,7 @@
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
         <ons-list>
             <ons-list-header>Upload image</ons-list-header>
+            Android 4.4.2 can only upload from camera
             <ons-list-item>
                 <div style="display:flex">
 					<span class="btn btn-default btn-file" style="width:50%;margin: auto">From storage
@@ -68,8 +69,8 @@
         <br> -->
         <!-- <input type="file" class="custom-file-input"
 file-model="imgUri"> -->
-        <ons-button modifier="large" ng-click="submitForm()">
-            Post Notice
+        <ons-button modifier="large" ng-click="submitForm()" ng-attr-disabled="{{disableButton}}">
+            {{postNoticeButtonText}}
         </ons-button>
     </section>
 
