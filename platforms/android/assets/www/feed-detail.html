@@ -45,12 +45,12 @@
         </ons-button> -->
 
         <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-        <ons-button modifier="large" ng-click="loadURL(item.socialLink)">
-            View post on social network
+        <ons-button modifier="large" ng-show="item.urlLink != 'undefined'" ng-click="loadURL(item.urlLink)">
+            View post on URL
         </ons-button>
         <br>
-        <ons-button modifier="large" ng-click="loadURL(item.urlLink)">
-            View post on URL
+        <ons-button modifier="large" ng-show="item.socialLink != 'undefined'" ng-click="loadURL(item.socialLink)">
+            View post on social network
         </ons-button>
         <br>
         <ons-button modifier="small" ng-click="setInfoState('spam')">

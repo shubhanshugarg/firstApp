@@ -22,9 +22,9 @@
                style="width:100%; margin-bottom:10px;">
 
         <ons-list>
-            <ons-list-header>Categories</ons-list-header>
+            <!--<ons-list-header>Select Category</ons-list-header>-->
 
-            <div ng-repeat="category in allCategories">
+            <!-- <div ng-repeat="category in allCategories">
 
                 <ons-list-item modifier="tappable" style="width:33%;float: left">
                     <label class="radio-button radio-button--list-item">
@@ -37,12 +37,20 @@
                     </label>
                 </ons-list-item>
 
-            </div>
+            </div> -->
+            <select ng-model="isSelected" class="form-control">
+                <option value="">Select category</option>
+                <option ng-repeat="category in allCategories" value="{{category.categoryId}}">
+                    {{category.categoryName}}
+                </option>
+            </select>
         </ons-list>
+        <hr/>
         <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
         <ons-list>
             <ons-list-header>Upload image</ons-list-header>
+
             <ons-list-item>
                 <div style="display:flex">
 					<span class="btn btn-default btn-file" style="width:50%;margin: auto">From storage
@@ -50,13 +58,18 @@
                            onchange="angular.element(this).scope().loadImageFile()"/>
 					</span>
 					<span style="width:50%">
-						<button class="btn btn-default btn-file" ng-click="capturePhotoEdit()">From camera</button>
+						<button style="width:100%" class="btn btn-default btn-file" ng-click="capturePhotoEdit()">From
+                            camera
+                        </button>
 					</span>
                 </div>
+                <small>Android 4.4.2 can only upload from camera</small>
+
             </ons-list-item>
             <ons-list-item>
                 <img id="uploadPreview" src=""/>
             </ons-list-item>
+
         </ons-list>
 
         <!-- <button ng-click="getPhoto()">From Photo Album</button>
@@ -68,8 +81,8 @@
         <br> -->
         <!-- <input type="file" class="custom-file-input"
 file-model="imgUri"> -->
-        <ons-button modifier="large" ng-click="submitForm()">
-            Post Notice
+        <ons-button modifier="large" ng-click="submitForm()" ng-attr-disabled="{{disableButton}}">
+            {{postNoticeButtonText}}
         </ons-button>
     </section>
 

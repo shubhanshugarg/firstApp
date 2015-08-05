@@ -1180,6 +1180,10 @@ var app = {
 
             $scope.imageBlob = $scope.dataURItoBlob(imageData);
 
+            var uploadPreview = document.getElementById('uploadPreview');
+
+            uploadPreview.src =imageData;
+
         };
         $scope.dataURItoBlob = function (dataURI) {
             // convert base64/URLEncoded data component to raw binary data held in a string
