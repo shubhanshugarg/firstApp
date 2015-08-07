@@ -11,8 +11,8 @@
             <div class="container-fluid">
                 <div class="col-md-6 " style="padding: 0">
                     <div class="panel panel-login">
-                        <center style="color: blueviolet;">A Crowd sourced college community information platform
-                        </center>
+                        <center style="color: blueviolet;"><strong>A Crowd sourced college community information platform
+                        </strong></center>
                         <div class="panel-heading">
                             <div class="container-fluid">
                                 <div class="col-xs-6">
@@ -29,12 +29,12 @@
                                 <div class="col-lg-12">
                                     <form id="loginForm" role="form" ng-controller="loginController"
                                           ngstyle="display: block;">
-                                        <div class="form-group">
+                                        <div class="form-group has-success">
                                             <input class="form-control" type="text" name="email" id="email"
-                                                   placeholder="Email"/></div>
+                                                   placeholder="Email *"/></div>
                                         <div class="form-group">
-                                            <input class="form-control" type="password" name="password" id="password"
-                                                   tabindex="2" placeholder="Password"/>
+                                            <input class="form-control has-success" type="password" name="password" id="password"
+                                                   tabindex="2" placeholder="Password *"/>
                                         </div>
                                         <div class="form-group">
                                             <div class="container-fluid" style="width : 100%">
@@ -59,33 +59,33 @@
                                     </form>
                                     <form role="form" id="registerForm" ng-controller="registerController"
                                           style="display: none;">
-                                        <div class="form-group">
+                                        <div class="form-group has-success">
                                             <input class="form-control" type="text" name="register_name"
                                                    id="register_name" value="" tabindex="1"
-                                                   placeholder="Username"/>
+                                                   placeholder="Username *"/>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group has-success">
                                             <input class="form-control" type="text" name="register_email" tabindex="1"
-                                                   id="register_email" value="" placeholder="Email Address"/>
+                                                   id="register_email" value="" placeholder="Email Address *"/>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group has-success">
                                             <input class="form-control" type="password" name="register_password"
                                                    id="register_password" value="" tabindex="2"
-                                                   placeholder="Password"/>
+                                                   placeholder="Password *"/>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group has-success">
                                             <input class="form-control" type="password" name="register_confirmPassword"
                                                    tabindex="2" id="register_confirmPassword" value=""
-                                                   placeholder="Confirm Password"/>
+                                                   placeholder="Confirm Password *"/>
+                                        </div>
+                                        <div class="form-group has-success">
+                                            <input class="form-control" type="text" name="register_college"
+                                                   id="register_college" tabindex="1" placeholder="College *"/>
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control" type="text" name="register_roll"
                                                    id="register_roll" value="" tabindex="1"
                                                    placeholder="Roll No."/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" type="text" name="register_college"
-                                                   id="register_college" tabindex="1" placeholder="College"/>
                                         </div>
                                         <!-- <div class="form-group">
                                             <input class="form-control" type="text" name="register_categories"
@@ -104,11 +104,16 @@
                                                            tabindex="4"
                                                            class="form-control btn btn-register" value="Register Now"
                                                            ng-click="userRegister();">
+                                                           <small>By clicking 'Register Now' you agree to <a onclick="window.open('https://docs.google.com/document/d/1bQFKoJXzdSP6Kt6f1g8r8tVxs7LrT_IOL1fMKmf0wq0/edit?usp=sharing', '_blank');">Terms and Conditions</a> </small>
                                                 </div>
+
                                             </div>
                                         </div>
+                                        <center><small>Information filled is editable on request to collegeloopin@gmail.com. An earnest request to fill correct information.</small></center>
                                     </form>
+
                                 </div>
+                                <center><small>For any queries mail to collegeloopin@gmail.com</small></center>
                             </div>
                         </div>
                     </div>
@@ -124,7 +129,7 @@
                     <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                 </ons-toolbar-button>
             </div>
-            <div class="center">College FirstKhabar</div>
+            <div class="center">CollegeLoopIn</div>
         </ons-toolbar>
 
 
@@ -132,7 +137,7 @@
             <div class="profile-card">
 
                 <ons-icon icon="rss" class="profile-logo"></ons-icon>
-                <div class="profile-name">College FirstKhabar</div>
+                <div class="profile-name">CollegeLoopIn</div>
                 <!-- below ang not working -->
                 <div class="profile-id">@connect{{retrieveCollege("a")}}</div>
                 <div class="profile-desc">Crowd sourced college community information platform</div>
@@ -169,6 +174,7 @@
                 </ons-list-item>
                 <!-- below function call as when migrating from menu toolbar all is hidded by default -->
                 {{showHiddenPage(category.id)}}
+                {{getNotificationEarlyHack()}}
 
             </ons-list>
         </div>

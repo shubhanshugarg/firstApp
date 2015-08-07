@@ -12,7 +12,7 @@
 
     <section style="padding: 10px">
 
-        <input type="text" class="text-input" placeholder="Subject" ng-model="subject"
+        <input type="text" class="text-input" placeholder="Subject *" ng-model="subject"
                style="width:100%; margin-bottom:10px;">
 
         <textarea class="textarea" rows="10" placeholder="Message" ng-model="message"
@@ -39,7 +39,7 @@
 
             </div> -->
             <select ng-model="isSelected" class="form-control">
-                <option value="">Select category</option>
+                <option value="">Select category *</option>
                 <option ng-repeat="category in allCategories" value="{{category.categoryId}}">
                     {{category.categoryName}}
                 </option>

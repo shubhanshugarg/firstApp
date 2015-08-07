@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.firstKhabar" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.firstKhabar" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
@@ -14,12 +14,12 @@
     </feature>
     <allow-intent href="market:*" />
     <splash src="res/screen/android/screen-default.png" />
-    <name>College FirstKhabar</name>
+    <name>College LoopIn</name>
     <description>
-        Pehli khabhar,na idhar,na udhar,only on first khabar :D
+        College LoopIn is a community powered resource sharing social network
     </description>
-    <author email="dev@firstKhabar.com" href="http://firstKhabar.com">
-        College First Khabar Team
+    <author email="dev@collegeloopin.com" href="http://collegeloopin.com">
+        College LoopIn Team
     </author>
     <content src="index.html" />
     <access origin="*" />

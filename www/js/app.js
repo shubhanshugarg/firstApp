@@ -24,10 +24,10 @@ var app = {
         }
         ons.setDefaultDeviceBackButtonListener(function () {
             /*var confirmed = confirm("Are you sure to close the App?");
-            if (confirmed)
-                navigator.app.exitApp();
-        });*/
-        navigator.app.exitApp();
+             if (confirmed)
+             navigator.app.exitApp();
+             });*/
+            navigator.app.exitApp();
         });
         // Open any external link with InAppBrowser Plugin
         $(document).on('click', 'a[href^=http], a[href^=https]', function (e) {
@@ -347,7 +347,7 @@ var app = {
             //alert("clicked");
 
             var form = $("#registerForm");
-//disable the button so we can't resubmit while we wait
+            //disable the button so we can't resubmit while we wait
             $("#register_submitButton", form).attr("disabled", "disabled");
             var u = $("#register_email", form).val();
             var p = $("#register_password", form).val();
@@ -355,7 +355,7 @@ var app = {
             var name = $("#register_name", form).val();
             var roll = $("#register_roll", form).val();
             var college = $("#register_college", form).val();
-//var categories = $("#register_categories", form).val();
+            //var categories = $("#register_categories", form).val();
             var contactNumber = $("#register_contactNumber", form).val();
 
             if (u != '' && p != '' && !(p != cp)) {
@@ -364,12 +364,12 @@ var app = {
                 fd.append('userName', name);
                 fd.append('rollNumber', roll);
                 fd.append('contactNumber', contactNumber);
-//fd.append('categoryIds', categories);
+                //fd.append('categoryIds', categories);
                 fd.append('email', u);
                 fd.append('password', p);
                 fd.append('collegeName', college);
-//fd.append('collegeAddress', collegeAddress);
-//fd.append('userImageFile', userImageFile);
+                //fd.append('collegeAddress', collegeAddress);
+                //fd.append('userImageFile', userImageFile);
                 var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
                 $http.post(locationOrigin + "/userInfo/userSignUp", fd, {
                     transformRequest: angular.identity,
@@ -502,10 +502,10 @@ var app = {
             ;
         }
 
-        $scope.getNotificationEarlyHack = function (){
-        app.getCount("Notices");
-        app.getCount("News");
-    }
+        $scope.getNotificationEarlyHack = function () {
+            app.getCount("Notices");
+            app.getCount("News");
+        }
 
         $scope.getName = function (id) {
             //
@@ -835,10 +835,10 @@ var app = {
         //delete a notice or news item
         $scope.deleteItem = function () {
             var confirmed = confirm("Are you sure you want to delete?");
-            if (!confirmed){
+            if (!confirmed) {
                 return;
             }
-        
+
             var fd = new FormData();
             var setDeleteUrl = "";
             //if news or notice
@@ -898,7 +898,7 @@ var app = {
 
         $scope.setInfoState = function (state) {
             var confirmed = confirm("Are you sure you want to mark report item?");
-            if (!confirmed){
+            if (!confirmed) {
                 return;
             }
             var fd = new FormData();
@@ -975,17 +975,17 @@ var app = {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
         var allCategories = profileData.interestedCategories;
         $scope.allCategories = allCategories;
-        $scope.disableButton=false;
-        $scope.postNoticeButtonText="Post Notice";
+        $scope.disableButton = false;
+        $scope.postNoticeButtonText = "Post Notice";
 
         $scope.capturePhotoEdit = function () {
             // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
             navigator.camera.getPicture($scope.onPhotoDataSuccess, $scope.onFail, { quality: 20, allowEdit: true,
                 destinationType: destinationType.DATA_URL });
-        }
+        };
         $scope.onFail = function (message) {
             alert('Failed because: ' + message);
-        }
+        };
         $scope.onPhotoDataSuccess = function (imageData) {
             // Uncomment to view the base64-encoded image data
             // console.log(imageData);
@@ -1005,7 +1005,7 @@ var app = {
             // Show the captured photo
             // The in-line CSS rules are used to resize the image
             //
-            uploadPreview.src =imageData;
+            uploadPreview.src = imageData;
         };
         $scope.dataURItoBlob = function (dataURI) {
             // convert base64/URLEncoded data component to raw binary data held in a string
@@ -1027,46 +1027,64 @@ var app = {
 
             return new Blob([ia], {type: mimeString});
         };
-        
-        $scope.loadImageFile = function(){
 
-       var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+        $scope.loadImageFile = function () {
 
-        oFReader.onload = function (oFREvent) {
+            var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
 
-          var img=new Image();
-          img.onload=function(){
-              //document.getElementById("originalImg").src=img.src;
-              var canvas=document.createElement("canvas");
-              var ctx=canvas.getContext("2d");
-              //canvas.width=img.width/2;
-              //canvas.height=img.height/2;
-              canvas.width=150;
-              canvas.height=250;
-              ctx.drawImage(img,0,0,img.width,img.height,0,0,canvas.width,canvas.height);
-              document.getElementById("uploadPreview").src = canvas.toDataURL();
-              var imageData=canvas.toDataURL();
-              $scope.imageBlob = $scope.dataURItoBlob(imageData);
-          }
-          img.src=oFREvent.target.result;
-        };
-                
-        if (document.getElementById("uploadImage").files.length === 0) { return; }
-          var oFile = document.getElementById("uploadImage").files[0];
-          if (!rFilter.test(oFile.type)) { alert("You must select a valid image file!"); return; }
-          oFReader.readAsDataURL(oFile);
+            oFReader.onload = function (oFREvent) {
+
+                var img = new Image();
+                img.onload = function () {
+                    //document.getElementById("originalImg").src=img.src;
+                    var canvas = document.createElement("canvas");
+                    var ctx = canvas.getContext("2d");
+                    //canvas.width=img.width/2;
+                    //canvas.height=img.height/2;
+                    canvas.width = 150;
+                    canvas.height = 250;
+                    ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+                    document.getElementById("uploadPreview").src = canvas.toDataURL();
+                    var imageData = canvas.toDataURL();
+                    $scope.imageBlob = $scope.dataURItoBlob(imageData);
+                }
+                img.src = oFREvent.target.result;
+            };
+
+            if (document.getElementById("uploadImage").files.length === 0) {
+                return;
+            }
+            var oFile = document.getElementById("uploadImage").files[0];
+            if (!rFilter.test(oFile.type)) {
+                alert("You must select a valid image file!");
+                return;
+            }
+            oFReader.readAsDataURL(oFile);
 
         };
         $scope.submitForm = function () {
-            $scope.postNoticeButtonText="Wait ...";
-            $scope.disableButton=true;
+            $scope.postNoticeButtonText = "Wait ...";
+            $scope.disableButton = true;
             var heading = $scope.subject;
             var description = $scope.message;
             var url = $scope.url;
             var fbUrl = $scope.fbUrl;
             var imageBlob = $scope.imageBlob;
-            var categories = '';
+            var categories = $scope.isSelected;
 
+
+            if (heading == undefined || heading == '') {
+                alert("Please provide a heading for the notice..");
+                $scope.postNoticeButtonText = "Post Notice";
+                $scope.disableButton = false;
+                return false;
+            }
+            if (categories == undefined || categories == '') {
+                alert("Please select a category for the notice..");
+                $scope.postNoticeButtonText = "Post Notice";
+                $scope.disableButton = false;
+                return false;
+            }
             //for loop all categories time
             /*var i = 0;
 
@@ -1082,7 +1100,6 @@ var app = {
              };
 
              }*/
-            categories = $scope.isSelected;
 
 
             /*var cat1=$scope.cat1;
@@ -1098,9 +1115,9 @@ var app = {
             /*var imgUri = $scope.imgUri;
 
 
-            var imgUri = $("#imgUri").val();
+             var imgUri = $("#imgUri").val();
 
-            var imgUri = $('input[type=file]')[0].files[0];*/
+             var imgUri = $('input[type=file]')[0].files[0];*/
 
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
 
@@ -1110,7 +1127,7 @@ var app = {
              "noticeInfoList": noticeInfos
              };
              */
-//data = JSON.stringify(data);
+            //data = JSON.stringify(data);
             var fd = new FormData();
             fd.append('userId', user_id);
             fd.append('noticeHeading', heading);
@@ -1132,31 +1149,31 @@ var app = {
                 var isSuccess = response.success;
                 if (isSuccess) {
                     alert("Your Notice has been posted");
-                    $scope.disableButton=false;
-                    $scope.postNoticeButtonText="Post Notice";
+                    $scope.disableButton = false;
+                    $scope.postNoticeButtonText = "Post Notice";
                     //empty the initial variabes of notice
                     $scope.subject = '';
                     $scope.message = '';
                     $scope.cat1 = '';
-                    $scope.url='';
-                    $scope.fbUrl='';
-                    $scope.imageBlob='';
-                    $scope.isSelected='';
-                    document.getElementById("uploadPreview").src='';
+                    $scope.url = '';
+                    $scope.fbUrl = '';
+                    $scope.imageBlob = '';
+                    $scope.isSelected = '';
+                    document.getElementById("uploadPreview").src = '';
                 } else {
 
                     var errorMessage = response.message;
                     alert("notice was'nt posted contact us" + errorMessage);
-                    $scope.disableButton=false;
-                    $scope.postNoticeButtonText="Post Notice";
+                    $scope.disableButton = false;
+                    $scope.postNoticeButtonText = "Post Notice";
                     //alert(errorMessage);
                 }
             }).error(function (response) {
 
                 //alert(response.message);
                 alert("Some problem with the internet or server try later.");
-                $scope.disableButton=false;
-                $scope.postNoticeButtonText="Post Notice";
+                $scope.disableButton = false;
+                $scope.postNoticeButtonText = "Post Notice";
             });
 
 
@@ -1169,17 +1186,17 @@ var app = {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
         var allCategories = profileData.interestedCategories;
         $scope.allCategories = allCategories;
-        $scope.disableButton=false;
-        $scope.postNewsButtonText="Post News";
-        
+        $scope.disableButton = false;
+        $scope.postNewsButtonText = "Post News";
+
         $scope.capturePhotoEdit = function () {
             // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
             navigator.camera.getPicture($scope.onPhotoDataSuccess, $scope.onFail, { quality: 20, allowEdit: true,
                 destinationType: destinationType.DATA_URL });
-        }
+        };
         $scope.onFail = function (message) {
             alert('Failed because: ' + message);
-        }
+        };
         $scope.onPhotoDataSuccess = function (imageData) {
             imageData = "data:image/jpeg;base64," + imageData;
 
@@ -1187,7 +1204,7 @@ var app = {
 
             var uploadPreview = document.getElementById('uploadPreview');
 
-            uploadPreview.src =imageData;
+            uploadPreview.src = imageData;
 
         };
         $scope.dataURItoBlob = function (dataURI) {
@@ -1210,47 +1227,64 @@ var app = {
 
             return new Blob([ia], {type: mimeString});
         };
-        
-        $scope.loadImageFile = function(){
 
-       var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+        $scope.loadImageFile = function () {
 
-        oFReader.onload = function (oFREvent) {
+            var oFReader = new FileReader(), rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
 
-          var img=new Image();
-          img.onload=function(){
-              //document.getElementById("originalImg").src=img.src;
-              var canvas=document.createElement("canvas");
-              var ctx=canvas.getContext("2d");
-              //canvas.width=img.width/2;
-              //canvas.height=img.height/2;
-              canvas.width=150;
-              canvas.height=250;
-              ctx.drawImage(img,0,0,img.width,img.height,0,0,canvas.width,canvas.height);
-              document.getElementById("uploadPreview").src = canvas.toDataURL();
-              var imageData=canvas.toDataURL();
-              $scope.imageBlob = $scope.dataURItoBlob(imageData);
-          }
-          img.src=oFREvent.target.result;
-        };
-                
-        if (document.getElementById("uploadImage").files.length === 0) { return; }
-          var oFile = document.getElementById("uploadImage").files[0];
-          if (!rFilter.test(oFile.type)) { alert("You must select a valid image file!"); return; }
-          oFReader.readAsDataURL(oFile);
+            oFReader.onload = function (oFREvent) {
+
+                var img = new Image();
+                img.onload = function () {
+                    //document.getElementById("originalImg").src=img.src;
+                    var canvas = document.createElement("canvas");
+                    var ctx = canvas.getContext("2d");
+                    //canvas.width=img.width/2;
+                    //canvas.height=img.height/2;
+                    canvas.width = 150;
+                    canvas.height = 250;
+                    ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+                    document.getElementById("uploadPreview").src = canvas.toDataURL();
+                    var imageData = canvas.toDataURL();
+                    $scope.imageBlob = $scope.dataURItoBlob(imageData);
+                };
+                img.src = oFREvent.target.result;
+            };
+
+            if (document.getElementById("uploadImage").files.length === 0) {
+                return;
+            }
+            var oFile = document.getElementById("uploadImage").files[0];
+            if (!rFilter.test(oFile.type)) {
+                alert("You must select a valid image file!");
+                return;
+            }
+            oFReader.readAsDataURL(oFile);
 
         };
 
         $scope.submitForm = function () {
-            $scope.disableButton=true;
-            $scope.postNewsButtonText="Wait...";
+            $scope.disableButton = true;
+            $scope.postNewsButtonText = "Wait...";
             var heading = $scope.subject;
             var description = $scope.message;
             var url = $scope.url;
             var fbUrl = $scope.fbUrl;
-            var categories = '';
+            var categories = $scope.isSelected;
             var imageBlob = $scope.imageBlob;
-            categories = $scope.isSelected;
+
+            if (heading == undefined || heading == '') {
+                alert("Please provide a subject for the news..");
+                $scope.postNewsButtonText = "Post News";
+                $scope.disableButton = false;
+                return false;
+            }
+            if (categories == undefined || categories == '') {
+                alert("Please select a category for the news..");
+                $scope.postNewsButtonText = "Post News";
+                $scope.disableButton = false;
+                return false;
+            }
 
             var profileData = JSON.parse(window.localStorage.getItem('profileData'));
 
@@ -1276,31 +1310,31 @@ var app = {
                 var isSuccess = response.success;
                 if (isSuccess) {
                     alert("Your news has been posted");
-                    $scope.disableButton=false;
-                    $scope.postNewsButtonText="Post News";
+                    $scope.disableButton = false;
+                    $scope.postNewsButtonText = "Post News";
                     //empty the initial variabes of news
                     $scope.subject = '';
                     $scope.message = '';
                     $scope.cat1 = '';
-                    $scope.url='';
-                    $scope.fbUrl='';
-                    $scope.imageBlob='';
-                    $scope.isSelected='';
-                    document.getElementById("uploadPreview").src='';
+                    $scope.url = '';
+                    $scope.fbUrl = '';
+                    $scope.imageBlob = '';
+                    $scope.isSelected = '';
+                    document.getElementById("uploadPreview").src = '';
                 } else {
 
                     var errorMessage = response.message;
                     alert("news was'nt posted contact us" + errorMessage);
-                    $scope.disableButton=false;
-                    $scope.postNewsButtonText="Post News";
+                    $scope.disableButton = false;
+                    $scope.postNewsButtonText = "Post News";
                     //alert(errorMessage);
                 }
             }).error(function (response) {
 
                 //alert(response.message);
                 alert("Some problem with the internet or server try later.");
-                $scope.disableButton=false;
-                $scope.postNewsButtonText="Post News";
+                $scope.disableButton = false;
+                $scope.postNewsButtonText = "Post News";
             });
 
 
