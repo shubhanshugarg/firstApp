@@ -502,6 +502,11 @@ var app = {
             ;
         }
 
+        $scope.getNotificationEarlyHack = function (){
+        app.getCount("Notices");
+        app.getCount("News");
+    }
+
         $scope.getName = function (id) {
             //
             return "a";
