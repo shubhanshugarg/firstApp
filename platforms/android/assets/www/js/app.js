@@ -1055,10 +1055,10 @@ var app = {
                 return;
             }
             var oFile = document.getElementById("uploadImage").files[0];
-            if (!rFilter.test(oFile.type)) {
+            /*if (!rFilter.test(oFile.type)) {
                 alert("You must select a valid image file!");
                 return;
-            }
+            }*/
             oFReader.readAsDataURL(oFile);
 
         };
