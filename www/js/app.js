@@ -265,6 +265,12 @@ var app = {
                             var register_password = response.data.password;
                             var register_college = response.data.collegeName;
                             var interestedCategories = response.data.userCategories;
+                            var register_status = response.data.status;
+                            var register_aboutMe = response.data.aboutMe;
+                            var register_fbUrl = response.data.fbUrl;
+                            var register_twitterUrl = response.data.twitterUrl;
+                            var register_linkedinUrl = response.data.linkedinUrl;
+                            var register_interests = response.data.interests;
                         } else {
                             var errorMessage = response.message;
                             alert(errorMessage);
@@ -281,7 +287,13 @@ var app = {
                                 'register_name': register_name,
                                 'register_college': register_college,
                                 'register_roll': register_roll,
-                                'interestedCategories': interestedCategories
+                                'interestedCategories': interestedCategories,
+                                'status': register_status,
+                                'aboutMe': register_aboutMe,
+                                'fbUrl': register_fbUrl,
+                                'twitterUrl': register_twitterUrl,
+                                'linkedinUrl': register_linkedinUrl,
+                                'interests': register_interests
                             };
                             var profileDataJson = JSON.stringify(profileData);
 
@@ -1342,7 +1354,153 @@ var app = {
 
     });
 
+    // Feed Plugin: Profile Controller
+    module.controller('profileController', function ($scope, $http, FeedPluginData) {
+        var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        $scope.name = profileData.register_name;
+        $scope.email = profileData.register_email;
+        $scope.college = profileData.register_college;
+        $scope.contactNumber = profileData.register_contactNumber;
+        $scope.roll = profileData.register_roll;
+        $scope.status = profileData.register_status;
+        $scope.aboutMe = profileData.register_aboutMe;
+        $scope.fbUrl = profileData.register_fbUrl;
+        $scope.twitterUrl = profileData.register_twitterUrl;
+        $scope.interests = profileData.register_interests;
+        $scope.linkedinUrl = profileData.register_linkedinUrl;
+        $scope.loadURL = function (link) {
+            //target: The target in which to load the URL, an optional parameter that defaults to _self. (String)
+            //_self: Opens in the Cordova WebView if the URL is in the white list, otherwise it opens in the InAppBrowser.
+            //_blank: Opens in the InAppBrowser.
+            //_system: Opens in the system's web browser.
+            //window.open($scope.item.link,'_blank');
+            //alert(link);    
+            if (link.substring(0, 4).toLowerCase() != "http") {
+                link = "http://" + link;
+            }
+            window.open(link, '_blank');
+        }
 
+        $scope.editProfile = function () {
+            
+            $scope.ons.navigator.pushPage('editProfile.html', {compulsory: "selectedItem.categoryName"});
+        }
+        
+
+    });
+
+// Feed Plugin: editProfile Controller
+    module.controller('editProfileController', function ($scope) {
+        var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        $scope.editProfileButtonText = "Submit";
+        $scope.name = profileData.register_name;
+        $scope.email = profileData.register_email;
+        $scope.college = profileData.register_college;
+        $scope.contactNumber = profileData.register_contactNumber;
+        $scope.roll = profileData.register_roll;
+        $scope.user_id = profileData.user_id;
+        $scope.status = profileData.register_status;
+        $scope.aboutMe = profileData.register_aboutMe;
+        $scope.fbUrl = profileData.register_fbUrl;
+        $scope.twitterUrl = profileData.register_twitterUrl;
+        $scope.interests = profileData.register_interests;
+        $scope.linkedinUrl = profileData.register_linkedinUrl;
+        
+
+        $scope.submitForm = function () {
+            $scope.disableButton = true;
+            $scope.editProfileButtonText = "Wait...";
+            //var name = $scope.name;
+            var contactNumber = $scope.contactNumber;
+            var roll = $scope.roll;
+            var status = $scope.status;
+            var aboutMe = $scope.aboutMe;
+            var fbUrl = $scope.fbUrl;
+            var twitterUrl = $scope.twitterUrl;
+            var linkedinUrl = $scope.linkedinUrl;
+            var interests = $scope.interests;
+
+           
+            var fd = new FormData();
+            fd.append('userId', user_id);
+            fd.append('rollNumber', roll);
+            fd.append('contactNumber', contactNumber);
+            fd.append('status', status);
+            fd.append('aboutMe', aboutMe);
+            fd.append('fbUrl', fbUrl);
+            fd.append('twitterUrl', twitterUrl);
+            fd.append('linkedinUrl', linkedinUrl);
+            fd.append('interests', interests);
+
+            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            $http.post(locationOrigin + "url", fd, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            }).success(function (response) {
+                
+                        
+                var isSuccess = response.success;
+                if (isSuccess) {
+                    alert("Your information has been edited . Go back.");
+                    var register_name = response.data.userName;
+                        var register_roll = response.data.rollNumber;
+                        var user_id = response.data.userId;
+                        var contact_nos = response.data.contactNumber;
+                        var register_email = response.data.emailAddress;
+                        var register_password = response.data.password;
+                        var register_college = response.data.collegeName;
+                        var interestedCategories = response.data.userCategories;
+                        var register_status = response.data.status;
+                        var register_aboutMe = response.data.aboutMe;
+                        var register_fbUrl = response.data.fbUrl;
+                        var register_twitterUrl = response.data.twitterUrl;
+                        var register_linkedinUrl = response.data.linkedinUrl;
+                        var register_interests = response.data.interests;
+                        var profileData = {
+                            'register_email': register_email,
+                            'user_id': user_id,
+                            'contact_nos': contact_nos,
+                            'register_password': register_password,
+                            'register_name': register_name,
+                            'register_college': register_college,
+                            'register_roll': register_roll,
+                            'interestedCategories': interestedCategories,
+                            'status': register_status,
+                            'aboutMe': register_aboutMe,
+                            'fbUrl': register_fbUrl,
+                            'twitterUrl': register_twitterUrl,
+                            'linkedinUrl': register_linkedinUrl,
+                            'interests': register_interests
+                            
+                        };
+                        var profileDataJson = JSON.stringify(profileData);
+
+                        window.localStorage["profileData"] = profileDataJson;
+
+                } else {
+
+                    var errorMessage = response.message;
+                    alert("some problem in editing :" + errorMessage);
+                    $scope.disableButton = false;
+                    $scope.editProfileButtonText = "Submit";
+                    //alert(errorMessage);
+                }
+            }).error(function (response) {
+
+                //alert(response.message);
+                alert("Some problem with the internet or server try later.");
+                $scope.disableButton = false;
+                $scope.editProfileButtonText = "Submit";
+            });
+
+
+        };        
+
+    });
     module.controller('menuController', function ($scope) {
 
 
