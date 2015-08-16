@@ -1501,6 +1501,173 @@ var app = {
         };        
 
     });
+
+    // Feed Plugin: people search Controller
+    module.controller('peopleSearchController', function ($scope,$http) {
+        var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        $scope.user_id = profileData.user_id;
+        $scope.searchButtonText = "Submit";
+        $scope.submitForm = function () {
+            $scope.disableButton = true;
+            $scope.searchButtonText = "Wait...";
+            var user_id = $scope.user_id;
+            var name = $scope.name;
+            var roll = $scope.roll;
+            var yearGrad = $scope.yearGrad;
+            var branch = $scope.branch;
+            var interest = $scope.interest;
+            var company = $scope.company;
+            
+           
+            var fd = new FormData();
+            fd.append('userId', user_id);
+            fd.append('rollNumber', roll);
+            fd.append('yearGrad', yearGrad);
+            fd.append('branch', branch);
+            fd.append('interest', interest);
+            fd.append('company', company);
+            
+            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            //$http.post(locationOrigin + "url", fd, {
+            $http.post('http://localhost/noticeBoard/firstApp/www/loginDummy3.php', fd, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            }).success(function (response) {
+                
+                        
+                var isSuccess = response.success;
+                
+
+                if (isSuccess) {
+                    //alert("Your information has been edited . Go back.");
+                    var searchData = []; // new Array
+                    var searchDataWrapper ={};    
+                    var responseData = response.data;
+                    $.each(responseData, function (key, value) { 
+                        var singleUser_name = value.userName;
+                        var singleUser_roll = value.rollNumber;
+                        //var user_id = response.data.userId;
+                        //var contact_nos = response.data.contactNumber;
+                        //var singleUser_email = response.data.emailAddress;
+                        //var singleUser_password = response.data.password;
+                        var singleUser_college = value.collegeName;
+                        //var interestedCategories = response.data.userCategories;
+                        var singleUser_status = value.status;
+                        var singleUser_aboutMe = value.aboutMe;
+                        var singleUser_fbUrl = value.fbUrl;
+                        var singleUser_twitterUrl = value.twitterUrl;
+                        var singleUser_linkedinUrl = value.linkedinUrl;
+                        var singleUser_interests = value.interests;
+                        var singleUserData = {
+                            'user_id': user_id,
+                            'singleUser_name': singleUser_name,
+                            'singleUser_college': singleUser_college,
+                            'singleUser_roll': singleUser_roll,
+                            //'interestedCategories': interestedCategories,
+                            'status': singleUser_status,
+                            'aboutMe': singleUser_aboutMe,
+                            'fbUrl': singleUser_fbUrl,
+                            'twitterUrl': singleUser_twitterUrl,
+                            'linkedinUrl': singleUser_linkedinUrl,
+                            'interests': singleUser_interests
+                            };
+                        searchData.push(singleUserData);
+                        searchDataWrapper[key] = singleUserData;
+
+                        });
+                        //searchDataWrapper={'search':searchData};
+                        var searchDataWrapperJson = JSON.stringify(searchDataWrapper);
+
+                        window.localStorage["searchDataWrapper"] = searchDataWrapperJson;
+                        $scope.ons.navigator.pushPage('searchDisplay.html');
+
+                } else {
+
+                    var errorMessage = response.message;
+                    alert("some problem in searching :" + errorMessage);
+                    $scope.disableButton = false;
+                    $scope.searchButtonText = "Submit";
+                    //alert(errorMessage);
+                }
+            }).error(function (response) {
+
+                //alert(response.message);
+                alert("Some problem with the internet or server try later.");
+                $scope.disableButton = false;
+                $scope.searchButtonText = "Submit";
+            });
+
+
+        };        
+
+    });
+
+module.controller('searchDisplayController', function ($scope) {
+        var searchDataWrapper = $.parseJSON(window.localStorage.getItem('searchDataWrapper'));
+        //to place condition if not null here
+        //$scope.feeds = searchDataWrapper.search;
+        $scope.feeds = searchDataWrapper;
+        
+        //var feeds=$scope.feeds;
+        
+        /*$scope.email = profileData.register_email;
+        $scope.college = profileData.register_college;
+        $scope.contactNumber = profileData.register_contactNumber;
+        $scope.roll = profileData.register_roll;
+        $scope.status = profileData.register_status;
+        $scope.aboutMe = profileData.register_aboutMe;
+        $scope.fbUrl = profileData.register_fbUrl;
+        $scope.twitterUrl = profileData.register_twitterUrl;
+        $scope.interests = profileData.register_interests;
+        $scope.linkedinUrl = profileData.register_linkedinUrl;
+        */
+
+        $scope.showDetail = function (index) {
+            var selectedItem = $scope.feeds[index];    
+            $scope.ons.navigator.pushPage('searchSingleUserDisplay.html', {'selectedItem': selectedItem});
+        }
+        
+
+    });
+    
+    module.controller('searchSingleUserDisplayController', function ($scope, $http, FeedPluginData) {
+        var selectedItem=$scope.ons.navigator.getCurrentPage().options.selectedItem;
+        //var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        
+        $scope.name = selectedItem.singleUser_name;
+        $scope.email = selectedItem.singleUser_email;
+        $scope.college = selectedItem.singleUser_college;
+        $scope.contactNumber = selectedItem.singleUser_contactNumber;
+        $scope.roll = selectedItem.singleUser_roll;
+        $scope.status = selectedItem.singleUser_status;
+        $scope.aboutMe = selectedItem.singleUser_aboutMe;
+        $scope.fbUrl = selectedItem.singleUser_fbUrl;
+        $scope.twitterUrl = selectedItem.singleUser_twitterUrl;
+        $scope.interests = selectedItem.singleUser_interests;
+        $scope.linkedinUrl = selectedItem.singleUser_linkedinUrl;
+
+                            
+        $scope.loadURL = function (link) {
+            //target: The target in which to load the URL, an optional parameter that defaults to _self. (String)
+            //_self: Opens in the Cordova WebView if the URL is in the white list, otherwise it opens in the InAppBrowser.
+            //_blank: Opens in the InAppBrowser.
+            //_system: Opens in the system's web browser.
+            //window.open($scope.item.link,'_blank');
+            //alert(link);    
+            if (link.substring(0, 4).toLowerCase() != "http") {
+                link = "http://" + link;
+            }
+            window.open(link, '_blank');
+        }
+
+        
+
+    });
+
     module.controller('menuController', function ($scope) {
 
 
