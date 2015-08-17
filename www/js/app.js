@@ -42,12 +42,13 @@ var app = {
 
         checkPreAuth();
 
+        app.updateInterestedCategories();
         app.getCount("Notices");
         /*setInterval(function () {
             app.getCount("Notices");
         }, 1500000);*/
         app.getCount("News");
-        app.updateInterestedCategories();
+        
         /*setInterval(function () {
             app.getCount("News");
         }, 1500000);*/
@@ -212,7 +213,7 @@ var app = {
         if (window.localStorage["email"] != undefined || window.localStorage["password"] != undefined) {
             var u = window.localStorage.getItem('email');
             var p = window.localStorage.getItem('password');
-            
+
             var updateInterestedCategoriesUrl="http://collegeboard-env2.elasticbeanstalk.com/userInfo/userSignIn?userEmail=" + u + "&userPassword=" + p;
             $.get(updateInterestedCategoriesUrl, function (response) {
                     
