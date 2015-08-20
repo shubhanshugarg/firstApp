@@ -7,50 +7,59 @@
                 <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
             </ons-toolbar-button>
         </div>
-        <div class="center">Profile</div>
+        <div class="center">Profile
+        </div>
     </ons-toolbar>
     
 
     
     <section style="padding: 10px;">
-
+        <ons-button modifier="small"  ng-click="editProfile()">
+            Edit
+        </ons-button><br><br>
         <h2 class="title" ng-bind-html="name"></h2>
 
+        <!-- $scope.name = profileData.register_name;
+        $scope.email = profileData.register_email;
+        $scope.college = profileData.register_college;
+        $scope.contactNumber = profileData.register_contactNumber;
+        $scope.roll = profileData.register_roll;
+        $scope.yearGrad = profileData.register_yearGrad;
+        $scope.branch = profileData.register_branch;
+        $scope.company = profileData.register_company;
+        $scope.status = profileData.register_status;
+        $scope.aboutMe = profileData.register_aboutMe;
+        $scope.fbUrl = profileData.register_fbUrl;
+        $scope.twitterUrl = profileData.register_twitterUrl;
+        $scope.interests = profileData.register_interests;
+        $scope.linkedinUrl = profileData.register_linkedinUrl; -->
+        <!-- <img src="scrollDown.png" style="z-index:2;position: absolute;height: 59px;right: 80px;top: 55px;"> -->
+
+        <p class="text-primary">Email: </p><p class="text-info" ng-bind-html="email"></p>
+        <p class="text-primary">Roll Number :</p><p class="text-info" ng-bind-html="roll"></p>
+        <p class="text-primary">Contact Number: </p><p class="text-info" ng-bind-html="contactNumber"></p>
+        <p class="text-primary">Graduation Year :</p><p class="text-info" ng-bind-html="yearGrad"></p>
+        <p class="text-primary">Branch :</p><p class="text-info" ng-bind-html="branch"></p>
+        <p class="text-primary">Company :</p><p class="text-info" ng-bind-html="company"></p>
+        <p class="text-primary">Status: </p><p class="text-info" ng-bind-html="status"></p>
+        <!-- About Me :<p class="feed-content" ng-bind-html="aboutMe"></p> -->
+        <p class="text-primary">Interests :</p><p class="text-info" ng-bind-html="interests"></p>
+
         
-
-        about me :<p class="feed-content" ng-bind-html="aboutMe"></p>
-        about me :<p class="feed-content" ng-bind-html="email"></p>
-
-        <!-- <p class="feed-categories" ng-show="{{item.categories.length}}"><ons-icon icon="tags"></ons-icon>
-        <span ng-repeat="category in item.categories">{{category}}{{$last ? '' : ', '}}</span>
-        </p> -->
-
-        <p class="feed-categories">
-            <ons-icon icon="tags"></ons-icon>
-            <span ng-bind-html="item.postedByName"></span>
-            <span ng-bind-html="item.postedByRoll"></span>
-        </p>
-
-        <!-- <ons-button modifier="outline" class="button-share" ng-click="shareFeed()">
-        <ons-icon icon="share-alt"></ons-icon> Share this feed
-        </ons-button> -->
-
         <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-        <ons-button modifier="large" ng-show="fbUrl != ''" ng-click="loadURL(fbUrl)">
+        <ons-button modifier="large" ng-show="fbUrl != undefined" ng-click="loadURL(fbUrl)">
             Profile on facebook
         </ons-button>
         <br>
-        <ons-button modifier="large" ng-show=" twitterUrl != 'undefined'" ng-click="loadURL(twitterUrl)">
+        <ons-button modifier="large" ng-show=" twitterUrl != undefined" ng-click="loadURL(twitterUrl)">
             Profile on twitter
         </ons-button>
-        <ons-button modifier="large" ng-show=" linkedinUrl != 'undefined'" ng-click="loadURL(linkedinUrl)">
+        <br>
+        <ons-button modifier="large" ng-show=" linkedinUrl != undefined" ng-click="loadURL(linkedinUrl)">
             Profile on linkedin
         </ons-button>
         <br>
-        <ons-button modifier="small"  ng-click="editProfile()">
-            Edit
-        </ons-button>
-
+        
     </section>
 
 </ons-page>

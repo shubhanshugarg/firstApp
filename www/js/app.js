@@ -230,8 +230,9 @@ var app = {
                             var register_password = response.data.password;
                             var register_college = response.data.collegeName;
                             var interestedCategories = response.data.userCategories;
+                            var userCollegeBranches = response.data.collegeBranches;
                             var register_status = response.data.status;
-                            var register_aboutMe = response.data.aboutMe;
+                            //var register_aboutMe = response.data.aboutMe;
                             var register_fbUrl = response.data.fbUrl;
                             var register_twitterUrl = response.data.twitterUrl;
                             var register_linkedinUrl = response.data.linkedinUrl;
@@ -253,12 +254,13 @@ var app = {
                                 'register_college': register_college,
                                 'register_roll': register_roll,
                                 'interestedCategories': interestedCategories,
-                                'status': register_status,
-                                'aboutMe': register_aboutMe,
-                                'fbUrl': register_fbUrl,
-                                'twitterUrl': register_twitterUrl,
-                                'linkedinUrl': register_linkedinUrl,
-                                'interests': register_interests
+                                'userCollegeBranches': userCollegeBranches,
+                                'register_status': register_status,
+                                //'aboutMe': register_aboutMe,
+                                'register_fbUrl': register_fbUrl,
+                                'register_twitterUrl': register_twitterUrl,
+                                'register_linkedinUrl': register_linkedinUrl,
+                                'register_interests': register_interests
                             };
                             var profileDataJson = JSON.stringify(profileData);
 
@@ -338,8 +340,9 @@ var app = {
                             var register_password = response.data.password;
                             var register_college = response.data.collegeName;
                             var interestedCategories = response.data.userCategories;
+                            var userCollegeBranches = response.data.collegeBranches;
                             var register_status = response.data.status;
-                            var register_aboutMe = response.data.aboutMe;
+                            //var register_aboutMe = response.data.aboutMe;
                             var register_fbUrl = response.data.fbUrl;
                             var register_twitterUrl = response.data.twitterUrl;
                             var register_linkedinUrl = response.data.linkedinUrl;
@@ -364,12 +367,13 @@ var app = {
                                 'register_college': register_college,
                                 'register_roll': register_roll,
                                 'interestedCategories': interestedCategories,
-                                'status': register_status,
-                                'aboutMe': register_aboutMe,
-                                'fbUrl': register_fbUrl,
-                                'twitterUrl': register_twitterUrl,
-                                'linkedinUrl': register_linkedinUrl,
-                                'interests': register_interests
+                                'userCollegeBranches': userCollegeBranches,
+                                'register_status': register_status,
+                                //'aboutMe': register_aboutMe,
+                                'register_fbUrl': register_fbUrl,
+                                'register_twitterUrl': register_twitterUrl,
+                                'register_linkedinUrl': register_linkedinUrl,
+                                'register_interests': register_interests
                             };
                             var profileDataJson = JSON.stringify(profileData);
 
@@ -475,6 +479,7 @@ var app = {
                         var register_password = response.data.password;
                         var register_college = response.data.collegeName;
                         var interestedCategories = response.data.userCategories;
+                        var userCollegeBranches= response.data.collegeBranches;
                     } else {
                         var errorMessage = response.message;
                         alert(errorMessage);
@@ -491,7 +496,8 @@ var app = {
                             'register_name': register_name,
                             'register_college': register_college,
                             'register_roll': register_roll,
-                            'interestedCategories': interestedCategories
+                            'interestedCategories': interestedCategories,
+                            'userCollegeBranches': userCollegeBranches
                         };
                         var profileDataJson = JSON.stringify(profileData);
 
@@ -1437,13 +1443,16 @@ var app = {
         $scope.name = profileData.register_name;
         $scope.email = profileData.register_email;
         $scope.college = profileData.register_college;
-        $scope.contactNumber = profileData.register_contactNumber;
+        $scope.contactNumber = profileData.contact_nos;
         $scope.roll = profileData.register_roll;
         $scope.yearGrad = profileData.register_yearGrad;
-        $scope.branch = profileData.register_branch;
+        if (profileData.register_branch!=undefined && profileData.register_branch!= null && profileData.register_branch!='') {
+        $scope.branch = profileData.register_branch.branchName;
+            
+        };
         $scope.company = profileData.register_company;
         $scope.status = profileData.register_status;
-        $scope.aboutMe = profileData.register_aboutMe;
+        //$scope.aboutMe = profileData.register_aboutMe;
         $scope.fbUrl = profileData.register_fbUrl;
         $scope.twitterUrl = profileData.register_twitterUrl;
         $scope.interests = profileData.register_interests;
@@ -1470,26 +1479,43 @@ var app = {
     });
 
 // Feed Plugin: editProfile Controller
-    module.controller('editProfileController', function ($scope) {
+    module.controller('editProfileController', function ($scope,$http) {
         var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
         //to place condition if not null here
         $scope.editProfileButtonText = "Submit";
         $scope.name = profileData.register_name;
         $scope.email = profileData.register_email;
         $scope.college = profileData.register_college;
-        $scope.contactNumber = profileData.register_contactNumber;
+        $scope.userCollegeBranches = profileData.userCollegeBranches;
+        $scope.contactNumber = profileData.contact_nos;
         $scope.roll = profileData.register_roll;
         $scope.yearGrad = profileData.register_yearGrad;
         $scope.branch = profileData.register_branch;
         $scope.company = profileData.register_company;
         $scope.user_id = profileData.user_id;
         $scope.status = profileData.register_status;
-        $scope.aboutMe = profileData.register_aboutMe;
+        //$scope.aboutMe = profileData.register_aboutMe;
         $scope.fbUrl = profileData.register_fbUrl;
         $scope.twitterUrl = profileData.register_twitterUrl;
         $scope.interests = profileData.register_interests;
         $scope.linkedinUrl = profileData.register_linkedinUrl;
         
+        var yearList = [];
+        for (var i = 1970; i <= 2030; i++) {
+          yearList.push(i);   
+        };
+        
+        $scope.gradYearList = yearList; 
+        $scope.userSelectedBranch = function(selectTagBranch){
+            if (selectTagBranch== profileData.register_branch.branchId) {
+                return true;
+            };
+        };
+        $scope.userSelectedyear = function(selectTagYear){
+            if (selectTagYear== profileData.register_yearGrad) {
+                return true;
+            };
+        };
 
         $scope.submitForm = function () {
             $scope.disableButton = true;
@@ -1497,11 +1523,12 @@ var app = {
             //var name = $scope.name;
             var contactNumber = $scope.contactNumber;
             var roll = $scope.roll;
+            var user_id=$scope.user_id;
             var yearGrad=$scope.yearGrad ;
             var branch=$scope.branch ;
             var company=$scope.company ;
             var status = $scope.status;
-            var aboutMe = $scope.aboutMe;
+            //var aboutMe = $scope.aboutMe;
             var fbUrl = $scope.fbUrl;
             var twitterUrl = $scope.twitterUrl;
             var linkedinUrl = $scope.linkedinUrl;
@@ -1509,21 +1536,43 @@ var app = {
 
            
             var fd = new FormData();
+            if (roll!=undefined && roll!=null) {
+                fd.append('rollNumber', roll);
+            };if (yearGrad!=undefined && yearGrad!=null) {
+                fd.append('yearGrad', yearGrad);
+            };if (contactNumber!=undefined && contactNumber!=null) {
+                fd.append('contactNumber', contactNumber);
+            };if (branch!=undefined && branch!=null) {
+                fd.append('branch', branch);
+            };if (company!=undefined && company!=null) {
+                fd.append('company', company);
+            };if (status!=undefined && status!=null) {
+                fd.append('status', status);
+            };if (fbUrl!=undefined && fbUrl!=null) {
+                fd.append('fbUrl', fbUrl);
+            };if (twitterUrl!=undefined && twitterUrl!=null) {
+                fd.append('twitterUrl', twitterUrl);
+            };if (linkedinUrl!=undefined && linkedinUrl!=null) {
+                fd.append('linkedinUrl', linkedinUrl);
+            };if (interests!=undefined && interests!=null) {
+                fd.append('interests', interests);
+            };
             fd.append('userId', user_id);
-            fd.append('rollNumber', roll);
-            fd.append('yearGrad', yearGrad);
-            fd.append('branch', branch);
-            fd.append('company', company);
-            fd.append('contactNumber', contactNumber);
-            fd.append('status', status);
-            fd.append('aboutMe', aboutMe);
-            fd.append('fbUrl', fbUrl);
-            fd.append('twitterUrl', twitterUrl);
-            fd.append('linkedinUrl', linkedinUrl);
-            fd.append('interests', interests);
+            
+            
+            
+            
+            
+            
+            //fd.append('aboutMe', aboutMe);
+            
+            
+            
+            
 
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
-            $http.post(locationOrigin + "url", fd, {
+
+            $http.post(locationOrigin + "/userInfo/editUserInfo", fd, {
                 transformRequest: angular.identity,
                 headers: {
                     'Content-Type': undefined
@@ -1541,12 +1590,13 @@ var app = {
                         var register_branch = response.data.branch;
                         var register_company = response.data.company;
                         var contact_nos = response.data.contactNumber;
+                        var userCollegeBranches = response.data.collegeBranches;
                         var register_email = response.data.emailAddress;
                         var register_password = response.data.password;
                         var register_college = response.data.collegeName;
                         var interestedCategories = response.data.userCategories;
                         var register_status = response.data.status;
-                        var register_aboutMe = response.data.aboutMe;
+                        //var register_aboutMe = response.data.aboutMe;
                         var register_fbUrl = response.data.fbUrl;
                         var register_twitterUrl = response.data.twitterUrl;
                         var register_linkedinUrl = response.data.linkedinUrl;
@@ -1557,23 +1607,26 @@ var app = {
                             'contact_nos': contact_nos,
                             'register_yearGrad': register_yearGrad,
                             'register_branch': register_branch,
+                            'userCollegeBranches': userCollegeBranches,
                             'register_company': register_company,
                             'register_password': register_password,
                             'register_name': register_name,
                             'register_college': register_college,
                             'register_roll': register_roll,
                             'interestedCategories': interestedCategories,
-                            'status': register_status,
-                            'aboutMe': register_aboutMe,
-                            'fbUrl': register_fbUrl,
-                            'twitterUrl': register_twitterUrl,
-                            'linkedinUrl': register_linkedinUrl,
-                            'interests': register_interests
+                            'register_status': register_status,
+                            //'aboutMe': register_aboutMe,
+                            'register_fbUrl': register_fbUrl,
+                            'register_twitterUrl': register_twitterUrl,
+                            'register_linkedinUrl': register_linkedinUrl,
+                            'register_interests': register_interests
                             
                         };
                         var profileDataJson = JSON.stringify(profileData);
 
                         window.localStorage["profileData"] = profileDataJson;
+                        $scope.disableButton = false;
+                    $scope.editProfileButtonText = "Submit";
 
                 } else {
 
@@ -1601,6 +1654,14 @@ var app = {
         var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
         //to place condition if not null here
         $scope.user_id = profileData.user_id;
+        $scope.userCollegeBranches = profileData.userCollegeBranches;
+        var yearList = [];
+        for (var i = 1970; i <= 2030; i++) {
+          yearList.push(i);   
+        };
+        
+        $scope.gradYearList = yearList; 
+        
         $scope.searchButtonText = "Submit";
         $scope.submitForm = function () {
             $scope.disableButton = true;
@@ -1622,15 +1683,32 @@ var app = {
             fd.append('branch', branch);
             fd.append('interest', interest);
             fd.append('company', company);
+
+            if (name==undefined || name==null) {
+                name='';
+            };if (roll==undefined || roll==null) {
+                roll='';
+            };if (yearGrad==undefined || yearGrad==null) {
+                yearGrad='';
+            };if (branch==undefined || branch==null) {
+                branch='';
+            };if (interest==undefined || interest==null) {
+                interest='';
+            };if (company==undefined || company==null) {
+                company='';
+            };
             
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             //$http.post(locationOrigin + "url", fd, {
-            $http.post('http://localhost/noticeBoard/firstApp/www/loginDummy3.php', fd, {
+            var searchUrl= locationOrigin + "/userInfo/searchUser?userId="+user_id+"&userName="+name+"&rollNumber="+roll+"&yearGrad="+yearGrad+"&interest="+interest+"&branch="+branch+"&company="+company;
+            
+            /*$http.post('http://localhost/noticeBoard/firstApp/www/loginDummy3.php', fd, {
                 transformRequest: angular.identity,
                 headers: {
                     'Content-Type': undefined
                 }
-            }).success(function (response) {
+            })*/
+            $http({method: 'GET', url: searchUrl}).success(function (response) {
                 
                         
                 var isSuccess = response.success;
@@ -1651,10 +1729,14 @@ var app = {
                         var singleUser_college = value.collegeName;
                         //var interestedCategories = response.data.userCategories;
                         var singleUser_status = value.status;
-                        var singleUser_aboutMe = value.aboutMe;
+                        //var singleUser_aboutMe = value.aboutMe;
                         var singleUser_fbUrl = value.fbUrl;
                         var singleUser_yearGrad = value.yearGrad;
-                        var singleUser_branch = value.branch;
+                        if (value.branch!=undefined && value.branch!= null && value.branch!='') {
+                            var singleUser_branch = value.branch.branchName;
+                                
+                            };
+                        
                         var singleUser_company = value.company;
                         var singleUser_twitterUrl = value.twitterUrl;
                         var singleUser_linkedinUrl = value.linkedinUrl;
@@ -1669,7 +1751,7 @@ var app = {
                             'singleUser_branch': singleUser_branch,
                             'singleUser_company': singleUser_company,
                             'singleUser_status': singleUser_status,
-                            'singleUser_aboutMe': singleUser_aboutMe,
+                            //'singleUser_aboutMe': singleUser_aboutMe,
                             'singleUser_fbUrl': singleUser_fbUrl,
                             'singleUser_twitterUrl': singleUser_twitterUrl,
                             'singleUser_linkedinUrl': singleUser_linkedinUrl,
@@ -1684,6 +1766,8 @@ var app = {
 
                         window.localStorage["searchDataWrapper"] = searchDataWrapperJson;
                         $scope.ons.navigator.pushPage('searchDisplay.html');
+                        $scope.disableButton = false;
+                    $scope.searchButtonText = "Submit";
 
                 } else {
 
@@ -1748,7 +1832,7 @@ module.controller('searchDisplayController', function ($scope) {
         $scope.contactNumber = selectedItem.singleUser_contactNumber;
         $scope.roll = selectedItem.singleUser_roll;
         $scope.status = selectedItem.singleUser_status;
-        $scope.aboutMe = selectedItem.singleUser_aboutMe;
+        //$scope.aboutMe = selectedItem.singleUser_aboutMe;
         $scope.fbUrl = selectedItem.singleUser_fbUrl;
         $scope.twitterUrl = selectedItem.singleUser_twitterUrl;
         $scope.interests = selectedItem.singleUser_interests;

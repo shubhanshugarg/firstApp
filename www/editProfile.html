@@ -12,8 +12,24 @@
 
     <section style="padding: 10px">
         
+        
         <input type="text" class="text-input" placeholder="Roll Number *" ng-model="roll"
                style="width:100%; margin-bottom:10px;">
+        <input type="text" class="text-input" placeholder="Company" ng-model="company"
+               style="width:100%; margin-bottom:10px;">
+       
+       <select ng-model="branch" class="form-control">
+                <option value="">Select Branch</option>
+                <option ng-repeat="userBranch in userCollegeBranches" value="{{userBranch.branchId}}" ng-selected="{{userSelectedBranch(userBranch.branchId)}}">
+                    {{userBranch.branchName}}
+                </option>
+            </select><br>
+        <select ng-model="yearGrad" class="form-control">
+                <option value="">Select Graduation Year</option>
+                <option ng-repeat="year in gradYearList" value="{{year}}" ng-selected="{{userSelectedYear(year)}}">
+                    {{year}}
+                </option>
+            </select><br>
         <input type="text" class="text-input" placeholder="Contact Number" ng-model="contactNumber"
                style="width:100%; margin-bottom:10px;">
        <input type="text" class="text-input" placeholder="Status" ng-model="status"
@@ -24,10 +40,10 @@
                style="width:100%; margin-bottom:10px;">
         <input type="text" class="text-input" placeholder="LinkedIn Profile Url" ng-model="linkedinUrl"
                style="width:100%; margin-bottom:10px;">
-        <input type="text" class="text-input" placeholder="Interests" ng-model="interests"
-               style="width:100%; margin-bottom:10px;">
+        <!-- <textarea type="text" class="text-input" placeholder="Interests" ng-model="interests"
+               style="width:100%; margin-bottom:10px;"> -->
         
-        <textarea class="textarea" rows="10" placeholder="About Myself" ng-model="aboutMe"
+        <textarea class="textarea" rows="10" placeholder="Interests" ng-model="interests"
                   style="width:100%; margin-bottom:10px;"></textarea>
         
                 

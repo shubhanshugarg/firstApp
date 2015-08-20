@@ -10,38 +10,37 @@
     
     <section style="padding: 10px;">
 
-        <h2 class="title" ng-bind-html="name"></h2>
+        <h2  class="text-primary" ng-bind-html="name"></h2>
+        <br>
+        <p class="text-primary">Roll Number :</p><p class="text-info" ng-bind-html="roll"></p>
+        <p class="text-primary">Branch :</p><p class="text-info" ng-bind-html="branch"></p>
+        <p class="text-primary">Graduation Year :</p><p class="text-info" ng-bind-html="yearGrad"></p>
+        <p class="text-primary">Company :</p><p class="text-info" ng-bind-html="company"></p>
+        <p class="text-primary">Status: </p><p class="text-info" ng-bind-html="status"></p>
+        <!-- About Me :<p class="feed-content" ng-bind-html="aboutMe"></p> -->
+        <p class="text-primary">Interests :</p><p class="text-info" ng-bind-html="interests"></p>
 
         
+        <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
+        <ons-button modifier="large" ng-show="fbUrl != null" ng-click="loadURL(fbUrl)">
+            Profile on facebook
+        </ons-button>
+        <br>
+        <ons-button modifier="large" ng-show=" twitterUrl != null" ng-click="loadURL(twitterUrl)">
+            Profile on twitter
+        </ons-button>
+        <br>
+        <ons-button modifier="large" ng-show=" linkedinUrl != null" ng-click="loadURL(linkedinUrl)">
+            Profile on linkedin
+        </ons-button>
+        <br>
 
-        about me :<p class="feed-content" ng-bind-html="aboutMe"></p>
-        about me :<p class="feed-content" ng-bind-html="email"></p>
-
+        
         <!-- <p class="feed-categories" ng-show="{{item.categories.length}}"><ons-icon icon="tags"></ons-icon>
         <span ng-repeat="category in item.categories">{{category}}{{$last ? '' : ', '}}</span>
         </p> -->
 
-        <p class="feed-categories">
-            <ons-icon icon="tags"></ons-icon>
-            <span ng-bind-html="item.postedByName"></span>
-            <span ng-bind-html="item.postedByRoll"></span>
-        </p>
-
-        <!-- <ons-button modifier="outline" class="button-share" ng-click="shareFeed()">
-        <ons-icon icon="share-alt"></ons-icon> Share this feed
-        </ons-button> -->
-
-        <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-        <ons-button modifier="large" ng-show="fbUrl != ''" ng-click="loadURL(fbUrl)">
-            Profile on facebook
-        </ons-button>
-        <br>
-        <ons-button modifier="large" ng-show=" twitterUrl != 'undefined'" ng-click="loadURL(twitterUrl)">
-            Profile on twitter
-        </ons-button>
-        <ons-button modifier="large" ng-show=" linkedinUrl != 'undefined'" ng-click="loadURL(linkedinUrl)">
-            Profile on linkedin
-        </ons-button>
+       
         
     </section>
 

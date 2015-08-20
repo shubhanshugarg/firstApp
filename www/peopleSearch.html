@@ -11,14 +11,27 @@
     </ons-toolbar>
     
     <section style="padding: 10px">
+      <p class="text-primary">Apply any number of filters to filter the search.</p>
         <input type="text" class="text-input" placeholder="Name" ng-model="name"
                style="width:100%; margin-bottom:10px;">
         <input type="text" class="text-input" placeholder="Roll Number " ng-model="roll"
                style="width:100%; margin-bottom:10px;">
-        <input type="text" class="text-input" placeholder="year of graduation" ng-model="yearGrad"
+        <!-- <input type="text" class="text-input" placeholder="year of graduation" ng-model="yearGrad"
                style="width:100%; margin-bottom:10px;">
        <input type="text" class="text-input" placeholder="branch" ng-model="branch"
-               style="width:100%; margin-bottom:10px;">
+               style="width:100%; margin-bottom:10px;"> -->
+       <select ng-model="branch" class="form-control">
+                <option value="">Select Branch</option>
+                <option ng-repeat="userBranch in userCollegeBranches" value="{{userBranch.branchId}}" >
+                    {{userBranch.branchName}}
+                </option>
+            </select><br>
+        <select ng-model="yearGrad" class="form-control">
+                <option value="">Select Graduation Year</option>
+                <option ng-repeat="year in gradYearList" value="{{year}}" >
+                    {{year}}
+                </option>
+            </select><br>
         <input type="text" class="text-input" placeholder="interest" ng-model="interest"
                style="width:100%; margin-bottom:10px;">
        <input type="text" class="text-input" placeholder="company" ng-model="company"
