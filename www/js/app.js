@@ -1489,8 +1489,9 @@ var app = {
         $scope.userCollegeBranches = profileData.userCollegeBranches;
         $scope.contactNumber = profileData.contact_nos;
         $scope.roll = profileData.register_roll;
+        
         $scope.yearGrad = profileData.register_yearGrad;
-        $scope.branch = profileData.register_branch;
+        $scope.branch = profileData.register_branch.branchId;
         $scope.company = profileData.register_company;
         $scope.user_id = profileData.user_id;
         $scope.status = profileData.register_status;
@@ -1500,6 +1501,10 @@ var app = {
         $scope.interests = profileData.register_interests;
         $scope.linkedinUrl = profileData.register_linkedinUrl;
         
+        //branch if null angular puts a nullable object in the options tag
+        if ($scope.branch==null) {$scope.branch='';};
+        
+
         var yearList = [];
         for (var i = 1970; i <= 2030; i++) {
           yearList.push(i);   
@@ -1511,7 +1516,7 @@ var app = {
                 return true;
             };
         };
-        $scope.userSelectedyear = function(selectTagYear){
+        $scope.userSelectedYear = function(selectTagYear){
             if (selectTagYear== profileData.register_yearGrad) {
                 return true;
             };
@@ -1538,11 +1543,11 @@ var app = {
             var fd = new FormData();
             if (roll!=undefined && roll!=null) {
                 fd.append('rollNumber', roll);
-            };if (yearGrad!=undefined && yearGrad!=null) {
+            };if (yearGrad!=undefined && yearGrad!=null && yearGrad!='') {
                 fd.append('yearGrad', yearGrad);
             };if (contactNumber!=undefined && contactNumber!=null) {
                 fd.append('contactNumber', contactNumber);
-            };if (branch!=undefined && branch!=null) {
+            };if (branch!=undefined && branch!=null && branch!='') {
                 fd.append('branch', branch);
             };if (company!=undefined && company!=null) {
                 fd.append('company', company);
@@ -1731,7 +1736,8 @@ var app = {
                         var singleUser_status = value.status;
                         //var singleUser_aboutMe = value.aboutMe;
                         var singleUser_fbUrl = value.fbUrl;
-                        var singleUser_yearGrad = value.yearGrad;
+                        //var singleUser_yearGrad = value.yearGrad;
+                        var singleUser_yearGrad = value.graduationYear;
                         if (value.branch!=undefined && value.branch!= null && value.branch!='') {
                             var singleUser_branch = value.branch.branchName;
                                 
@@ -1739,7 +1745,7 @@ var app = {
                         
                         var singleUser_company = value.company;
                         var singleUser_twitterUrl = value.twitterUrl;
-                        var singleUser_linkedinUrl = value.linkedinUrl;
+                        var singleUser_linkedinUrl = value.linkedInUrl;
                         var singleUser_interests = value.interests;
                         var singleUserData = {
                             'user_id': user_id,

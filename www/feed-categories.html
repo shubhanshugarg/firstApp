@@ -173,10 +173,19 @@
 
                 </ons-list-item>
                 <!-- below function call as when migrating from menu toolbar all is hidded by default -->
+
                 {{showHiddenPage(category.id)}}
                 {{getNotificationEarlyHack()}}
 
             </ons-list>
+            <br>
+            <ons-row>
+                <ons-col align="center">
+                    <ons-button  ng-click="menu.toggleMenu()">
+                        More Features
+                    </ons-button>
+                </ons-col>
+            </ons-row>
         </div>
     </ons-page>
 </ons-navigator>

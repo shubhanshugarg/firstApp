@@ -5,13 +5,6 @@
       "title": "Notices",
       "description": "Read the college notices here",
       "icon": "calendar"
-    },
-    {
-      "id": 2,
-      "title": "News",
-      "description": "Read college news here",
-      "icon": "flag"
-      
     }
   ]
 }
