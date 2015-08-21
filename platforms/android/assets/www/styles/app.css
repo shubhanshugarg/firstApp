@@ -127,7 +127,8 @@ img {
     color: white;
     padding: 30px 0;
     line-height: 1.4;
-    background-color: #6F6D9C;
+    /*background-color: #6F6D9C;*/
+    background-color: #1284ff;
     text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
 }
 
@@ -139,6 +140,24 @@ img {
     padding: 10px 13px;
 }
 
+.card {
+    background:#FFF;
+    border:1px solid #AAA;
+    border-bottom:3px solid #BBB;
+    padding:0px;
+    margin:15px;
+    overflow:hidden;
+}
+
+.card h1 {
+    margin:0px;
+    padding:10px;
+    padding-bottom:0px;
+}
+.card p {
+    margin:0px;
+    padding:10px;
+}
 .profile-name {
     margin: 20px 0 0 0;
     font-weight: 600;
@@ -153,7 +172,7 @@ img {
 
 .profile-desc {
     font-size: 15px;
-    opacity: 0.6;
+    opacity: 1;
     width: 90%;
     text-align: center;
     margin: 0 auto;

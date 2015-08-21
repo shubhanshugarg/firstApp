@@ -2,51 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca440e21-143d-46ba-82b1-3445d204f9d5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/Icon.png" afterPath="$PROJECT_DIR$/res/icon/Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-hdpi/Icon.png" afterPath="$PROJECT_DIR$/res/icon/drawable-hdpi/Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-ldpi/Icon.png" afterPath="$PROJECT_DIR$/res/icon/drawable-ldpi/Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-mdpi/Icon.png" afterPath="$PROJECT_DIR$/res/icon/drawable-mdpi/Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-xhdpi/Icon.png" afterPath="$PROJECT_DIR$/res/icon/drawable-xhdpi/Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/Thumbs.db" afterPath="$PROJECT_DIR$/res/icon/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-hdpi/Thumbs.db" afterPath="$PROJECT_DIR$/res/icon/drawable-hdpi/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-xhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/res/icon/drawable-xhdpi/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/drawable-hdpi/Thumbs.db" afterPath="$PROJECT_DIR$/res/screen/android/drawable-hdpi/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/drawable-ldpi/Thumbs.db" afterPath="$PROJECT_DIR$/res/screen/android/drawable-ldpi/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/drawable-xhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/res/screen/android/drawable-xhdpi/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-hdpi/contextual-hdpi.png" afterPath="$PROJECT_DIR$/res/icon/drawable-hdpi/contextual-hdpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-ldpi/contextual-ldpi.png" afterPath="$PROJECT_DIR$/res/icon/drawable-ldpi/contextual-ldpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-mdpi/contextual-mdpi.png" afterPath="$PROJECT_DIR$/res/icon/drawable-mdpi/contextual-mdpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-xhdpi/contextual-xhdpi.png" afterPath="$PROJECT_DIR$/res/icon/drawable-xhdpi/contextual-xhdpi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-hdpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/res/drawable-hdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-ldpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/res/drawable-ldpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-xhdpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/res/drawable-xhdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-hdpi/notification.png" afterPath="$PROJECT_DIR$/res/icon/drawable-hdpi/notification.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-ldpi/notification.png" afterPath="$PROJECT_DIR$/res/icon/drawable-ldpi/notification.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-mdpi/notification.png" afterPath="$PROJECT_DIR$/res/icon/drawable-mdpi/notification.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/drawable-xhdpi/notification.png" afterPath="$PROJECT_DIR$/res/icon/drawable-xhdpi/notification.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/screen-default.png" afterPath="$PROJECT_DIR$/res/screen/android/screen-default.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/screen.png" afterPath="$PROJECT_DIR$/platforms/android/res/drawable-mdpi/screen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/drawable-hdpi/splash.png" afterPath="$PROJECT_DIR$/res/screen/android/drawable-hdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/drawable-ldpi/splash.png" afterPath="$PROJECT_DIR$/res/screen/android/drawable-ldpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/drawable-mdpi/splash.png" afterPath="$PROJECT_DIR$/res/screen/android/drawable-mdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/drawable-xhdpi/splash.png" afterPath="$PROJECT_DIR$/res/screen/android/drawable-xhdpi/splash.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/about.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/feed-categories.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/feed-categories.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/feed-categories.html" afterPath="$PROJECT_DIR$/www/feed-categories.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/feed-detail.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/feed-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/newsPost.html" afterPath="$PROJECT_DIR$/www/newsPost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/noticePost.html" afterPath="$PROJECT_DIR$/www/noticePost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/values/strings.xml" afterPath="$PROJECT_DIR$/platforms/android/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="firstApp.iws" />
@@ -75,30 +30,28 @@
       <file leaf-file-name="feed-categories.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/feed-categories.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.961538" vertical-offset="930" max-vertical-offset="3230">
+            <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="3230">
               <caret line="73" column="74" selection-start-line="73" selection-start-column="74" selection-end-line="73" selection-end-column="74" />
-              <folding>
-                <element signature="n#style#0;n#center#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="noticePost.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="noticePost.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/noticePost.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.076923" vertical-offset="106" max-vertical-offset="1598">
+            <state vertical-scroll-proportion="-0.24954128" vertical-offset="374" max-vertical-offset="1598">
               <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newsPost.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="newsPost.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/newsPost.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43669724" vertical-offset="0" max-vertical-offset="1513">
-              <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1513">
+              <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -107,8 +60,8 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="21029" max-vertical-offset="23222">
-              <caret line="1235" column="0" selection-start-line="1235" selection-start-column="0" selection-end-line="1235" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="23732" max-vertical-offset="25908">
+              <caret line="1394" column="0" selection-start-line="1394" selection-start-column="0" selection-end-line="1394" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,7 +70,7 @@
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615" vertical-offset="170" max-vertical-offset="918">
+            <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="918">
               <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
@@ -127,7 +80,7 @@
       <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+            <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="799">
               <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
@@ -137,8 +90,8 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="255">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -602,14 +555,16 @@
       <workItem from="1438786506995" duration="1518000" />
       <workItem from="1438789844061" duration="926000" />
       <workItem from="1438958282206" duration="5908000" />
+      <workItem from="1439093296049" duration="752000" />
+      <workItem from="1439730990414" duration="1951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46067000" />
+    <option name="totallyTimeSpent" value="49087000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="711" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="711" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -667,10 +622,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/feed-master-backu.html">
+    <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="255">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -958,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="561">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -966,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5583" max-vertical-offset="6205">
           <caret line="356" column="0" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,15 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="571">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -996,7 +941,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="170" max-vertical-offset="918">
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="918">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
@@ -1004,34 +949,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/feed-categories.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.961538" vertical-offset="930" max-vertical-offset="3230">
+        <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="3230">
           <caret line="73" column="74" selection-start-line="73" selection-start-column="74" selection-end-line="73" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#center#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/noticePost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.076923" vertical-offset="106" max-vertical-offset="1598">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="21029" max-vertical-offset="23222">
-          <caret line="1235" column="0" selection-start-line="1235" selection-start-column="0" selection-end-line="1235" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="23732" max-vertical-offset="25908">
+          <caret line="1394" column="0" selection-start-line="1394" selection-start-column="0" selection-end-line="1394" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/newsPost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43669724" vertical-offset="0" max-vertical-offset="1513">
-          <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1513">
+          <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="255">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/noticePost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.24954128" vertical-offset="374" max-vertical-offset="1598">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding />
         </state>
       </provider>

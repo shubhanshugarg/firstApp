@@ -1,0 +1,66 @@
+<ons-page ng-controller="searchSingleUserDisplayController">
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center" >Profile</div>
+    </ons-toolbar>
+
+    
+    <section style="padding: 10px;">
+
+        <h2  class="text-primary" ng-bind-html="name"></h2>
+        <br>
+        <div class="card">
+            <img src="scrollDown.png" style="z-index:2;position: absolute;height: 80px;right: 80px;top: 55px;">
+    <h3 style="margin:20px">Personal Information</h3>
+    <p >Name :</p><p class="text-info" ng-bind-html="name"></p>
+    <p >Roll Number :</p><p class="text-info" ng-bind-html="roll"></p>
+    <p >Graduation Year :</p><p class="text-info" ng-bind-html="yearGrad"></p>
+        <p >Branch :</p><p class="text-info" ng-bind-html="branch"></p>
+         
+           
+</div>
+<div class="card">
+    <h3 style="margin:20px">Other Information</h3>
+    <p >Company :</p><p class="text-info" ng-bind-html="company"></p>
+        <p >Status: </p><p class="text-info" ng-bind-html="status"></p>
+        <!-- About Me :<p class="feed-content" ng-bind-html="aboutMe"></p> -->
+        <p >Interests :</p><p class="text-info" ng-bind-html="interests"></p>
+
+</div>
+
+        <!-- <p class="text-primary">Roll Number :</p><p class="text-info" ng-bind-html="roll"></p>
+        <p class="text-primary">Branch :</p><p class="text-info" ng-bind-html="branch"></p>
+        <p class="text-primary">Graduation Year :</p><p class="text-info" ng-bind-html="yearGrad"></p>
+        <p class="text-primary">Company :</p><p class="text-info" ng-bind-html="company"></p>
+        <p class="text-primary">Status: </p><p class="text-info" ng-bind-html="status"></p>
+         About Me :<p class="feed-content" ng-bind-html="aboutMe"></p> -->
+        <!-- <p class="text-primary">Interests :</p><p class="text-info" ng-bind-html="interests"></p> -->
+
+        
+        <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
+        <ons-button modifier="large" ng-show="fbUrl != null" ng-click="loadURL(fbUrl)">
+            Profile on facebook
+        </ons-button>
+        <br>
+        <ons-button modifier="large" ng-show=" twitterUrl != null" ng-click="loadURL(twitterUrl)">
+            Profile on twitter
+        </ons-button>
+        <br>
+        <ons-button modifier="large" ng-show=" linkedinUrl != null" ng-click="loadURL(linkedinUrl)">
+            Profile on linkedin
+        </ons-button>
+        <br>
+
+        
+        <!-- <p class="feed-categories" ng-show="{{item.categories.length}}"><ons-icon icon="tags"></ons-icon>
+        <span ng-repeat="category in item.categories">{{category}}{{$last ? '' : ', '}}</span>
+        </p> -->
+
+       
+        
+    </section>
+
+</ons-page>

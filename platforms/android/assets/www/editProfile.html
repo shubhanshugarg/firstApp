@@ -1,0 +1,60 @@
+<ons-page ng-controller="editProfileController"
+          >
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center" >Edit Profile</div>
+        <div class="right">
+            </div>
+    </ons-toolbar>
+
+    <section style="padding: 10px">
+        
+        
+        <input type="text" class="text-input" placeholder="Roll Number *" ng-model="roll"
+               style="width:100%; margin-bottom:10px;">
+        <input type="text" class="text-input" placeholder="Company" ng-model="company"
+               style="width:100%; margin-bottom:10px;">
+       
+       <select ng-model="branch" class="form-control">
+                <option value="">Select Branch</option>
+                <option ng-repeat="userBranch in userCollegeBranches" value="{{userBranch.branchId}}" ng-selected="{{userSelectedBranch(userBranch.branchId)}}">
+                    {{userBranch.branchName}}
+                </option>
+            </select><br>
+        <select ng-model="yearGrad" class="form-control">
+                <option value="">Select Graduation Year</option>
+                <option ng-repeat="year in gradYearList" value="{{year}}" ng-selected="{{userSelectedYear(year)}}">
+                    {{year}}
+                </option>
+            </select><br>
+        <input type="text" class="text-input" placeholder="Contact Number" ng-model="contactNumber"
+               style="width:100%; margin-bottom:10px;">
+       <input type="text" class="text-input" placeholder="Status" ng-model="status"
+               style="width:100%; margin-bottom:10px;">
+        <input type="text" class="text-input" placeholder="Facebook Profile Url" ng-model="fbUrl"
+               style="width:100%; margin-bottom:10px;">
+       <input type="text" class="text-input" placeholder="Twitter Profile Url" ng-model="twitterUrl"
+               style="width:100%; margin-bottom:10px;">
+        <input type="text" class="text-input" placeholder="LinkedIn Profile Url" ng-model="linkedinUrl"
+               style="width:100%; margin-bottom:10px;">
+        <!-- <textarea type="text" class="text-input" placeholder="Interests" ng-model="interests"
+               style="width:100%; margin-bottom:10px;"> -->
+        
+        <textarea class="textarea" rows="10" placeholder="Interests" ng-model="interests"
+                  style="width:100%; margin-bottom:10px;"></textarea>
+        
+                
+
+        <!-- Choose Image: <input type="file" id="imgUri">
+        <br> -->
+        <!-- <input type="file" class="custom-file-input"
+file-model="imgUri"> -->
+        <ons-button modifier="large" ng-click="submitForm()" ng-attr-disabled="{{disableButton}}">
+            {{editProfileButtonText}}
+        </ons-button>
+    </section>
+
+</ons-page>

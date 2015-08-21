@@ -42,14 +42,16 @@ var app = {
 
         checkPreAuth();
 
+        app.updateInterestedCategories();
         app.getCount("Notices");
-        setInterval(function () {
+        /*setInterval(function () {
             app.getCount("Notices");
-        }, 1500000);
+        }, 1500000);*/
         app.getCount("News");
-        setInterval(function () {
+        
+        /*setInterval(function () {
             app.getCount("News");
-        }, 1500000);
+        }, 1500000);*/
 //left
 //change variable name and make global variable for url
 
@@ -205,6 +207,76 @@ var app = {
 
     },
 
+    updateInterestedCategories: function () {
+
+        //if here to execute only when profile id set
+        if (window.localStorage["email"] != undefined || window.localStorage["password"] != undefined) {
+            var u = window.localStorage.getItem('email');
+            var p = window.localStorage.getItem('password');
+
+            var updateInterestedCategoriesUrl="http://collegeboard-env2.elasticbeanstalk.com/userInfo/userSignIn?userEmail=" + u + "&userPassword=" + p;
+            $.get(updateInterestedCategoriesUrl, function (response) {
+                    
+                var isSuccess = response.success;
+                        if (isSuccess) {
+                            var register_name = response.data.userName;
+                            var register_roll = response.data.rollNumber;
+                            var register_yearGrad = response.data.yearGrad;
+                            var register_branch = response.data.branch;
+                            var register_company = response.data.company;
+                            var user_id = response.data.userId;
+                            var contact_nos = response.data.contactNumber;
+                            var register_email = response.data.emailAddress;
+                            var register_password = response.data.password;
+                            var register_college = response.data.collegeName;
+                            var interestedCategories = response.data.userCategories;
+                            var userCollegeBranches = response.data.collegeBranches;
+                            var register_status = response.data.status;
+                            //var register_aboutMe = response.data.aboutMe;
+                            var register_fbUrl = response.data.fbUrl;
+                            var register_twitterUrl = response.data.twitterUrl;
+                            var register_linkedinUrl = response.data.linkedinUrl;
+                            var register_interests = response.data.interests;
+                        } else {
+                            
+                        }
+                        if (isSuccess) {
+                            //store profile data in local storage
+                            var profileData = {
+                                'register_email': register_email,
+                                'user_id': user_id,
+                                'contact_nos': contact_nos,
+                                'register_yearGrad': register_yearGrad,
+                                'register_branch': register_branch,
+                                'register_company': register_company,
+                                'register_password': register_password,
+                                'register_name': register_name,
+                                'register_college': register_college,
+                                'register_roll': register_roll,
+                                'interestedCategories': interestedCategories,
+                                'userCollegeBranches': userCollegeBranches,
+                                'register_status': register_status,
+                                //'aboutMe': register_aboutMe,
+                                'register_fbUrl': register_fbUrl,
+                                'register_twitterUrl': register_twitterUrl,
+                                'register_linkedinUrl': register_linkedinUrl,
+                                'register_interests': register_interests
+                            };
+                            var profileDataJson = JSON.stringify(profileData);
+
+                            window.localStorage["profileData"] = profileDataJson;
+                        }
+
+                }).fail(function () {
+
+                    //alert("some probem with internet or server not able to fetch count in categories.");
+                });
+            
+        }
+        //alert("Hello");
+
+    },
+
     // Update DOM on a Received Event
     receivedEvent: function (id) {
         //var parentElement = document.getElementById(id);
@@ -259,12 +331,22 @@ var app = {
                         if (isSuccess) {
                             var register_name = response.data.userName;
                             var register_roll = response.data.rollNumber;
+                            var register_yearGrad = response.data.yearGrad;
+                            var register_branch = response.data.branch;
+                            var register_company = response.data.company;
                             var user_id = response.data.userId;
                             var contact_nos = response.data.contactNumber;
                             var register_email = response.data.emailAddress;
                             var register_password = response.data.password;
                             var register_college = response.data.collegeName;
                             var interestedCategories = response.data.userCategories;
+                            var userCollegeBranches = response.data.collegeBranches;
+                            var register_status = response.data.status;
+                            //var register_aboutMe = response.data.aboutMe;
+                            var register_fbUrl = response.data.fbUrl;
+                            var register_twitterUrl = response.data.twitterUrl;
+                            var register_linkedinUrl = response.data.linkedinUrl;
+                            var register_interests = response.data.interests;
                         } else {
                             var errorMessage = response.message;
                             alert(errorMessage);
@@ -277,11 +359,21 @@ var app = {
                                 'register_email': register_email,
                                 'user_id': user_id,
                                 'contact_nos': contact_nos,
+                                'register_yearGrad': register_yearGrad,
+                                'register_branch': register_branch,
+                                'register_company': register_company,
                                 'register_password': register_password,
                                 'register_name': register_name,
                                 'register_college': register_college,
                                 'register_roll': register_roll,
-                                'interestedCategories': interestedCategories
+                                'interestedCategories': interestedCategories,
+                                'userCollegeBranches': userCollegeBranches,
+                                'register_status': register_status,
+                                //'aboutMe': register_aboutMe,
+                                'register_fbUrl': register_fbUrl,
+                                'register_twitterUrl': register_twitterUrl,
+                                'register_linkedinUrl': register_linkedinUrl,
+                                'register_interests': register_interests
                             };
                             var profileDataJson = JSON.stringify(profileData);
 
@@ -387,6 +479,7 @@ var app = {
                         var register_password = response.data.password;
                         var register_college = response.data.collegeName;
                         var interestedCategories = response.data.userCategories;
+                        var userCollegeBranches= response.data.collegeBranches;
                     } else {
                         var errorMessage = response.message;
                         alert(errorMessage);
@@ -403,7 +496,8 @@ var app = {
                             'register_name': register_name,
                             'register_college': register_college,
                             'register_roll': register_roll,
-                            'interestedCategories': interestedCategories
+                            'interestedCategories': interestedCategories,
+                            'userCollegeBranches': userCollegeBranches
                         };
                         var profileDataJson = JSON.stringify(profileData);
 
@@ -1342,6 +1436,431 @@ var app = {
 
     });
 
+    // Feed Plugin: Profile Controller
+    module.controller('profileController', function ($scope, $http, FeedPluginData) {
+        var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        $scope.name = profileData.register_name;
+        $scope.email = profileData.register_email;
+        $scope.college = profileData.register_college;
+        $scope.contactNumber = profileData.contact_nos;
+        $scope.roll = profileData.register_roll;
+        $scope.yearGrad = profileData.register_yearGrad;
+        if (profileData.register_branch!=undefined && profileData.register_branch!= null && profileData.register_branch!='') {
+        $scope.branch = profileData.register_branch.branchName;
+            
+        };
+        $scope.company = profileData.register_company;
+        $scope.status = profileData.register_status;
+        //$scope.aboutMe = profileData.register_aboutMe;
+        $scope.fbUrl = profileData.register_fbUrl;
+        $scope.twitterUrl = profileData.register_twitterUrl;
+        $scope.interests = profileData.register_interests;
+        $scope.linkedinUrl = profileData.register_linkedinUrl;
+        $scope.loadURL = function (link) {
+            //target: The target in which to load the URL, an optional parameter that defaults to _self. (String)
+            //_self: Opens in the Cordova WebView if the URL is in the white list, otherwise it opens in the InAppBrowser.
+            //_blank: Opens in the InAppBrowser.
+            //_system: Opens in the system's web browser.
+            //window.open($scope.item.link,'_blank');
+            //alert(link);    
+            if (link.substring(0, 4).toLowerCase() != "http") {
+                link = "http://" + link;
+            }
+            window.open(link, '_blank');
+        }
+
+        $scope.editProfile = function () {
+            
+            $scope.ons.navigator.pushPage('editProfile.html', {compulsory: "selectedItem.categoryName"});
+        }
+        
+
+    });
+
+// Feed Plugin: editProfile Controller
+    module.controller('editProfileController', function ($scope,$http) {
+        var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        $scope.editProfileButtonText = "Submit";
+        $scope.name = profileData.register_name;
+        $scope.email = profileData.register_email;
+        $scope.college = profileData.register_college;
+        $scope.userCollegeBranches = profileData.userCollegeBranches;
+        $scope.contactNumber = profileData.contact_nos;
+        $scope.roll = profileData.register_roll;
+        
+        $scope.yearGrad = profileData.register_yearGrad;
+        $scope.branch = profileData.register_branch.branchId;
+        $scope.company = profileData.register_company;
+        $scope.user_id = profileData.user_id;
+        $scope.status = profileData.register_status;
+        //$scope.aboutMe = profileData.register_aboutMe;
+        $scope.fbUrl = profileData.register_fbUrl;
+        $scope.twitterUrl = profileData.register_twitterUrl;
+        $scope.interests = profileData.register_interests;
+        $scope.linkedinUrl = profileData.register_linkedinUrl;
+        
+        //branch if null angular puts a nullable object in the options tag
+        if ($scope.branch==null) {$scope.branch='';};
+        
+
+        var yearList = [];
+        for (var i = 1970; i <= 2030; i++) {
+          yearList.push(i);   
+        };
+        
+        $scope.gradYearList = yearList; 
+        $scope.userSelectedBranch = function(selectTagBranch){
+            if (selectTagBranch== profileData.register_branch.branchId) {
+                return true;
+            };
+        };
+        $scope.userSelectedYear = function(selectTagYear){
+            if (selectTagYear== profileData.register_yearGrad) {
+                return true;
+            };
+        };
+
+        $scope.submitForm = function () {
+            $scope.disableButton = true;
+            $scope.editProfileButtonText = "Wait...";
+            //var name = $scope.name;
+            var contactNumber = $scope.contactNumber;
+            var roll = $scope.roll;
+            var user_id=$scope.user_id;
+            var yearGrad=$scope.yearGrad ;
+            var branch=$scope.branch ;
+            var company=$scope.company ;
+            var status = $scope.status;
+            //var aboutMe = $scope.aboutMe;
+            var fbUrl = $scope.fbUrl;
+            var twitterUrl = $scope.twitterUrl;
+            var linkedinUrl = $scope.linkedinUrl;
+            var interests = $scope.interests;
+
+           
+            var fd = new FormData();
+            if (roll!=undefined && roll!=null) {
+                fd.append('rollNumber', roll);
+            };if (yearGrad!=undefined && yearGrad!=null && yearGrad!='') {
+                fd.append('yearGrad', yearGrad);
+            };if (contactNumber!=undefined && contactNumber!=null) {
+                fd.append('contactNumber', contactNumber);
+            };if (branch!=undefined && branch!=null && branch!='') {
+                fd.append('branch', branch);
+            };if (company!=undefined && company!=null) {
+                fd.append('company', company);
+            };if (status!=undefined && status!=null) {
+                fd.append('status', status);
+            };if (fbUrl!=undefined && fbUrl!=null) {
+                fd.append('fbUrl', fbUrl);
+            };if (twitterUrl!=undefined && twitterUrl!=null) {
+                fd.append('twitterUrl', twitterUrl);
+            };if (linkedinUrl!=undefined && linkedinUrl!=null) {
+                fd.append('linkedinUrl', linkedinUrl);
+            };if (interests!=undefined && interests!=null) {
+                fd.append('interests', interests);
+            };
+            fd.append('userId', user_id);
+            
+            
+            
+            
+            
+            
+            //fd.append('aboutMe', aboutMe);
+            
+            
+            
+            
+
+            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+
+            $http.post(locationOrigin + "/userInfo/editUserInfo", fd, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            }).success(function (response) {
+                
+                        
+                var isSuccess = response.success;
+                if (isSuccess) {
+                    alert("Your information has been edited . Go back.");
+                        var register_name = response.data.userName;
+                        var register_roll = response.data.rollNumber;
+                        var user_id = response.data.userId;
+                        var register_yearGrad = response.data.yearGrad;
+                        var register_branch = response.data.branch;
+                        var register_company = response.data.company;
+                        var contact_nos = response.data.contactNumber;
+                        var userCollegeBranches = response.data.collegeBranches;
+                        var register_email = response.data.emailAddress;
+                        var register_password = response.data.password;
+                        var register_college = response.data.collegeName;
+                        var interestedCategories = response.data.userCategories;
+                        var register_status = response.data.status;
+                        //var register_aboutMe = response.data.aboutMe;
+                        var register_fbUrl = response.data.fbUrl;
+                        var register_twitterUrl = response.data.twitterUrl;
+                        var register_linkedinUrl = response.data.linkedinUrl;
+                        var register_interests = response.data.interests;
+                        var profileData = {
+                            'register_email': register_email,
+                            'user_id': user_id,
+                            'contact_nos': contact_nos,
+                            'register_yearGrad': register_yearGrad,
+                            'register_branch': register_branch,
+                            'userCollegeBranches': userCollegeBranches,
+                            'register_company': register_company,
+                            'register_password': register_password,
+                            'register_name': register_name,
+                            'register_college': register_college,
+                            'register_roll': register_roll,
+                            'interestedCategories': interestedCategories,
+                            'register_status': register_status,
+                            //'aboutMe': register_aboutMe,
+                            'register_fbUrl': register_fbUrl,
+                            'register_twitterUrl': register_twitterUrl,
+                            'register_linkedinUrl': register_linkedinUrl,
+                            'register_interests': register_interests
+                            
+                        };
+                        var profileDataJson = JSON.stringify(profileData);
+
+                        window.localStorage["profileData"] = profileDataJson;
+                        $scope.disableButton = false;
+                    $scope.editProfileButtonText = "Submit";
+
+                } else {
+
+                    var errorMessage = response.message;
+                    alert("some problem in editing :" + errorMessage);
+                    $scope.disableButton = false;
+                    $scope.editProfileButtonText = "Submit";
+                    //alert(errorMessage);
+                }
+            }).error(function (response) {
+
+                //alert(response.message);
+                alert("Some problem with the internet or server try later.");
+                $scope.disableButton = false;
+                $scope.editProfileButtonText = "Submit";
+            });
+
+
+        };        
+
+    });
+
+    // Feed Plugin: people search Controller
+    module.controller('peopleSearchController', function ($scope,$http) {
+        var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        $scope.user_id = profileData.user_id;
+        $scope.userCollegeBranches = profileData.userCollegeBranches;
+        var yearList = [];
+        for (var i = 1970; i <= 2030; i++) {
+          yearList.push(i);   
+        };
+        
+        $scope.gradYearList = yearList; 
+        
+        $scope.searchButtonText = "Submit";
+        $scope.submitForm = function () {
+            $scope.disableButton = true;
+            $scope.searchButtonText = "Wait...";
+            var user_id = $scope.user_id;
+            var name = $scope.name;
+            var roll = $scope.roll;
+            var yearGrad = $scope.yearGrad;
+            var branch = $scope.branch;
+            var interest = $scope.interest;
+            var company = $scope.company;
+            
+           
+            var fd = new FormData();
+            fd.append('userId', user_id);
+            fd.append('userName', name);
+            fd.append('rollNumber', roll);
+            fd.append('yearGrad', yearGrad);
+            fd.append('branch', branch);
+            fd.append('interest', interest);
+            fd.append('company', company);
+
+            if (name==undefined || name==null) {
+                name='';
+            };if (roll==undefined || roll==null) {
+                roll='';
+            };if (yearGrad==undefined || yearGrad==null) {
+                yearGrad='';
+            };if (branch==undefined || branch==null) {
+                branch='';
+            };if (interest==undefined || interest==null) {
+                interest='';
+            };if (company==undefined || company==null) {
+                company='';
+            };
+            
+            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            //$http.post(locationOrigin + "url", fd, {
+            var searchUrl= locationOrigin + "/userInfo/searchUser?userId="+user_id+"&userName="+name+"&rollNumber="+roll+"&yearGrad="+yearGrad+"&interest="+interest+"&branch="+branch+"&company="+company;
+            
+            /*$http.post('http://localhost/noticeBoard/firstApp/www/loginDummy3.php', fd, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            })*/
+            $http({method: 'GET', url: searchUrl}).success(function (response) {
+                
+                        
+                var isSuccess = response.success;
+                
+
+                if (isSuccess) {
+                    //alert("Your information has been edited . Go back.");
+                    var searchData = []; // new Array
+                    var searchDataWrapper ={};    
+                    var responseData = response.data;
+                    $.each(responseData, function (key, value) { 
+                        var singleUser_name = value.userName;
+                        var singleUser_roll = value.rollNumber;
+                        //var user_id = response.data.userId;
+                        //var contact_nos = response.data.contactNumber;
+                        //var singleUser_email = response.data.emailAddress;
+                        //var singleUser_password = response.data.password;
+                        var singleUser_college = value.collegeName;
+                        //var interestedCategories = response.data.userCategories;
+                        var singleUser_status = value.status;
+                        //var singleUser_aboutMe = value.aboutMe;
+                        var singleUser_fbUrl = value.fbUrl;
+                        //var singleUser_yearGrad = value.yearGrad;
+                        var singleUser_yearGrad = value.graduationYear;
+                        if (value.branch!=undefined && value.branch!= null && value.branch!='') {
+                            var singleUser_branch = value.branch.branchName;
+                                
+                            };
+                        
+                        var singleUser_company = value.company;
+                        var singleUser_twitterUrl = value.twitterUrl;
+                        var singleUser_linkedinUrl = value.linkedInUrl;
+                        var singleUser_interests = value.interests;
+                        var singleUserData = {
+                            'user_id': user_id,
+                            'singleUser_name': singleUser_name,
+                            'singleUser_college': singleUser_college,
+                            'singleUser_roll': singleUser_roll,
+                            //'interestedCategories': interestedCategories,
+                            'singleUser_yearGrad': singleUser_yearGrad,
+                            'singleUser_branch': singleUser_branch,
+                            'singleUser_company': singleUser_company,
+                            'singleUser_status': singleUser_status,
+                            //'singleUser_aboutMe': singleUser_aboutMe,
+                            'singleUser_fbUrl': singleUser_fbUrl,
+                            'singleUser_twitterUrl': singleUser_twitterUrl,
+                            'singleUser_linkedinUrl': singleUser_linkedinUrl,
+                            'singleUser_interests': singleUser_interests
+                            };
+                        searchData.push(singleUserData);
+                        searchDataWrapper[key] = singleUserData;
+
+                        });
+                        //searchDataWrapper={'search':searchData};
+                        var searchDataWrapperJson = JSON.stringify(searchDataWrapper);
+
+                        window.localStorage["searchDataWrapper"] = searchDataWrapperJson;
+                        $scope.ons.navigator.pushPage('searchDisplay.html');
+                        $scope.disableButton = false;
+                    $scope.searchButtonText = "Submit";
+
+                } else {
+
+                    var errorMessage = response.message;
+                    alert("some problem in searching :" + errorMessage);
+                    $scope.disableButton = false;
+                    $scope.searchButtonText = "Submit";
+                    //alert(errorMessage);
+                }
+            }).error(function (response) {
+
+                //alert(response.message);
+                alert("Some problem with the internet or server try later.");
+                $scope.disableButton = false;
+                $scope.searchButtonText = "Submit";
+            });
+
+
+        };        
+
+    });
+
+module.controller('searchDisplayController', function ($scope) {
+        var searchDataWrapper = $.parseJSON(window.localStorage.getItem('searchDataWrapper'));
+        //to place condition if not null here
+        //$scope.feeds = searchDataWrapper.search;
+        $scope.feeds = searchDataWrapper;
+        
+        //var feeds=$scope.feeds;
+        
+        /*$scope.email = profileData.register_email;
+        $scope.college = profileData.register_college;
+        $scope.contactNumber = profileData.register_contactNumber;
+        $scope.roll = profileData.register_roll;
+        $scope.status = profileData.register_status;
+        $scope.aboutMe = profileData.register_aboutMe;
+        $scope.fbUrl = profileData.register_fbUrl;
+        $scope.twitterUrl = profileData.register_twitterUrl;
+        $scope.interests = profileData.register_interests;
+        $scope.linkedinUrl = profileData.register_linkedinUrl;
+        */
+
+        $scope.showDetail = function (index) {
+            var selectedItem = $scope.feeds[index];    
+            $scope.ons.navigator.pushPage('searchSingleUserDisplay.html', {'selectedItem': selectedItem});
+        }
+        
+
+    });
+    
+    module.controller('searchSingleUserDisplayController', function ($scope, $http, FeedPluginData) {
+        var selectedItem=$scope.ons.navigator.getCurrentPage().options.selectedItem;
+        //var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
+        //to place condition if not null here
+        
+        $scope.name = selectedItem.singleUser_name;
+        $scope.email = selectedItem.singleUser_email;
+        $scope.yearGrad = selectedItem.singleUser_yearGrad;
+        $scope.branch = selectedItem.singleUser_branch;
+        $scope.company = selectedItem.singleUser_company;
+        $scope.college = selectedItem.singleUser_college;
+        $scope.contactNumber = selectedItem.singleUser_contactNumber;
+        $scope.roll = selectedItem.singleUser_roll;
+        $scope.status = selectedItem.singleUser_status;
+        //$scope.aboutMe = selectedItem.singleUser_aboutMe;
+        $scope.fbUrl = selectedItem.singleUser_fbUrl;
+        $scope.twitterUrl = selectedItem.singleUser_twitterUrl;
+        $scope.interests = selectedItem.singleUser_interests;
+        $scope.linkedinUrl = selectedItem.singleUser_linkedinUrl;
+
+                            
+        $scope.loadURL = function (link) {
+            //target: The target in which to load the URL, an optional parameter that defaults to _self. (String)
+            //_self: Opens in the Cordova WebView if the URL is in the white list, otherwise it opens in the InAppBrowser.
+            //_blank: Opens in the InAppBrowser.
+            //_system: Opens in the system's web browser.
+            //window.open($scope.item.link,'_blank');
+            //alert(link);    
+            if (link.substring(0, 4).toLowerCase() != "http") {
+                link = "http://" + link;
+            }
+            window.open(link, '_blank');
+        }
+
+        
+
+    });
 
     module.controller('menuController', function ($scope) {
 
