@@ -87,15 +87,15 @@
 
 
             <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-            <ons-button modifier="large" ng-show="fbUrl != undefined" ng-click="loadURL(fbUrl)">
+            <ons-button modifier="large" ng-show="fbUrl != undefined && fbUrl != '' && fbUrl != null" ng-click="loadURL(fbUrl)">
                 Profile on facebook
             </ons-button>
             <br>
-            <ons-button modifier="large" ng-show=" twitterUrl != undefined" ng-click="loadURL(twitterUrl)">
+            <ons-button modifier="large" ng-show=" twitterUrl != undefined && twitterUrl != '' && twitterUrl != null" ng-click="loadURL(twitterUrl)">
                 Profile on twitter
             </ons-button>
             <br>
-            <ons-button modifier="large" ng-show=" linkedinUrl != undefined" ng-click="loadURL(linkedinUrl)">
+            <ons-button modifier="large" ng-show=" linkedinUrl != undefined && linkedinUrl != '' && linkedinUrl != null" ng-click="loadURL(linkedinUrl)">
                 Profile on linkedin
             </ons-button>
             <br>

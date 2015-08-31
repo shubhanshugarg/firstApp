@@ -552,9 +552,10 @@ var app = {
         $http({method: 'GET', url: FeedPluginData.url}).
             success(function (data, status, headers, config) {
                 $scope.categories = data.categories;
+                navigator.splashscreen.hide();
             }).
             error(function (data, status, headers, config) {
-
+                navigator.splashscreen.hide();
             });
 
         $scope.retrieveCollege = function (a) {
@@ -1135,8 +1136,8 @@ var app = {
                     var ctx = canvas.getContext("2d");
                     //canvas.width=img.width/2;
                     //canvas.height=img.height/2;
-                    canvas.width = 150;
-                    canvas.height = 250;
+                    canvas.width = 399;
+                    canvas.height = 300;
                     ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
                     document.getElementById("uploadPreview").src = canvas.toDataURL();
                     var imageData = canvas.toDataURL();
@@ -1800,8 +1801,12 @@ module.controller('searchDisplayController', function ($scope) {
         var searchDataWrapper = $.parseJSON(window.localStorage.getItem('searchDataWrapper'));
         //to place condition if not null here
         //$scope.feeds = searchDataWrapper.search;
-        $scope.feeds = searchDataWrapper;
-        
+        var array = $.map(searchDataWrapper, function (value, index) {
+                return [value];
+            });
+        //$scope.feeds = searchDataWrapper;
+        $scope.feeds = array;
+        var q=1;
         //var feeds=$scope.feeds;
         
         /*$scope.email = profileData.register_email;
