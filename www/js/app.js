@@ -66,7 +66,7 @@ var app = {
                     //hacky way post asynch as to do after dom load
                     $('#toolbar').show();
                     $('#category-page').show();
-                    navigator.splashscreen.hide();
+                    //navigator.splashscreen.hide();
 
 
                 }, "json");
@@ -117,7 +117,7 @@ var app = {
                         //show categories and hide login and register form
                         menu.setSwipeable(false);
                         $('#loginPage').show();
-                        navigator.splashscreen.hide();
+                        //navigator.splashscreen.hide();
                         //$('#registerPage').show();
 
 
@@ -127,7 +127,7 @@ var app = {
                     alert("some probem with internet or server not able to fetch list of colleges.");
                     menu.setSwipeable(false);
                     $('#loginPage').show();
-                    navigator.splashscreen.hide();
+                    //navigator.splashscreen.hide();
                     //$('#registerPage').show();
                 });
 
@@ -592,6 +592,7 @@ var app = {
 
         $scope.showHiddenPage = function (index) {
             //how to hide splash screen here
+            navigator.splashscreen.hide();
             if ($("#loginPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
                 $('#toolbar').show();
                 $('#category-page').show();
