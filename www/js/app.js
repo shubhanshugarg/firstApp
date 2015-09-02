@@ -592,7 +592,7 @@ var app = {
 
         $scope.showHiddenPage = function (index) {
             //how to hide splash screen here
-            navigator.splashscreen.hide();
+            //navigator.splashscreen.hide();
             if ($("#loginPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
                 $('#toolbar').show();
                 $('#category-page').show();
