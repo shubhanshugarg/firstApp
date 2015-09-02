@@ -1064,7 +1064,18 @@ var app = {
             }
             window.open(link, '_blank');
         }
+        $scope.shareFeed = function () {
+            
+            var subject = "Notice Published On College LoopIn app";
+            var message = $scope.item.title;
+            message = message.replace(/(<([^>]+)>)/ig,"");
 
+            //var link = $scope.item.link;
+            
+            //Documentation: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin
+            //window.plugins.socialsharing.share('Message', 'Subject', 'Image', 'Link');
+            window.plugins.socialsharing.share(message, subject, null, null);
+        }
 
     });
 
