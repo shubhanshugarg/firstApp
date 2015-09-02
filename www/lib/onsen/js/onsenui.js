@@ -5261,6 +5261,7 @@ window.ons = (function(){
             var $onsen = ons._getOnsenService();
             $onsen.waitForVariables(dependencies, callback);
           });
+		  navigator.splashscreen.hide();
         }
       },
 

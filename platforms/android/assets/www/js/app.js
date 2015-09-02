@@ -66,6 +66,7 @@ var app = {
                     //hacky way post asynch as to do after dom load
                     $('#toolbar').show();
                     $('#category-page').show();
+                    //navigator.splashscreen.hide();
 
 
                 }, "json");
@@ -116,6 +117,7 @@ var app = {
                         //show categories and hide login and register form
                         menu.setSwipeable(false);
                         $('#loginPage').show();
+                        //navigator.splashscreen.hide();
                         //$('#registerPage').show();
 
 
@@ -125,6 +127,7 @@ var app = {
                     alert("some probem with internet or server not able to fetch list of colleges.");
                     menu.setSwipeable(false);
                     $('#loginPage').show();
+                    //navigator.splashscreen.hide();
                     //$('#registerPage').show();
                 });
 
@@ -552,9 +555,10 @@ var app = {
         $http({method: 'GET', url: FeedPluginData.url}).
             success(function (data, status, headers, config) {
                 $scope.categories = data.categories;
+                //navigator.splashscreen.hide();
             }).
             error(function (data, status, headers, config) {
-
+                //navigator.splashscreen.hide();
             });
 
         $scope.retrieveCollege = function (a) {
@@ -588,6 +592,7 @@ var app = {
 
         $scope.showHiddenPage = function (index) {
             //how to hide splash screen here
+            //navigator.splashscreen.hide();
             if ($("#loginPage").is(":hidden") && window.localStorage["email"] != undefined && window.localStorage["password"] != undefined) {
                 $('#toolbar').show();
                 $('#category-page').show();
@@ -638,7 +643,12 @@ var app = {
 
 
         });
-        $scope.items = FeedPluginData.profileData["interestedCategories"];
+
+        var categories= FeedPluginData.profileData["interestedCategories"];
+        categories=categories.sort(function(b, a) {
+            return parseFloat(a.categoryNotifications) - parseFloat(b.categoryNotifications);
+        });
+        $scope.items = categories;
         //var iii= FeedPluginData.profileData["interestedCategories"];
         //var ii=0;
 
@@ -1059,7 +1069,18 @@ var app = {
             }
             window.open(link, '_blank');
         }
+        $scope.shareFeed = function () {
+            
+            var subject = "Notice Published On College LoopIn app";
+            var message = $scope.item.title;
+            message = message.replace(/(<([^>]+)>)/ig,"");
 
+            //var link = $scope.item.link;
+            
+            //Documentation: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin
+            //window.plugins.socialsharing.share('Message', 'Subject', 'Image', 'Link');
+            window.plugins.socialsharing.share(message, subject, null, null);
+        }
 
     });
 
@@ -1135,8 +1156,8 @@ var app = {
                     var ctx = canvas.getContext("2d");
                     //canvas.width=img.width/2;
                     //canvas.height=img.height/2;
-                    canvas.width = 150;
-                    canvas.height = 250;
+                    canvas.width = 399;
+                    canvas.height = 300;
                     ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
                     document.getElementById("uploadPreview").src = canvas.toDataURL();
                     var imageData = canvas.toDataURL();
@@ -1800,8 +1821,12 @@ module.controller('searchDisplayController', function ($scope) {
         var searchDataWrapper = $.parseJSON(window.localStorage.getItem('searchDataWrapper'));
         //to place condition if not null here
         //$scope.feeds = searchDataWrapper.search;
-        $scope.feeds = searchDataWrapper;
-        
+        var array = $.map(searchDataWrapper, function (value, index) {
+                return [value];
+            });
+        //$scope.feeds = searchDataWrapper;
+        $scope.feeds = array;
+        var q=1;
         //var feeds=$scope.feeds;
         
         /*$scope.email = profileData.register_email;

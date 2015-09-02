@@ -23,7 +23,7 @@
                     <div class="thumbnail-container">
                         <div><img
                                 ng-src="http://collegeboard-env2.elasticbeanstalk.com/archive/document/{{feed.images.url1}}"
-                                class="thumbnail"></img></div>
+                                class="thumbnail" onerror="this.onerror=null;this.src='No_Image.jpg'"></div>
 
                     </div>
                 </ons-col>
@@ -41,7 +41,6 @@
         </ons-list-item>
     </ons-list>
 
-    
 
     <div style="padding: 0 10px 10px 10px;">
         <ons-button modifier="large" ng-show="hasMoreItems()" ng-click="showMoreItems()">Show more</ons-button>

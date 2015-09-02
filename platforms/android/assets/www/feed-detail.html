@@ -6,9 +6,9 @@
         </div>
         <div class="center" ng-bind-html="item.title"></div>
         <div class="right">
-            <!-- <ons-toolbar-button ng-click="shareFeed()">
+            <ons-toolbar-button ng-click="shareFeed()">
                 <ons-icon icon="share-alt" style="vertical-align: -4px; font-size: 26px;"></ons-icon>
-            </ons-toolbar-button> -->
+            </ons-toolbar-button>
         </div>
     </ons-toolbar>
 
@@ -45,11 +45,11 @@
         </ons-button> -->
 
         <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-        <ons-button modifier="large" ng-show="item.urlLink != 'undefined'" ng-click="loadURL(item.urlLink)">
+        <ons-button modifier="large" ng-show="item.urlLink != 'undefined' && item.urlLink != '' && item.urlLink != null" ng-click="loadURL(item.urlLink)">
             Open Link
         </ons-button>
         <br>
-        <ons-button modifier="large" ng-show="item.socialLink != 'undefined'" ng-click="loadURL(item.socialLink)">
+        <ons-button modifier="large" ng-show="item.socialLink != 'undefined' && item.socialLink != '' && item.socialLink != null" ng-click="loadURL(item.socialLink)">
             Open link on social network
         </ons-button>
         <br>

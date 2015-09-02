@@ -1,79 +1,106 @@
 <ons-navigator>
-<ons-page ng-controller="profileController" on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
+    <ons-page ng-controller="profileController"
+              on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
 
-    <ons-toolbar>
-        <div class="left">
-            <ons-toolbar-button ng-click="menu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
-        <div class="center">Profile
-        </div>
-    </ons-toolbar>
-    
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button ng-click="menu.toggle()">
+                    <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">Profile
+            </div>
+        </ons-toolbar>
 
-    
-    <section style="padding: 10px;">
-        <ons-button modifier="small"  ng-click="editProfile()">
-            Edit
-        </ons-button><br><br>
-        
-        <!-- $scope.name = profileData.register_name;
-        $scope.email = profileData.register_email;
-        $scope.college = profileData.register_college;
-        $scope.contactNumber = profileData.register_contactNumber;
-        $scope.roll = profileData.register_roll;
-        $scope.yearGrad = profileData.register_yearGrad;
-        $scope.branch = profileData.register_branch;
-        $scope.company = profileData.register_company;
-        $scope.status = profileData.register_status;
-        $scope.aboutMe = profileData.register_aboutMe;
-        $scope.fbUrl = profileData.register_fbUrl;
-        $scope.twitterUrl = profileData.register_twitterUrl;
-        $scope.interests = profileData.register_interests;
-        $scope.linkedinUrl = profileData.register_linkedinUrl; -->
-        <!-- <img src="scrollDown.png" style="z-index:2;position: absolute;height: 59px;right: 80px;top: 55px;"> -->
-        <div class="card">
-            <img src="scrollDown.png" style="z-index:2;position: absolute;height: 80px;right: 80px;top: 55px;">
-    <h3 style="margin:20px">Personal Information</h3>
-    <p >Name :</p><p class="text-info" ng-bind-html="name"></p>
-    <p >Roll Number :</p><p class="text-info" ng-bind-html="roll"></p>
-    <p >Graduation Year :</p><p class="text-info" ng-bind-html="yearGrad"></p>
-        <p >Branch :</p><p class="text-info" ng-bind-html="branch"></p>
-         
-           
-</div>
-<div class="card">
-    <h3 style="margin:20px">Contact Information</h3>
-    <p >Email: </p><p class="text-info" ng-bind-html="email"></p>
-    <p >Contact Number: </p><p class="text-info" ng-bind-html="contactNumber"></p>
-</div>
-<div class="card">
-    <h3 style="margin:20px">Other Information</h3>
-    <p >Company :</p><p class="text-info" ng-bind-html="company"></p>
-        <p >Status: </p><p class="text-info" ng-bind-html="status"></p>
-        <!-- About Me :<p class="feed-content" ng-bind-html="aboutMe"></p> -->
-        <p >Interests :</p><p class="text-info" ng-bind-html="interests"></p>
 
-</div>
+        <section style="padding: 10px;">
+            <ons-button style="margin-left: 15px" modifier="small" ng-click="editProfile()">
+                Edit
+            </ons-button>
+            <br><br>
 
-        
-        
-        <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-        <ons-button modifier="large" ng-show="fbUrl != undefined" ng-click="loadURL(fbUrl)">
-            Profile on facebook
-        </ons-button>
-        <br>
-        <ons-button modifier="large" ng-show=" twitterUrl != undefined" ng-click="loadURL(twitterUrl)">
-            Profile on twitter
-        </ons-button>
-        <br>
-        <ons-button modifier="large" ng-show=" linkedinUrl != undefined" ng-click="loadURL(linkedinUrl)">
-            Profile on linkedin
-        </ons-button>
-        <br>
-        
-    </section>
+            <!-- $scope.name = profileData.register_name;
+            $scope.email = profileData.register_email;
+            $scope.college = profileData.register_college;
+            $scope.contactNumber = profileData.register_contactNumber;
+            $scope.roll = profileData.register_roll;
+            $scope.yearGrad = profileData.register_yearGrad;
+            $scope.branch = profileData.register_branch;
+            $scope.company = profileData.register_company;
+            $scope.status = profileData.register_status;
+            $scope.aboutMe = profileData.register_aboutMe;
+            $scope.fbUrl = profileData.register_fbUrl;
+            $scope.twitterUrl = profileData.register_twitterUrl;
+            $scope.interests = profileData.register_interests;
+            $scope.linkedinUrl = profileData.register_linkedinUrl; -->
+            <!-- <img src="scrollDown.png" style="z-index:2;position: absolute;height: 59px;right: 80px;top: 55px;"> -->
+            <div class="card">
+                <img src="scrollDown.png" style="z-index:2;position: absolute;height: 80px;right: 20px;bottom:-5px;">
 
-</ons-page>
+                <h3 style="margin:20px">Personal Information</h3>
+
+                <p>Name :</p>
+
+                <p class="text-info" ng-bind-html="name"></p>
+
+                <p>Roll Number :</p>
+
+                <p class="text-info" ng-bind-html="roll"></p>
+
+                <p>Graduation Year :</p>
+
+                <p class="text-info" ng-bind-html="yearGrad"></p>
+
+                <p>Branch :</p>
+
+                <p class="text-info" ng-bind-html="branch"></p>
+
+
+            </div>
+            <div class="card">
+                <h3 style="margin:20px">Contact Information</h3>
+
+                <p>Email: </p>
+
+                <p class="text-info" ng-bind-html="email"></p>
+
+                <p>Contact Number: </p>
+
+                <p class="text-info" ng-bind-html="contactNumber"></p>
+            </div>
+            <div class="card">
+                <h3 style="margin:20px">Other Information</h3>
+
+                <p>Company :</p>
+
+                <p class="text-info" ng-bind-html="company"></p>
+
+                <p>Status: </p>
+
+                <p class="text-info" ng-bind-html="status"></p>
+                <!-- About Me :<p class="feed-content" ng-bind-html="aboutMe"></p> -->
+                <p>Interests :</p>
+
+                <p class="text-info" ng-bind-html="interests"></p>
+
+            </div>
+
+
+            <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
+            <ons-button modifier="large" ng-show="fbUrl != undefined && fbUrl != '' && fbUrl != null" ng-click="loadURL(fbUrl)">
+                Profile on facebook
+            </ons-button>
+            <br>
+            <ons-button modifier="large" ng-show=" twitterUrl != undefined && twitterUrl != '' && twitterUrl != null" ng-click="loadURL(twitterUrl)">
+                Profile on twitter
+            </ons-button>
+            <br>
+            <ons-button modifier="large" ng-show=" linkedinUrl != undefined && linkedinUrl != '' && linkedinUrl != null" ng-click="loadURL(linkedinUrl)">
+                Profile on linkedin
+            </ons-button>
+            <br>
+
+        </section>
+
+    </ons-page>
 </ons-navigator>

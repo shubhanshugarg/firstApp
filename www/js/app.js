@@ -643,7 +643,12 @@ var app = {
 
 
         });
-        $scope.items = FeedPluginData.profileData["interestedCategories"];
+
+        var categories= FeedPluginData.profileData["interestedCategories"];
+        categories=categories.sort(function(b, a) {
+            return parseFloat(a.categoryNotifications) - parseFloat(b.categoryNotifications);
+        });
+        $scope.items = categories;
         //var iii= FeedPluginData.profileData["interestedCategories"];
         //var ii=0;
 
