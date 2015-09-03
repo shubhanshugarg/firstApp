@@ -5260,8 +5260,9 @@ window.ons = (function(){
           ons.ready(function() {
             var $onsen = ons._getOnsenService();
             $onsen.waitForVariables(dependencies, callback);
+          	navigator.splashscreen.hide();
           });
-		  navigator.splashscreen.hide();
+		  
         }
       },
 
