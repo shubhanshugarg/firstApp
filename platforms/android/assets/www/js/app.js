@@ -734,6 +734,8 @@ var app = {
 
                         $.each(responseData, function (key, value) {
 
+                            var publishedFullDate = new Date(value.creationDate);
+                            var publishedDate=publishedFullDate.toDateString();
                             entryValueObj = {
                                 "id": value.noticeId,
                                 "title": value.noticeHeading,
@@ -747,7 +749,8 @@ var app = {
                                 "postedById": value.userInfo.userId,
                                 "postedByRoll": value.userInfo.rollNumber,
                                 "postedByName": value.userInfo.userName,
-                                "contentSnippet": "Click to read"
+                                //"contentSnippet": "Click to read"
+                                "contentSnippet": publishedDate
                             }
                             entries[count++] = entryValueObj;
 
@@ -900,7 +903,8 @@ var app = {
         //decoupling the selected item
         $scope.item.mainCategory = FeedPluginData.mainCategory;
         $scope.item.title = FeedPluginData.selectedItem.title;
-        $scope.item.publishedDate = new Date(FeedPluginData.selectedItem.publishedDate);
+        $scope.item.publishedFullDate = new Date(FeedPluginData.selectedItem.publishedDate);
+        $scope.item.publishedDate=$scope.item.publishedFullDate.toDateString();
         //$scope.item.publishedDate = FeedPluginData.selectedItem.publishedDate;
         $scope.item.content = FeedPluginData.selectedItem.content;
         $scope.item.urlLink = FeedPluginData.selectedItem.urlLink;
@@ -1071,15 +1075,15 @@ var app = {
         }
         $scope.shareFeed = function () {
             
-            var subject = "Notice Published On College LoopIn app";
-            var message = $scope.item.title;
+            var subject = "Shared Notice from COLLEGE LOOPIN app";
+            var message = $scope.item.title+":"+$scope.item.content;
             message = message.replace(/(<([^>]+)>)/ig,"");
-
+            var link ="https://play.google.com/store/apps/details?id=com.collegeloopin";
             //var link = $scope.item.link;
             
             //Documentation: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin
             //window.plugins.socialsharing.share('Message', 'Subject', 'Image', 'Link');
-            window.plugins.socialsharing.share(message, subject, null, null);
+            window.plugins.socialsharing.share(message, subject, null, link);
         }
 
     });
