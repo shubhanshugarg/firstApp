@@ -47,7 +47,7 @@ var app = {
         /*setInterval(function () {
             app.getCount("Notices");
         }, 1500000);*/
-        app.getCount("News");
+        //app.getCount("News");
         
         /*setInterval(function () {
             app.getCount("News");
@@ -176,9 +176,10 @@ var app = {
                 var postedDatesString = postedDates.join(",");
                 if (mainCategory == "Notices") {
                     getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
-                } else if (mainCategory == "News") {
-                    getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
                 }
+                /*else if (mainCategory == "News") {
+                    getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+                }*/
                 $.get(getCountUrl, function (response) {
                     //alert("not stored in local storage");
 
@@ -389,7 +390,7 @@ var app = {
                             $('#toolbar').show();
                             $('#category-page').show();
                             app.getCount("Notices");
-                            app.getCount("News");
+                            //app.getCount("News");
                             menu.setSwipeable(true);
 
 
@@ -513,7 +514,7 @@ var app = {
                         $('#toolbar').show();
                         $('#category-page').show();
                         app.getCount("Notices");
-                        app.getCount("News");
+                        //app.getCount("News");
                         menu.setSwipeable(true);
 
 
@@ -582,9 +583,10 @@ var app = {
             FeedPluginData.profileData = profileData;
             //profiledata to take out the categories
             //title fields are passed you can change it
-            if (selectedItem.title.toLowerCase() == "news") {
+            /*if (selectedItem.title.toLowerCase() == "news") {
                 app.getCount("News");
-            } else if (selectedItem.title.toLowerCase() == "notices") {
+            } else*/
+            if (selectedItem.title.toLowerCase() == "notices") {
                 app.getCount("Notices");
             }
             $scope.ons.navigator.pushPage('feed-category.html', {title: selectedItem.title});
@@ -603,7 +605,7 @@ var app = {
 
         $scope.getNotificationEarlyHack = function () {
             app.getCount("Notices");
-            app.getCount("News");
+            //app.getCount("News");
         }
 
         $scope.getName = function (id) {
@@ -632,7 +634,8 @@ var app = {
                 } else {
                     value.categoryNotifications = 0;
                 }
-            } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
+            }
+            /*else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
                 if (window.localStorage['#notificationNewsCount-' + value.categoryId] != undefined) {
                     value.categoryNotifications = JSON.parse(window.localStorage.getItem('#notificationNewsCount-' + value.categoryId));
 
@@ -640,7 +643,7 @@ var app = {
                     value.categoryNotifications = 0;
                 }
             }
-
+*/
 
         });
 
@@ -704,9 +707,10 @@ var app = {
 
             getUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
 
-        } else if (mainCategory.toLowerCase() == "news") {
-            getUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         }
+        /*else if (mainCategory.toLowerCase() == "news") {
+            getUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+        }*/
         //noticeInfo/getNotices?userId=user_id&categoriesToFetch=categoryId
         //$http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php", async: false}).
         $http({
@@ -756,7 +760,8 @@ var app = {
 
 
                         });
-                    } else if (mainCategory.toLowerCase() == "news") {
+                    }
+                    /*else if (mainCategory.toLowerCase() == "news") {
                         $.each(responseData, function (key, value) {
 
                             entryValueObj = {
@@ -778,7 +783,7 @@ var app = {
 
 
                         });
-                    }
+                    }*/
 
 
                     feed = {
@@ -918,9 +923,10 @@ var app = {
         }
         if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
             $scope.item.noticeId = FeedPluginData.selectedItem.id;
-        } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
-            $scope.item.newsId = FeedPluginData.selectedItem.id;
         }
+        /*else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
+            $scope.item.newsId = FeedPluginData.selectedItem.id;
+        }*/
         /*$scope.mediaObject = function(item) {
          return (item && item.mediaGroups) ? item.mediaGroups[0].contents[0] : {url:''};
          }
@@ -955,10 +961,11 @@ var app = {
                 fd.append('noticeId', $scope.item.noticeId);
                 setDeleteUrl = "/noticeInfo/deleteNotice";
 
-            } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
+            }
+            /*else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
                 fd.append('newsId', $scope.item.newsId);
                 setDeleteUrl = "/newsInfo/deleteNews";
-            }
+            }*/
 
 
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
@@ -1016,10 +1023,11 @@ var app = {
                 fd.append('noticeId', $scope.item.noticeId);
                 setInfoStateUrl = "/noticeInfo/changeNoticeState";
 
-            } else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
+            }
+            /*else if (FeedPluginData.mainCategory.toLowerCase() == "news") {
                 fd.append('newsId', $scope.item.newsId);
                 setInfoStateUrl = "/newsInfo/changeNewsState";
-            }
+            }*/
             //if spam or abuse
             if (state.toLowerCase() == "spam") {
                 fd.append('infoState', "REPORTED_SPAM");
@@ -1301,7 +1309,7 @@ var app = {
     });
 
 
-    module.controller('newsPostController', function ($scope, $http) {
+/*    module.controller('newsPostController', function ($scope, $http) {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
         var allCategories = profileData.interestedCategories;
         $scope.allCategories = allCategories;
@@ -1459,7 +1467,7 @@ var app = {
 
         };
 
-    });
+    });*/
 
     // Feed Plugin: Profile Controller
     module.controller('profileController', function ($scope, $http, FeedPluginData) {
