@@ -46,6 +46,13 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "file": "plugins/phonegap-plugin-push/www/push.js",
+        "id": "phonegap-plugin-push.PushNotification",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -54,7 +61,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.0.0",
     "org.apache.cordova.splashscreen": "1.0.0",
     "org.apache.cordova.camera": "0.3.6",
-    "nl.x-services.plugins.socialsharing": "4.3.19"
+    "nl.x-services.plugins.socialsharing": "4.3.19",
+    "phonegap-plugin-push": "1.2.3"
 }
 // BOTTOM OF METADATA
 });
