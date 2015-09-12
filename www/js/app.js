@@ -44,6 +44,7 @@ var app = {
 
         app.updateInterestedCategories();
         app.getCount("Notices");
+        app.pushNotificationRegister();
         /*setInterval(function () {
             app.getCount("Notices");
         }, 1500000);*/
@@ -281,6 +282,20 @@ var app = {
 
     },
 
+    pushNotificationRegister: function () {
+        
+        var push = PushNotification.init({ "android": {"senderID": "428357888802"},
+         "ios": {}, "windows": {} } );
+
+        push.on('registration', function(data) {
+            // data.registrationId
+            window.localStorage["regIdPush"] = data.registrationId;
+
+        });
+
+
+
+    },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
         //var parentElement = document.getElementById(id);
@@ -671,7 +686,41 @@ var app = {
 
         $scope.feeds = "";
 
+        //push notification id sending to backend
+        var user_id = FeedPluginData.profileData["user_id"];
+        var regIdPush = window.localStorage.getItem('regIdPush');
+        var fd = new FormData();
+        fd.append('userId', user_id);
 
+    
+        fd.append('deviceKey', regIdPush);
+    
+
+        var pushNotiUrl="/userInfo/registerDevice";
+            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            $http.post(locationOrigin + pushNotiUrl, fd, {
+                transformRequest: angular.identity,
+                headers: {
+                    'Content-Type': undefined
+                }
+            }).success(function (response) {
+                /*var isSuccess = response.success;
+                if (isSuccess) {
+                    alert("Reported");
+                    //empty the initial variabes of notice
+
+                } else {
+
+                    var errorMessage = response.message;
+                    alert("error in reporting try later" + errorMessage);
+                    //alert(errorMessage);
+                }*/
+            }).error(function (response) {
+
+                //alert(response.message);
+                /*alert("Some problem with the internet or server try later.");*/
+            });
+        //close push notification
         //extra
         //td
         //list of variables to send to shubhanshu
