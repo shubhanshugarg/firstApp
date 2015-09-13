@@ -284,14 +284,17 @@ var app = {
 
     pushNotificationRegister: function () {
         
-        var push = PushNotification.init({ "android": {"senderID": "428357888802"},
+        var push = PushNotification.init({ "android": {"senderID": "428357888802","clearNotifications": "false"},
          "ios": {}, "windows": {} } );
-
-        push.on('registration', function(data) {
+        if (window.localStorage["regIdPush"]==undefined || window.localStorage.getItem('regIdPush')==null || window.localStorage.getItem('regIdPush')=='') {
+            push.on('registration', function(data) {
             // data.registrationId
             window.localStorage["regIdPush"] = data.registrationId;
 
         });
+            
+        };
+        
 
 
 
@@ -661,10 +664,41 @@ var app = {
 */
 
         });
-
+        
+        /*var mainCategory = FeedPluginData.mainCategory;
+        var categoryId = FeedPluginData.selectedItem.categoryId;
+        var categoryName = FeedPluginData.selectedItem.categoryName;
+        var feedEntriesDataA = JSON.parse(window.localStorage.getItem('feedEntriesData' + 'Notices' + a.categoryId + a.categoryName));*/
         var categories= FeedPluginData.profileData["interestedCategories"];
         categories=categories.sort(function(b, a) {
-            return parseFloat(a.categoryNotifications) - parseFloat(b.categoryNotifications);
+            
+            var feedEntriesDataA = JSON.parse(window.localStorage.getItem('feedEntriesData' + 'Notices' + a.categoryId + a.categoryName));
+            var feedEntriesDataB = JSON.parse(window.localStorage.getItem('feedEntriesData' + 'Notices' + b.categoryId + b.categoryName));
+            if(feedEntriesDataA==null || feedEntriesDataA==undefined ){
+                var valueA='';
+            }else{
+                var valueA=feedEntriesDataA[0];;
+            }
+            if(feedEntriesDataB==null || feedEntriesDataB==undefined ){
+                var valueB='';
+            }else{
+                var valueB=feedEntriesDataB[0];
+            }
+
+            //var valueA=feedEntriesDataA[0];
+            //var valueB=feedEntriesDataB[0];
+            if(valueB==null || valueB==undefined || valueB==''){
+                var valueBPublishedDate=0;
+            }else{
+                var valueBPublishedDate=valueB.publishedDate;
+            }
+            if(valueA==null || valueA==undefined || valueA==''){
+                var valueAPublishedDate=0;
+            }else{
+                var valueAPublishedDate=valueA.publishedDate;
+            }
+            return valueAPublishedDate - valueBPublishedDate;
+            //return parseFloat(a.categoryNotifications) - parseFloat(b.categoryNotifications);
         });
         $scope.items = categories;
         //var iii= FeedPluginData.profileData["interestedCategories"];
