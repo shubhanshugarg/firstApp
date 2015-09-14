@@ -176,7 +176,8 @@ var app = {
 
                 var postedDatesString = postedDates.join(",");
                 if (mainCategory == "Notices") {
-                    getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+        //            getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+                    getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesInfoForCategories?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;                
                 }
                 /*else if (mainCategory == "News") {
                     getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
@@ -198,7 +199,8 @@ var app = {
                             $('#notificationNew' + mainCategory).text("New " + mainCategory);
                         }
                         ;
-                        window.localStorage['#notification' + mainCategory + 'Count-' + key] = value;
+                        window.localStorage['#notification' + mainCategory + 'Count-' + key] = value.mostRecentNoticeCount;
+                        window.localStorage['#notificationTimestamp' + mainCategory + 'Date-' + key] = value.mostRecentNoticeDate;
                     });
 
 
@@ -286,7 +288,7 @@ var app = {
         
         var push = PushNotification.init({ "android": {"senderID": "428357888802","clearNotifications": "false"},
          "ios": {}, "windows": {} } );
-        if (window.localStorage["regIdPush"]==undefined || window.localStorage.getItem('regIdPush')==null || window.localStorage.getItem('regIdPush')=='') {
+        if (!(window.localStorage["regIdPush"]!=undefined) ) {
             push.on('registration', function(data) {
             // data.registrationId
             window.localStorage["regIdPush"] = data.registrationId;
@@ -648,7 +650,10 @@ var app = {
             //notifications.push(JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId)));
             if (FeedPluginData.mainCategory.toLowerCase() == "notices") {
                 if (window.localStorage['#notificationNoticesCount-' + value.categoryId] != undefined) {
-                    value.categoryNotifications = JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
+                   value.categoryNotifications = JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
+                   // value.categoryNotifications = Number(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId)) ;
+                    var a=1;
+                
                 } else {
                     value.categoryNotifications = 0;
                 }
@@ -671,8 +676,9 @@ var app = {
         var feedEntriesDataA = JSON.parse(window.localStorage.getItem('feedEntriesData' + 'Notices' + a.categoryId + a.categoryName));*/
         var categories= FeedPluginData.profileData["interestedCategories"];
         categories=categories.sort(function(b, a) {
-            
-            var feedEntriesDataA = JSON.parse(window.localStorage.getItem('feedEntriesData' + 'Notices' + a.categoryId + a.categoryName));
+            var timestampA=window.localStorage.getItem('#notificationTimestamp' + 'Notices' + 'Date-' + a.categoryId);
+            var timestampB=window.localStorage.getItem('#notificationTimestamp' + 'Notices' + 'Date-' + b.categoryId);
+            /*var feedEntriesDataA = JSON.parse(window.localStorage.getItem('feedEntriesData' + 'Notices' + a.categoryId + a.categoryName));
             var feedEntriesDataB = JSON.parse(window.localStorage.getItem('feedEntriesData' + 'Notices' + b.categoryId + b.categoryName));
             if(feedEntriesDataA==null || feedEntriesDataA==undefined ){
                 var valueA='';
@@ -697,7 +703,8 @@ var app = {
             }else{
                 var valueAPublishedDate=valueA.publishedDate;
             }
-            return valueAPublishedDate - valueBPublishedDate;
+            return valueAPublishedDate - valueBPublishedDate;*/
+            return timestampA - timestampB;
             //return parseFloat(a.categoryNotifications) - parseFloat(b.categoryNotifications);
         });
         $scope.items = categories;
