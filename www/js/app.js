@@ -296,6 +296,14 @@ var app = {
         });
             
         };
+        push.on('notification', function(data) {
+        // data.message,
+        // data.title,
+        // data.count,
+        // data.sound,
+        // data.image,
+        // data.additionalData
+    });
         
 
 
