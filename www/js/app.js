@@ -19,14 +19,14 @@ var app = {
     onDeviceReady: function () {
         var push = PushNotification.init({ "android": {"senderID": "428357888802"},
          "ios": {}, "windows": {} } );
-        if (!(window.localStorage["regIdPush"]!=undefined) ) {
+        
             push.on('registration', function(data) {
             // data.registrationId
             window.localStorage["regIdPush"] = data.registrationId;
 
         });
             
-        };
+        
         push.on('notification', function(data) {
        
     });
