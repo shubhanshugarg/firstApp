@@ -17,6 +17,19 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
+        var push = PushNotification.init({ "android": {"senderID": "428357888802"},
+         "ios": {}, "windows": {} } );
+        if (!(window.localStorage["regIdPush"]!=undefined) ) {
+            push.on('registration', function(data) {
+            // data.registrationId
+            window.localStorage["regIdPush"] = data.registrationId;
+
+        });
+            
+        };
+        push.on('notification', function(data) {
+       
+    });
         app.receivedEvent('deviceready');
         if (navigator.camera != undefined) {
             pictureSource = navigator.camera.PictureSourceType;
@@ -44,7 +57,7 @@ var app = {
 
         app.updateInterestedCategories();
         app.getCount("Notices");
-        app.pushNotificationRegister();
+        //app.pushNotificationRegister();
         /*setInterval(function () {
             app.getCount("Notices");
         }, 1500000);*/
@@ -284,7 +297,7 @@ var app = {
 
     },
 
-    pushNotificationRegister: function () {
+    /*pushNotificationRegister: function () {
         
         var push = PushNotification.init({ "android": {"senderID": "428357888802","clearNotifications": "false"},
          "ios": {}, "windows": {} } );
@@ -308,7 +321,7 @@ var app = {
 
 
 
-    },
+    },*/
     // Update DOM on a Received Event
     receivedEvent: function (id) {
         //var parentElement = document.getElementById(id);
