@@ -30,6 +30,9 @@ var app = {
         push.on('notification', function(data) {
        
     });
+        push.on('error', function(e) {
+        // e.message
+    });
         app.receivedEvent('deviceready');
         if (navigator.camera != undefined) {
             pictureSource = navigator.camera.PictureSourceType;
@@ -933,7 +936,7 @@ var app = {
 
                     if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
                         var errorMessage = response.message;
-                        alert("Not able to fetch new data" + errorMessage);
+                        alert("No new notices");
                         var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                         //array formed for to limt to work
                         var array = $.map(feedEntriesData, function (value, index) {
@@ -943,12 +946,14 @@ var app = {
                         //$scope.feeds=feedEntriesData;
                         feedEntriesData = array;
                         $scope.feeds = feedEntriesData;
+                        $scope.msg = "";
                         //var feedEntriesData=window.localStorage["feedEntriesData"+categoryId+categoryName];
                         executeOnSucess(feedEntriesData);
 
                     } else {
                         var errorMessage = response.message;
-                        alert("Not able to fetch data" + errorMessage);
+                        alert("No new notices");
+                        $scope.msg = "";
                     }
                 }
 
@@ -959,7 +964,7 @@ var app = {
                     $scope.title = categoryName;
                     $scope.description = categoryDescription;
 
-                    alert("Some internet problem");
+                    alert("No internet connection available.");
                     var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                     //array formed for to limt to work
                     var array = $.map(feedEntriesData, function (value, index) {
@@ -968,6 +973,7 @@ var app = {
                     //$scope.feeds=feedEntriesData;
                     feedEntriesData = array;
                     $scope.feeds = feedEntriesData;
+                    $scope.msg = "";
                     executeOnSucess(feedEntriesData);
 
                 } else {
@@ -975,7 +981,8 @@ var app = {
                     $scope.title = categoryName;
                     $scope.description = categoryDescription;
 
-                    $scope.msg = 'An error occured:' + status;
+                    //$scope.msg = 'An error occured:' + status;
+                    $scope.msg = 'No notices to fetch in this category';
                 }
 
             });
@@ -1100,7 +1107,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Some problem with the internet or server try later.");
+                alert("Some problem with the internet try later.");
             });
 
 
