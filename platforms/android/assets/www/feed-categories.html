@@ -16,10 +16,10 @@
                         <div class="panel-heading">
                             <div class="container-fluid">
                                 <div class="col-xs-6">
-                                    <a href="#" class="active" id="login-form-link">Login</a>
+                                    <a href="#" id="login-form-link">Login</a>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a href="#" id="register-form-link">Register</a>
+                                    <a href="#" class="active" id="register-form-link">Register</a>
                                 </div>
                             </div>
                             <hr>
@@ -28,7 +28,7 @@
                             <div class="container-fluid">
                                 <div class="col-lg-12">
                                     <form id="loginForm" role="form" ng-controller="loginController"
-                                          ngstyle="display: block;">
+                                          style="display: none;">
                                         <div class="form-group has-success">
                                             <input class="form-control" type="text" name="email" id="email"
                                                    placeholder="Email *"/></div>
@@ -58,7 +58,7 @@
                                          </div>-->
                                     </form>
                                     <form role="form" id="registerForm" ng-controller="registerController"
-                                          style="display: none;">
+                                          ngstyle="display: block;">
                                         <div class="form-group has-success">
                                             <input class="form-control" type="text" name="register_name"
                                                    id="register_name" value="" tabindex="1"

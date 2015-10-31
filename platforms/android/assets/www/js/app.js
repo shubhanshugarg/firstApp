@@ -172,7 +172,7 @@ var pictureSource, destinationType, app = {
             var a = $("#register_email", e).val(), r = $("#register_password", e).val(),
                 o = $("#register_confirmPassword", e).val(), i = $("#register_name", e).val(),
                 n = $("#register_roll", e).val(), s = $("#register_college", e).val(),
-                l = $("#register_contactNumber", e).val(),referenceCode=$("#referenceCode", e).val();
+                l = $("#register_contactNumber", e).val(), referenceCode = $("#referenceCode", e).val();
             if ("" != a && "" != r && r == o) {
                 var c = new FormData;
                 c.append("userName", i), c.append("rollNumber", n), c.append("contactNumber", l), c.append("email", a),
