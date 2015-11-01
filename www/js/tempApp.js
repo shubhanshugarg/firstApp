@@ -4,7 +4,7 @@ function sendAnalyticsInfo() {
     try {
         window.analytics.startTrackerWithId("UA-69271459-1"), window.analytics.setUserId(window.localStorage.email), window.analytics.trackView("Home Screen")
     } catch (e) {
-        console.log("error in sending : " + e)
+        //console.log("error in sending : " + e)
     }
 }
 var app = {
@@ -44,7 +44,7 @@ var app = {
                 // e.message
             });
         } catch (e) {
-            console.log(e);
+            //console.log(e);
         }
         app.receivedEvent('deviceready');
         if (navigator.camera != undefined) {
@@ -82,8 +82,8 @@ var app = {
         /*setInterval(function () {
          app.getCount("News");
          }, 1500000);*/
-//left
-//change variable name and make global variable for url
+        //left
+        //change variable name and make global variable for url
 
         function checkPreAuth() {
             var form = $("#loginForm");
@@ -101,8 +101,8 @@ var app = {
 
 
                 }, "json");
-///handle login not needed as login if stored in local storage
-//handleLogin(email,password);
+                ///handle login not needed as login if stored in local storage
+                //handleLogin(email,password);
             } else {
                 //show login and register form here
                 //hide the categories page
@@ -169,7 +169,7 @@ var app = {
         }
 
 
-//mine
+        //mine
 
 
     },
@@ -348,7 +348,7 @@ var app = {
         //listeningElement.setAttribute('style', 'display:none;');
         //receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        //console.log('Received Event: ' + id);
     }
 
 };
@@ -374,11 +374,11 @@ var app = {
             //alert("clicked");
 
             var form = $("#loginForm");
-//disable the button so we can't resubmit while we wait
+            //disable the button so we can't resubmit while we wait
             $("#submitButton", form).attr("disabled", "disabled");
             var u = $("#email", form).val();
             var p = $("#password", form).val();
-            console.log("click");
+            //console.log("click");
             if (u != '' && p != '') {
 
 
@@ -464,7 +464,7 @@ var app = {
                 $("#submitButton").removeAttr("disabled");
 
             } else {
-//Thanks Igor!
+                //Thanks Igor!
                 alert("You must enter a email and password");
                 $("#submitButton").removeAttr("disabled");
             }
@@ -593,7 +593,7 @@ var app = {
                 $("#register_submitButton").removeAttr("disabled");
 
             } else {
-//Thanks Igor!
+                //Thanks Igor!
                 alert("You must enter a email , password and matching confirm password ");
                 $("#register_submitButton").removeAttr("disabled");
             }
@@ -929,7 +929,7 @@ var app = {
                     //$scope.feeds = feedData.feed.entries;
                     $scope.feeds = feed.entries;
                     var feedEntriesData = feed.entries;
-                    console.log($scope.feeds);
+                    //console.log($scope.feeds);
                     var feedEntriesDataJson = JSON.stringify(feedEntriesData);
                     window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] = feedEntriesDataJson;
                     //td json formation and storing in memory, retrieving from memory and then showing
@@ -942,7 +942,7 @@ var app = {
 
                     $scope.feeds = array;
                     feedEntriesData = array;
-                    console.log(array);
+                    //console.log(array);
                     $scope.msg = "";
                     //feedEntriesData is not decoupled from the incomming data so also change in the feed master when data changes
                     executeOnSucess(feedEntriesData);
@@ -1210,7 +1210,7 @@ var app = {
             //_blank: Opens in the InAppBrowser.
             //_system: Opens in the system's web browser.
             //window.open($scope.item.link,'_blank');
-            //alert(link);    
+            //alert(link);
             if (link.substring(0, 4).toLowerCase() != "http") {
                 link = "http://" + link;
             }
@@ -1634,7 +1634,7 @@ var app = {
             //_blank: Opens in the InAppBrowser.
             //_system: Opens in the system's web browser.
             //window.open($scope.item.link,'_blank');
-            //alert(link);    
+            //alert(link);
             if (link.substring(0, 4).toLowerCase() != "http") {
                 link = "http://" + link;
             }
@@ -1649,7 +1649,7 @@ var app = {
 
     }]);
 
-// Feed Plugin: editProfile Controller
+    // Feed Plugin: editProfile Controller
     module.controller('editProfileController', ["$scope", "$http", function ($scope, $http) {
         var profileData = $.parseJSON(window.localStorage.getItem('profileData'));
         //to place condition if not null here
@@ -2057,7 +2057,7 @@ var app = {
             //_blank: Opens in the InAppBrowser.
             //_system: Opens in the system's web browser.
             //window.open($scope.item.link,'_blank');
-            //alert(link);    
+            //alert(link);
             if (link.substring(0, 4).toLowerCase() != "http") {
                 link = "http://" + link;
             }

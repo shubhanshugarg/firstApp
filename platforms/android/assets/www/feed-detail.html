@@ -18,8 +18,10 @@
     <audio id="audio" ng-src="{{getTrustedResourceUrl(mediaObject(item).url)}}" controls autoplay ng-if="hasAudio(item)"></audio>
      -->
     <!-- <img ng-src="{{getTrustedResourceUrl(item.images.url1)}}"></img> -->
-    <center><img ng-show="item.images.url1 != null" ng-src="http://collegeboard-env2.elasticbeanstalk.com/archive/document/{{item.images.url1}}"></img></center>
-    
+    <center><img ng-show="item.images.url1 != null"
+                 ng-src="http://collegeboard-env2.elasticbeanstalk.com/archive/document/{{item.images.url1}}"></img>
+    </center>
+
     <section style="padding: 10px;">
 
         <h2 class="title" ng-bind-html="item.title"></h2>
@@ -28,7 +30,7 @@
             <ons-icon icon="clock-o"></ons-icon>
             Posted {{item.publishedDate }}
         </div>
-        <p class="feed-content" ng-bind-html="item.content"></p>
+        <p class="feed-content" style="white-space: pre-line" ng-bind-html="item.content"></p>
 
         <!-- <p class="feed-categories" ng-show="{{item.categories.length}}"><ons-icon icon="tags"></ons-icon>
         <span ng-repeat="category in item.categories">{{category}}{{$last ? '' : ', '}}</span>
@@ -45,11 +47,14 @@
         </ons-button> -->
 
         <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-        <ons-button modifier="large" ng-show="item.urlLink != 'undefined' && item.urlLink != '' && item.urlLink != null" ng-click="loadURL(item.urlLink)">
+        <ons-button modifier="large" ng-show="item.urlLink != 'undefined' && item.urlLink != '' && item.urlLink != null"
+                    ng-click="loadURL(item.urlLink)">
             Open Link
         </ons-button>
         <br>
-        <ons-button modifier="large" ng-show="item.socialLink != 'undefined' && item.socialLink != '' && item.socialLink != null" ng-click="loadURL(item.socialLink)">
+        <ons-button modifier="large"
+                    ng-show="item.socialLink != 'undefined' && item.socialLink != '' && item.socialLink != null"
+                    ng-click="loadURL(item.socialLink)">
             Open link on social network
         </ons-button>
         <br>

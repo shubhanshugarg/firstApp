@@ -14,43 +14,50 @@
         <br>
 
         <div class="card">
-            <img src="scrollDown.png" style="z-index:2;position: absolute;height: 80px;right: 20px;bottom:60px">
-
             <h3 style="margin:20px">Personal Information</h3>
 
-            <p>Name :</p>
+            <div>
+                <span class="text-label">Name :</span>
 
-            <p class="text-info" ng-bind-html="name"></p>
+                <span class="text-info" ng-bind-html="name"></span>
+            </div>
+            <div>
+                <span class="text-label">Roll Number :</span>
 
-            <p>Roll Number :</p>
+                <span class="text-info" ng-bind-html="roll"></span>
+            </div>
+            <div>
+                <span class="text-label">Graduation Year :</span>
 
-            <p class="text-info" ng-bind-html="roll"></p>
+                <span class="text-info" ng-bind-html="yearGrad"></span>
+            </div>
+            <div>
+                <span class="text-label">Branch :</span>
 
-            <p>Graduation Year :</p>
-
-            <p class="text-info" ng-bind-html="yearGrad"></p>
-
-            <p>Branch :</p>
-
-            <p class="text-info" ng-bind-html="branch"></p>
-
+                <span class="text-info" ng-bind-html="branch"></span>
+            </div>
 
         </div>
+
         <div class="card">
             <h3 style="margin:20px">Other Information</h3>
 
-            <p>Company :</p>
+            <div>
+                <span class="text-label">Company :</span>
 
-            <p class="text-info" ng-bind-html="company"></p>
+                <span class="text-info" ng-bind-html="company"></span>
+            </div>
+            <div>
+                <span class="text-label">Status: </span>
 
-            <p>Status: </p>
+                <span class="text-info" ng-bind-html="status"></span>
+            </div>
+            <div>
+                <!-- About Me :<span class="feed-content" ng-bind-html="aboutMe"></span> -->
+                <span class="text-label">Interests :</span>
 
-            <p class="text-info" ng-bind-html="status"></p>
-            <!-- About Me :<p class="feed-content" ng-bind-html="aboutMe"></p> -->
-            <p>Interests :</p>
-
-            <p class="text-info" ng-bind-html="interests"></p>
-
+                <span class="text-info" ng-bind-html="interests"></span>
+            </div>
         </div>
 
         <!-- <p class="text-primary">Roll Number :</p><p class="text-info" ng-bind-html="roll"></p>
@@ -63,15 +70,18 @@
 
 
         <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-        <ons-button modifier="large" ng-show="fbUrl != null && fbUrl != undefined && fbUrl != ''" ng-click="loadURL(fbUrl)">
+        <ons-button modifier="large" ng-show="fbUrl != null && fbUrl != undefined && fbUrl != ''"
+                    ng-click="loadURL(fbUrl)">
             Profile on facebook
         </ons-button>
         <br>
-        <ons-button modifier="large" ng-show=" twitterUrl != null && twitterUrl != undefined && twitterUrl != ''" ng-click="loadURL(twitterUrl)">
+        <ons-button modifier="large" ng-show=" twitterUrl != null && twitterUrl != undefined && twitterUrl != ''"
+                    ng-click="loadURL(twitterUrl)">
             Profile on twitter
         </ons-button>
         <br>
-        <ons-button modifier="large" ng-show=" linkedinUrl != null && linkedinUrl != undefined && linkedinUrl != ''" ng-click="loadURL(linkedinUrl)">
+        <ons-button modifier="large" ng-show=" linkedinUrl != null && linkedinUrl != undefined && linkedinUrl != ''"
+                    ng-click="loadURL(linkedinUrl)">
             Profile on linkedin
         </ons-button>
         <br>
