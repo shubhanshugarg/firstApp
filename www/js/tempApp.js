@@ -2,7 +2,7 @@ var pictureSource;
 var destinationType;
 function sendAnalyticsInfo() {
     try {
-        window.analytics.startTrackerWithId("UA-69271459-1"), window.analytics.setUserId(window.localStorage.email), window.analytics.trackView("Home Screen")
+        window.analytics.startTrackerWithId("UA-69271459-1"), window.analytics.setUserId(window.localStorage.email) , window.analytics.trackView("Home Screen")
     } catch (e) {
         //console.log("error in sending : " + e)
     }
@@ -123,10 +123,7 @@ var app = {
                     if (isSuccess) {
                         //store profile data in local storage
                         //var collegeData = {'college_list': register_email, 'user_id' :user_id ,'contact_nos':contact_nos,'register_password':register_password, 'register_name': register_name, 'register_college': register_college, 'register_roll': register_roll, 'interestedCategories': interestedCategories};
-                        var collegeData = collegeList;
-                        var collegeDataJson = JSON.stringify(collegeData);
-
-                        window.localStorage["collegeData"] = collegeDataJson;
+                        window.localStorage["collegeData"] = JSON.stringify(collegeList);
 
                         var collegeData = $.parseJSON(window.localStorage.getItem('collegeData'));
 
@@ -228,7 +225,6 @@ var app = {
                         if (value > 0) {
                             $('#notificationNew' + mainCategory).text("New " + mainCategory);
                         }
-                        ;
                         window.localStorage['#notification' + mainCategory + 'Count-' + key] = value.mostRecentNoticeCount;
                         window.localStorage['#notificationTimestamp' + mainCategory + 'Date-' + key] = value.mostRecentNoticeDate;
                     });
@@ -299,9 +295,7 @@ var app = {
                         'register_linkedinUrl': register_linkedinUrl,
                         'register_interests': register_interests
                     };
-                    var profileDataJson = JSON.stringify(profileData);
-
-                    window.localStorage["profileData"] = profileDataJson;
+                    window.localStorage["profileData"] = JSON.stringify(profileData);
                 }
 
             }).fail(function () {
@@ -437,9 +431,7 @@ var app = {
                                 'register_linkedinUrl': register_linkedinUrl,
                                 'register_interests': register_interests
                             };
-                            var profileDataJson = JSON.stringify(profileData);
-
-                            window.localStorage["profileData"] = profileDataJson;
+                            window.localStorage["profileData"] = JSON.stringify(profileData);
                             //$.mobile.changePage("some.html");
                             //show categories and hide login and register form
 
@@ -473,7 +465,7 @@ var app = {
             /*var selectedItem = $scope.categories[index];
              FeedPluginData.selectedItem = selectedItem;
              $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});*/
-        }
+        };
 
         $('#login-form-link').click(function (e) {
             $("#loginForm").delay(100).fadeIn(100);
@@ -511,7 +503,7 @@ var app = {
             var college = $("#register_college", form).val();
             //var categories = $("#register_categories", form).val();
             var contactNumber = $("#register_contactNumber", form).val();
-            var referenceCode = $("#referenceCode", form).val()
+            var referenceCode = $("#referenceCode", form).val();
 
             if (u != '' && p != '' && !(p != cp)) {
 
@@ -564,9 +556,7 @@ var app = {
                             'interestedCategories': interestedCategories,
                             'userCollegeBranches': userCollegeBranches
                         };
-                        var profileDataJson = JSON.stringify(profileData);
-
-                        window.localStorage["profileData"] = profileDataJson;
+                        window.localStorage["profileData"] = JSON.stringify(profileData);
                         //$.mobile.changePage("some.html");
                         //show categories and hide login and register form
 
@@ -629,8 +619,7 @@ var app = {
                 return profileData["register_college"];
 
             }
-            ;
-        }
+        };
 
         $scope.showDetail = function (index) {
             var selectedItem = $scope.categories[index];
@@ -651,7 +640,7 @@ var app = {
                 app.getCount("Notices");
             }
             $scope.ons.navigator.pushPage('feed-category.html', {title: selectedItem.title});
-        }
+        };
 
         $scope.showHiddenPage = function (index) {
             //how to hide splash screen here
@@ -661,13 +650,12 @@ var app = {
                 $('#category-page').show();
 
             }
-            ;
-        }
+        };
 
         $scope.getNotificationEarlyHack = function () {
             app.getCount("Notices");
             //app.getCount("News");
-        }
+        };
 
         $scope.getName = function (id) {
             //
@@ -693,8 +681,6 @@ var app = {
                 if (window.localStorage['#notificationNoticesCount-' + value.categoryId] != undefined) {
                     value.categoryNotifications = JSON.parse(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId));
                     // value.categoryNotifications = Number(window.localStorage.getItem('#notificationNoticesCount-' + value.categoryId)) ;
-                    var a = 1;
-
                 } else {
                     value.categoryNotifications = 0;
                 }
@@ -821,11 +807,10 @@ var app = {
 
             var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
             //array formed for to limt to work
-            var array = $.map(feedEntriesData, function (value, index) {
+            //$scope.feeds=feedEntriesData;
+            feedEntriesData = $.map(feedEntriesData, function (value, index) {
                 return [value];
             });
-            //$scope.feeds=feedEntriesData;
-            feedEntriesData = array;
             $scope.feeds = feedEntriesData;
             executeOnSucess(feedEntriesData);
 
@@ -886,7 +871,7 @@ var app = {
                                 "postedByName": value.userInfo.userName,
                                 //"contentSnippet": "Click to read"
                                 "contentSnippet": publishedDate
-                            }
+                            };
                             entries[count++] = entryValueObj;
 
 
@@ -919,7 +904,7 @@ var app = {
 
                     feed = {
                         "entries": entries
-                    }
+                    };
 
 
                     //var feedData = response.data;
@@ -952,16 +937,15 @@ var app = {
                     $scope.description = categoryDescription;
 
                     if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
-                        var errorMessage = response.message;
+
                         alert("No new notices");
                         var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                         //array formed for to limt to work
-                        var array = $.map(feedEntriesData, function (value, index) {
+                        //scope.feeds allocate to the view
+                        //$scope.feeds=feedEntriesData;
+                        feedEntriesData = $.map(feedEntriesData, function (value, index) {
                             return [value];
                         });
-                        //scpoe.feeds allocate to the view
-                        //$scope.feeds=feedEntriesData;
-                        feedEntriesData = array;
                         $scope.feeds = feedEntriesData;
                         $scope.msg = "";
                         //var feedEntriesData=window.localStorage["feedEntriesData"+categoryId+categoryName];
@@ -983,12 +967,11 @@ var app = {
 
                     alert("No internet connection available.");
                     var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
-                    //array formed for to limt to work
-                    var array = $.map(feedEntriesData, function (value, index) {
+                    //array formed for to limit to work
+                    //$scope.feeds=feedEntriesData;
+                    feedEntriesData = $.map(feedEntriesData, function (value, index) {
                         return [value];
                     });
-                    //$scope.feeds=feedEntriesData;
-                    feedEntriesData = array;
                     $scope.feeds = feedEntriesData;
                     $scope.msg = "";
                     executeOnSucess(feedEntriesData);
@@ -1033,8 +1016,7 @@ var app = {
             }
 
 
-        };
-
+        }
     }]);
 
     // Feed Plugin: Detail Controller
@@ -1128,20 +1110,16 @@ var app = {
             });
 
 
-        }
+        };
 
         //close delete call
 
         $scope.checkItemPermission = function () {
 
-            if ($scope.item.myUserId == $scope.item.postedById) {
-                return true;
-            } else {
-                return false;
-            }
+            return $scope.item.myUserId == $scope.item.postedById;
 
 
-        }
+        };
 
 
         //marking spam and report abuse here function firing post call to the server same function doing both calls
@@ -1197,12 +1175,12 @@ var app = {
             });
 
 
-        }
+        };
 
         $scope.getTrustedResourceUrl = function (src) {
 
             return $sce.trustAsResourceUrl(src);
-        }
+        };
 
         $scope.loadURL = function (link) {
             //target: The target in which to load the URL, an optional parameter that defaults to _self. (String)
@@ -1215,7 +1193,7 @@ var app = {
                 link = "http://" + link;
             }
             window.open(link, '_blank');
-        }
+        };
         $scope.shareFeed = function () {
 
             var subject = "Shared Notice from COLLEGE LOOPIN app";
@@ -1235,8 +1213,7 @@ var app = {
     // Contact Controller
     module.controller('noticePostController', ["$scope", "$http", function ($scope, $http) {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-        var allCategories = profileData.interestedCategories;
-        $scope.allCategories = allCategories;
+        $scope.allCategories = profileData.interestedCategories;
         $scope.disableButton = false;
         $scope.postNoticeButtonText = "Post Notice";
 
@@ -1311,7 +1288,7 @@ var app = {
                     document.getElementById("uploadPreview").src = canvas.toDataURL();
                     var imageData = canvas.toDataURL();
                     $scope.imageBlob = $scope.dataURItoBlob(imageData);
-                }
+                };
                 img.src = oFREvent.target.result;
             };
 
@@ -1662,7 +1639,8 @@ var app = {
         $scope.roll = profileData.register_roll;
 
         $scope.yearGrad = profileData.register_yearGrad;
-        $scope.branch = profileData.register_branch.branchId;
+        if (profileData.register_branch != null)
+            $scope.branch = profileData.register_branch.branchId;
         $scope.company = profileData.register_company;
         $scope.user_id = profileData.user_id;
         $scope.status = profileData.register_status;
@@ -1676,27 +1654,22 @@ var app = {
         if ($scope.branch == null) {
             $scope.branch = '';
         }
-        ;
-
 
         var yearList = [];
         for (var i = 1970; i <= 2030; i++) {
             yearList.push(i);
         }
-        ;
 
         $scope.gradYearList = yearList;
         $scope.userSelectedBranch = function (selectTagBranch) {
             if (selectTagBranch == profileData.register_branch.branchId) {
                 return true;
             }
-            ;
         };
         $scope.userSelectedYear = function (selectTagYear) {
             if (selectTagYear == profileData.register_yearGrad) {
                 return true;
             }
-            ;
         };
 
         $scope.submitForm = function () {
@@ -1721,43 +1694,33 @@ var app = {
             if (roll != undefined && roll != null) {
                 fd.append('rollNumber', roll);
             }
-            ;
             if (yearGrad != undefined && yearGrad != null && yearGrad != '') {
                 fd.append('yearGrad', yearGrad);
             }
-            ;
             if (contactNumber != undefined && contactNumber != null) {
                 fd.append('contactNumber', contactNumber);
             }
-            ;
             if (branch != undefined && branch != null && branch != '') {
                 fd.append('branch', branch);
             }
-            ;
             if (company != undefined && company != null) {
                 fd.append('company', company);
             }
-            ;
             if (status != undefined && status != null) {
                 fd.append('status', status);
             }
-            ;
             if (fbUrl != undefined && fbUrl != null) {
                 fd.append('fbUrl', fbUrl);
             }
-            ;
             if (twitterUrl != undefined && twitterUrl != null) {
                 fd.append('twitterUrl', twitterUrl);
             }
-            ;
             if (linkedinUrl != undefined && linkedinUrl != null) {
                 fd.append('linkedinUrl', linkedinUrl);
             }
-            ;
             if (interests != undefined && interests != null) {
                 fd.append('interests', interests);
             }
-            ;
             fd.append('userId', user_id);
 
 
@@ -1816,9 +1779,7 @@ var app = {
                         'register_interests': register_interests
 
                     };
-                    var profileDataJson = JSON.stringify(profileData);
-
-                    window.localStorage["profileData"] = profileDataJson;
+                    window.localStorage["profileData"] = JSON.stringify(profileData);
                     $scope.disableButton = false;
                     $scope.editProfileButtonText = "Submit";
 
@@ -1853,7 +1814,6 @@ var app = {
         for (var i = 1970; i <= 2030; i++) {
             yearList.push(i);
         }
-        ;
 
         $scope.gradYearList = yearList;
 
@@ -1882,27 +1842,21 @@ var app = {
             if (name == undefined || name == null) {
                 name = '';
             }
-            ;
             if (roll == undefined || roll == null) {
                 roll = '';
             }
-            ;
             if (yearGrad == undefined || yearGrad == null) {
                 yearGrad = '';
             }
-            ;
             if (branch == undefined || branch == null) {
                 branch = '';
             }
-            ;
             if (interest == undefined || interest == null) {
                 interest = '';
             }
-            ;
             if (company == undefined || company == null) {
                 company = '';
             }
-            ;
 
             var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
             //$http.post(locationOrigin + "url", fd, {
@@ -1943,7 +1897,6 @@ var app = {
                             var singleUser_branch = value.branch.branchName;
 
                         }
-                        ;
 
                         var singleUser_company = value.company;
                         var singleUser_twitterUrl = value.twitterUrl;
@@ -1970,9 +1923,7 @@ var app = {
 
                     });
                     //searchDataWrapper={'search':searchData};
-                    var searchDataWrapperJson = JSON.stringify(searchDataWrapper);
-
-                    window.localStorage["searchDataWrapper"] = searchDataWrapperJson;
+                    window.localStorage["searchDataWrapper"] = JSON.stringify(searchDataWrapper);
                     $scope.ons.navigator.pushPage('searchDisplay.html');
                     $scope.disableButton = false;
                     $scope.searchButtonText = "Submit";
@@ -2002,12 +1953,10 @@ var app = {
         var searchDataWrapper = $.parseJSON(window.localStorage.getItem('searchDataWrapper'));
         //to place condition if not null here
         //$scope.feeds = searchDataWrapper.search;
-        var array = $.map(searchDataWrapper, function (value, index) {
+        //$scope.feeds = searchDataWrapper;
+        $scope.feeds = $.map(searchDataWrapper, function (value, index) {
             return [value];
         });
-        //$scope.feeds = searchDataWrapper;
-        $scope.feeds = array;
-        var q = 1;
         //var feeds=$scope.feeds;
 
         /*$scope.email = profileData.register_email;
