@@ -11,7 +11,8 @@
             <div class="container-fluid">
                 <div class="col-md-6 " style="padding: 0">
                     <div class="panel panel-login">
-                        <center style="color: blueviolet;"><strong>A Crowd sourced college community information platform
+                        <center style="color: #59B2E6;"><strong>Welcome to College LoopIn
+                            platform
                         </strong></center>
                         <div class="panel-heading">
                             <div class="container-fluid">
@@ -26,6 +27,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="container-fluid">
+                                <div id="loopin-bg"></div>
                                 <div class="col-lg-12">
                                     <form id="loginForm" role="form" ng-controller="loginController"
                                           style="display: none;">
@@ -33,7 +35,8 @@
                                             <input class="form-control" type="text" name="email" id="email"
                                                    placeholder="Email *"/></div>
                                         <div class="form-group">
-                                            <input class="form-control has-success" type="password" name="password" id="password"
+                                            <input class="form-control has-success" type="password" name="password"
+                                                   id="password"
                                                    tabindex="2" placeholder="Password *"/>
                                         </div>
                                         <div class="form-group">
@@ -43,6 +46,16 @@
                                                            tabindex="4"
                                                            class="form-control btn btn-login" value="Log In"
                                                            ng-click="userLogin()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="container-fluid" style="width : 100%">
+                                                <div class="col-sm-6 col-sm-offset-3">
+                                                    <input type="submit" id="forgot-password"
+                                                           tabindex="4" class="form-control btn btn-login"
+                                                           value=" Forgot password"
+                                                           ng-click="forgotPassword()">
                                                 </div>
                                             </div>
                                         </div>
@@ -81,11 +94,9 @@
                                         <div class="form-group has-success">
                                             <input class="form-control" type="text" name="register_college"
                                                    id="register_college" tabindex="1" placeholder="College *"/>
-                                        
+
                                         </div>
-                                        <small style="color: blueviolet;">
-                                        If your college isn't present mail us at collegeloopin@gmail.com and get shortlisted for campus ambassador interview. 
-                                        </small>
+
                                         <div class="form-group">
                                             <input class="form-control" type="text" name="register_roll"
                                                    id="register_roll" value="" tabindex="1"
@@ -113,7 +124,9 @@
                                                            tabindex="4"
                                                            class="form-control btn btn-register" value="Register Now"
                                                            ng-click="userRegister();">
-                                                           <small>By clicking 'Register Now' you agree to <a onclick="window.open('https://docs.google.com/document/d/1bQFKoJXzdSP6Kt6f1g8r8tVxs7LrT_IOL1fMKmf0wq0/edit?usp=sharing', '_blank');">Terms and Conditions</a> </small>
+                                                    <small>By clicking 'Register Now' you agree to <a
+                                                            onclick="window.open('https://docs.google.com/document/d/1bQFKoJXzdSP6Kt6f1g8r8tVxs7LrT_IOL1fMKmf0wq0/edit?usp=sharing', '_blank');">Terms
+                                                        and Conditions</a></small>
                                                 </div>
 
                                             </div>
@@ -122,7 +135,9 @@
                                     </form>
 
                                 </div>
-                                <center><small>For any queries mail to collegeloopin@gmail.com</small></center>
+                                <center>
+                                    <small>For any queries,please mail to collegeloopin@gmail.com</small>
+                                </center>
                             </div>
                         </div>
                     </div>

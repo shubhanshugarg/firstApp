@@ -151,8 +151,7 @@ var app = {
 
                     }
                 }).fail(function () {
-
-                    alert("some probem with internet or server not able to fetch list of colleges.");
+                    alert("Sorry,no internet connection available right now.Please try again later.");
                     menu.setSwipeable(false);
                     $('#loginPage').show();
                     //navigator.splashscreen.hide();
@@ -363,6 +362,53 @@ var app = {
 
         $scope.name = "harry";
 
+
+        $scope.forgotPassword = function () {
+
+            //alert("clicked");
+
+            var form = $("#loginForm");
+            //disable the button so we can't resubmit while we wait
+            $("#submitButton", form).attr("disabled", "disabled");
+            var u = $("#email", form).val();
+            //console.log("click");
+            if (u != '') {
+
+
+                $http({
+                    method: 'GET',
+                    url: "http://collegeboard-env2.elasticbeanstalk.com/userInfo/forgotPassword?userEmail=" + u,
+                    async: false
+                }).
+                    success(function (response, status, headers, config) {
+
+                        var isSuccess = response.success;
+                        if (isSuccess) {
+                            alert("Your existing password has been sent to your registered email address !!");
+                        } else {
+                            var errorMessage = response.message;
+                            alert(errorMessage);
+                        }
+                    }).
+                    error(function (data, status, headers, config) {
+                        alert("Sorry,no internet connection available right now.Please try again later.");
+                        //page remain as it is
+                        $scope.isLoggedIn = "no";
+                    });
+
+
+                $("#submitButton").removeAttr("disabled");
+
+            } else {
+                alert("You must enter a valid email");
+            }
+
+
+            /*var selectedItem = $scope.categories[index];
+             FeedPluginData.selectedItem = selectedItem;
+             $scope.ons.navigator.pushPage('feed-category.html', {title : selectedItem.title});*/
+        };
+
         $scope.userLogin = function () {
 
             //alert("clicked");
@@ -372,8 +418,9 @@ var app = {
             $("#submitButton", form).attr("disabled", "disabled");
             var u = $("#email", form).val();
             var p = $("#password", form).val();
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             //console.log("click");
-            if (u != '' && p != '') {
+            if (u != '' && p != '' && u.match(re)) {
 
 
                 $http({
@@ -447,7 +494,7 @@ var app = {
                         }
                     }).
                     error(function (data, status, headers, config) {
-                        alert("some probem with server try sometime later");
+                        alert("Sorry,no internet connection available right now.Please try again later.");
                         //page remain as it is
                         $scope.isLoggedIn = "no";
                     });
@@ -456,8 +503,7 @@ var app = {
                 $("#submitButton").removeAttr("disabled");
 
             } else {
-                //Thanks Igor!
-                alert("You must enter a email and password");
+                alert("You must enter valid email and password");
                 $("#submitButton").removeAttr("disabled");
             }
 
@@ -486,7 +532,6 @@ var app = {
             $(this).addClass('active');
             e.preventDefault();
         });
-        $scope.name = "harry";
 
         $scope.userRegister = function () {
 
@@ -505,7 +550,9 @@ var app = {
             var contactNumber = $("#register_contactNumber", form).val();
             var referenceCode = $("#referenceCode", form).val();
 
-            if (u != '' && p != '' && !(p != cp)) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+            if (u != '' && p != '' && !(p != cp) && u.match(re)) {
 
                 var fd = new FormData();
                 fd.append('userName', name);
@@ -576,7 +623,7 @@ var app = {
                 }).error(function (response) {
 
                     alert(response.message);
-                    alert("Some problem with the server");
+                    alert("Sorry,no internet connection available right now.Please try again later");
                 });
 
 
@@ -584,7 +631,7 @@ var app = {
 
             } else {
                 //Thanks Igor!
-                alert("You must enter a email , password and matching confirm password ");
+                alert("You must enter a valid email ,password and matching confirm password ");
                 $("#register_submitButton").removeAttr("disabled");
             }
 
@@ -786,7 +833,7 @@ var app = {
         }).error(function (response) {
 
             //alert(response.message);
-            /*alert("Some problem with the internet or server try later.");*/
+            /*alert("Sorry,no internet connection available right now. Please try again later..");*/
         });
         //close push notification
         //extra
@@ -1106,7 +1153,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Some problem with the internet try later.");
+                alert("Sorry,no internet connection available right now.Please try again later.");
             });
 
 
@@ -1159,7 +1206,7 @@ var app = {
             }).success(function (response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
-                    alert("Reported");
+                    alert("This notice has been reported for review....");
                     //empty the initial variabes of notice
 
                 } else {
@@ -1171,7 +1218,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Some problem with the internet or server try later.");
+                alert("Sorry,no internet connection available right now. Please try again later..");
             });
 
 
@@ -1412,7 +1459,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Some problem with the internet or server try later.");
+                alert("Sorry,no internet connection available right now. Please try again later..");
                 $scope.disableButton = false;
                 $scope.postNoticeButtonText = "Post Notice";
             });
@@ -1573,7 +1620,7 @@ var app = {
      }).error(function (response) {
 
      //alert(response.message);
-     alert("Some problem with the internet or server try later.");
+     alert("Sorry,no internet connection available right now. Please try again later..");
      $scope.disableButton = false;
      $scope.postNewsButtonText = "Post News";
      });
@@ -1786,7 +1833,7 @@ var app = {
                 } else {
 
                     var errorMessage = response.message;
-                    alert("some problem in editing :" + errorMessage);
+                    alert("Following error occured while editing profile info : " + errorMessage);
                     $scope.disableButton = false;
                     $scope.editProfileButtonText = "Submit";
                     //alert(errorMessage);
@@ -1794,7 +1841,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Some problem with the internet or server try later.");
+                alert("Sorry,no internet connection available right now. Please try again later..");
                 $scope.disableButton = false;
                 $scope.editProfileButtonText = "Submit";
             });
@@ -1931,7 +1978,7 @@ var app = {
                 } else {
 
                     var errorMessage = response.message;
-                    alert("some problem in searching :" + errorMessage);
+                    alert("Following error occired while searching :" + errorMessage);
                     $scope.disableButton = false;
                     $scope.searchButtonText = "Submit";
                     //alert(errorMessage);
@@ -1939,7 +1986,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Some problem with the internet or server try later.");
+                alert("Sorry,no internet connection available right now. Please try again later..");
                 $scope.disableButton = false;
                 $scope.searchButtonText = "Submit";
             });

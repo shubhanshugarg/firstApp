@@ -371,3 +371,14 @@ audio {
 .col {
     margin-left: 10px
 }
+
+#loopin-bg {
+    background-image: url(../lib/images/screen-default.png);
+    opacity: 0.2;
+    position: absolute;
+    height: 67%;
+    width: 100%;
+    background-size: cover;
+    left: 0;
+    top: 80px
+}
