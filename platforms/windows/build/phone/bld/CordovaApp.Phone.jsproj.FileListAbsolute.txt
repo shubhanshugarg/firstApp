@@ -1,0 +1,17 @@
+C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\resources.pri
+C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\AppxManifest.xml
+C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\CordovaApp.Phone.build.appxrecipe
+C:\workspace\firstApp\platforms\windows\build\phone\bld\priconfig.xml
+C:\workspace\firstApp\platforms\windows\build\phone\bld\priconfig.xml.intermediate
+C:\workspace\firstApp\platforms\windows\build\phone\bld\layout.resfiles
+C:\workspace\firstApp\platforms\windows\build\phone\bld\layout.resfiles.intermediate
+C:\workspace\firstApp\platforms\windows\build\phone\bld\resources.resfiles
+C:\workspace\firstApp\platforms\windows\build\phone\bld\resources.resfiles.intermediate
+C:\workspace\firstApp\platforms\windows\build\phone\bld\pri.resfiles
+C:\workspace\firstApp\platforms\windows\build\phone\bld\pri.resfiles.intermediate
+C:\workspace\firstApp\platforms\windows\build\phone\bld\qualifiers.txt
+C:\workspace\firstApp\platforms\windows\build\phone\bld\qualifiers.txt.intermediate
+C:\workspace\firstApp\platforms\windows\build\phone\bld\MultipleQualifiersPerDimensionFound.txt
+C:\workspace\firstApp\platforms\windows\build\phone\bld\ProjectArchitectures.txt
+C:\workspace\firstApp\platforms\windows\build\phone\bld\package.map.txt
+C:\workspace\firstApp\platforms\windows\build\phone\bld\_pkginfo.txt

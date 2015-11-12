@@ -1,0 +1,1 @@
+C:\workspace\firstApp\platforms\windows\CordovaApp.Phone.jsproj;neutral

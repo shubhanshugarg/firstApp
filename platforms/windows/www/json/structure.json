@@ -1,0 +1,10 @@
+﻿{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Notices",
+      "description": "Read the college notices here",
+      "icon": "calendar"
+    }
+  ]
+}

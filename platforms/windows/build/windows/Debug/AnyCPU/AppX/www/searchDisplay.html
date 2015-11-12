@@ -1,0 +1,35 @@
+﻿<ons-page ng-controller="searchDisplayController">
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">Search Results</div>
+    </ons-toolbar>
+
+    <ons-list-header>Top 15 results shown . Go back to change search parameters</ons-list-header>
+
+    <ons-row align="center" class="status-message">
+        <ons-col>
+            <span ng-bind="msg"></span>
+        </ons-col>
+    </ons-row>
+    <ons-list ng-show="feeds">
+        <ons-list-item modifier="chevron" class="item" ng-repeat="feed in feeds"
+                       ng-click="showDetail($index)">
+            <ons-row>
+                <ons-col>
+                    <header>
+
+                        <span class="item-title" ng-bind-html="feed.singleUser_name"></span>
+                    </header>
+                    <p class="item-desc" ng-bind-html="feed.singleUser_roll"></p>
+                    <!-- <p class="item-desc" ng-bind-html="feed.contentSnippet"></p> -->
+                </ons-col>
+            </ons-row>
+
+        </ons-list-item>
+    </ons-list>
+
+
+</ons-page>

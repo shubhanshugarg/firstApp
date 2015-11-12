@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SHUBHANSHU</Machine>
+    <WindowsUser>shubhanshu</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>com.collegeloopin</PackageIdentityName>
+    <IntermediateOutputPath>C:\workspace\firstApp\platforms\windows\build\windows\bld\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>73984F2CDEACD3282FC1924C366D9F3F08302CBE91121233AA39F74263A4D141</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>com.collegeloopin_0.0.8.0_neutral__h35559jr9hy9m</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>com.collegeloopin_h35559jr9hy9m!com.collegeloopin</RegisteredUserModeAppID>
+    <RegisteredPackageID>com.collegeloopin</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Apache Cordova Team</RegisteredPackagePublisher>
+    <RegisteredVersion>0.0.8.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T14:07:38.852</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\SplashScreen.scale-100.png">
+      <PackagePath>images\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T13:52:47.097</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square150x150Logo.scale-100.png">
+      <PackagePath>images\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T13:52:47.100</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square30x30Logo.scale-100.png">
+      <PackagePath>images\Square30x30Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T13:52:47.103</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square310x310Logo.scale-100.png">
+      <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T13:52:47.104</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square44x44Logo.scale-100.png">
+      <PackagePath>images\Square44x44Logo.scale-100.png</PackagePath>
+      <Modified>2015-11-12T13:52:47.106</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square70x70Logo.scale-100.png">
+      <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T13:52:47.109</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square71x71Logo.scale-100.png">
+      <PackagePath>images\Square71x71Logo.scale-100.png</PackagePath>
+      <Modified>2015-11-12T13:52:47.110</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\StoreLogo.scale-100.png">
+      <PackagePath>images\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T13:52:47.112</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Wide310x150Logo.scale-100.png">
+      <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-11-12T13:52:47.116</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\images\screen-default.png">
+      <PackagePath>www\lib\images\screen-default.png</PackagePath>
+      <Modified>2015-11-12T14:03:29.024</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\scrollDown.png">
+      <PackagePath>www\scrollDown.png</PackagePath>
+      <Modified>2015-11-12T14:03:29.602</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-android-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-android-share.png</PackagePath>
+      <Modified>2015-11-12T13:52:53.127</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios6-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios6-share.png</PackagePath>
+      <Modified>2015-11-12T13:52:53.129</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-ipad-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-ipad-share.png</PackagePath>
+      <Modified>2015-11-12T13:52:53.132</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-share.png</PackagePath>
+      <Modified>2015-11-12T13:52:53.135</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshots-ios7-shareconfig.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshots-ios7-shareconfig.png</PackagePath>
+      <Modified>2015-11-12T13:52:53.141</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\about.html">
+      <PackagePath>www\about.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.196</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\contact.html">
+      <PackagePath>www\contact.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.196</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\contact_backup.html">
+      <PackagePath>www\contact_backup.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\editProfile.html">
+      <PackagePath>www\editProfile.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-categories-fromMenu.html">
+      <PackagePath>www\feed-categories-fromMenu.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-categories.html">
+      <PackagePath>www\feed-categories.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.227</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-category.html">
+      <PackagePath>www\feed-category.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.227</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-detail.html">
+      <PackagePath>www\feed-detail.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.227</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-master-backu.html">
+      <PackagePath>www\feed-master-backu.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.227</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-master.html">
+      <PackagePath>www\feed-master.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.227</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\index.html">
+      <PackagePath>www\index.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.227</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\main.html">
+      <PackagePath>www\main.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\menu.html">
+      <PackagePath>www\menu.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\newsPost.html">
+      <PackagePath>www\newsPost.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.821</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\noticePost.html">
+      <PackagePath>www\noticePost.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.821</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\peopleSearch.html">
+      <PackagePath>www\peopleSearch.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.821</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\profile.html">
+      <PackagePath>www\profile.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\searchDisplay.html">
+      <PackagePath>www\searchDisplay.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\searchSingleUserDisplay.html">
+      <PackagePath>www\searchSingleUserDisplay.html</PackagePath>
+      <Modified>2015-11-12T14:03:30.868</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova-js-src\exec.js">
+      <PackagePath>www\cordova-js-src\exec.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova-js-src\platform.js">
+      <PackagePath>www\cordova-js-src\platform.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova.js">
+      <PackagePath>www\cordova.js</PackagePath>
+      <Modified>2015-11-12T14:03:29.634</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova_plugins.js">
+      <PackagePath>www\cordova_plugins.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\angular-sanitize.js">
+      <PackagePath>www\js\angular-sanitize.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.243</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\app.js">
+      <PackagePath>www\js\app.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.259</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\data.js">
+      <PackagePath>www\js\data.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.259</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\jquery-1.11.1.min.js">
+      <PackagePath>www\js\jquery-1.11.1.min.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.290</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\tempApp.js">
+      <PackagePath>www\js\tempApp.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.290</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\winstore-jscompat.js">
+      <PackagePath>www\js\winstore-jscompat.js</PackagePath>
+      <Modified>2015-11-12T14:03:29.024</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\js\bootstrap.min.js">
+      <PackagePath>www\lib\js\bootstrap.min.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.321</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\js\fastclick.js">
+      <PackagePath>www\lib\js\fastclick.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.337</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\js\jquery-ui.min.js">
+      <PackagePath>www\lib\js\jquery-ui.min.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.384</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular-animate.js">
+      <PackagePath>www\lib\onsen\js\angular\angular-animate.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.462</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular-touch.js">
+      <PackagePath>www\lib\onsen\js\angular\angular-touch.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.462</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.js">
+      <PackagePath>www\lib\onsen\js\angular\angular.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.min.js">
+      <PackagePath>www\lib\onsen\js\angular\angular.min.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui.js">
+      <PackagePath>www\lib\onsen\js\onsenui.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.602</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui.min.js">
+      <PackagePath>www\lib\onsen\js\onsenui.min.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.634</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui_all.js">
+      <PackagePath>www\lib\onsen\js\onsenui_all.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.743</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui_all.min.js">
+      <PackagePath>www\lib\onsen\js\onsenui_all.min.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\cordova-plugin-google-analytics\www\analytics.js">
+      <PackagePath>www\plugins\cordova-plugin-google-analytics\www\analytics.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.821</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js">
+      <PackagePath>www\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.821</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js">
+      <PackagePath>www\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.837</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.837</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\Camera.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\Camera.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.837</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\CameraConstants.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraConstants.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.837</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.837</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js">
+      <PackagePath>www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js">
+      <PackagePath>www\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\phonegap-plugin-push\src\windows\PushPluginProxy.js">
+      <PackagePath>www\plugins\phonegap-plugin-push\src\windows\PushPluginProxy.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\phonegap-plugin-push\www\push.js">
+      <PackagePath>www\plugins\phonegap-plugin-push\www\push.js</PackagePath>
+      <Modified>2015-11-12T14:03:30.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\WinJS\js\base.js">
+      <PackagePath>www\WinJS\js\base.js</PackagePath>
+      <Modified>2015-11-12T14:03:29.962</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js</PackagePath>
+      <Modified>2015-11-12T13:52:53.165</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\tests\tests.js">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\tests\tests.js</PackagePath>
+      <Modified>2015-11-12T13:52:53.213</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js</PackagePath>
+      <Modified>2015-11-12T13:52:53.219</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\json\structure.json">
+      <PackagePath>www\json\structure.json</PackagePath>
+      <Modified>2015-11-12T14:03:30.305</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\bower.json">
+      <PackagePath>www\lib\onsen\js\angular\bower.json</PackagePath>
+      <Modified>2015-11-12T14:03:30.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\css\bootstrap.min.css">
+      <PackagePath>www\lib\css\bootstrap.min.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.305</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\css\jquery-ui.css">
+      <PackagePath>www\lib\css\jquery-ui.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.305</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\css\font-awesome.css">
+      <PackagePath>www\lib\onsen\css\font_awesome\css\font-awesome.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.384</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\css\font-awesome.min.css">
+      <PackagePath>www\lib\onsen\css\font_awesome\css\font-awesome.min.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.384</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\css\ionicons.css">
+      <PackagePath>www\lib\onsen\css\ionicons\css\ionicons.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.399</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\css\ionicons.min.css">
+      <PackagePath>www\lib\onsen\css\ionicons\css\ionicons.min.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.399</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-blue-basic-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-blue-basic-theme.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.399</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-blue-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-blue-theme.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.415</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-dark-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-dark-theme.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.415</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-default.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-default.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.415</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-purple-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-purple-theme.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.430</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-sunshine-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-sunshine-theme.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.430</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.446</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsenui.css">
+      <PackagePath>www\lib\onsen\css\onsenui.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.446</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular-csp.css">
+      <PackagePath>www\lib\onsen\js\angular\angular-csp.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.462</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\styles\app.css">
+      <PackagePath>www\styles\app.css</PackagePath>
+      <Modified>2015-11-12T14:03:30.868</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.eot">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.eot</PackagePath>
+      <Modified>2015-11-12T14:03:29.118</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.eot">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.eot</PackagePath>
+      <Modified>2015-11-12T14:03:29.149</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.svg">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.svg</PackagePath>
+      <Modified>2015-11-12T14:03:29.134</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.svg">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.svg</PackagePath>
+      <Modified>2015-11-12T14:03:29.165</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.ttf">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.ttf</PackagePath>
+      <Modified>2015-11-12T14:03:29.134</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.ttf">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.ttf</PackagePath>
+      <Modified>2015-11-12T14:03:29.165</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.woff">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.woff</PackagePath>
+      <Modified>2015-11-12T14:03:29.134</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.woff">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.woff</PackagePath>
+      <Modified>2015-11-12T14:03:29.180</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\FontAwesome.otf">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\FontAwesome.otf</PackagePath>
+      <Modified>2015-11-12T14:03:29.149</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.min.js.gzip">
+      <PackagePath>www\lib\onsen\js\angular\angular.min.js.gzip</PackagePath>
+      <Modified>2015-11-12T14:03:29.305</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.min.js.map">
+      <PackagePath>www\lib\onsen\js\angular\angular.min.js.map</PackagePath>
+      <Modified>2015-11-12T14:03:29.305</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\README.md">
+      <PackagePath>www\lib\onsen\js\angular\README.md</PackagePath>
+      <Modified>2015-11-12T14:03:29.305</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\README.md">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\README.md</PackagePath>
+      <Modified>2015-11-12T13:52:53.125</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\blue-basic-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\blue-basic-theme.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\blue-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\blue-theme.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\alert-dialog.styl">
+      <PackagePath>www\lib\onsen\stylus\components\alert-dialog.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\button-bar.styl">
+      <PackagePath>www\lib\onsen\stylus\components\button-bar.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\button.styl">
+      <PackagePath>www\lib\onsen\stylus\components\button.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\checkbox.styl">
+      <PackagePath>www\lib\onsen\stylus\components\checkbox.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\dialog.styl">
+      <PackagePath>www\lib\onsen\stylus\components\dialog.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\global.styl">
+      <PackagePath>www\lib\onsen\stylus\components\global.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\index.styl">
+      <PackagePath>www\lib\onsen\stylus\components\index.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\list.styl">
+      <PackagePath>www\lib\onsen\stylus\components\list.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\modal.styl">
+      <PackagePath>www\lib\onsen\stylus\components\modal.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\navigation-bar.styl">
+      <PackagePath>www\lib\onsen\stylus\components\navigation-bar.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\notification.styl">
+      <PackagePath>www\lib\onsen\stylus\components\notification.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\page.styl">
+      <PackagePath>www\lib\onsen\stylus\components\page.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\popover.styl">
+      <PackagePath>www\lib\onsen\stylus\components\popover.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\radio-button.styl">
+      <PackagePath>www\lib\onsen\stylus\components\radio-button.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\range.styl">
+      <PackagePath>www\lib\onsen\stylus\components\range.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\search-input.styl">
+      <PackagePath>www\lib\onsen\stylus\components\search-input.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\switch.styl">
+      <PackagePath>www\lib\onsen\stylus\components\switch.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\tab-bar.styl">
+      <PackagePath>www\lib\onsen\stylus\components\tab-bar.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\text-input.styl">
+      <PackagePath>www\lib\onsen\stylus\components\text-input.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\textarea.styl">
+      <PackagePath>www\lib\onsen\stylus\components\textarea.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\toolbar-button.styl">
+      <PackagePath>www\lib\onsen\stylus\components\toolbar-button.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\util.styl">
+      <PackagePath>www\lib\onsen\stylus\components\util.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\dark-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\dark-theme.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\default.styl">
+      <PackagePath>www\lib\onsen\stylus\default.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\purple-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\purple-theme.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\sunshine-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\sunshine-theme.styl</PackagePath>
+      <Modified>2015-11-12T14:03:29.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\loginDummy.php">
+      <PackagePath>www\loginDummy.php</PackagePath>
+      <Modified>2015-11-12T14:03:29.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\loginDummy2.php">
+      <PackagePath>www\loginDummy2.php</PackagePath>
+      <Modified>2015-11-12T14:03:29.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\loginDummy3.php">
+      <PackagePath>www\loginDummy3.php</PackagePath>
+      <Modified>2015-11-12T14:03:29.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\No_Image.jpg">
+      <PackagePath>www\No_Image.jpg</PackagePath>
+      <Modified>2015-11-12T14:03:29.602</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-wp8-share.jpg">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-wp8-share.jpg</PackagePath>
+      <Modified>2015-11-12T13:52:53.139</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\www.iml">
+      <PackagePath>www\www.iml</PackagePath>
+      <Modified>2015-11-12T14:03:29.602</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\config.xml">
+      <PackagePath>config.xml</PackagePath>
+      <Modified>2015-11-12T14:03:28.884</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\plugin.xml">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\plugin.xml</PackagePath>
+      <Modified>2015-11-12T13:52:53.119</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\tests\plugin.xml">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\tests\plugin.xml</PackagePath>
+      <Modified>2015-11-12T13:52:53.206</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\android\nl\xservices\plugins\SocialSharing.java">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\android\nl\xservices\plugins\SocialSharing.java</PackagePath>
+      <Modified>2015-11-12T13:52:53.148</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.h">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.h</PackagePath>
+      <Modified>2015-11-12T13:52:53.153</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.m">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.m</PackagePath>
+      <Modified>2015-11-12T13:52:53.159</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs</PackagePath>
+      <Modified>2015-11-12T13:52:53.169</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-11-12T14:07:38.586</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.17018</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.17018</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

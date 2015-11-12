@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SHUBHANSHU</Machine>
+    <WindowsUser>shubhanshu</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows Phone 8.1</TargetOsDescription>
+    <SolutionConfiguration>release|anycpu</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>a7bbeac0-8944-11e5-b4ab-bf6547ea2f42</PackageIdentityName>
+    <IntermediateOutputPath>C:\workspace\firstApp\platforms\windows\build\phone\bld\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\SplashScreen.scale-100.png">
+      <PackagePath>images\SplashScreen.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\SplashScreenPhone.scale-240.png">
+      <PackagePath>images\SplashScreenPhone.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square150x150Logo.scale-100.png">
+      <PackagePath>images\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square150x150Logo.scale-240.png">
+      <PackagePath>images\Square150x150Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square30x30Logo.scale-100.png">
+      <PackagePath>images\Square30x30Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square310x310Logo.scale-100.png">
+      <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square44x44Logo.scale-100.png">
+      <PackagePath>images\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square44x44Logo.scale-240.png">
+      <PackagePath>images\Square44x44Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square70x70Logo.scale-100.png">
+      <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square71x71Logo.scale-100.png">
+      <PackagePath>images\Square71x71Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Square71x71Logo.scale-240.png">
+      <PackagePath>images\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\StoreLogo.scale-100.png">
+      <PackagePath>images\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\StoreLogo.scale-240.png">
+      <PackagePath>images\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Wide310x150Logo.scale-100.png">
+      <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\images\Wide310x150Logo.scale-240.png">
+      <PackagePath>images\Wide310x150Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\images\screen-default.png">
+      <PackagePath>www\lib\images\screen-default.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\scrollDown.png">
+      <PackagePath>www\scrollDown.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-android-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-android-share.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios6-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios6-share.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-ipad-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-ipad-share.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-share.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-share.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshots-ios7-shareconfig.png">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshots-ios7-shareconfig.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\about.html">
+      <PackagePath>www\about.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\contact.html">
+      <PackagePath>www\contact.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\contact_backup.html">
+      <PackagePath>www\contact_backup.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\editProfile.html">
+      <PackagePath>www\editProfile.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-categories-fromMenu.html">
+      <PackagePath>www\feed-categories-fromMenu.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-categories.html">
+      <PackagePath>www\feed-categories.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-category.html">
+      <PackagePath>www\feed-category.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-detail.html">
+      <PackagePath>www\feed-detail.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-master-backu.html">
+      <PackagePath>www\feed-master-backu.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\feed-master.html">
+      <PackagePath>www\feed-master.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\index.html">
+      <PackagePath>www\index.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\main.html">
+      <PackagePath>www\main.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\menu.html">
+      <PackagePath>www\menu.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\newsPost.html">
+      <PackagePath>www\newsPost.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\noticePost.html">
+      <PackagePath>www\noticePost.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\peopleSearch.html">
+      <PackagePath>www\peopleSearch.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\profile.html">
+      <PackagePath>www\profile.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\searchDisplay.html">
+      <PackagePath>www\searchDisplay.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\searchSingleUserDisplay.html">
+      <PackagePath>www\searchSingleUserDisplay.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova-js-src\exec.js">
+      <PackagePath>www\cordova-js-src\exec.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova-js-src\platform.js">
+      <PackagePath>www\cordova-js-src\platform.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova.js">
+      <PackagePath>www\cordova.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\cordova_plugins.js">
+      <PackagePath>www\cordova_plugins.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\angular-sanitize.js">
+      <PackagePath>www\js\angular-sanitize.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\app.js">
+      <PackagePath>www\js\app.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\data.js">
+      <PackagePath>www\js\data.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\jquery-1.11.1.min.js">
+      <PackagePath>www\js\jquery-1.11.1.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\tempApp.js">
+      <PackagePath>www\js\tempApp.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\js\winstore-jscompat.js">
+      <PackagePath>www\js\winstore-jscompat.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\js\bootstrap.min.js">
+      <PackagePath>www\lib\js\bootstrap.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\js\fastclick.js">
+      <PackagePath>www\lib\js\fastclick.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\js\jquery-ui.min.js">
+      <PackagePath>www\lib\js\jquery-ui.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular-animate.js">
+      <PackagePath>www\lib\onsen\js\angular\angular-animate.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular-touch.js">
+      <PackagePath>www\lib\onsen\js\angular\angular-touch.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.js">
+      <PackagePath>www\lib\onsen\js\angular\angular.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.min.js">
+      <PackagePath>www\lib\onsen\js\angular\angular.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui.js">
+      <PackagePath>www\lib\onsen\js\onsenui.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui.min.js">
+      <PackagePath>www\lib\onsen\js\onsenui.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui_all.js">
+      <PackagePath>www\lib\onsen\js\onsenui_all.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\onsenui_all.min.js">
+      <PackagePath>www\lib\onsen\js\onsenui_all.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\cordova-plugin-google-analytics\www\analytics.js">
+      <PackagePath>www\plugins\cordova-plugin-google-analytics\www\analytics.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js">
+      <PackagePath>www\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js">
+      <PackagePath>www\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\Camera.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\Camera.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\CameraConstants.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraConstants.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js">
+      <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js">
+      <PackagePath>www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js">
+      <PackagePath>www\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\phonegap-plugin-push\src\windows\PushPluginProxy.js">
+      <PackagePath>www\plugins\phonegap-plugin-push\src\windows\PushPluginProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\plugins\phonegap-plugin-push\www\push.js">
+      <PackagePath>www\plugins\phonegap-plugin-push\www\push.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\WinJS\js\base.js">
+      <PackagePath>www\WinJS\js\base.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\tests\tests.js">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\tests\tests.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\json\structure.json">
+      <PackagePath>www\json\structure.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\bower.json">
+      <PackagePath>www\lib\onsen\js\angular\bower.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\css\bootstrap.min.css">
+      <PackagePath>www\lib\css\bootstrap.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\css\jquery-ui.css">
+      <PackagePath>www\lib\css\jquery-ui.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\css\font-awesome.css">
+      <PackagePath>www\lib\onsen\css\font_awesome\css\font-awesome.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\css\font-awesome.min.css">
+      <PackagePath>www\lib\onsen\css\font_awesome\css\font-awesome.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\css\ionicons.css">
+      <PackagePath>www\lib\onsen\css\ionicons\css\ionicons.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\css\ionicons.min.css">
+      <PackagePath>www\lib\onsen\css\ionicons\css\ionicons.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-blue-basic-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-blue-basic-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-blue-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-blue-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-dark-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-dark-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-default.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-default.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-purple-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-purple-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components-sunshine-theme.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components-sunshine-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsen-css-components.css">
+      <PackagePath>www\lib\onsen\css\onsen-css-components.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\onsenui.css">
+      <PackagePath>www\lib\onsen\css\onsenui.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular-csp.css">
+      <PackagePath>www\lib\onsen\js\angular\angular-csp.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\styles\app.css">
+      <PackagePath>www\styles\app.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.eot">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.eot</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.eot">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.eot</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.svg">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.svg">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.ttf">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.ttf">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.woff">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.woff</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\ionicons\fonts\ionicons.woff">
+      <PackagePath>www\lib\onsen\css\ionicons\fonts\ionicons.woff</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\css\font_awesome\fonts\FontAwesome.otf">
+      <PackagePath>www\lib\onsen\css\font_awesome\fonts\FontAwesome.otf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.min.js.gzip">
+      <PackagePath>www\lib\onsen\js\angular\angular.min.js.gzip</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\angular.min.js.map">
+      <PackagePath>www\lib\onsen\js\angular\angular.min.js.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\js\angular\README.md">
+      <PackagePath>www\lib\onsen\js\angular\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\README.md">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\blue-basic-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\blue-basic-theme.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\blue-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\blue-theme.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\alert-dialog.styl">
+      <PackagePath>www\lib\onsen\stylus\components\alert-dialog.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\button-bar.styl">
+      <PackagePath>www\lib\onsen\stylus\components\button-bar.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\button.styl">
+      <PackagePath>www\lib\onsen\stylus\components\button.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\checkbox.styl">
+      <PackagePath>www\lib\onsen\stylus\components\checkbox.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\dialog.styl">
+      <PackagePath>www\lib\onsen\stylus\components\dialog.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\global.styl">
+      <PackagePath>www\lib\onsen\stylus\components\global.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\index.styl">
+      <PackagePath>www\lib\onsen\stylus\components\index.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\list.styl">
+      <PackagePath>www\lib\onsen\stylus\components\list.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\modal.styl">
+      <PackagePath>www\lib\onsen\stylus\components\modal.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\navigation-bar.styl">
+      <PackagePath>www\lib\onsen\stylus\components\navigation-bar.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\notification.styl">
+      <PackagePath>www\lib\onsen\stylus\components\notification.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\page.styl">
+      <PackagePath>www\lib\onsen\stylus\components\page.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\popover.styl">
+      <PackagePath>www\lib\onsen\stylus\components\popover.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\radio-button.styl">
+      <PackagePath>www\lib\onsen\stylus\components\radio-button.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\range.styl">
+      <PackagePath>www\lib\onsen\stylus\components\range.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\search-input.styl">
+      <PackagePath>www\lib\onsen\stylus\components\search-input.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\switch.styl">
+      <PackagePath>www\lib\onsen\stylus\components\switch.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\tab-bar.styl">
+      <PackagePath>www\lib\onsen\stylus\components\tab-bar.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\text-input.styl">
+      <PackagePath>www\lib\onsen\stylus\components\text-input.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\textarea.styl">
+      <PackagePath>www\lib\onsen\stylus\components\textarea.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\toolbar-button.styl">
+      <PackagePath>www\lib\onsen\stylus\components\toolbar-button.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\components\util.styl">
+      <PackagePath>www\lib\onsen\stylus\components\util.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\dark-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\dark-theme.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\default.styl">
+      <PackagePath>www\lib\onsen\stylus\default.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\purple-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\purple-theme.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\lib\onsen\stylus\sunshine-theme.styl">
+      <PackagePath>www\lib\onsen\stylus\sunshine-theme.styl</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\loginDummy.php">
+      <PackagePath>www\loginDummy.php</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\loginDummy2.php">
+      <PackagePath>www\loginDummy2.php</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\loginDummy3.php">
+      <PackagePath>www\loginDummy3.php</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\No_Image.jpg">
+      <PackagePath>www\No_Image.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-wp8-share.jpg">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-wp8-share.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\www\www.iml">
+      <PackagePath>www\www.iml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\config.xml">
+      <PackagePath>config.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\plugin.xml">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\plugin.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\tests\plugin.xml">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\tests\plugin.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\android\nl\xservices\plugins\SocialSharing.java">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\android\nl\xservices\plugins\SocialSharing.java</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.h">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.h</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.m">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.m</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs">
+      <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Phone.WinJS.2.1\1.0\">
+      <Name>Microsoft.Phone.WinJS.2.1</Name>
+      <Version>1.0.9651.0</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.Phone.WinJS.2.1, MinVersion=1.0.9651.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Phone.WinJS.2.1\1.0\Microsoft.Phone.WinJS.2.1.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

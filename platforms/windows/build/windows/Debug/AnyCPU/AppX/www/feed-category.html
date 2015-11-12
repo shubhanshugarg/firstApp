@@ -1,0 +1,32 @@
+﻿<ons-page ng-controller="FeedPluginCategoryController">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">{{title}}</div>
+    </ons-toolbar>
+    <!-- <img src="scrollDown.png" style="z-index:2;position: absolute;height: 59px;right: 20px;bottom: 10px;"> -->
+    <ons-list>
+        <!-- <ons-list-item>
+        llll
+        </ons-list-item> -->
+        <ons-list-item modifier="chevron" class="item" ng-repeat="item in items" ng-click="showDetail($index)">
+            <ons-row>
+                <ons-col>
+                    <header>
+                        <!-- <div class="notification menu-notification" id="notification{{title}}Count-{{item.categoryId}}"
+                             ng-hide="item.categoryNotifications == 0"> -->
+                             <div class="notification menu-notification" 
+                             ng-hide="item.categoryNotifications == 0">{{item.categoryNotifications}}
+                        </div>
+
+                        <span class="item-title">{{item.categoryName}}</span>
+
+                    </header>
+                    <p class="item-desc">{{item.categoryDescription}}</p>
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>
