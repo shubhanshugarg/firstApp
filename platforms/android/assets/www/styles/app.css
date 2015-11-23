@@ -382,3 +382,10 @@ audio {
     left: 0;
     top: 80px
 }
+
+#home-profile {
+    background-image: url(../lib/images/screen-default.png);
+    height: 27em;
+    margin-top: -6em;
+    background-size: cover;
+}
