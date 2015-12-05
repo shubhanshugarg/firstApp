@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="com.collegeloopin" Publisher="CN=Apache Cordova Team" Version="0.0.8.0" ProcessorArchitecture="neutral" />
+  <Identity Name="com.collegeloopin" Publisher="CN=Apache Cordova Team" Version="0.0.9.0" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>College LoopIn</DisplayName>
     <PublisherDisplayName>College LoopIn Team</PublisherDisplayName>
@@ -23,7 +23,7 @@
   </Resources>
   <Applications>
     <Application Id="com.collegeloopin" StartPage="www/index.html">
-      <m2:VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="College LoopIn" ForegroundText="light" Square150x150Logo="images\Square150x150Logo.png" Square30x30Logo="images\Square30x30Logo.png" ToastCapable="true">
+      <m2:VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="College LoopIn" ForegroundText="light" Square150x150Logo="images\Square150x150Logo.png" Square30x30Logo="images\Square30x30Logo.png">
         <m2:DefaultTile Square310x310Logo="images\Square310x310Logo.png" Square70x70Logo="images\Square70x70Logo.png" Wide310x150Logo="images\Wide310x150Logo.png">
           <m2:ShowNameOnTiles>
             <m2:ShowOn Tile="square150x150Logo" />
@@ -47,7 +47,6 @@
     <build:Item Name="SharedGUID" Value="9ebdb27f-d75b-4d8c-b53f-7be4a1fe89f9" />
     <build:Item Name="CodeSharingProject" Value="248F659F-DAC5-46E8-AC09-60EC9FC95053" />
     <build:Item Name="VisualStudio" Version="14.0" />
-    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Enterprise 2015" />
     <build:Item Name="OperatingSystem" Version="10.0.10240.16384 (th1.150709-1700)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.23315.0" />
     <build:Item Name="ProjectGUID" Value="58950fb6-2f93-4963-b9cd-637f83f3efbf" />

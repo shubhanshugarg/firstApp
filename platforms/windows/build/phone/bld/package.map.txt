@@ -1,5 +1,5 @@
 [Files]
-"C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\AppxManifest.xml" "AppxManifest.xml"
+"C:\workspace\firstApp\platforms\windows\build\phone\debug\anycpu\AppxManifest.xml" "AppxManifest.xml"
 "C:\workspace\firstApp\platforms\windows\images\SplashScreen.scale-100.png" "images\SplashScreen.scale-100.png"
 "C:\workspace\firstApp\platforms\windows\images\SplashScreenPhone.scale-240.png" "images\SplashScreenPhone.scale-240.png"
 "C:\workspace\firstApp\platforms\windows\images\Square150x150Logo.scale-100.png" "images\Square150x150Logo.scale-100.png"
@@ -150,4 +150,4 @@
 "C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.h" "plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.h"
 "C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.m" "plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.m"
 "C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs" "plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs"
-"C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\resources.pri" "resources.pri"
+"C:\workspace\firstApp\platforms\windows\build\phone\debug\anycpu\resources.pri" "resources.pri"

@@ -14,8 +14,8 @@
 
 
         <section style="padding: 10px;">
-            <ons-button style="float:right;margin-right:  20px" modifier="small" ng-click="editProfile()">
-                Edit
+            <ons-button style="float:right;margin-right:  20px;padding: 0" modifier="small" ng-click="editProfile()">
+                Edit Profile
             </ons-button>
             <br><br>
 
@@ -35,61 +35,61 @@
             $scope.linkedinUrl = profileData.register_linkedinUrl; -->
             <!-- <img src="scrollDown.png" style="z-index:2;position: absolute;height: 59px;right: 80px;top: 55px;"> -->
             <div class="card">
-                <h3 style="margin:20px">Personal Information</h3>
+                <h4 style="text-align: center">Personal Information</h4>
 
                 <div>
-                    <span class="text-label">Name :</span>
+                    <span class="text-label">Name</span>
 
                     <span class="text-info" ng-bind-html="name"></span>
                 </div>
                 <div>
-                    <span class="text-label">Roll Number :</span>
+                    <span class="text-label">Roll Number</span>
 
                     <span class="text-info" ng-bind-html="roll"></span>
                 </div>
                 <div>
-                    <span class="text-label">Graduation Year :</span>
+                    <span class="text-label">Graduation Year</span>
 
                     <span class="text-info" ng-bind-html="yearGrad"></span>
                 </div>
                 <div>
-                    <span class="text-label">Branch :</span>
+                    <span class="text-label">Branch</span>
 
                     <span class="text-info" ng-bind-html="branch"></span>
                 </div>
 
             </div>
             <div class="card">
-                <h3 style="margin:20px">Contact Information</h3>
+                <h4 style="text-align: center">Contact Information</h4>
 
                 <div>
-                    <span class="text-label">Email: </span>
+                    <span class="text-label">Email</span>
 
                     <span class="text-info" ng-bind-html="email"></span>
                 </div>
                 <div>
-                    <span class="text-label">Contact Number: </span>
+                    <span class="text-label">Contact Number</span>
 
                     <span class="text-info" ng-bind-html="contactNumber"></span>
                 </div>
             </div>
 
             <div class="card">
-                <h3 style="margin:20px">Other Information</h3>
+                <h4 style="text-align: center">Other Information</h4>
 
                 <div>
-                    <span class="text-label">Company :</span>
+                    <span class="text-label">Company</span>
 
                     <span class="text-info" ng-bind-html="company"></span>
                 </div>
                 <div>
-                    <span class="text-label">Status: </span>
+                    <span class="text-label">Status</span>
 
                     <span class="text-info" ng-bind-html="status"></span>
                 </div>
                 <div>
                     <!-- About Me :<span class="feed-content" ng-bind-html="aboutMe"></span> -->
-                    <span class="text-label">Interests :</span>
+                    <span class="text-label">Interests</span>
 
                     <span class="text-info" ng-bind-html="interests"></span>
                 </div>

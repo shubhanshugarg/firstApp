@@ -6,13 +6,13 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetOsVersion>6.3</TargetOsVersion>
     <TargetOsDescription>Windows 8.1</TargetOsDescription>
-    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <SolutionConfiguration>debug|anycpu</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>com.collegeloopin</PackageIdentityName>
     <IntermediateOutputPath>C:\workspace\firstApp\platforms\windows\build\windows\bld\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppxManifest.xml">
+    <AppXManifest Include="C:\workspace\firstApp\platforms\windows\build\windows\debug\anycpu\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
@@ -457,7 +457,7 @@
     <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs">
       <PackagePath>plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\ReverseMap\resources.pri">
+    <AppxPackagedFile Include="C:\workspace\firstApp\platforms\windows\build\windows\debug\anycpu\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

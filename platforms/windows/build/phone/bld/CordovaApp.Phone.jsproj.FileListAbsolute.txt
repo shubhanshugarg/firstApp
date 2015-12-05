@@ -1,6 +1,6 @@
-C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\resources.pri
-C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\AppxManifest.xml
-C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\CordovaApp.Phone.build.appxrecipe
+C:\workspace\firstApp\platforms\windows\build\phone\debug\anycpu\resources.pri
+C:\workspace\firstApp\platforms\windows\build\phone\debug\anycpu\AppxManifest.xml
+C:\workspace\firstApp\platforms\windows\build\phone\debug\anycpu\CordovaApp.Phone.build.appxrecipe
 C:\workspace\firstApp\platforms\windows\build\phone\bld\priconfig.xml
 C:\workspace\firstApp\platforms\windows\build\phone\bld\priconfig.xml.intermediate
 C:\workspace\firstApp\platforms\windows\build\phone\bld\layout.resfiles

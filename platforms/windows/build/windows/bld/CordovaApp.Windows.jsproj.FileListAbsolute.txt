@@ -1,6 +1,6 @@
-C:\workspace\firstApp\platforms\windows\build\windows\release\anycpu\resources.pri
-C:\workspace\firstApp\platforms\windows\build\windows\release\anycpu\AppxManifest.xml
-C:\workspace\firstApp\platforms\windows\build\windows\release\anycpu\CordovaApp.Windows.build.appxrecipe
+C:\workspace\firstApp\platforms\windows\build\windows\debug\anycpu\resources.pri
+C:\workspace\firstApp\platforms\windows\build\windows\debug\anycpu\AppxManifest.xml
+C:\workspace\firstApp\platforms\windows\build\windows\debug\anycpu\CordovaApp.Windows.build.appxrecipe
 C:\workspace\firstApp\platforms\windows\build\windows\bld\priconfig.xml
 C:\workspace\firstApp\platforms\windows\build\windows\bld\priconfig.xml.intermediate
 C:\workspace\firstApp\platforms\windows\build\windows\bld\layout.resfiles
@@ -13,6 +13,5 @@ C:\workspace\firstApp\platforms\windows\build\windows\bld\qualifiers.txt
 C:\workspace\firstApp\platforms\windows\build\windows\bld\qualifiers.txt.intermediate
 C:\workspace\firstApp\platforms\windows\build\windows\bld\MultipleQualifiersPerDimensionFound.txt
 C:\workspace\firstApp\platforms\windows\build\windows\bld\ProjectArchitectures.txt
-C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\ReverseMap\resources.pri
-C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppxManifest.xml
-C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\CordovaApp.Windows.build.appxrecipe
+C:\workspace\firstApp\platforms\windows\build\windows\bld\package.map.txt
+C:\workspace\firstApp\platforms\windows\build\windows\bld\_pkginfo.txt

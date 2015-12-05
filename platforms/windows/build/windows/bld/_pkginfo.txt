@@ -1,0 +1,1 @@
+C:\workspace\firstApp\platforms\windows\AppPackages\CordovaApp.Windows_0.0.9.0_anycpu_debug_Test\CordovaApp.Windows_0.0.9.0_anycpu_debug.appx

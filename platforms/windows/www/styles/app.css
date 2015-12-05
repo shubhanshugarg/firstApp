@@ -93,7 +93,7 @@ img {
 
 .menu-notification {
     display: inline-block;
-    margin-top: 12px;
+    margin-left: 2px;
     font-size: 14px;
     height: 16px;
     line-height: 16px;
@@ -382,3 +382,11 @@ audio {
     left: 0;
     top: 80px
 }
+
+#home-profile {
+    background-image: url(../lib/images/screen-default.png);
+    height: 27em;
+    margin-top: -6em;
+    background-size: cover;
+}
+

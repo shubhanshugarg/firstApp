@@ -269,6 +269,7 @@ var app = {
                     var register_twitterUrl = response.data.twitterUrl;
                     var register_linkedinUrl = response.data.linkedinUrl;
                     var register_interests = response.data.interests;
+                    var special_user = response.data.specialUser;
                 } else {
 
                 }
@@ -292,7 +293,8 @@ var app = {
                         'register_fbUrl': register_fbUrl,
                         'register_twitterUrl': register_twitterUrl,
                         'register_linkedinUrl': register_linkedinUrl,
-                        'register_interests': register_interests
+                        'register_interests': register_interests,
+                        'special_user': special_user
                     };
                     window.localStorage["profileData"] = JSON.stringify(profileData);
                 }
@@ -450,6 +452,7 @@ var app = {
                             var register_twitterUrl = response.data.twitterUrl;
                             var register_linkedinUrl = response.data.linkedinUrl;
                             var register_interests = response.data.interests;
+                            var special_user = response.data.specialUser;
                         } else {
                             var errorMessage = response.message;
                             alert(errorMessage);
@@ -476,7 +479,8 @@ var app = {
                                 'register_fbUrl': register_fbUrl,
                                 'register_twitterUrl': register_twitterUrl,
                                 'register_linkedinUrl': register_linkedinUrl,
-                                'register_interests': register_interests
+                                'register_interests': register_interests,
+                                'special_user': special_user
                             };
                             window.localStorage["profileData"] = JSON.stringify(profileData);
                             //$.mobile.changePage("some.html");
@@ -1260,7 +1264,20 @@ var app = {
     // Contact Controller
     module.controller('noticePostController', ["$scope", "$http", function ($scope, $http) {
         var profileData = JSON.parse(window.localStorage.getItem('profileData'));
-        $scope.allCategories = profileData.interestedCategories;
+        var interestedCategories = profileData.interestedCategories;
+
+        if (!profileData.special_user) {
+
+            var commonCategories = ["Internship", "Placement", "Fest", "Sharing Goods", "MBA", "Masters", "First Year",
+                "Second Year", "Third Year", "Fourth Year", "Hostel", "Alumni", "Music", "Sports", "Food", "Travel", "Events",
+                "Technology", "Marketing", "Competitions", "Entrepreneurship", "Deals", "Others"];
+
+            interestedCategories = interestedCategories.filter(function (el) {
+                return commonCategories.indexOf(el.categoryName) > -1;
+            });
+        }
+
+        $scope.allCategories = interestedCategories;
         $scope.disableButton = false;
         $scope.postNoticeButtonText = "Post Notice";
 
@@ -1805,6 +1822,8 @@ var app = {
                     var register_twitterUrl = response.data.twitterUrl;
                     var register_linkedinUrl = response.data.linkedinUrl;
                     var register_interests = response.data.interests;
+                    var special_user = response.data.specialUser;
+
                     var profileData = {
                         'register_email': register_email,
                         'user_id': user_id,
@@ -1823,8 +1842,8 @@ var app = {
                         'register_fbUrl': register_fbUrl,
                         'register_twitterUrl': register_twitterUrl,
                         'register_linkedinUrl': register_linkedinUrl,
-                        'register_interests': register_interests
-
+                        'register_interests': register_interests,
+                        'special_user': special_user
                     };
                     window.localStorage["profileData"] = JSON.stringify(profileData);
                     $scope.disableButton = false;
