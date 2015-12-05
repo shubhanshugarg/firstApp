@@ -2,196 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca440e21-143d-46ba-82b1-3445d204f9d5" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\AppxManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\CordovaApp.Phone.build.appxrecipe" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\phone\release\anycpu\resources.pri" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\AppxManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\config.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\SplashScreen.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\Square150x150Logo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\Square30x30Logo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\Square310x310Logo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\Square44x44Logo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\Square70x70Logo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\Square71x71Logo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\StoreLogo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\images\Wide310x150Logo.scale-100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\plugin.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-android-share.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios6-share.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-ipad-share.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-ios7-share.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshot-wp8-share.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\screenshots\screenshots-ios7-shareconfig.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\src\android\nl\xservices\plugins\SocialSharing.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.h" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\src\ios\SocialSharing.m" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\src\wp8\SocialSharing.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\tests\plugin.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\tests\tests.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\resources.pri" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\vs.appxrecipe" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\No_Image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\WinJS\js\base.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\about.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\contact.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\contact_backup.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\cordova-js-src\exec.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\cordova-js-src\platform.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\cordova.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\cordova_plugins.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\editProfile.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\feed-categories-fromMenu.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\feed-categories.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\feed-category.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\feed-detail.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\feed-master-backu.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\feed-master.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\js\angular-sanitize.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\js\app.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\js\data.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\js\jquery-1.11.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\js\tempApp.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\js\winstore-jscompat.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\json\structure.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\css\bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\css\jquery-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\images\screen-default.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\js\bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\js\fastclick.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\js\jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\font_awesome\css\font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\font_awesome\css\font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\font_awesome\fonts\FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\font_awesome\fonts\fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\ionicons\css\ionicons.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\ionicons\css\ionicons.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\ionicons\fonts\ionicons.eot" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\ionicons\fonts\ionicons.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\ionicons\fonts\ionicons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\ionicons\fonts\ionicons.woff" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsen-css-components-blue-basic-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsen-css-components-blue-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsen-css-components-dark-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsen-css-components-default.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsen-css-components-purple-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsen-css-components-sunshine-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsen-css-components.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\css\onsenui.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\angular-animate.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\angular-csp.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\angular-touch.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\angular.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\angular.min.js.gzip" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\angular.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\angular\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\onsenui.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\onsenui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\onsenui_all.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\js\onsenui_all.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\blue-basic-theme.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\blue-theme.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\alert-dialog.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\button-bar.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\button.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\checkbox.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\dialog.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\global.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\index.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\list.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\modal.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\navigation-bar.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\notification.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\page.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\popover.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\radio-button.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\range.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\search-input.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\switch.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\tab-bar.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\text-input.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\textarea.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\toolbar-button.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\components\util.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\dark-theme.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\default.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\purple-theme.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\lib\onsen\stylus\sunshine-theme.styl" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\loginDummy.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\loginDummy2.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\loginDummy3.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\main.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\menu.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\newsPost.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\noticePost.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\peopleSearch.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\cordova-plugin-google-analytics\www\analytics.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\nl.x-services.plugins.socialsharing\src\windows\SocialSharingProxy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\nl.x-services.plugins.socialsharing\www\SocialSharing.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\org.apache.cordova.camera\www\Camera.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\org.apache.cordova.camera\www\CameraConstants.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\phonegap-plugin-push\src\windows\PushPluginProxy.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\plugins\phonegap-plugin-push\www\push.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\profile.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\scrollDown.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\searchDisplay.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\searchSingleUserDisplay.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\styles\app.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\AppX\www\www.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\Debug\AnyCPU\ReverseMap\resources.pri" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\release\anycpu\AppxManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\release\anycpu\CordovaApp.Windows.build.appxrecipe" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\release\anycpu\resources.pri" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\debug\anycpu\AppxManifest.xml" afterPath="$PROJECT_DIR$/platforms/windows/build/windows/debug/anycpu/AppxManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/phone/bld/CordovaApp.Phone.jsproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/platforms/windows/build/phone/bld/CordovaApp.Phone.jsproj.FileListAbsolute.txt" />
-      <change type="MODIFICATION" beforePath="C:\workspace\firstApp\platforms\windows\build\windows\debug\anycpu\CordovaApp.Windows.build.appxrecipe" afterPath="$PROJECT_DIR$/platforms/windows/build/windows/debug/anycpu/CordovaApp.Windows.build.appxrecipe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/windows/bld/CordovaApp.Windows.jsproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/platforms/windows/build/windows/bld/CordovaApp.Windows.jsproj.FileListAbsolute.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/phone/bld/PackagingDirectoryWrites.log" afterPath="$PROJECT_DIR$/platforms/windows/build/phone/bld/PackagingDirectoryWrites.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/windows/bld/PackagingDirectoryWrites.log" afterPath="$PROJECT_DIR$/platforms/windows/build/windows/bld/PackagingDirectoryWrites.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/phone/bld/PackagingFileWrites.log" afterPath="$PROJECT_DIR$/platforms/windows/build/phone/bld/PackagingFileWrites.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/windows/bld/PackagingFileWrites.log" afterPath="$PROJECT_DIR$/platforms/windows/build/windows/bld/PackagingFileWrites.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/phone/bld/_pkginfo.txt" afterPath="$PROJECT_DIR$/platforms/windows/build/phone/bld/_pkginfo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/about.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/about.html" afterPath="$PROJECT_DIR$/platforms/windows/www/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/styles/app.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/styles/app.css" afterPath="$PROJECT_DIR$/platforms/windows/www/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/styles/app.css" afterPath="$PROJECT_DIR$/www/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/config.xml" afterPath="$PROJECT_DIR$/platforms/windows/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/feed-categories.html" afterPath="$PROJECT_DIR$/platforms/windows/www/feed-categories.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/feed-categories.html" afterPath="$PROJECT_DIR$/www/feed-categories.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/menu.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/menu.html" afterPath="$PROJECT_DIR$/platforms/windows/www/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/build/phone/bld/package.map.txt" afterPath="$PROJECT_DIR$/platforms/windows/build/phone/bld/package.map.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.phone.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.phone.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.windows.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.windows.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.windows10.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.windows10.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.windows80.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.windows80.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/profile.html" afterPath="$PROJECT_DIR$/www/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/searchSingleUserDisplay.html" afterPath="$PROJECT_DIR$/www/searchSingleUserDisplay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/json/structure.json" afterPath="$PROJECT_DIR$/platforms/android/assets/www/json/structure.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/json/structure.json" afterPath="$PROJECT_DIR$/platforms/windows/www/json/structure.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/tempApp.js" afterPath="$PROJECT_DIR$/www/js/tempApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/windows.json" afterPath="$PROJECT_DIR$/platforms/windows/windows.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="firstApp.iws" />
@@ -238,7 +49,7 @@
       <file leaf-file-name="searchSingleUserDisplay.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/searchSingleUserDisplay.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1734">
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1734">
               <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
@@ -280,21 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614" vertical-offset="119" max-vertical-offset="935">
-              <caret line="8" column="77" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feed-categories.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="feed-categories.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/feed-categories.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3461537" vertical-offset="2529" max-vertical-offset="3655">
-              <caret line="160" column="36" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.56673115" vertical-offset="2529" max-vertical-offset="3655">
+              <caret line="166" column="93" selection-start-line="166" selection-start-column="93" selection-end-line="166" selection-end-column="93" />
               <folding>
                 <element signature="n#style#0;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
               </folding>
@@ -302,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4" vertical-offset="77" max-vertical-offset="2108">
+            <state vertical-scroll-proportion="-8.153846" vertical-offset="77" max-vertical-offset="2108">
               <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#ons-button#0;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
@@ -320,7 +121,7 @@
       <file leaf-file-name="editProfile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/editProfile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="119" max-vertical-offset="1105">
+            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1105">
               <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
               <folding />
             </state>
@@ -365,10 +166,10 @@
         <option value="$PROJECT_DIR$/www/js/tempApp.js" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/www/feed-categories.html" />
         <option value="$PROJECT_DIR$/www/styles/app.css" />
         <option value="$PROJECT_DIR$/www/searchSingleUserDisplay.html" />
         <option value="$PROJECT_DIR$/www/profile.html" />
+        <option value="$PROJECT_DIR$/www/feed-categories.html" />
       </list>
     </option>
   </component>
@@ -874,12 +675,13 @@
       <workItem from="1447941129391" duration="1360000" />
       <workItem from="1448293486056" duration="3538000" />
       <workItem from="1448706677867" duration="589000" />
-      <workItem from="1449291446365" duration="7855000" />
+      <workItem from="1449291446365" duration="8048000" />
+      <workItem from="1449303740277" duration="240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120229000" />
+    <option name="totallyTimeSpent" value="120662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
@@ -895,23 +697,23 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42465752" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25797102" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23984376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25797102" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1226,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="255">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1254,9 +1055,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/styles/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2261" max-vertical-offset="6817">
+          <caret line="149" column="11" selection-start-line="149" selection-start-column="11" selection-end-line="149" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/editProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1105">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/searchSingleUserDisplay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1734">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#1;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.153846" vertical-offset="77" max-vertical-offset="2108">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#ons-button#0;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#1;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#2;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614" vertical-offset="119" max-vertical-offset="935">
+        <state vertical-scroll-proportion="0.032075472" vertical-offset="119" max-vertical-offset="935">
           <caret line="8" column="77" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
           <folding />
         </state>
@@ -1272,52 +1115,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/feed-categories.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3461537" vertical-offset="2529" max-vertical-offset="3655">
-          <caret line="160" column="36" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.56673115" vertical-offset="2529" max-vertical-offset="3655">
+          <caret line="166" column="93" selection-start-line="166" selection-start-column="93" selection-end-line="166" selection-end-column="93" />
           <folding>
             <element signature="n#style#0;n#ons-list-item#0;n#ons-list#0;n#div#1;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/styles/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2261" max-vertical-offset="6817">
-          <caret line="149" column="11" selection-start-line="149" selection-start-column="11" selection-end-line="149" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/editProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="119" max-vertical-offset="1105">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/searchSingleUserDisplay.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1734">
-          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#1;n#section#0;n#ons-page#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4" vertical-offset="77" max-vertical-offset="2108">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#ons-button#0;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#1;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#2;n#section#0;n#ons-page#0;n#ons-navigator#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
