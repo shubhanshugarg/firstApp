@@ -17,11 +17,7 @@
     under the License.
 */
 
-/* jshint node:true, bitwise:true, undef:true, trailing:true, quotmark:true,
-          indent:4, unused:vars, latedef:nofunc
-*/
-
-var cordova_events = require('../events');
+var cordova_events = require('cordova-common').events;
 var cordova_util = require('./util');
 
 var off = function() {
@@ -71,7 +67,7 @@ addModuleProperty(module, 'platforms', './platform', true);
 addModuleProperty(module, 'compile', './compile', true);
 addModuleProperty(module, 'run', './run', true);
 addModuleProperty(module, 'info', './info', true);
-addModuleProperty(module, 'save', './save', true);
-addModuleProperty(module, 'restore', './restore', true);
-
-
+addModuleProperty(module, 'targets', './targets', true);
+addModuleProperty(module, 'requirements', './requirements', true);
+addModuleProperty(module, 'projectMetadata', './project_metadata', true);
+addModuleProperty(module, 'clean', './clean', true);
