@@ -7,19 +7,19 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.collegeloopin"
+        },
         "cordova-plugin-google-analytics": {
+            "PACKAGE_NAME": "com.collegeloopin"
+        },
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.collegeloopin"
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.collegeloopin"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.collegeloopin"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.collegeloopin"
-        },
-        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.collegeloopin"
         },
         "phonegap-plugin-push": {
