@@ -1,0 +1,119 @@
+<ons-navigator>
+    <ons-page ng-controller="profileController"
+              on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button ng-click="menu.toggle()">
+                    <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">Profile
+            </div>
+        </ons-toolbar>
+
+
+        <section style="padding: 10px;">
+            <ons-button style="float:right;margin-right:  20px;padding: 0" modifier="small" ng-click="editProfile()">
+                Edit Profile
+            </ons-button>
+            <br><br>
+
+            <!-- $scope.name = profileData.register_name;
+            $scope.email = profileData.register_email;
+            $scope.college = profileData.register_college;
+            $scope.contactNumber = profileData.register_contactNumber;
+            $scope.roll = profileData.register_roll;
+            $scope.yearGrad = profileData.register_yearGrad;
+            $scope.branch = profileData.register_branch;
+            $scope.company = profileData.register_company;
+            $scope.status = profileData.register_status;
+            $scope.aboutMe = profileData.register_aboutMe;
+            $scope.fbUrl = profileData.register_fbUrl;
+            $scope.twitterUrl = profileData.register_twitterUrl;
+            $scope.interests = profileData.register_interests;
+            $scope.linkedinUrl = profileData.register_linkedinUrl; -->
+            <!-- <img src="scrollDown.png" style="z-index:2;position: absolute;height: 59px;right: 80px;top: 55px;"> -->
+            <div class="card">
+                <h4 style="text-align: center">Personal Information</h4>
+
+                <div>
+                    <span class="text-label">Name</span>
+
+                    <span class="text-info" ng-bind-html="name"></span>
+                </div>
+                <div>
+                    <span class="text-label">Roll Number</span>
+
+                    <span class="text-info" ng-bind-html="roll"></span>
+                </div>
+                <div>
+                    <span class="text-label">Graduation Year</span>
+
+                    <span class="text-info" ng-bind-html="yearGrad"></span>
+                </div>
+                <div>
+                    <span class="text-label">Branch</span>
+
+                    <span class="text-info" ng-bind-html="branch"></span>
+                </div>
+
+            </div>
+            <div class="card">
+                <h4 style="text-align: center">Contact Information</h4>
+
+                <div>
+                    <span class="text-label">Email</span>
+
+                    <span class="text-info" ng-bind-html="email"></span>
+                </div>
+                <div>
+                    <span class="text-label">Contact Number</span>
+
+                    <span class="text-info" ng-bind-html="contactNumber"></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4 style="text-align: center">Other Information</h4>
+
+                <div>
+                    <span class="text-label">Company</span>
+
+                    <span class="text-info" ng-bind-html="company"></span>
+                </div>
+                <div>
+                    <span class="text-label">Status</span>
+
+                    <span class="text-info" ng-bind-html="status"></span>
+                </div>
+                <div>
+                    <!-- About Me :<span class="feed-content" ng-bind-html="aboutMe"></span> -->
+                    <span class="text-label">Interests</span>
+
+                    <span class="text-info" ng-bind-html="interests"></span>
+                </div>
+            </div>
+
+
+            <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
+            <ons-button modifier="large" ng-show="fbUrl != undefined && fbUrl != '' && fbUrl != null"
+                        ng-click="loadURL(fbUrl)">
+                Profile on facebook
+            </ons-button>
+            <br>
+            <ons-button modifier="large" ng-show=" twitterUrl != undefined && twitterUrl != '' && twitterUrl != null"
+                        ng-click="loadURL(twitterUrl)">
+                Profile on twitter
+            </ons-button>
+            <br>
+            <ons-button modifier="large" ng-show=" linkedinUrl != undefined && linkedinUrl != '' && linkedinUrl != null"
+                        ng-click="loadURL(linkedinUrl)">
+                Profile on linkedin
+            </ons-button>
+            <br>
+
+        </section>
+
+    </ons-page>
+</ons-navigator>

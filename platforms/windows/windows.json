@@ -7,44 +7,17 @@
         "files": {
             "package.windows.appxmanifest": {
                 "parents": {
-                    "/Package/Capabilities": [
-                        {
-                            "xml": "<Capability Name=\"picturesLibrary\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<DeviceCapability Name=\"webcam\" />",
-                            "count": 1
-                        }
-                    ]
+                    "/Package/Capabilities": []
                 }
             },
             "package.windows80.appxmanifest": {
                 "parents": {
-                    "/Package/Capabilities": [
-                        {
-                            "xml": "<Capability Name=\"picturesLibrary\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<DeviceCapability Name=\"webcam\" />",
-                            "count": 1
-                        }
-                    ]
+                    "/Package/Capabilities": []
                 }
             },
             "package.phone.appxmanifest": {
                 "parents": {
-                    "/Package/Capabilities": [
-                        {
-                            "xml": "<Capability Name=\"picturesLibrary\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<DeviceCapability Name=\"webcam\" />",
-                            "count": 1
-                        }
-                    ]
+                    "/Package/Capabilities": []
                 }
             },
             "config.xml": {
@@ -52,6 +25,16 @@
                     "/*": [
                         {
                             "xml": "<preference name=\"WindowsToastCapable\" value=\"true\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "package.appxmanifest": {
+                "parents": {
+                    "/Package/Capabilities": [
+                        {
+                            "xml": "<DeviceCapability Name=\"webcam\" />",
                             "count": 1
                         }
                     ]
@@ -66,13 +49,13 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "College LoopIn"
         },
-        "nl.x-services.plugins.socialsharing": {
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "College LoopIn"
         },
-        "org.apache.cordova.camera": {
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "College LoopIn"
         },
-        "org.apache.cordova.splashscreen": {
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "College LoopIn"
         },
         "phonegap-plugin-push": {
@@ -90,73 +73,73 @@
             ]
         },
         {
-            "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
-            "id": "nl.x-services.plugins.socialsharing.SocialSharing",
-            "pluginId": "nl.x-services.plugins.socialsharing",
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "pluginId": "cordova-plugin-x-socialsharing",
             "clobbers": [
                 "window.plugins.socialsharing"
             ]
         },
         {
-            "file": "plugins/nl.x-services.plugins.socialsharing/src/windows/SocialSharingProxy.js",
-            "id": "nl.x-services.plugins.socialsharing.SocialSharingProxy",
-            "pluginId": "nl.x-services.plugins.socialsharing",
+            "file": "plugins/cordova-plugin-x-socialsharing/src/windows/SocialSharingProxy.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharingProxy",
+            "pluginId": "cordova-plugin-x-socialsharing",
             "merges": [
                 ""
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
-            "id": "org.apache.cordova.camera.Camera",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+            "id": "cordova-plugin-camera.Camera",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "Camera"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js",
-            "id": "org.apache.cordova.camera.CameraPopoverOptions",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+            "id": "cordova-plugin-camera.CameraPopoverOptions",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "CameraPopoverOptions"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/Camera.js",
-            "id": "org.apache.cordova.camera.camera",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/Camera.js",
+            "id": "cordova-plugin-camera.camera",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "navigator.camera"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js",
-            "id": "org.apache.cordova.camera.CameraPopoverHandle",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+            "id": "cordova-plugin-camera.CameraPopoverHandle",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "CameraPopoverHandle"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/src/windows/CameraProxy.js",
-            "id": "org.apache.cordova.camera.CameraProxy",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/src/windows/CameraProxy.js",
+            "id": "cordova-plugin-camera.CameraProxy",
+            "pluginId": "cordova-plugin-camera",
             "merges": [
                 ""
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
-            "id": "org.apache.cordova.splashscreen.SplashScreen",
-            "pluginId": "org.apache.cordova.splashscreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
             "clobbers": [
                 "navigator.splashscreen"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.splashscreen/www/windows8/SplashScreenProxy.js",
-            "id": "org.apache.cordova.splashscreen.SplashScreenProxy",
-            "pluginId": "org.apache.cordova.splashscreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/windows/SplashScreenProxy.js",
+            "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+            "pluginId": "cordova-plugin-splashscreen",
             "merges": [
                 ""
             ]
@@ -177,5 +160,13 @@
                 ""
             ]
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-google-analytics": "0.8.1",
+        "cordova-plugin-whitelist": "1.2.0",
+        "cordova-plugin-x-socialsharing": "5.0.7.1",
+        "cordova-plugin-camera": "1.2.0",
+        "cordova-plugin-splashscreen": "3.0.0",
+        "phonegap-plugin-push": "1.5.2"
+    }
 }

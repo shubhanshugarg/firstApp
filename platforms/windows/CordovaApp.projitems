@@ -14,6 +14,6 @@
     <Import Condition="Exists('$(MSBuildThisFileDirectory)CordovaAppDebug.projitems') And '$(Configuration)'=='Debug'" Project="CordovaAppDebug.projitems" />
     <Import Condition="Exists('$(MSBuildThisFileDirectory)CordovaAppRelease.projitems') And '$(Configuration)'!='Debug'" Project="CordovaAppRelease.projitems" />
     <ItemGroup>
-        <Content Include="plugins\nl.x-services.plugins.socialsharing" />
+        <Content Include="plugins\cordova-plugin-x-socialsharing" />
     </ItemGroup>
 </Project>

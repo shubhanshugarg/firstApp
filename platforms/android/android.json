@@ -39,19 +39,23 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 2
+                        },
+                        {
                             "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 2
                         }
                     ],
                     "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
@@ -69,25 +73,49 @@
                             "count": 1
                         },
                         {
-                            "xml": "<permission android:name=\"com.collegeloopin.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "xml": "<permission android:name=\"${applicationId}.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"com.collegeloopin.permission.C2D_MESSAGE\" />",
+                            "xml": "<uses-permission android:name=\"${applicationId}.permission.C2D_MESSAGE\" />",
                             "count": 1
                         }
                     ],
                     "/manifest/application": [
                         {
+                            "xml": "<receiver android:enabled=\"true\" android:name=\"com.google.android.gms.analytics.AnalyticsReceiver\"><intent-filter><action android:name=\"com.google.android.gms.analytics.ANALYTICS_DISPATCH\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:enabled=\"true\" android:exported=\"false\" android:name=\"com.google.android.gms.analytics.AnalyticsService\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:exported=\"true\" android:name=\"com.google.android.gms.analytics.CampaignTrackingReceiver\"><intent-filter><action android:name=\"com.android.vending.INSTALL_REFERRER\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"com.google.android.gms.analytics.CampaignTrackingService\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<activity android:exported=\"true\" android:name=\"com.adobe.phonegap.push.PushHandlerActivity\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<receiver android:name=\"com.adobe.phonegap.push.CordovaGCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"com.collegeloopin\" /></intent-filter></receiver>",
+                            "xml": "<receiver android:exported=\"true\" android:name=\"com.google.android.gms.gcm.GcmReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><category android:name=\"${applicationId}\" /></intent-filter></receiver>",
                             "count": 1
                         },
                         {
-                            "xml": "<service android:name=\"com.adobe.phonegap.push.GCMIntentService\" />",
+                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.GCMIntentService\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.PushInstanceIDListenerService\"><intent-filter><action android:name=\"com.google.android.gms.iid.InstanceID\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.RegistrationIntentService\"></service>",
                             "count": 1
                         }
                     ]
@@ -102,13 +130,13 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.collegeloopin"
         },
-        "nl.x-services.plugins.socialsharing": {
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.collegeloopin"
         },
-        "org.apache.cordova.camera": {
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.collegeloopin"
         },
-        "org.apache.cordova.splashscreen": {
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.collegeloopin"
         },
         "phonegap-plugin-push": {
@@ -132,49 +160,49 @@
             "runs": true
         },
         {
-            "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
-            "id": "nl.x-services.plugins.socialsharing.SocialSharing",
-            "pluginId": "nl.x-services.plugins.socialsharing",
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "pluginId": "cordova-plugin-x-socialsharing",
             "clobbers": [
                 "window.plugins.socialsharing"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
-            "id": "org.apache.cordova.camera.Camera",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+            "id": "cordova-plugin-camera.Camera",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "Camera"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js",
-            "id": "org.apache.cordova.camera.CameraPopoverOptions",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+            "id": "cordova-plugin-camera.CameraPopoverOptions",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "CameraPopoverOptions"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/Camera.js",
-            "id": "org.apache.cordova.camera.camera",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/Camera.js",
+            "id": "cordova-plugin-camera.camera",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "navigator.camera"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js",
-            "id": "org.apache.cordova.camera.CameraPopoverHandle",
-            "pluginId": "org.apache.cordova.camera",
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+            "id": "cordova-plugin-camera.CameraPopoverHandle",
+            "pluginId": "cordova-plugin-camera",
             "clobbers": [
                 "CameraPopoverHandle"
             ]
         },
         {
-            "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
-            "id": "org.apache.cordova.splashscreen.SplashScreen",
-            "pluginId": "org.apache.cordova.splashscreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
             "clobbers": [
                 "navigator.splashscreen"
             ]
@@ -187,5 +215,13 @@
                 "PushNotification"
             ]
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-google-analytics": "0.8.1",
+        "cordova-plugin-whitelist": "1.2.0",
+        "cordova-plugin-x-socialsharing": "5.0.7.1",
+        "cordova-plugin-camera": "1.2.0",
+        "cordova-plugin-splashscreen": "3.0.0",
+        "phonegap-plugin-push": "1.5.2"
+    }
 }

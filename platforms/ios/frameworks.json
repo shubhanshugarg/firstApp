@@ -1,0 +1,15 @@
+{
+    "SystemConfiguration.framework": 2,
+    "CoreData.framework": 2,
+    "libz.dylib": 2,
+    "libsqlite3.0.dylib": 1,
+    "Social.framework": 2,
+    "MessageUI.framework": 2,
+    "ImageIO.framework": 2,
+    "CoreLocation.framework": 2,
+    "libsqlite3.dylib": 1,
+    "AVFoundation.framework": 1,
+    "AddressBook.framework": 2,
+    "libsqlite3.tbd": 2,
+    "libz.tbd": 2
+}

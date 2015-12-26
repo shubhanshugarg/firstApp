@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Package IgnorableNamespaces="uap mp" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10">
-    <Identity Name="com.collegeloopin" Publisher="CN=$username$" Version="0.0.9.0" />
+    <Identity Name="com.collegeloopin" Publisher="CN=$username$" Version="0.0.9.1" />
     <mp:PhoneIdentity PhoneProductId="a7bbeac0-8944-11e5-b4ab-bf6547ea2f42" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
     <Properties>
         <DisplayName>College LoopIn</DisplayName>
@@ -15,7 +15,7 @@
     </Resources>
     <Applications>
         <Application Id="com.collegeloopin" StartPage="ms-appx-web:///www/index.html">
-            <uap:VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="College LoopIn" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+            <uap:VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="College LoopIn" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png" ToastCapable="true">
                 <uap:SplashScreen Image="images\splashscreen.png" />
                 <uap:DefaultTile ShortName="College LoopIn" Square310x310Logo="images\Square310x310Logo.png" Square71x71Logo="images\Square71x71Logo.png" Wide310x150Logo="images\Wide310x150Logo.png" />
             </uap:VisualElements>
@@ -26,5 +26,6 @@
     </Applications>
     <Capabilities>
         <Capability Name="internetClient" />
+        <DeviceCapability Name="webcam" />
     </Capabilities>
 </Package>

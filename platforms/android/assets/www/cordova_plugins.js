@@ -15,49 +15,49 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
-        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
-        "pluginId": "nl.x-services.plugins.socialsharing",
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "pluginId": "cordova-plugin-x-socialsharing",
         "clobbers": [
             "window.plugins.socialsharing"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
-        "id": "org.apache.cordova.camera.Camera",
-        "pluginId": "org.apache.cordova.camera",
+        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+        "id": "cordova-plugin-camera.Camera",
+        "pluginId": "cordova-plugin-camera",
         "clobbers": [
             "Camera"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js",
-        "id": "org.apache.cordova.camera.CameraPopoverOptions",
-        "pluginId": "org.apache.cordova.camera",
+        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+        "id": "cordova-plugin-camera.CameraPopoverOptions",
+        "pluginId": "cordova-plugin-camera",
         "clobbers": [
             "CameraPopoverOptions"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.camera/www/Camera.js",
-        "id": "org.apache.cordova.camera.camera",
-        "pluginId": "org.apache.cordova.camera",
+        "file": "plugins/cordova-plugin-camera/www/Camera.js",
+        "id": "cordova-plugin-camera.camera",
+        "pluginId": "cordova-plugin-camera",
         "clobbers": [
             "navigator.camera"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js",
-        "id": "org.apache.cordova.camera.CameraPopoverHandle",
-        "pluginId": "org.apache.cordova.camera",
+        "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+        "id": "cordova-plugin-camera.CameraPopoverHandle",
+        "pluginId": "cordova-plugin-camera",
         "clobbers": [
             "CameraPopoverHandle"
         ]
     },
     {
-        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
-        "id": "org.apache.cordova.splashscreen.SplashScreen",
-        "pluginId": "org.apache.cordova.splashscreen",
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "pluginId": "cordova-plugin-splashscreen",
         "clobbers": [
             "navigator.splashscreen"
         ]
@@ -73,6 +73,13 @@ module.exports = [
 ];
 module.exports.metadata = 
 // TOP OF METADATA
-{}
+{
+    "cordova-plugin-google-analytics": "0.8.1",
+    "cordova-plugin-whitelist": "1.2.0",
+    "cordova-plugin-x-socialsharing": "5.0.7.1",
+    "cordova-plugin-camera": "1.2.0",
+    "cordova-plugin-splashscreen": "3.0.0",
+    "phonegap-plugin-push": "1.5.2"
+}
 // BOTTOM OF METADATA
 });
