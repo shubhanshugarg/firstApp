@@ -1277,9 +1277,15 @@ var app = {
             });
         }
 
+        var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" :
+            (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" :
+                (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" :
+                    (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
         $scope.allCategories = interestedCategories;
         $scope.disableButton = false;
         $scope.postNoticeButtonText = "Post Notice";
+        $scope.deviceType=deviceType;
 
         $scope.capturePhotoEdit = function () {
             // Take picture using device camera, allow edit, and retrieve image as base64-encoded string

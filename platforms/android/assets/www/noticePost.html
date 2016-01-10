@@ -45,6 +45,7 @@
                 </option>
             </select>
         </ons-list>
+        <div>{{deviceType}}</div>
         <hr/>
         <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
@@ -57,13 +58,12 @@
 					<input id="uploadImage" type="file" name="myPhoto" ng-model="a"
                            onchange="angular.element(this).scope().loadImageFile()"/>
 					</span>
-					<span style="width:50%">
+					<span ng-if="deviceType === 'Android'" style="width:50%">
 						<button style="margin: auto" class="btn btn-default btn-file" ng-click="capturePhotoEdit()">From
                             camera
                         </button>
 					</span>
                 </div>
-                <small>Android 4.4.2 can only upload from camera</small>
 
             </ons-list-item>
             <ons-list-item>
