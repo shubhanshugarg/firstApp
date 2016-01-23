@@ -24,6 +24,9 @@
         },
         "phonegap-plugin-push": {
             "PACKAGE_NAME": "com.collegeloopin"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.collegeloopin"
         }
     },
     "dependent_plugins": {}

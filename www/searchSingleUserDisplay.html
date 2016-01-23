@@ -11,7 +11,6 @@
     <section style="padding: 10px;">
 
         <h2 class="text-primary" style="text-align: center" ng-bind-html="name"></h2>
-        <br>
 
         <div class="card">
             <h4 style="text-align: center">Personal Information</h4>
@@ -70,6 +69,19 @@
 
 
         <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
+        <ons-icon icon="facebook-square" size="40px" fixed-width="true" style="margin-left: 10%"
+                  ng-show="fbUrl != undefined && fbUrl != '' && fbUrl != null"
+                  ng-click="loadURL(fbUrl)"></ons-icon>
+
+        <ons-icon icon="twitter-square" size="40px" fixed-width="true" style="margin-left: 10%"
+                  ng-show=" twitterUrl != undefined && twitterUrl != '' && twitterUrl != null"
+                  ng-click="loadURL(twitterUrl)"></ons-icon>
+
+        <ons-icon icon="linkedin-square" size="40px" fixed-width="true" style="margin-left: 10%"
+                  ng-show=" linkedinUrl != undefined && linkedinUrl != '' && linkedinUrl != null"
+                  ng-click="loadURL(linkedinUrl)"></ons-icon>
+
+<!--
         <ons-button modifier="large" ng-show="fbUrl != null && fbUrl != undefined && fbUrl != ''"
                     ng-click="loadURL(fbUrl)">
             Profile on facebook
@@ -85,6 +97,7 @@
             Profile on linkedin
         </ons-button>
         <br>
+-->
 
 
         <!-- <p class="feed-categories" ng-show="{{item.categories.length}}"><ons-icon icon="tags"></ons-icon>

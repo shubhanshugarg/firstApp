@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-    <Identity Name="com.collegeloopin" Publisher="CN=$username$" Version="0.0.9.1" />
+    <Identity Name="com.collegeloopin" Publisher="CN=$username$" Version="0.1.0.0" />
     <mp:PhoneIdentity PhoneProductId="a7bbeac0-8944-11e5-b4ab-bf6547ea2f42" PhonePublisherId="db093ed5-53b1-45f7-af72-751e8f36ab80" />
     <Properties>
         <DisplayName>College LoopIn</DisplayName>

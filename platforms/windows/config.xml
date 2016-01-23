@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="99" id="com.collegeloopin" version="0.0.9.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="2" id="com.collegeloopin" ios-CFBundleVersion="0.0.1" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="WindowsToastCapable" value="true" />
+    <splash src="res/screen/android/screen-default.png" />
     <name>College LoopIn</name>
     <description>
         College LoopIn is a college notice board app
@@ -21,6 +22,8 @@
     <icon density="mdpi" platform="android" src="res/icon/drawable-mdpi/icon.png" />
     <icon density="hdpi" platform="android" src="res/icon/drawable-hdpi/icon.png" />
     <icon density="xhdpi" platform="android" src="res/icon/drawable-xhdpi/icon.png" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="FadeSplashScreenDuration" value="1000" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="4000" />
     <preference name="ShowSplashScreenSpinner" value="false" />

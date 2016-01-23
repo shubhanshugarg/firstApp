@@ -930,6 +930,7 @@ var app = {
                                 "postedById": value.userInfo.userId,
                                 "postedByRoll": value.userInfo.rollNumber,
                                 "postedByName": value.userInfo.userName,
+                                "seenCount":value.seenCount,
                                 //"contentSnippet": "Click to read"
                                 "contentSnippet": publishedDate
                             };

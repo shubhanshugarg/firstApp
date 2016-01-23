@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		004DA78D2D064ED387C98B0D /* libGTM_StringEncoding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67535C2834B149FEB6396D0D /* libGTM_StringEncoding.a */; };
 		021466A202964E39A896E6C1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8503426CB44A8C8D347B23 /* AVFoundation.framework */; };
@@ -88,6 +87,7 @@
 		F5D1EC23D02C4FC29BA12362 /* libGTM_iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAB636623E947B6AAF4E4DC /* libGTM_iPhone.a */; };
 		F82F78A7094849C8A85D1394 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 297EEB1DF4004076907D9C92 /* PushPlugin.m */; };
 		FC4D3664387948D9BFEE8268 /* libGTMSessionFetcher_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8806693A8D844928AB9CED51 /* libGTMSessionFetcher_full.a */; };
+		418E5676FA72448AB9722C66 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D27A8E864F4558B104FFF2 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +234,8 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "College LoopIn/config.xml"; sourceTree = "<group>"; };
 		FAF6197D2D35450BA5CA2688 /* CloudMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CloudMessaging.h; path = "phonegap-plugin-push/GCM/Headers/CloudMessaging.h"; sourceTree = "<group>"; };
 		FDAFA2EFBFEE4C0285D01862 /* GoogleCloudMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleCloudMessaging.h; path = "phonegap-plugin-push/GCM/Headers/GoogleCloudMessaging.h"; sourceTree = "<group>"; };
+		11D27A8E864F4558B104FFF2 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		63A1EB58BC08412A943481D5 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +456,8 @@
 				33BAA3F46B024CDCA4C4F6BD /* GCMReceiverDelegate.h */,
 				DA8635ABC1E347399D99E61B /* GCMService.h */,
 				FDAFA2EFBFEE4C0285D01862 /* GoogleCloudMessaging.h */,
+				11D27A8E864F4558B104FFF2 /* CDVInAppBrowser.m */,
+				63A1EB58BC08412A943481D5 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "College LoopIn/Plugins";
@@ -647,6 +651,7 @@
 				BBC9201E6ECB4E84A138A76C /* SocialSharing.m in Sources */,
 				3F6748788E764E93996DFF3A /* AppDelegate+notification.m in Sources */,
 				F82F78A7094849C8A85D1394 /* PushPlugin.m in Sources */,
+				418E5676FA72448AB9722C66 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

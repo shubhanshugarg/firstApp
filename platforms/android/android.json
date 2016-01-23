@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" value=\"com.adobe.phonegap.push.PushPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -141,6 +145,9 @@
         },
         "phonegap-plugin-push": {
             "PACKAGE_NAME": "com.collegeloopin"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.collegeloopin"
         }
     },
     "dependent_plugins": {},
@@ -214,6 +221,18 @@
             "clobbers": [
                 "PushNotification"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-inappbrowser": "1.2.0"
+    }
 }

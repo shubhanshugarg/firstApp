@@ -27,7 +27,11 @@ var app = {
         try {
             var push = PushNotification.init({
                 "android": {"senderID": "428357888802"},
-                "ios": {}, "windows": {}
+                "ios": {
+                    alert: "true",
+                    badge: "true",
+                    sound: "true"
+                }, "windows": {}
             });
 
             push.on('registration', function (data) {
@@ -541,6 +545,11 @@ var app = {
 
             //alert("clicked");
 
+            var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" :
+                (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" :
+                    (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" :
+                        (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
             var form = $("#registerForm");
             //disable the button so we can't resubmit while we wait
             $("#register_submitButton", form).attr("disabled", "disabled");
@@ -569,6 +578,7 @@ var app = {
                 //fd.append('collegeAddress', collegeAddress);
                 //fd.append('userImageFile', userImageFile);
                 fd.append('referenceCode', referenceCode);
+                fd.append('deviceType', deviceType);
 
                 var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
                 $http.post(locationOrigin + "/userInfo/userSignUp", fd, {
@@ -1277,15 +1287,15 @@ var app = {
             });
         }
 
-        var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" :
-            (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" :
+        var deviceType = (navigator.userAgent.match(/iPad/i)) == "iPad" ? "iPad" :
+            (navigator.userAgent.match(/iPhone/i)) == "iPhone" ? "iPhone" :
                 (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" :
                     (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
 
         $scope.allCategories = interestedCategories;
         $scope.disableButton = false;
         $scope.postNoticeButtonText = "Post Notice";
-        $scope.deviceType=deviceType;
+        $scope.deviceType = deviceType;
 
         $scope.capturePhotoEdit = function () {
             // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
