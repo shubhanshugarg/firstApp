@@ -4,7 +4,8 @@
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center" ng-bind-html="item.title"></div>
+        <div class="center" style="color:#1284ff">Notice</div>
+
         <div class="right">
             <ons-toolbar-button ng-click="shareFeed()">
                 <ons-icon icon="share-alt" style="vertical-align: -4px; font-size: 26px;"></ons-icon>
@@ -28,7 +29,11 @@
 
         <div class="feed-date">
             <ons-icon icon="clock-o"></ons-icon>
-            Posted {{item.publishedDate }}
+            Posted - {{item.publishedDate }}
+        </div>
+        <div class="feed-date">
+            <ons-icon icon="eye"></ons-icon>
+            Views - {{item.seenCount }}
         </div>
         <p class="feed-content" style="white-space: pre-line" ng-bind-html="item.content"></p>
 
@@ -37,7 +42,7 @@
         </p> -->
 
         <p class="feed-categories">
-            <ons-icon icon="tags"></ons-icon>
+            <ons-icon icon="child" style="font-size: large"></ons-icon>
             <span ng-bind-html="item.postedByName"></span>
             <span ng-bind-html="item.postedByRoll"></span>
         </p>
@@ -48,26 +53,22 @@
 
         <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
         <ons-button modifier="large" ng-show="item.urlLink != 'undefined' && item.urlLink != '' && item.urlLink != null"
-                    ng-click="loadURL(item.urlLink)">
+                    ng-click="loadURL(item.urlLink)" style="margin-bottom: .3em">
             Open Link
         </ons-button>
-        <br>
-        <a href="#" onclick="window.open('http://www.kidzout.com', '_system');">www.kidzout.com</a>
-
         <ons-button modifier="large"
                     ng-show="item.socialLink != 'undefined' && item.socialLink != '' && item.socialLink != null"
-                    ng-click="loadURL(item.socialLink)">
+                    ng-click="loadURL(item.socialLink)" style="margin-bottom: .3em">
             Open link on social network
         </ons-button>
-        <br>
-        <ons-button modifier="small" ng-click="setInfoState('spam')">
+        <ons-button modifier="small" ng-click="setInfoState('spam')" style="font-size: smaller">
             Mark Spam
         </ons-button>
-        <ons-button modifier="small" ng-click="setInfoState('abuse')">
-            Report Abuse
-        </ons-button>
-        <ons-button modifier="small" ng-show="checkItemPermission()" ng-click="deleteItem()">
+        <ons-button modifier="small" ng-show="checkItemPermission()" ng-click="deleteItem()" style="font-size: smaller">
             Delete
+        </ons-button>
+        <ons-button modifier="small" ng-click="setInfoState('abuse')" style="float: right;font-size:smaller">
+            Report Abuse
         </ons-button>
 
     </section>
