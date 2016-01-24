@@ -27,6 +27,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "College LoopIn"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "College LoopIn"
         }
     },
     "dependent_plugins": {}

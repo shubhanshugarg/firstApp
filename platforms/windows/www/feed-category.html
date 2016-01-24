@@ -1,9 +1,9 @@
 ﻿<ons-page ng-controller="FeedPluginCategoryController">
-    <ons-toolbar>
+    <ons-toolbar fixed-style id="toolbar">
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">{{title}}</div>
+        <div class="center" style="color:#1284ff">Categories</div>
     </ons-toolbar>
     <!-- <img src="scrollDown.png" style="z-index:2;position: absolute;height: 59px;right: 20px;bottom: 10px;"> -->
     <ons-list>
@@ -16,7 +16,7 @@
                     <header>
                         <!-- <div class="notification menu-notification" id="notification{{title}}Count-{{item.categoryId}}"
                              ng-hide="item.categoryNotifications == 0"> -->
-                             <div class="notification menu-notification" 
+                        <div class="notification menu-notification"
                              ng-hide="item.categoryNotifications == 0">{{item.categoryNotifications}}
                         </div>
 

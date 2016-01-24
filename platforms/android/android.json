@@ -35,6 +35,10 @@
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -148,6 +152,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.collegeloopin"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.collegeloopin"
         }
     },
     "dependent_plugins": {},
@@ -230,9 +237,26 @@
                 "cordova.InAppBrowser.open",
                 "window.open"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "id": "cordova-plugin-dialogs.notification",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
+            "id": "cordova-plugin-dialogs.notification_android",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-inappbrowser": "1.2.0"
+        "cordova-plugin-inappbrowser": "1.2.0",
+        "cordova-plugin-dialogs": "1.2.0"
     }
 }

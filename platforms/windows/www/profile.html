@@ -2,13 +2,13 @@
     <ons-page ng-controller="profileController"
               on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
 
-        <ons-toolbar>
+        <ons-toolbar fixed-style id="toolbar">
             <div class="left">
                 <ons-toolbar-button ng-click="menu.toggle()">
                     <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                 </ons-toolbar-button>
             </div>
-            <div class="center">Profile
+            <div class="center" style="color:#1284ff">Profile
             </div>
         </ons-toolbar>
 
@@ -97,21 +97,17 @@
 
 
             <!-- Open the post using the InAppBrowser plugin (org.apache.cordova.inappbrowser) -->
-            <ons-button modifier="large" ng-show="fbUrl != undefined && fbUrl != '' && fbUrl != null"
-                        ng-click="loadURL(fbUrl)">
-                Profile on facebook
-            </ons-button>
-            <br>
-            <ons-button modifier="large" ng-show=" twitterUrl != undefined && twitterUrl != '' && twitterUrl != null"
-                        ng-click="loadURL(twitterUrl)">
-                Profile on twitter
-            </ons-button>
-            <br>
-            <ons-button modifier="large" ng-show=" linkedinUrl != undefined && linkedinUrl != '' && linkedinUrl != null"
-                        ng-click="loadURL(linkedinUrl)">
-                Profile on linkedin
-            </ons-button>
-            <br>
+            <ons-icon icon="facebook-square" size="40px" fixed-width="true" style="margin-left: 10%"
+                      ng-show="fbUrl != undefined && fbUrl != '' && fbUrl != null"
+                      ng-click="loadURL(fbUrl)"></ons-icon>
+
+            <ons-icon icon="twitter-square" size="40px" fixed-width="true" style="margin-left: 10%"
+                      ng-show=" twitterUrl != undefined && twitterUrl != '' && twitterUrl != null"
+                      ng-click="loadURL(twitterUrl)"></ons-icon>
+
+            <ons-icon icon="linkedin-square" size="40px" fixed-width="true" style="margin-left: 10%"
+                      ng-show=" linkedinUrl != undefined && linkedinUrl != '' && linkedinUrl != null"
+                      ng-click="loadURL(linkedinUrl)"></ons-icon>
 
         </section>
 

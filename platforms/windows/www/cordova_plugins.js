@@ -112,6 +112,22 @@ module.exports = [
         "merges": [
             ""
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+        "id": "cordova-plugin-dialogs.notification",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/src/windows/NotificationProxy.js",
+        "id": "cordova-plugin-dialogs.NotificationProxy",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            ""
+        ]
     }
 ];
 module.exports.metadata = 
@@ -123,7 +139,8 @@ module.exports.metadata =
     "cordova-plugin-camera": "1.2.0",
     "cordova-plugin-splashscreen": "3.0.0",
     "phonegap-plugin-push": "1.5.2",
-    "cordova-plugin-inappbrowser": "1.2.0"
+    "cordova-plugin-inappbrowser": "1.2.0",
+    "cordova-plugin-dialogs": "1.2.0"
 }
 // BOTTOM OF METADATA
 });

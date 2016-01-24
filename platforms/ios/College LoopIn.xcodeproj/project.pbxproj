@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		004DA78D2D064ED387C98B0D /* libGTM_StringEncoding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67535C2834B149FEB6396D0D /* libGTM_StringEncoding.a */; };
 		021466A202964E39A896E6C1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8503426CB44A8C8D347B23 /* AVFoundation.framework */; };
@@ -89,6 +88,9 @@
 		F5D1EC23D02C4FC29BA12362 /* libGTM_iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAB636623E947B6AAF4E4DC /* libGTM_iPhone.a */; };
 		F82F78A7094849C8A85D1394 /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 297EEB1DF4004076907D9C92 /* PushPlugin.m */; };
 		FC4D3664387948D9BFEE8268 /* libGTMSessionFetcher_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8806693A8D844928AB9CED51 /* libGTMSessionFetcher_full.a */; };
+		C8F885335D6B4EA0AD0B5BC6 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AF74CB053C4D2B8A320E62 /* CDVNotification.m */; };
+		7F7389475B67447484DA239D /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BA117D6FDBD4D2BAFAFD66E /* CDVNotification.bundle */; };
+		4D02DE390A3A429E8B2EFD26 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4283CDB2BBEF4AC6A4070C1D /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +239,10 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "College LoopIn/config.xml"; sourceTree = "<group>"; };
 		FAF6197D2D35450BA5CA2688 /* CloudMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CloudMessaging.h; path = "phonegap-plugin-push/GCM/Headers/CloudMessaging.h"; sourceTree = "<group>"; };
 		FDAFA2EFBFEE4C0285D01862 /* GoogleCloudMessaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleCloudMessaging.h; path = "phonegap-plugin-push/GCM/Headers/GoogleCloudMessaging.h"; sourceTree = "<group>"; };
+		A9AF74CB053C4D2B8A320E62 /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		4A8963703D4C46D5AD9F4723 /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		3BA117D6FDBD4D2BAFAFD66E /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
+		4283CDB2BBEF4AC6A4070C1D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +293,7 @@
 				BA4FC65FD9594A9C82B23FCF /* AddressBook.framework in Frameworks */,
 				19F4336AD64546E997B64303 /* libsqlite3.tbd in Frameworks */,
 				8A5AF03936274E88BFDD2255 /* libz.tbd in Frameworks */,
+				4D02DE390A3A429E8B2EFD26 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +355,7 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* College LoopIn-Info.plist */,
+				3BA117D6FDBD4D2BAFAFD66E /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = "College LoopIn/Resources";
@@ -398,6 +406,7 @@
 				3834D63F0C224BED953A2FC2 /* AddressBook.framework */,
 				DCF90ACC20C0480A974A19DD /* libsqlite3.tbd */,
 				6E381CC151C142A0BD75659C /* libz.tbd */,
+				4283CDB2BBEF4AC6A4070C1D /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -459,6 +468,8 @@
 				FDAFA2EFBFEE4C0285D01862 /* GoogleCloudMessaging.h */,
 				11D27A8E864F4558B104FFF2 /* CDVInAppBrowser.m */,
 				63A1EB58BC08412A943481D5 /* CDVInAppBrowser.h */,
+				A9AF74CB053C4D2B8A320E62 /* CDVNotification.m */,
+				4A8963703D4C46D5AD9F4723 /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = "College LoopIn/Plugins";
@@ -612,6 +623,7 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				7F7389475B67447484DA239D /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +665,7 @@
 				3F6748788E764E93996DFF3A /* AppDelegate+notification.m in Sources */,
 				F82F78A7094849C8A85D1394 /* PushPlugin.m in Sources */,
 				418E5676FA72448AB9722C66 /* CDVInAppBrowser.m in Sources */,
+				C8F885335D6B4EA0AD0B5BC6 /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

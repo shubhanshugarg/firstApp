@@ -7,6 +7,10 @@ function sendAnalyticsInfo() {
         //console.log("error in sending : " + e)
     }
 }
+function showAlertMessage(message) {
+    navigator.notification.alert(message, function () {
+    }, "College LoopIn", "Close");
+}
 var app = {
     // Application Constructor
     initialize: function () {
@@ -122,7 +126,7 @@ var app = {
 
                     } else {
                         var errorMessage = response.message;
-                        alert(errorMessage);
+                        showAlertMessage(errorMessage);
                     }
                     if (isSuccess) {
                         //store profile data in local storage
@@ -155,7 +159,7 @@ var app = {
 
                     }
                 }).fail(function () {
-                    alert("Sorry,no internet connection available right now.Please try again later.");
+                    showAlertMessage("Sorry,no internet connection available right now.Please try again later.");
                     menu.setSwipeable(false);
                     $('#loginPage').show();
                     //navigator.splashscreen.hide();
@@ -366,9 +370,6 @@ var app = {
 
     module.controller('loginController', ["$scope", "$http", "FeedPluginData", function ($scope, $http, FeedPluginData) {
 
-        $scope.name = "harry";
-
-
         $scope.forgotPassword = function () {
 
             //alert("clicked");
@@ -390,10 +391,10 @@ var app = {
 
                         var isSuccess = response.success;
                         if (isSuccess) {
-                            alert("Your existing password has been sent to your registered email address !!");
+                            showAlertMessage("Your existing password has been sent to your registered email address !!");
                         } else {
                             var errorMessage = response.message;
-                            alert(errorMessage);
+                            showAlertMessage(errorMessage);
                         }
                     }).
                     error(function (data, status, headers, config) {
@@ -406,7 +407,7 @@ var app = {
                 $("#submitButton").removeAttr("disabled");
 
             } else {
-                alert("You must enter a valid email");
+                showAlertMessage("You must enter a valid email address");
             }
 
 
@@ -459,7 +460,7 @@ var app = {
                             var special_user = response.data.specialUser;
                         } else {
                             var errorMessage = response.message;
-                            alert(errorMessage);
+                            showAlertMessage(errorMessage);
                         }
                         if (isSuccess) {
                             //store profile data in local storage
@@ -502,7 +503,7 @@ var app = {
                         }
                     }).
                     error(function (data, status, headers, config) {
-                        alert("Sorry,no internet connection available right now.Please try again later.");
+                        showAlertMessage("Sorry,no internet connection available right now.Please try again later.");
                         //page remain as it is
                         $scope.isLoggedIn = "no";
                     });
@@ -511,7 +512,7 @@ var app = {
                 $("#submitButton").removeAttr("disabled");
 
             } else {
-                alert("You must enter valid email and password");
+                showAlertMessage("You must enter valid email and password");
                 $("#submitButton").removeAttr("disabled");
             }
 
@@ -545,8 +546,8 @@ var app = {
 
             //alert("clicked");
 
-            var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" :
-                (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" :
+            var deviceType = (navigator.userAgent.match(/iPad/i)) == "iPad" ? "iPad" :
+                (navigator.userAgent.match(/iPhone/i)) == "iPhone" ? "iPhone" :
                     (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" :
                         (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
 
@@ -600,7 +601,7 @@ var app = {
                         var userCollegeBranches = response.data.collegeBranches;
                     } else {
                         var errorMessage = response.message;
-                        alert(errorMessage);
+                        showAlertMessage(errorMessage);
                     }
                     if (isSuccess) {
                         //store profile data in local storage
@@ -632,12 +633,12 @@ var app = {
 
                     } else {
                         // or message from shubhanshu to show here
-                        alert("Your registration failed try again");
+                        showAlertMessage("Your registration failed try again");
                     }
                 }).error(function (response) {
 
-                    alert(response.message);
-                    alert("Sorry,no internet connection available right now.Please try again later");
+                    showAlertMessage(response.message);
+                    showAlertMessage("Sorry,no internet connection available right now.Please try again later");
                 });
 
 
@@ -645,7 +646,7 @@ var app = {
 
             } else {
                 //Thanks Igor!
-                alert("You must enter a valid email ,password and matching confirm password ");
+                showAlertMessage("You must enter a valid email ,password and matching confirm password ");
                 $("#register_submitButton").removeAttr("disabled");
             }
 
@@ -930,7 +931,7 @@ var app = {
                                 "postedById": value.userInfo.userId,
                                 "postedByRoll": value.userInfo.rollNumber,
                                 "postedByName": value.userInfo.userName,
-                                "seenCount":value.seenCount,
+                                "seenCount": value.seenCount,
                                 //"contentSnippet": "Click to read"
                                 "contentSnippet": publishedDate
                             };
@@ -1000,7 +1001,7 @@ var app = {
 
                     if (window.localStorage["feedEntriesData" + mainCategory + categoryId + categoryName] != undefined) {
 
-                        alert("No new notices");
+                        showAlertMessage("Sorry,no new notices available right now...");
                         var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                         //array formed for to limt to work
                         //scope.feeds allocate to the view
@@ -1015,7 +1016,7 @@ var app = {
 
                     } else {
                         var errorMessage = response.message;
-                        alert("No new notices");
+                        showAlertMessage("Sorry,no new notices available right now...");
                         $scope.msg = "";
                     }
                 }
@@ -1027,7 +1028,7 @@ var app = {
                     $scope.title = categoryName;
                     $scope.description = categoryDescription;
 
-                    alert("No internet connection available.");
+                    showAlertMessage("No internet connection available.");
                     var feedEntriesData = JSON.parse(window.localStorage.getItem('feedEntriesData' + mainCategory + categoryId + categoryName));
                     //array formed for to limit to work
                     //$scope.feeds=feedEntriesData;
@@ -1156,19 +1157,19 @@ var app = {
             }).success(function (response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
-                    alert("Deleted");
+                    showAlertMessage("Successfully deleted the notice");
                     //empty the initial variabes of notice
 
                 } else {
 
                     var errorMessage = response.message;
-                    alert("error in deleting try later" + errorMessage);
+                    showAlertMessage("Sorry,unable to delete the notice.Please try after some time..." + errorMessage);
                     //alert(errorMessage);
                 }
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Sorry,no internet connection available right now.Please try again later.");
+                showAlertMessage("Sorry,no internet connection available right now.Please try again later.");
             });
 
 
@@ -1221,19 +1222,19 @@ var app = {
             }).success(function (response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
-                    alert("This notice has been reported for review....");
+                    showAlertMessage("This notice has been reported for review....");
                     //empty the initial variabes of notice
 
                 } else {
 
                     var errorMessage = response.message;
-                    alert("error in reporting try later" + errorMessage);
+                    showAlertMessage("Sorry...Unable to report now.Please try later .." + errorMessage);
                     //alert(errorMessage);
                 }
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Sorry,no internet connection available right now. Please try again later..");
+                showAlertMessage("Sorry,no internet connection available right now. Please try again later..");
             });
 
 
@@ -1306,7 +1307,7 @@ var app = {
             });
         };
         $scope.onFail = function (message) {
-            alert('Failed because: ' + message);
+            showAlertMessage('Unable to upload image. Reason :  ' + message);
         };
         $scope.onPhotoDataSuccess = function (imageData) {
             // Uncomment to view the base64-encoded image data
@@ -1396,13 +1397,13 @@ var app = {
 
 
             if (heading == undefined || heading == '') {
-                alert("Please provide a heading for the notice..");
+                showAlertMessage("Please provide a heading for the notice..");
                 $scope.postNoticeButtonText = "Post Notice";
                 $scope.disableButton = false;
                 return false;
             }
             if (categories == undefined || categories == '') {
-                alert("Please select a category for the notice..");
+                showAlertMessage("Please select a category for the notice..");
                 $scope.postNoticeButtonText = "Post Notice";
                 $scope.disableButton = false;
                 return false;
@@ -1470,7 +1471,7 @@ var app = {
             }).success(function (response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
-                    alert("Your Notice has been posted");
+                    showAlertMessage("Your notice has been successfully posted");
                     $scope.disableButton = false;
                     $scope.postNoticeButtonText = "Post Notice";
                     //empty the initial variabes of notice
@@ -1485,7 +1486,7 @@ var app = {
                 } else {
 
                     var errorMessage = response.message;
-                    alert("notice was'nt posted contact us" + errorMessage);
+                    showAlertMessage("Sorry.Unable to post notice currently.Please try later.Reason :" + errorMessage);
                     $scope.disableButton = false;
                     $scope.postNoticeButtonText = "Post Notice";
                     //alert(errorMessage);
@@ -1493,7 +1494,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Sorry,no internet connection available right now. Please try again later..");
+                showAlertMessage("Sorry,no internet connection available right now. Please try again later..");
                 $scope.disableButton = false;
                 $scope.postNoticeButtonText = "Post Notice";
             });
@@ -1820,7 +1821,7 @@ var app = {
 
                 var isSuccess = response.success;
                 if (isSuccess) {
-                    alert("Your information has been edited . Go back.");
+                    showAlertMessage("Your information has been edited . Go back.");
                     var register_name = response.data.userName;
                     var register_roll = response.data.rollNumber;
                     var user_id = response.data.userId;
@@ -1869,7 +1870,7 @@ var app = {
                 } else {
 
                     var errorMessage = response.message;
-                    alert("Following error occured while editing profile info : " + errorMessage);
+                    showAlertMessage("Following error occured while editing profile info : " + errorMessage);
                     $scope.disableButton = false;
                     $scope.editProfileButtonText = "Submit";
                     //alert(errorMessage);
@@ -1877,7 +1878,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Sorry,no internet connection available right now. Please try again later..");
+                showAlertMessage("Sorry,no internet connection available right now. Please try again later..");
                 $scope.disableButton = false;
                 $scope.editProfileButtonText = "Submit";
             });
@@ -2014,7 +2015,7 @@ var app = {
                 } else {
 
                     var errorMessage = response.message;
-                    alert("Following error occired while searching :" + errorMessage);
+                    showAlertMessage("Following error occurred while searching :" + errorMessage);
                     $scope.disableButton = false;
                     $scope.searchButtonText = "Submit";
                     //alert(errorMessage);
@@ -2022,7 +2023,7 @@ var app = {
             }).error(function (response) {
 
                 //alert(response.message);
-                alert("Sorry,no internet connection available right now. Please try again later..");
+                showAlertMessage("Sorry,no internet connection available right now. Please try again later..");
                 $scope.disableButton = false;
                 $scope.searchButtonText = "Submit";
             });

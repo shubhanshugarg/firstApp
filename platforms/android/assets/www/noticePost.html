@@ -54,18 +54,18 @@
             <ons-list-item>
                 <div style="display:flex">
 
-                    <span ng-if="deviceType !== 'Android'" class="btn btn-default btn-file"
-                          style="margin: auto;margin-top:.3em">Select Image
-					    <input id="uploadImage" type="file" name="myPhoto" ng-model="a"
-                               onchange="angular.element(this).scope().loadImageFile()"/>
-					</span>
+                   <span ng-if="deviceType !== 'Android'" class="btn btn-default btn-file"
+                         style="margin: auto;margin-top:.3em">Select Image
+                       <input id="uploadImage" type="file" name="myPhoto" ng-model="a"
+                              onchange="angular.element(this).scope().loadImageFile()"/>
+                   </span>
 
-                    <span ng-if="deviceType === 'Android'" style="width:50%">
-                        <span class="btn btn-default btn-file" style="margin: auto;margin-top:.3em">From storage
+                    <span ng-if="deviceType === 'Android'">
+                        <span class="btn btn-default btn-file">From storage
 				        	<input id="uploadImage" type="file" name="myPhoto" ng-model="a"
                                    onchange="angular.element(this).scope().loadImageFile()"/>
 					    </span>
-						<button style="margin: auto;margin-top:.3em" class="btn btn-default btn-file"
+						<button class="btn btn-default btn-file"
                                 ng-click="capturePhotoEdit()">From
                             camera
                         </button>

@@ -72,6 +72,14 @@ module.exports = [
             "cordova.InAppBrowser.open",
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+        "id": "cordova-plugin-dialogs.notification",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -83,7 +91,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.0",
     "cordova-plugin-x-socialsharing": "5.0.7.1",
     "phonegap-plugin-push": "1.5.2",
-    "cordova-plugin-inappbrowser": "1.2.0"
+    "cordova-plugin-inappbrowser": "1.2.0",
+    "cordova-plugin-dialogs": "1.2.0"
 }
 // BOTTOM OF METADATA
 });

@@ -7,6 +7,10 @@ function sendAnalyticsInfo() {
         //console.log("error in sending : " + e)
     }
 }
+function showAlertMessage(message){
+    alert("2131");
+        navigator.notification.alert(message, function() {}, "sd", "Close");
+}
 var app = {
     // Application Constructor
     initialize: function () {
@@ -930,6 +934,7 @@ var app = {
                                 "postedById": value.userInfo.userId,
                                 "postedByRoll": value.userInfo.rollNumber,
                                 "postedByName": value.userInfo.userName,
+                                "seenCount":value.seenCount,
                                 //"contentSnippet": "Click to read"
                                 "contentSnippet": publishedDate
                             };
@@ -1395,7 +1400,9 @@ var app = {
 
 
             if (heading == undefined || heading == '') {
-                alert("Please provide a heading for the notice..");
+                alert("dasfdsf");
+                showAlertMessage("Please provide a heading for the notice..");
+                alert("dobe");
                 $scope.postNoticeButtonText = "Post Notice";
                 $scope.disableButton = false;
                 return false;
