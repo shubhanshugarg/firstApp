@@ -1,5 +1,5 @@
 <ons-page ng-controller="FeedPluginCategoryController">
-    <ons-toolbar>
+    <ons-toolbar fixed-style id="toolbar">
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
@@ -16,7 +16,7 @@
                     <header>
                         <!-- <div class="notification menu-notification" id="notification{{title}}Count-{{item.categoryId}}"
                              ng-hide="item.categoryNotifications == 0"> -->
-                             <div class="notification menu-notification" 
+                        <div class="notification menu-notification"
                              ng-hide="item.categoryNotifications == 0">{{item.categoryNotifications}}
                         </div>
 

@@ -2,13 +2,13 @@
     <ons-page ng-controller="profileController"
               on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
 
-        <ons-toolbar>
+        <ons-toolbar fixed-style id="toolbar">
             <div class="left">
                 <ons-toolbar-button ng-click="menu.toggle()">
                     <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                 </ons-toolbar-button>
             </div>
-            <div class="center">Profile
+            <div class="center" style="color:#1284ff">Profile
             </div>
         </ons-toolbar>
 

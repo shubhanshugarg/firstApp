@@ -1,7 +1,7 @@
 <ons-page ng-controller="noticePostController"
           on-device-backbutton="menu.setMainPage('feed-categories.html', {closeMenu: true})">
 
-    <ons-toolbar>
+    <ons-toolbar fixed-style id="toolbar">
         <div class="left">
             <ons-toolbar-button ng-click="menu.toggle()">
                 <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
@@ -17,7 +17,8 @@
 
         <textarea class="textarea" rows="10" placeholder="Notice Description" ng-model="message"
                   style="width:100%; margin-bottom:10px;"></textarea>
-        <input type="text" class="text-input" placeholder="Notice Link" ng-model="url" style="width:100%; margin-bottom:10px;">
+        <input type="text" class="text-input" placeholder="Notice Link" ng-model="url"
+               style="width:100%; margin-bottom:10px;">
         <input type="text" class="text-input" placeholder="Notice Facebook Link" ng-model="fbUrl"
                style="width:100%; margin-bottom:10px;">
 
