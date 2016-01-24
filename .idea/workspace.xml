@@ -2,70 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca440e21-143d-46ba-82b1-3445d204f9d5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/contact.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/contact_backup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/feed-categories-fromMenu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/feed-master-backu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/loginDummy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/loginDummy2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/loginDummy3.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/windows/www/newsPost.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/College LoopIn.xcodeproj/project.xcworkspace/xcuserdata/sgarg.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/platforms/ios/College LoopIn.xcodeproj/project.xcworkspace/xcuserdata/sgarg.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/College LoopIn/College LoopIn-Info.plist" afterPath="$PROJECT_DIR$/platforms/ios/College LoopIn/College LoopIn-Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/android.json" afterPath="$PROJECT_DIR$/platforms/android/android.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/android.json" afterPath="$PROJECT_DIR$/plugins/android.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/styles/app.css" afterPath="$PROJECT_DIR$/platforms/windows/www/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/styles/app.css" afterPath="$PROJECT_DIR$/www/styles/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/styles/app.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/styles/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/windows/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/College LoopIn/config.xml" afterPath="$PROJECT_DIR$/platforms/ios/College LoopIn/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/config.xml" afterPath="$PROJECT_DIR$/platforms/windows/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/ios/platform_www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/windows/platform_www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/windows/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/feed-categories.html" afterPath="$PROJECT_DIR$/platforms/windows/www/feed-categories.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/feed-category.html" afterPath="$PROJECT_DIR$/platforms/ios/www/feed-category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/feed-category.html" afterPath="$PROJECT_DIR$/platforms/windows/www/feed-category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/feed-detail.html" afterPath="$PROJECT_DIR$/platforms/ios/www/feed-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/feed-detail.html" afterPath="$PROJECT_DIR$/platforms/windows/www/feed-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/feed-master.html" afterPath="$PROJECT_DIR$/platforms/ios/www/feed-master.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/feed-master.html" afterPath="$PROJECT_DIR$/platforms/windows/www/feed-master.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/fetch.json" afterPath="$PROJECT_DIR$/plugins/fetch.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/frameworks.json" afterPath="$PROJECT_DIR$/platforms/ios/frameworks.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/ios.json" afterPath="$PROJECT_DIR$/platforms/ios/ios.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ios.json" afterPath="$PROJECT_DIR$/plugins/ios.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/main.html" afterPath="$PROJECT_DIR$/platforms/windows/www/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/noticePost.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/noticePost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/noticePost.html" afterPath="$PROJECT_DIR$/platforms/ios/www/noticePost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/noticePost.html" afterPath="$PROJECT_DIR$/platforms/windows/www/noticePost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.phone.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.phone.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.windows.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.windows.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.windows10.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.windows10.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/package.windows80.appxmanifest" afterPath="$PROJECT_DIR$/platforms/windows/package.windows80.appxmanifest" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/peopleSearch.html" afterPath="$PROJECT_DIR$/platforms/ios/www/peopleSearch.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/peopleSearch.html" afterPath="$PROJECT_DIR$/platforms/windows/www/peopleSearch.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/profile.html" afterPath="$PROJECT_DIR$/platforms/ios/www/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/profile.html" afterPath="$PROJECT_DIR$/platforms/windows/www/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/College LoopIn.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/platforms/ios/College LoopIn.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/searchSingleUserDisplay.html" afterPath="$PROJECT_DIR$/platforms/windows/www/searchSingleUserDisplay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/json/structure.json" afterPath="$PROJECT_DIR$/platforms/windows/www/json/structure.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/tempApp.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/tempApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/tempApp.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/tempApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/www/js/tempApp.js" afterPath="$PROJECT_DIR$/platforms/windows/www/js/tempApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/tempApp.js" afterPath="$PROJECT_DIR$/www/js/tempApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/windows/windows.json" afterPath="$PROJECT_DIR$/platforms/windows/windows.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/windows.json" afterPath="$PROJECT_DIR$/plugins/windows.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="firstApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,8 +82,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8202995">
-              <caret line="0" column="27774" selection-start-line="0" selection-start-column="27774" selection-end-line="0" selection-end-column="27774" />
+            <state vertical-scroll-proportion="0.6705491">
+              <caret line="0" column="27119" selection-start-line="0" selection-start-column="27119" selection-end-line="0" selection-end-column="27119" />
               <folding />
             </state>
           </provider>
@@ -779,12 +721,12 @@
       <workItem from="1453565029933" duration="704000" />
       <workItem from="1453611875668" duration="2362000" />
       <workItem from="1453615844113" duration="1658000" />
-      <workItem from="1453627101379" duration="5924000" />
+      <workItem from="1453627101379" duration="6085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145323000" />
+    <option name="totallyTimeSpent" value="145484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1672" height="1006" extended-state="0" />
@@ -1238,8 +1180,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8202995">
-          <caret line="0" column="27774" selection-start-line="0" selection-start-column="27774" selection-end-line="0" selection-end-column="27774" />
+        <state vertical-scroll-proportion="0.6705491">
+          <caret line="0" column="27119" selection-start-line="0" selection-start-column="27119" selection-end-line="0" selection-end-column="27119" />
           <folding />
         </state>
       </provider>
