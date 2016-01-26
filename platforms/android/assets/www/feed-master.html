@@ -15,11 +15,11 @@
         </ons-col>
     </ons-row>
 
-<!--    <span ng-if="feeds.length === 0">
-            <ons-list-header><h4>Sorry.No notices are posted in this category.<br/>
-                Please go back and browse other categories.</h4>
-            </ons-list-header>
-    </span>-->
+    <!--    <span ng-if="feeds.length === 0">
+                <ons-list-header><h4>Sorry.No notices are posted in this category.<br/>
+                    Please go back and browse other categories.</h4>
+                </ons-list-header>
+        </span>-->
 
     <ons-list ng-show="feeds">
         <ons-list-item modifier="chevron" class="item" ng-repeat="feed in feeds | limitTo: paginationLimit()"
