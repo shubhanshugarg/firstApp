@@ -1,13 +1,11 @@
 <ons-page ng-controller="searchDisplayController">
 
-    <ons-toolbar>
+    <ons-toolbar fixed-style id="toolbar">
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">Search Results</div>
+        <div class="center" style="color:#1284ff">Search Results</div>
     </ons-toolbar>
-
-    <ons-list-header>Top 15 results shown . Go back to change search parameters</ons-list-header>
 
     <ons-row align="center" class="status-message">
         <ons-col>
@@ -15,6 +13,13 @@
         </ons-col>
     </ons-row>
     <ons-list ng-show="feeds">
+
+        <span ng-if="feeds.length === 0">
+                <ons-list-header><h4>Sorry.No results found for the given filters.<br/>
+                    Please go back and try searching with different filters.</h4>
+                </ons-list-header>
+        </span>
+
         <ons-list-item modifier="chevron" class="item" ng-repeat="feed in feeds"
                        ng-click="showDetail($index)">
             <ons-row>

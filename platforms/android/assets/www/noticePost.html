@@ -49,25 +49,26 @@
         <!-- <tt>color = {{allCategories}}</tt><br/> -->
         <!-- <input type="checkbox" ng-model="cat2" value="Car"> E cell -->
         <ons-list style="margin-top:.3em">
-            <ons-list-header>Upload image</ons-list-header>
+            <ons-list-header style="text-align: center;color: #1284ff ">Upload image</ons-list-header>
 
             <ons-list-item>
-                <div style="display:flex">
+                <div style="display:flex;">
 
                    <span ng-if="deviceType !== 'Android'" class="btn btn-default btn-file"
-                         style="margin: auto;margin-top:.3em">Select Image
+                         style="margin: auto;margin-top:.3em;background: #1284ff;color: white;">Select Image
                        <input id="uploadImage" type="file" name="myPhoto" ng-model="a"
                               onchange="angular.element(this).scope().loadImageFile()"/>
                    </span>
 
-                    <span ng-if="deviceType === 'Android'">
-                        <span class="btn btn-default btn-file">From storage
+                    <span ng-if="deviceType === 'Android'" style="width: 100%;margin-top: .3em">
+                        <span class="btn btn-default btn-file"
+                              style="float:left ;background: #1284ff;color: white;">From storage
 				        	<input id="uploadImage" type="file" name="myPhoto" ng-model="a"
                                    onchange="angular.element(this).scope().loadImageFile()"/>
 					    </span>
 						<button class="btn btn-default btn-file"
-                                ng-click="capturePhotoEdit()">From
-                            camera
+                                style="float:right;background: #1284ff;color: white;"
+                                ng-click="capturePhotoEdit()">From camera
                         </button>
 					</span>
                 </div>
