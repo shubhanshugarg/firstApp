@@ -1,5 +1,7 @@
 var pictureSource;
 var destinationType;
+var serverPrefix="http://sample-env.eitygw92j2.us-east-2.elasticbeanstalk.com"
+
 function sendAnalyticsInfo() {
     try {
         window.analytics.startTrackerWithId("UA-69271459-1"), window.analytics.setUserId(window.localStorage.email) , window.analytics.trackView("Home Screen")
@@ -117,7 +119,7 @@ var app = {
                 //hacky way post asynch as to do after dom load
 
 
-                $.get("http://collegeboard-env2.elasticbeanstalk.com/collegeInfo/getAllCollegeInfos", function (response) {
+                $.get(serverPrefix + "/collegeInfo/getAllCollegeInfos", function (response) {
                     //alert("not stored in local storage");
                     var isSuccess = response.success;
                     if (isSuccess) {
@@ -210,11 +212,11 @@ var app = {
 
                 var postedDatesString = postedDates.join(",");
                 if (mainCategory == "Notices") {
-                    //            getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
-                    getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNoticesInfoForCategories?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+                    //            getCountUrl = serverPrefix + "/noticeInfo/getNoticesCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+                    getCountUrl = serverPrefix + "/noticeInfo/getNoticesInfoForCategories?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
                 }
                 /*else if (mainCategory == "News") {
-                 getCountUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
+                 getCountUrl = serverPrefix + "/newsInfo/getNewsCount?userId=" + profileData.user_id + "&categoriesToFetch=" + catIdsString + "&dates=" + postedDatesString;
                  }*/
                 $.get(getCountUrl, function (response) {
                     //alert("not stored in local storage");
@@ -254,7 +256,7 @@ var app = {
             var u = window.localStorage.getItem('email');
             var p = window.localStorage.getItem('password');
 
-            var updateInterestedCategoriesUrl = "http://collegeboard-env2.elasticbeanstalk.com/userInfo/userSignIn?userEmail=" + u + "&userPassword=" + p;
+            var updateInterestedCategoriesUrl = serverPrefix + "/userInfo/userSignIn?userEmail=" + u + "&userPassword=" + p;
             $.get(updateInterestedCategoriesUrl, function (response) {
 
                 var isSuccess = response.success;
@@ -384,7 +386,7 @@ var app = {
 
                 $http({
                     method: 'GET',
-                    url: "http://collegeboard-env2.elasticbeanstalk.com/userInfo/forgotPassword?userEmail=" + u,
+                    url: serverPrefix + "/userInfo/forgotPassword?userEmail=" + u,
                     async: false
                 }).
                     success(function (response, status, headers, config) {
@@ -432,7 +434,7 @@ var app = {
 
                 $http({
                     method: 'GET',
-                    url: "http://collegeboard-env2.elasticbeanstalk.com/userInfo/userSignIn?userEmail=" + u + "&userPassword=" + p,
+                    url: serverPrefix + "/userInfo/userSignIn?userEmail=" + u + "&userPassword=" + p,
                     async: false
                 }).
                     success(function (response, status, headers, config) {
@@ -581,7 +583,7 @@ var app = {
                 fd.append('referenceCode', referenceCode);
                 fd.append('deviceType', deviceType);
 
-                var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+                var locationOrigin = serverPrefix;
                 $http.post(locationOrigin + "/userInfo/userSignUp", fd, {
                     transformRequest: angular.identity,
                     headers: {
@@ -827,7 +829,7 @@ var app = {
 
 
         var pushNotiUrl = "/userInfo/registerDevice";
-        var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+        var locationOrigin = serverPrefix;
         $http.post(locationOrigin + pushNotiUrl, fd, {
             transformRequest: angular.identity,
             headers: {
@@ -880,20 +882,20 @@ var app = {
 
         //close showing from llocal storage
         //alert(user_id);
-        var getUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+        var getUrl = serverPrefix + "/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
         if (mainCategory.toLowerCase() == "notices") {
 
-            getUrl = "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+            getUrl = serverPrefix + "/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId;
 
         }
         /*else if (mainCategory.toLowerCase() == "news") {
-         getUrl = "http://collegeboard-env2.elasticbeanstalk.com/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
+         getUrl = serverPrefix + "/newsInfo/getNews?userId=" + user_id + "&categoriesToFetch=" + categoryId;
          }*/
         //noticeInfo/getNotices?userId=user_id&categoriesToFetch=categoryId
         //$http({method: 'GET', url: "http://localhost/noticeBoard/www/loginDummy2.php", async: false}).
         $http({
             method: 'GET',
-            //url: "http://collegeboard-env2.elasticbeanstalk.com/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId,
+            //url: serverPrefix + "/noticeInfo/getNotices?userId=" + user_id + "&categoriesToFetch=" + categoryId,
             url: getUrl,
             async: false
         }).
@@ -1148,7 +1150,7 @@ var app = {
              }*/
 
 
-            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            var locationOrigin = serverPrefix;
             $http.post(locationOrigin + setDeleteUrl, fd, {
                 transformRequest: angular.identity,
                 headers: {
@@ -1213,7 +1215,7 @@ var app = {
             }
 
 
-            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            var locationOrigin = serverPrefix;
             $http.post(locationOrigin + setInfoStateUrl, fd, {
                 transformRequest: angular.identity,
                 headers: {
@@ -1462,7 +1464,7 @@ var app = {
             //fd.append('noticeImageFile', imgUri);
             fd.append('noticeImageFile', imageBlob);
 
-            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            var locationOrigin = serverPrefix;
             $http.post(locationOrigin + "/noticeInfo/postNotice", fd, {
                 transformRequest: angular.identity,
                 headers: {
@@ -1623,7 +1625,7 @@ var app = {
      //fd.append('newsImageFile', imgUri);
      fd.append('newsImageFile', imageBlob);
 
-     var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+     var locationOrigin = serverPrefix;
      $http.post(locationOrigin + "/newsInfo/postNews", fd, {
      transformRequest: angular.identity,
      headers: {
@@ -1809,7 +1811,7 @@ var app = {
             //fd.append('aboutMe', aboutMe);
 
 
-            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            var locationOrigin = serverPrefix;
 
             $http.post(locationOrigin + "/userInfo/editUserInfo", fd, {
                 transformRequest: angular.identity,
@@ -1942,7 +1944,7 @@ var app = {
                 company = '';
             }
 
-            var locationOrigin = "http://collegeboard-env2.elasticbeanstalk.com";
+            var locationOrigin = serverPrefix;
             //$http.post(locationOrigin + "url", fd, {
             var searchUrl = locationOrigin + "/userInfo/searchUser?userId=" + user_id + "&userName=" + name + "&rollNumber=" + roll + "&yearGrad=" + yearGrad + "&interest=" + interest + "&branch=" + branch + "&company=" + company;
 
